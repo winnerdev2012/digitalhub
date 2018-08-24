@@ -63,3 +63,4 @@ gem 'refinerycms-authentication-devise', '~> 2.0.0', :git => 'https://github.com
 #  gem 'refinerycms-inquiries', ['~> 4.0', '>= 4.0.0']
 #  gem 'refinerycms-search', ['~> 4.0', '>= 4.0.0']
 #  gem 'refinerycms-page-images', ['~> 4.0', '>= 4.0.0']
+gem 'refinerycms-i18n'

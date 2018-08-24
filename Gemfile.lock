@@ -461,6 +461,7 @@ DEPENDENCIES
   refinerycms (~> 4.0)!
   refinerycms-acts-as-indexed (~> 3.0, >= 3.0.0)
   refinerycms-authentication-devise (~> 2.0.0)!
+  refinerycms-i18n
   refinerycms-wymeditor (~> 2.0, >= 2.0.0)
   rspec-rails
   sassc-rails
