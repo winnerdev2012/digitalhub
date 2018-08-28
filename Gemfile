@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'rails', '~> 5.2.1'
-gem 'puma', '~> 3.11'
+gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 gem 'sassc-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'pg'
