@@ -9,8 +9,17 @@ GIT
       refinerycms-core (>= 3.0.0, < 5.0)
 
 GIT
+  remote: https://github.com/refinery/refinerycms-search.git
+  revision: 3ed767c8eeb7157c9e056a1c349e38d2ce176ff3
+  branch: master
+  specs:
+    refinerycms-search (4.0.0)
+      refinerycms-acts-as-indexed (~> 3.0)
+      refinerycms-core (~> 4.0)
+
+GIT
   remote: https://github.com/refinery/refinerycms.git
-  revision: 506a9d259abb2aaafe614bb2ca94cf7a0547e373
+  revision: 21d9c73ab2b24268dd24937176af6a55ffcd8791
   specs:
     refinerycms (4.0.2)
       refinerycms-core (= 4.0.2)
@@ -276,7 +285,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    pg (1.0.0)
+    pg (1.1.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -462,6 +471,7 @@ DEPENDENCIES
   refinerycms-acts-as-indexed (~> 3.0, >= 3.0.0)
   refinerycms-authentication-devise (~> 2.0.0)!
   refinerycms-i18n
+  refinerycms-search!
   refinerycms-wymeditor (~> 2.0, >= 2.0.0)
   rspec-rails
   sassc-rails
