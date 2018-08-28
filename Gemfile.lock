@@ -285,6 +285,9 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
+    passenger (5.3.4)
+      rack
+      rake (>= 0.8.1)
     pg (1.1.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -295,7 +298,6 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     public_suffix (3.0.3)
-    puma (3.12.0)
     rack (2.0.5)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -462,10 +464,10 @@ DEPENDENCIES
   guard-livereload
   guard-rspec
   listen (>= 3.0.5, < 3.2)
+  passenger (>= 5.0.25)
   pg
   pry-byebug
   pry-rails
-  puma (~> 3.11)
   rails (~> 5.2.1)
   refinerycms (~> 4.0)!
   refinerycms-acts-as-indexed (~> 3.0, >= 3.0.0)
