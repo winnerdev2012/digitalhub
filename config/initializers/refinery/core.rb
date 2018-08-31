@@ -13,7 +13,7 @@ Refinery::Core.configure do |config|
   # config.base_cache_key = :refinery
 
   # Site name
-  # config.site_name = "Company Name"
+  config.site_name = "Metropolitan Area Planning Council"
 
   # This activates Google Analytics tracking within your website. If this
   # config is left blank or set to UA-xxxxxx-x then no remote calls to
@@ -31,7 +31,7 @@ Refinery::Core.configure do |config|
 
   # Specify a different backend path than the default of "refinery".
   # Make sure you clear the `tmp/cache` directory after changing this setting.
-  # config.backend_route = "refinery"
+  config.backend_route = "hubadmin"
 
   # Specify a different Refinery::Core::Engine mount path than the default of "/".
   # Make sure you clear the `tmp/cache` directory after changing this setting.
