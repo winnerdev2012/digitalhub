@@ -31,4 +31,8 @@
 
 en:
   hello: "Hello world"
-  search_label: 'test'
+  refinery:
+    shared:
+      search:
+        search_label: 'Search:'
+
