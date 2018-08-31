@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  refinery:
+    shared:
+      search:
+        search_label: 'Search:'
+
