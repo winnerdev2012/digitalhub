@@ -33,6 +33,11 @@ en:
   hello: "Hello world"
   refinery:
     shared:
+      navigation_search:
+        search_label: ""
+        search_site_for: "What do you want to know?"
+        go: "Go"
       search:
-        search_label: 'Search:'
-
+        search_label: "> Let's Talk About"
+        search_site_for: 'Housi...'
+        go: "Go"

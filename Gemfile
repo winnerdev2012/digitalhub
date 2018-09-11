@@ -8,6 +8,7 @@ gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 gem 'sassc-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'pg'
+gem "font-awesome-rails"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

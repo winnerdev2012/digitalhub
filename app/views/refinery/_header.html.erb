@@ -1,0 +1,24 @@
+
+<input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+<label for="drawer-toggle" id="drawer-toggle-label"></label>
+<% cache [I18n.locale, 'main_menu', @page, Refinery::Page.fast_menu.map(&:updated_at).max] do %>
+  <div id="sidebar">
+    <%= render "/refinery/shared/navigation_search" %>
+    <%=
+      main_menu = Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self)
+      main_menu.menu_role = 'navigation'
+      main_menu.to_html
+    %>
+  </div>
+<% end %>
+
+<section class="banner">
+  <%= link_to refinery.root_path, itemprop: "url" do %>
+    <h1>MetroNext x 2050</h1>
+  <% end %>
+  <div class="center">
+    <h2>Our Regional Plan Update is a good thing. Don't fight it.</h2>
+    <%= render "/refinery/shared/search" %>
+  </div>
+  <%= image_tag("mapc_logo.svg", class: "logo") %>
+</section>
