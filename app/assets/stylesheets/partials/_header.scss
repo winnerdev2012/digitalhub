@@ -23,30 +23,51 @@ header {
         background: #8d8d8d;
         left: 13px;
         top: 18px;
-        box-shadow: 0 6px 0 #8d8d8d, 0 12px 0 #8d8d8d;
+        box-shadow: 0 0.4em 0 #8d8d8d, 0 0.8em 0 #8d8d8d;
       }
   }
 
   #drawer-toggle:checked ~ #drawer-toggle-label {
-    right: 300px;
-    z-index: 1;
+    right: 22em;
+    z-index: 2;
+    @include media(small) {
+      left: 0em;
+      right: initial;
+    }
   }
 
   #drawer-toggle:checked ~ #sidebar {
     right: 0px;
     z-index: 1;
+    padding-left: 5em;
+    @include media(small) {
+      width: 100%;
+      padding-left: 3em;
+    }
+  }
+
+  #drawer-toggle:checked ~ #page-content {
+    margin-left: 20em;
+  }
+
+  #drawer-toggle:checked ~ .banner {
+    margin-right: 20em;
   }
 
   #sidebar {
     position: fixed;
     height: 100%;
-    width: 300px;
-    right: -300px;
+    width: 25em;
+    right: -25em;
     background: white;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding: 20px;
+    padding: 1em;
     z-index: 1;
+    @include media(small) {
+      width: 100%;
+      right: -100%;
+    }
   }
 
   .fa-search {
@@ -65,7 +86,6 @@ header {
 
     ul {
       list-style: none;
-      padding-left: 1em;
       margin-top: 1em;
     }
 
@@ -75,7 +95,7 @@ header {
     }
 
     li ul li {
-      padding: 0;
+      padding: 0 0 0 1em;
       margin: 0;
       vertical-align: top;
       font-size: 1em;

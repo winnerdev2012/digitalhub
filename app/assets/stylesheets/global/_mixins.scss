@@ -1,0 +1,16 @@
+// Media query
+@mixin media($size) {
+  @if $size == 'x-small' {
+    @media (max-width: #{$break_xsmall}) { @content; }
+  } @else if $size == 'small' {
+    @media (max-width: #{$break_small}) { @content; }
+  } @else if $size == 'medium' {
+    @media (max-width: #{$break_medium}) { @content; }
+  } @else if $size == 'large' {
+    @media (max-width: #{$break_large}) { @content; }
+  } @else if $size == 'x-large' {
+    @media (max-width: #{$break_xlarge}) { @content; }
+  } @else {
+    @media (max-width: $size) { @content; }
+  }
+}
