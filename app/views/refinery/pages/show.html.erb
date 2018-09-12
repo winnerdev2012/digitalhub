@@ -4,10 +4,9 @@
   <% end %>
   <div class="center">
     <h2><%= raw @page.content_for(:tagline) %></h2>
-    <%= render "/refinery/shared/search" %>
   </div>
   <%= image_tag("mapc_logo.svg", class: "logo") %>
 </section>
 <section class="content">
-  <%= raw @page.content_for(:body) %>
+  <%= render '/refinery/content_page' %>
 </section>
