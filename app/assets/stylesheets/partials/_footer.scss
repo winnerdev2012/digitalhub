@@ -1,5 +1,5 @@
 footer {
-  background-color: grey;
+  background-color: $color_bg-dark;
   padding: 1.5rem;
   font-size: $font_size-xsmall;
   font-family: $font_family-secondary;
@@ -10,6 +10,10 @@ footer {
   a {
     color: $color_font-light;
   }
+  // .site-links{
+  //   display: block;
+  //   width: 30%;
+  // }
   .footer-left {
     display: flex;
     & > * {
