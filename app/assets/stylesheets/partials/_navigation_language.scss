@@ -1,0 +1,16 @@
+.navigation-language {
+  position: absolute;
+  right: 5em;
+  top: 0.2em;
+  font-size: 12px;
+  min-width: 4em;
+  z-index: 5;
+  li {
+    display: none;
+  }
+
+  &:hover li {
+    display: block;
+    // transition-delay: 0s 20s;
+  }
+}
