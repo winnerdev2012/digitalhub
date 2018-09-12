@@ -1,0 +1,39 @@
+nl:
+  refinery:
+    plugins:
+      events:
+        title: Events
+    events:
+      admin:
+        events:
+          actions:
+            create_new: Nieuwe Event toevoegen
+            reorder: De volgorde van de Events wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Event-volgorde
+          records:
+            title: Events
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Events. Druk op 'Nieuwe Event toevoegen' om de eerste toe te voegen.
+          event:
+            view_live_html: Deze event op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze event
+            delete: Deze event definitief verwijderen
+      events:
+        show:
+          other: Andere Events
+  activerecord:
+    attributes:
+      'refinery/events/event':
+        title: Title
+        description: Description
+        start: Start
+        end: End
+        image: Image
+        event_type: Event Type
+        address: Address
+        city: City
+        state: State
+        zipcode: Zipcode
+        registration_link: Registration Link
+        accessibility_note: Accessibility Note
+        translation_note: Translation Note

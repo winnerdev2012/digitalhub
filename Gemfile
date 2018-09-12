@@ -65,3 +65,6 @@ gem 'refinerycms-authentication-devise', '~> 2.0.0', :git => 'https://github.com
 gem 'refinerycms-search', github: 'refinery/refinerycms-search', branch: 'master'
 # gem 'refinerycms-page-images', ['~> 4.0', '>= 4.0.0']
 gem 'refinerycms-i18n'
+
+
+gem 'refinerycms-events', path: 'vendor/extensions'

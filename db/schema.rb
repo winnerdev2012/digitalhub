@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_154912) do
+ActiveRecord::Schema.define(version: 2018_09_11_174312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,25 @@ ActiveRecord::Schema.define(version: 2018_08_28_154912) do
     t.string "full_name"
     t.index ["id"], name: "index_refinery_authentication_devise_users_on_id"
     t.index ["slug"], name: "index_refinery_authentication_devise_users_on_slug"
+  end
+
+  create_table "refinery_events", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "start"
+    t.datetime "end"
+    t.integer "image_id"
+    t.string "event_type"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zipcode"
+    t.string "registration_link"
+    t.text "accessibility_note"
+    t.text "translation_note"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "refinery_image_translations", id: :serial, force: :cascade do |t|
@@ -149,6 +168,8 @@ ActiveRecord::Schema.define(version: 2018_08_28_154912) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "children_count", default: 0, null: false
+    t.string "headline"
+    t.string "subheadline"
     t.index ["depth"], name: "index_refinery_pages_on_depth"
     t.index ["id"], name: "index_refinery_pages_on_id"
     t.index ["lft"], name: "index_refinery_pages_on_lft"

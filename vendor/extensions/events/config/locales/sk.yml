@@ -1,0 +1,39 @@
+sk:
+  refinery:
+    plugins:
+      events:
+        title: Events
+    events:
+      admin:
+        events:
+          actions:
+            create_new: Pridať Event
+            reorder: Preusporiadať Events
+            reorder_done: Koniec radenia Events
+          records:
+            title: Events
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Events. Kliknite na "Pridať Event" pre pridanie prvého event.
+          event:
+            view_live_html: Zobraziť náhľad event<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť event
+            delete: Zmazať event
+      events:
+        show:
+          other: Daľšie Events
+  activerecord:
+    attributes:
+      'refinery/events/event':
+        title: Title
+        description: Description
+        start: Start
+        end: End
+        image: Image
+        event_type: Event Type
+        address: Address
+        city: City
+        state: State
+        zipcode: Zipcode
+        registration_link: Registration Link
+        accessibility_note: Accessibility Note
+        translation_note: Translation Note

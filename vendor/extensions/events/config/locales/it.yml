@@ -1,0 +1,39 @@
+it:
+  refinery:
+    plugins:
+      events:
+        title: Events
+    events:
+      admin:
+        events:
+          actions:
+            create_new: Aggiungi Nuovo Event
+            reorder: Riordina Events
+            reorder_done: Termina il Riordino di Events
+          records:
+            title: Events
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Events. Clicca "Aggiungi Nuovo Event" per aggiungere il tuo primo event.
+          event:
+            view_live_html: Guarda live questo event <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo event
+            delete: Rimuovi per sempre questo event
+      events:
+        show:
+          other: Altri Events
+  activerecord:
+    attributes:
+      'refinery/events/event':
+        title: Title
+        description: Description
+        start: Start
+        end: End
+        image: Image
+        event_type: Event Type
+        address: Address
+        city: City
+        state: State
+        zipcode: Zipcode
+        registration_link: Registration Link
+        accessibility_note: Accessibility Note
+        translation_note: Translation Note

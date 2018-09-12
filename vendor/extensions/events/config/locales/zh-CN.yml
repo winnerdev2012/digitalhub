@@ -1,0 +1,41 @@
+zh-CN:
+  refinery:
+    plugins:
+      events:
+        title: Events
+    events:
+      admin:
+        events:
+          actions:
+            create_new: 建立新的 Event
+            reorder: 对 Events 重新排序
+            reorder_done: 对 Events 的重新排序结束
+          records:
+            title: Events
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Events yet. Click "Add New Event" to add your first event.
+            no_items_yet: 目前没有 Events . 点击 "Add New Event" 创建一个event.
+          event:
+            view_live_html: 查看 event 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 event
+            delete: 永久删除 event
+      events:
+        show:
+          other: 其他 Events
+  activerecord:
+    attributes:
+      'refinery/events/event':
+        title: Title
+        description: Description
+        start: Start
+        end: End
+        image: Image
+        event_type: Event Type
+        address: Address
+        city: City
+        state: State
+        zipcode: Zipcode
+        registration_link: Registration Link
+        accessibility_note: Accessibility Note
+        translation_note: Translation Note
