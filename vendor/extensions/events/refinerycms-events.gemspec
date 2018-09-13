@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name              = 'refinerycms-events'
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Events extension for Refinery CMS'
-  s.date              = '2018-09-11'
+  s.date              = '2018-09-12'
   s.summary           = 'Events extension for Refinery CMS'
   s.authors           = 
   s.require_paths     = %w(lib)

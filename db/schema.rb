@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_11_174312) do
+ActiveRecord::Schema.define(version: 2018_09_12_125710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,9 +75,20 @@ ActiveRecord::Schema.define(version: 2018_09_11_174312) do
     t.index ["slug"], name: "index_refinery_authentication_devise_users_on_slug"
   end
 
-  create_table "refinery_events", force: :cascade do |t|
+  create_table "refinery_event_translations", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.text "accessibility_note"
+    t.text "translation_note"
+    t.string "locale", null: false
+    t.integer "refinery_event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_refinery_event_translations_on_locale"
+    t.index ["refinery_event_id", "locale"], name: "index_ef835b16deb790211db3f38fe084065f37a4862b", unique: true
+  end
+
+  create_table "refinery_events", force: :cascade do |t|
     t.datetime "start"
     t.datetime "end"
     t.integer "image_id"
@@ -87,8 +98,6 @@ ActiveRecord::Schema.define(version: 2018_09_11_174312) do
     t.string "state"
     t.string "zipcode"
     t.string "registration_link"
-    t.text "accessibility_note"
-    t.text "translation_note"
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

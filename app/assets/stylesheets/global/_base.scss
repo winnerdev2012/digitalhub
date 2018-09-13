@@ -19,4 +19,12 @@ input[type="submit"] {
   background-color: white;
   color: $color_bg-dark;
   border: 0.1em solid $color_bg-dark;
+
+.hidden-text {
+  position: absolute;
+  left: -1000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

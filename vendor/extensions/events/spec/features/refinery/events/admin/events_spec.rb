@@ -59,6 +59,105 @@ describe Refinery do
             end
           end
 
+          context "with translations" do
+            before do
+              Refinery::I18n.stub(:frontend_locales).and_return([:en, :cs])
+            end
+
+            describe "add a page with title for default locale" do
+              before do
+                visit refinery.events_admin_events_path
+                click_link "Add New Event"
+                fill_in "Title", :with => "First column"
+                click_button "Save"
+              end
+
+              it "should succeed" do
+                expect(Refinery::Events::Event.count).to eq(1)
+              end
+
+              it "should show locale marker for page" do
+                p = Refinery::Events::Event.last
+                within "#event_#{p.id}" do
+                  expect(page).to have_css(".locale_marker", content: 'EN')
+                end
+              end
+
+              it "should show title in the admin menu" do
+                p = Refinery::Events::Event.last
+                within "#event_#{p.id}" do
+                  expect(page).to have_content('First column')
+                end
+              end
+            end
+
+            describe "add a event with title for primary and secondary locale" do
+              before do
+                visit refinery.events_admin_events_path
+                click_link "Add New Event"
+                fill_in "Title", :with => "First column"
+                click_button "Save"
+
+                visit refinery.events_admin_events_path
+                within ".actions" do
+                  click_link "Edit this event"
+                end
+                within "#switch_locale_picker" do
+                  click_link "Cs"
+                end
+                fill_in "Title", :with => "First translated column"
+                click_button "Save"
+              end
+
+              it "should succeed" do
+                expect(Refinery::Events::Event.count).to eq(1)
+                expect(Refinery::Events::Event::Translation.count).to eq(2)
+              end
+
+              it "should show locale flag for page" do
+                p = Refinery::Events::Event.last
+                within "#event_#{p.id}" do
+                  expect(page).to have_css(".locale_marker", content: 'EN')
+                  expect(page).to have_css(".locale_marker", content: 'CS')
+                end
+              end
+
+              it "should show title in backend locale in the admin menu" do
+                p = Refinery::Events::Event.last
+                within "#event_#{p.id}" do
+                  expect(page).to have_content('First column')
+                end
+              end
+            end
+
+            describe "add a title with title only for secondary locale" do
+              before do
+                visit refinery.events_admin_events_path
+                click_link "Add New Event"
+                within "#switch_locale_picker" do
+                  click_link "Cs"
+                end
+
+                fill_in "Title", :with => "First translated column"
+                click_button "Save"
+              end
+
+              it "should show title in backend locale in the admin menu" do
+                p = Refinery::Events::Event.last
+                within "#event_#{p.id}" do
+                  expect(page).to have_content('First translated column')
+                end
+              end
+
+              it "should show locale flag for page" do
+                p = Refinery::Events::Event.last
+                within "#event_#{p.id}" do
+                  expect(page).to have_css(".locale_marker", content: 'CS')
+                end
+              end
+            end
+          end
+
         end
 
         describe "edit" do
