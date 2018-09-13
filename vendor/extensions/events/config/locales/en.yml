@@ -21,6 +21,10 @@ en:
       events:
         show:
           other: Other Events
+        index:
+          heading: "These are the events"
+          upcoming: "Upcoming"
+          next_month: "Next Month"
   activerecord:
     attributes:
       'refinery/events/event':

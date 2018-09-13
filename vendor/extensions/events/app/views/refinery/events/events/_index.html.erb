@@ -1,9 +1,9 @@
 <div class="partial EventsIndex">
   <div class="event-list-header">
-    <h2>These are the events</h2>
+    <h2><%= t('refinery.events.events.index.heading') %></h2>
   </div>
-  <h3>Upcoming</h3>
+  <h3><%= t('refinery.events.events.index.upcoming') %></h3>
   <%= render partial: 'refinery/events/events/event_list', locals: { events: @upcoming_events } %>
-  <h3>Next Month</h3>
+  <h3><%= t('refinery.events.events.index.next_month') %></h3>
   <%= render partial: 'refinery/events/events/event_list', locals: { events: @events_next_month } %>
 </div>
