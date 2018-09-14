@@ -1,27 +1,65 @@
 footer {
-  background-color: grey;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $color_bg-dark;
   padding: 1.5rem;
   font-size: $font_size-xsmall;
   font-family: $font_family-secondary;
   color: $color_font-light;
   line-height: $font_size-small;
-  display: flex;
-  justify-content: space-between;
+
   a {
     color: $color_font-light;
   }
-  .footer-left {
+  li {
+    margin-bottom: 0.3em;
+  }
+
+  .footer-top {
     display: flex;
-    & > * {
-      padding: 0;
-      margin: 0 1.5em 0 0;
+    flex-basis: 100%;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-basis: 100%;
+    border-top: solid white 1px;
+    align-items: center;
+    @include media(small) {
+      display: initial;
     }
   }
-  .footer-right {
+
+  .footer-about-links {
+    flex-basis: 10em;
+  }
+
+  .footer-mapc-brand {
     display: flex;
-    & > * {
-      padding: 0;
-      margin: 0 1.5em 0 0;
+    align-items: center;
+    flex-basis: 30%;
+    padding-top: 1em;
+    .logo {
+        width: 72px;
+        height: 36px;
+        margin-right: 1em;
+      }
+  }
+
+  .footer-contact-information {
+    padding-top: 1em;
+    flex-basis: 50%;
+    a {
+      white-space:nowrap;
+    }
+  }
+
+  .footer-right {
+    padding-top: 1em;
+    flex-basis: 20%;
+    a {
+      margin: 0 0.4em;
+      font-size: 16px;
     }
   }
 }
