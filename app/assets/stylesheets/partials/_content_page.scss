@@ -1,8 +1,10 @@
 .container {
   margin: 0 auto;
+
   .content {
     margin-left: 40em;
     margin-right: 16em;
+
     ul li {
       display: inline-block;
 
@@ -19,6 +21,11 @@
           width: 20em;
           padding: 1.5em 0;
           margin: 0.5em 0;
+        }
+
+        .result_type {
+          display: initial;
+          padding: initial;
         }
       }
     }
