@@ -2,6 +2,10 @@ body {
   font-family: $font_family-primary;
 }
 
+p {
+  line-height: 1.5em;
+}
+
 a {
   text-decoration: none;
   outline: none;
@@ -29,4 +33,20 @@ input[type="submit"] {
   height: 1em;
   padding-left: 1px;
   overflow: hidden;
+}
+
+.container {
+  max-width: 90rem;
+  margin: auto;
+  padding: 1rem;
+}
+
+.content-column {
+  margin-left: 44%;
+  margin-right: 18%;
+}
+
+.event-content-column {
+  margin-left: 44%;
+  margin-right: 10%;
 }

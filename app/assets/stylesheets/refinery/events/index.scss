@@ -1,9 +1,40 @@
-.template-events {
+.page.EventIndex {
   h1, h2 {
     font-size: $font_size-medium;
     color: $color_green-dark;
   }
+  h3 {
+    font-size: $font_size-small;
+    color: $color_font-grey;
+  }
   p {
     color: $color_font-grey;
+  }
+  .splash {
+    background-color: $color_bg-dark;
+    position: relative;
+    p {
+      color: $color_font-light;
+      margin: 0;
+    }
+    .headline {
+      font-size: $font_size-headline;
+    }
+    .subheadline {
+      font-size: $font_size-medium;
+    }
+    .container {
+      &:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        bottom: -25px;
+        right: 6rem;
+        border-top: 50px solid $color_green-medium;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+      }
+    }
+
   }
 }
