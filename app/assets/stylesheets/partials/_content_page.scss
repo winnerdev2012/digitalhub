@@ -1,13 +1,11 @@
+.container {
+  margin: 0 auto;
   .content {
-    max-width: 33em;
     margin-left: 40em;
-    @include media(medium) {
-      margin-left: 1em;
-      max-width: 20em;
-    }
-
+    margin-right: 16em;
     ul li {
       display: inline-block;
+
       a {
         display: inline-block;
         padding: 4em 0;
@@ -24,4 +22,9 @@
         }
       }
     }
+    @include media(large) {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
   }
+}
