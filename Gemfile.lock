@@ -60,6 +60,15 @@ GIT
       refinerycms-core (= 4.0.2)
       refinerycms-dragonfly (~> 1.0)
 
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: d5d22148b4144cfc165ea9b8b8551cec11ba88f7
+  branch: master
+  specs:
+    faker (1.9.1)
+      i18n (>= 0.7)
+      refinerycms-core (~> 4.0.2)
+
 PATH
   remote: vendor/extensions
   specs:
@@ -570,6 +579,7 @@ DEPENDENCIES
   chromedriver-helper
   dotenv-rails
   factory_bot_rails
+  faker!
   flipper
   flipper-active_record
   font-awesome-rails
