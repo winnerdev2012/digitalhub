@@ -40,7 +40,7 @@ class CreateEventsEvents < ActiveRecord::Migration[5.2]
     end
 
     if defined?(::Refinery::Page)
-      ::Refinery::Page.delete_all({:link_url => "/events/events"})
+      ::Refinery::Page.where(link_url: "/events/events").delete_all
     end
 
     drop_table :refinery_events
