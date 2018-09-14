@@ -9,6 +9,8 @@
   </div>
   <%= image_tag("mapc_logo.svg", class: "logo") %>
 </section>
-<section class="content">
-  <%= raw @page.content_for(:body) %>
-</section>
+<div class="container">
+  <section class="content">
+    <%= raw @page.content_for(:body) %>
+  </section>
+</div>

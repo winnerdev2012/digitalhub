@@ -1,0 +1,30 @@
+.container {
+  margin: 0 auto;
+  .content {
+    margin-left: 40em;
+    margin-right: 16em;
+    ul li {
+      display: inline-block;
+
+      a {
+        display: inline-block;
+        padding: 4em 0;
+        width: 10em;
+        text-align: center;
+        background-color: white;
+        margin: 0.5em 0.4em;
+        color: $color_bg-dark;
+        @include media(small) {
+          display: block;
+          width: 20em;
+          padding: 1.5em 0;
+          margin: 0.5em 0;
+        }
+      }
+    }
+    @include media(large) {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+  }
+}
