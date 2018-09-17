@@ -27,19 +27,23 @@
 @import url("//hello.myfonts.net/count/37908e");
 
 @font-face {
-  font-family: 'SwiftNeueLTPro-Italic';
-  src: asset-url('37908E_0_0.woff') format('woff');
+  font-family: 'SwiftNeueLTPro';
+  src: asset-url('37908E_1_0.woff') format('woff');
+  font-style: normal;
 }
 @font-face {
-  font-family: 'SwiftNeueLTPro-Regular';
-  src: asset-url('37908E_1_0.woff') format('woff');
+  font-family: 'SwiftNeueLTPro';
+  src: asset-url('37908E_0_0.woff') format('woff');
+  font-style: italic;
 }
 
 @font-face {
   font-family: 'CalibreWeb-Semibold';
   src: asset-url('CalibreWeb-Semibold.woff') format('woff');
+  font-style: normal;
 }
 @font-face {
-  font-family: 'CalibreWeb-SemiboldItalic';
+  font-family: 'CalibreWeb-Semibold';
   src: asset-url('CalibreWeb-SemiboldItalic.woff') format('woff');
+  font-style: italic;
 }
