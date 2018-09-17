@@ -1,0 +1,20 @@
+<ul>
+  <% if ::Refinery::Events::Admin::EventsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.events_admin_events_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= action_label :add, refinery.new_events_admin_event_path, t('.create_new') %>
+  </li>
+<% if !searching? && ::Refinery::Events::Admin::EventsController.sortable? && ::Refinery::Events::Event.many? %>
+  <li>
+    <%= action_label :reorder,
+                     refinery.events_admin_events_path,
+                     t('.reorder', what:  "Events"), id: 'reorder_action'%>
+    <%= action_label :reorder_done,
+                     refinery.events_admin_events_path,
+                      t('.reorder_done', what: "Events"), id: 'reorder_action_done', class: 'hidden'%>
+  </li>
+<% end %>
+</ul>

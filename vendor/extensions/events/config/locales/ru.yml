@@ -1,0 +1,39 @@
+ru:
+  refinery:
+    plugins:
+      events:
+        title: Events
+    events:
+      admin:
+        events:
+          actions:
+            create_new: Добавить Event
+            reorder: Изменить порядок Events
+            reorder_done: Закончить изменять порядок Events
+          records:
+            title: Events
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Events" не найдено. Нажмите "Добавить Event" чтобы создать event.
+          event:
+            view_live_html: Просмотреть event вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать event
+            delete: Удалить event навсегда
+      events:
+        show:
+          other: Другие Events
+  activerecord:
+    attributes:
+      'refinery/events/event':
+        title: Title
+        description: Description
+        start: Start
+        end: End
+        image: Image
+        event_type: Event Type
+        address: Address
+        city: City
+        state: State
+        zipcode: Zipcode
+        registration_link: Registration Link
+        accessibility_note: Accessibility Note
+        translation_note: Translation Note

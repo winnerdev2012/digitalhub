@@ -41,3 +41,8 @@ en:
         search_label: "> Let's Talk About"
         search_site_for: 'Housi...'
         go: "Go"
+    events:
+      event_style: "Event Style" # Used as a heading
+      style_event: "style event" # Used in a sentence
+      held_in: "held in" # Used in a sentence
+      on_date: "on" # Used in a sentence

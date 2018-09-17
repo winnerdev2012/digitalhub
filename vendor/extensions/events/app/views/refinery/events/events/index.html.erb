@@ -1,0 +1,35 @@
+<div class="page EventIndex">
+
+  <div class="splash">
+    <div class="container">
+      <div class="content-column">
+        <div class="headline">
+          <%= raw @page.content_for(:headline) %>
+        </div>
+        <div class="subheadline">
+          <%= raw @page.content_for(:subheadline) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-column">
+      <h1><%= raw @page.title %></h1>
+      <%= raw @page.content_for(:body) %>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="event-content-column">
+      <div class="partial EventsIndex">
+        <h2><%= t('refinery.events.events.index.heading') %></h2>
+        <h3><%= t('refinery.events.events.index.upcoming') %></h3>
+        <%= render partial: 'refinery/events/events/event_list', locals: { events: @upcoming_events } %>
+        <h3><%= t('refinery.events.events.index.next_month') %></h3>
+        <%= render partial: 'refinery/events/events/event_list', locals: { events: @events_next_month } %>
+      </div>
+    </div>
+  </div>
+
+</div>

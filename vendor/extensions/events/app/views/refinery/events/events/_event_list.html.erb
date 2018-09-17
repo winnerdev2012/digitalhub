@@ -1,0 +1,24 @@
+<ul class="partial EventList">
+  <% events.each do |event| %>
+    <li class="event-teaser">
+      <%= link_to(refinery.events_event_path(event)) do %>
+        <div class="event-title">
+          <h3><%= event.title %></h3>
+        </div>
+        <div class="event-type">
+          <span class="event-type-label" aria-hidden="true"><%= t('refinery.events.event_style') %></span>
+          <span class="event-type-value"><%= event.event_type %> <span class="hidden-text"><%= t('refinery.events.style_event') %></span></span>
+        </div>
+        <div class="event-city">
+          <span class="hidden-text"><%= t('refinery.events.held_in') %></span>
+          <span><%= event.city %></span>
+        </div>
+        <div class="event-start">
+          <span class="hidden-text"><%= t('refinery.events.on_date') %></span>
+          <span class="hidden-text"><%= event.start.strftime("%B %-d, %Y at %l:%M%p") %></span>
+          <span aria-hidden="true"><%= event.start.strftime("%-m|%-d|%y - %l:%M%P") %></span>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
