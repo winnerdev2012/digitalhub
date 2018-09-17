@@ -20,6 +20,7 @@ en:
             delete: Remove this event forever
       events:
         show:
+          register: Register
           other: Other Events
         index:
           heading: "These are the events"

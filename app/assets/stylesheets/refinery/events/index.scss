@@ -1,4 +1,4 @@
-.page.EventIndex {
+.EventIndex {
   h1, h2 {
     font-size: $font_size-medium;
     color: $color_green-dark;
@@ -18,7 +18,7 @@
       margin: 0;
     }
     .headline {
-      font-size: $font_size-headline;
+      font-size: $font_size-xlarge;
     }
     .subheadline {
       font-size: $font_size-medium;
@@ -35,6 +35,5 @@
         border-right: 25px solid transparent;
       }
     }
-
   }
 }
