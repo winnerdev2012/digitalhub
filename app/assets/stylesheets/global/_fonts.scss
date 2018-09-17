@@ -26,8 +26,24 @@
 /* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/37908e");
 
-@font-face {font-family: 'SwiftNeueLTPro-Italic';src: url('37908E_0_0.eot');src: url('37908E_0_0.eot?#iefix') format('embedded-opentype'),url('37908E_0_0.woff2') format('woff2'),url('37908E_0_0.woff') format('woff'),url('37908E_0_0.ttf') format('truetype');}
-@font-face {font-family: 'SwiftNeueLTPro-Regular';src: url('37908E_1_0.eot');src: url('37908E_1_0.eot?#iefix') format('embedded-opentype'),url('37908E_1_0.woff2') format('woff2'),url('37908E_1_0.woff') format('woff'),url('37908E_1_0.ttf') format('truetype');}
+@font-face {
+  font-family: 'SwiftNeueLTPro';
+  src: asset-url('37908E_1_0.woff') format('woff');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SwiftNeueLTPro';
+  src: asset-url('37908E_0_0.woff') format('woff');
+  font-style: italic;
+}
 
-@font-face {font-family: 'CalibreWeb-Semibold';src: url('CalibreWeb-Semibold.eot');src: url('CalibreWeb-Semibold.eot?#iefix') format('embedded-opentype'),url('CalibreWeb-Semibold.woff2') format('woff2'),url('CalibreWeb-Semibold.woff') format('woff');}
-@font-face {font-family: 'CalibreWeb-SemiboldItalic';src: url('CalibreWeb-SemiboldItalic.eot');src: url('CalibreWeb-SemiboldItalic.eot?#iefix') format('embedded-opentype'),url('CalibreWeb-SemiboldItalic.woff2') format('woff2'),url('CalibreWeb-SemiboldItalic.woff') format('woff');}
+@font-face {
+  font-family: 'CalibreWeb-Semibold';
+  src: asset-url('CalibreWeb-Semibold.woff') format('woff');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CalibreWeb-Semibold';
+  src: asset-url('CalibreWeb-SemiboldItalic.woff') format('woff');
+  font-style: italic;
+}
