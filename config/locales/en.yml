@@ -38,7 +38,7 @@ en:
         search_site_for: "What do you want to know?"
         go: "Go"
       search:
-        search_label: "> Let's Talk About"
+        search_label: "Let's Talk About"
         search_site_for: 'Housi...'
         go: "Go"
     events:
