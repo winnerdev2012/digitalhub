@@ -21,7 +21,7 @@
       <% if params[:query].present? %>
         <% if @results.present? %>
           <ul id="search_results">
-            <% @results.select { |result| result.class != Refinery::Page }.each do |result| %>
+            <% @results.select { |result| result.class == Refinery::Page }.each do |result| %>
               <li>
                 <%= link_to result_mark(result.title).html_safe, result_url(result) %>
                 <p><%= result.meta_description %></p>
