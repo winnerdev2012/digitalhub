@@ -14,8 +14,12 @@
   p {
     color: $color_font-grey;
   }
-  .event-time, .event-location, .event-registration {
-    margin-bottom: 1.5em;
+  .event-section {
+    margin-bottom: 2rem;
+  }
+  .event-time,
+  .event-location {
+    margin-bottom: 1.5rem;
     p {
       margin: 0;
     }
@@ -26,6 +30,18 @@
     padding: 0.5em 1em;
     background-color: $color_bg-dark;
     color: $color_font-light;
+    &:focus {
+      outline-style: solid;
+      outline-color: $color_blue-medium;
+      outline-width: 2px;
+      outline-offset: 4px;
+    }
+    &:hover {
+      border: 3px solid $color_green-dark;
+      background-color: $color_green-bg;
+      color: $color_green-dark;
+      padding: calc(0.5em - 3px) calc(1em - 3px);
+    }
   }
   .splash {
     background-color: $color_bg-dark;
@@ -34,11 +50,9 @@
       color: $color_font-light;
       margin: 0;
     }
-    .headline {
-      font-size: $font_size-xlarge;
-    }
-    .subheadline {
-      font-size: $font_size-medium;
+    .banner-area {
+      margin-top: 8rem;
+      margin-bottom: 8rem;
     }
     .container {
       &:after {

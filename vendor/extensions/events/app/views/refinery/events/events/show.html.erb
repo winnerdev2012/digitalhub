@@ -3,7 +3,7 @@
 
   <div class="splash">
     <div class="container">
-      <div class="content-column">
+      <div class="content-column banner-area">
         <h1><%= @event.title %></h1>
       </div>
     </div>
@@ -13,6 +13,7 @@
     <div class="content-column">
 
       <div class="event-time">
+        <h2 class="hidden-text"><%= t('refinery.events.events.show.time') %></h2>
         <% if @event.end.day > @event.start.day %>
           <p><%=@event.start.strftime("%A, %B %-d, %Y at %-l:%M%P")%> to</p>
           <p><%=@event.start.strftime("%A, %B %-d, %Y at %-l:%M%P")%></p>
@@ -21,24 +22,39 @@
           <p><%=@event.start.strftime("%-l:%M%P")%> - <%=@event.end.strftime("%-l:%M%P")%></p>
         <% end %>
       </div>
+
       <div class="event-location">
+        <h2 class="hidden-text"><%= t('refinery.events.events.show.location') %></h2>
         <p><%=@event.address%></p>
         <p><%=@event.city%>, <%=@event.state%> <%=@event.zipcode%></p>
       </div>
-      <div class="event-registration">
+
+      <div class="event-section event-registration">
+        <h2 class="hidden-text"><%= t('refinery.events.events.show.registration') %></h2>
         <a href="<%=@event.registration_link%>" target="_blank">
-          <%= t('refinery.events.events.show.register') %>
+          <span><%= t('refinery.events.events.show.register') %></span>
+          <span class="hidden-text"><%= t('refinery.events.events.show.for_this_event') %></span>
         </a>
       </div>
-      <div class="event-description">
+
+      <div class="event-section event-description">
+        <h2><%= t('refinery.events.events.show.description') %></h2>
         <%=raw @event.description %>
       </div>
-      <div class="event-accessibility-note">
-        <%=raw @event.accessibility_note %>
-      </div>
-      <div class="event-translation-note">
-        <%=raw @event.translation_note %>
-      </div>
+
+      <% if @event.accessibility_note %>
+        <div class="event-section event-accessibility-note">
+          <h2><%= t('refinery.events.events.show.accessibility') %></h2>
+          <%=raw @event.accessibility_note %>
+        </div>
+      <% end %>
+
+      <% if @event.translation_note %>
+        <div class="event-section event-translation-note">
+          <h2><%= t('refinery.events.events.show.translation') %></h2>
+          <%=raw @event.translation_note %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -20,7 +20,14 @@ en:
             delete: Remove this event forever
       events:
         show:
+          time: "Date and Time"
+          location: "Location"
+          registration: "Registration"
+          description: "Description"
           register: Register
+          for_this_event: " for this event"
+          accessibility: "Accessibility"
+          translation: "Translations"
           other: Other Events
         index:
           heading: "These are the events"
