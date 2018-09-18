@@ -1,7 +1,7 @@
-<input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+<input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
 <label for="drawer-toggle" id="drawer-toggle-label"></label>
 <% cache [I18n.locale, 'main_menu', @page, Refinery::Page.fast_menu.map(&:updated_at).max] do %>
-  <div id="sidebar">
+  <div id="drawer">
     <%= render "/refinery/shared/navigation_search" %>
     <%=
       main_menu = Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self)
