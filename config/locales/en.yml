@@ -49,4 +49,4 @@ en:
     search:
       search:
         show:
-          event_results_for: "Event Results for %{what}"
+          event_results_for: "Event Results for '%{what}'"
