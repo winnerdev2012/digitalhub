@@ -8,9 +8,19 @@ footer {
   color: $color_font-light;
   line-height: $font_size-small;
 
-  a {
+  // Override normal grey headings
+  h3 {
     color: $color_font-light;
   }
+
+  // Override normal green coloring
+  a {
+    color: $color_font-light;
+    &:hover {
+      color: $color_bg-light;
+    }
+  }
+
   li {
     margin-bottom: 0.3em;
   }

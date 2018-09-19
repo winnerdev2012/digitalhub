@@ -1,0 +1,18 @@
+header {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  z-index: 1;
+  .header-content {
+    margin: 3rem 3rem;
+  }
+  .site-name {
+    margin: 0;
+    color: $color_font-light;
+  }
+  a.focus--keyboard .site-name {
+    color: $color_blue-medium;
+  }
+}

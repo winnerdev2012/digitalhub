@@ -1,10 +1,15 @@
-<ul class="navigation-language">
-  <%= Refinery::I18n.config.locales[Refinery::I18n.config.current_locale] %> <%= fa_icon 'caret-down' %>
-  <% Refinery::I18n.config.frontend_locales.each do |locale| %>
-    <li>
-      <%= link_to("/#{locale.to_s}/" + request.path) do %>
-        <span><%= Refinery::I18n.locales[locale] %></span>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<nav class="navigation-language" aria-label="Select language">
+  <span aria-label="Current language:">
+    <%= Refinery::I18n.config.locales[Refinery::I18n.config.current_locale] %> <%= fa_icon 'caret-down' %>
+  </span>
+  <ul class="navigation-language">
+    <% locales = (Refinery::I18n.config.frontend_locales.map { |l| "/#{l.to_s}" }).join("|") %>
+    <% Refinery::I18n.config.frontend_locales.each do |locale| %>
+      <li>
+        <%= link_to("/#{locale.to_s}" + request.path.match("(?:#{locales})?(.*)")[1]) do %>
+          <span><%= Refinery::I18n.locales[locale] %></span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

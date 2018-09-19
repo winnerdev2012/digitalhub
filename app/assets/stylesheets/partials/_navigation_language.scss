@@ -6,11 +6,28 @@
   min-width: 4em;
   z-index: 5;
 
-  li {
-    display: none;
+  ul {
+    position: absolute;
+    height: 1px;
+    overflow: hidden;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 1px 0;
+
+    li:not(:last-child) {
+      margin-bottom: 0.25em;
+    }
   }
 
-  &:hover li {
-    display: block;
+  &:hover ul, &:focus-within ul {
+    height: max-content;
+  }
+
+  a, span {
+    color: $color_font-light;
+  }
+  a.focus--keyboard span {
+    color: $color_blue-medium;
   }
 }
