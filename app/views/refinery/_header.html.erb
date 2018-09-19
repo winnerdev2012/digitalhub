@@ -1,11 +1,13 @@
 <header>
   <div class="header-content">
-    <%= link_to refinery.root_path, itemprop: "url" do %>
-      <span class="site-name">MetroNext x 2050</span>
+    <%= link_to refinery.root_path, itemprop: "url", class: "site-name" do %>
+      MetroNext x 2050
     <% end %>
-    <%= render "/refinery/shared/navigation_language" %>
-    <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
-    <label for="drawer-toggle" id="drawer-toggle-label"></label>
+    <div class="header-content-right">
+      <%= render "/refinery/shared/navigation_language" %>
+      <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
+      <label for="drawer-toggle" id="drawer-toggle-label"></label>
+    </div>
   </div>
   <%= render "/refinery/menu" -%>
 </header>

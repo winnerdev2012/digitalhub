@@ -5,13 +5,31 @@ header {
   right: 0;
   margin: 0;
   z-index: 1;
-  .header-content {
-    margin: 3rem 3rem;
-  }
-  .site-name {
+
+  h1 {
     margin: 0;
-    color: $color_font-light;
   }
+
+  .header-content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .header-content-right {
+    display: flex;
+    flex-wrap: nowrap;
+    width: fit-content;
+    padding-right: 3rem;
+    padding-top: 1rem;
+  }
+
+  .site-name {
+    color: $color_font-light;
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+
   a.focus--keyboard .site-name {
     color: $color_blue-medium;
   }
