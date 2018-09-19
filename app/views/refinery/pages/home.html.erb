@@ -1,16 +1,18 @@
-<section class="banner">
-  <%= render "/refinery/shared/navigation_language" %>
-  <%= link_to refinery.root_path, itemprop: "url" do %>
-    <h1>MetroNext x 2050</h1>
-  <% end %>
-  <div class="center">
-    <h2><%= raw @page.content_for(:tagline) %></h2>
-    <%= render "/refinery/shared/search" %>
-  </div>
-  <%= image_tag("mapc_logo.svg", class: "logo") %>
-</section>
-<div class="container">
-  <section class="content">
-    <%= raw @page.content_for(:body) %>
+<div class="HomePage">
+  <section class="banner">
+    <%= render "/refinery/shared/navigation_language" %>
+    <%= link_to refinery.root_path, itemprop: "url" do %>
+      <h1>MetroNext x 2050</h1>
+    <% end %>
+    <div class="center">
+      <h2><%= raw @page.content_for(:tagline) %></h2>
+      <%= render "/refinery/shared/search" %>
+    </div>
+    <%= image_tag("mapc_logo.svg", class: "logo") %>
   </section>
+  <div class="container">
+    <section class="content">
+      <%= raw @page.content_for(:body) %>
+    </section>
+  </div>
 </div>

@@ -1,5 +1,9 @@
-.page.EventIndex {
-  h1, h2 {
+.EventIndex {
+  h1 {
+    font-size: $font_size-xlarge;
+    color: $color_font-light;
+  }
+  h2 {
     font-size: $font_size-medium;
     color: $color_green-dark;
   }
@@ -17,11 +21,9 @@
       color: $color_font-light;
       margin: 0;
     }
-    .headline {
-      font-size: $font_size-headline;
-    }
-    .subheadline {
-      font-size: $font_size-medium;
+    .banner-area {
+      margin-top: 8rem;
+      margin-bottom: 8rem;
     }
     .container {
       &:after {
@@ -35,6 +37,5 @@
         border-right: 25px solid transparent;
       }
     }
-
   }
 }

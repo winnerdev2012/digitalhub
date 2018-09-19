@@ -2,13 +2,26 @@ body {
   font-family: $font_family-primary;
 }
 
+h1, h2, h3 {
+  font-weight: 300;
+}
+
 p {
   line-height: 1.5em;
 }
 
 a {
+  color: $color_bg-dark;
   text-decoration: none;
-  outline: none;
+  &.focus--keyboard {
+    outline-style: solid;
+    outline-color: $color_blue-medium;
+    outline-width: 2px;
+    outline-offset: 4px;
+    background-color: $color_yellow-light;
+    box-shadow: 0px 0px 0px 8px $color_yellow-light;
+    color: $color_blue-medium;
+  }
 }
 
 button, img { outline: none; }

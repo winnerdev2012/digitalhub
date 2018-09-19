@@ -1,99 +1,60 @@
-<% content_for :body_content_title do %>
-  <%= @event.title %>
-<% end %>
 
-<% content_for :body do %>
-  <section>
-    <h1>Title</h1>
-    <p>
-      <%=raw @event.title %>
-    </p>
-  </section>
-  <section>
-    <h1>Description</h1>
-    <p>
-      <%=raw @event.description %>
-    </p>
-  </section>
-  <section>
-    <h1>Start</h1>
-    <p>
-      <%=raw @event.start %>
-    </p>
-  </section>
-  <section>
-    <h1>End</h1>
-    <p>
-      <%=raw @event.end %>
-    </p>
-  </section>
-  <section>
-    <h1>Image</h1>
-    <p>
-      <%= image_fu @event.image, nil %>
-    </p>
-  </section>
-  <section>
-    <h1>Event Type</h1>
-    <p>
-      <%=raw @event.event_type %>
-    </p>
-  </section>
-  <section>
-    <h1>Address</h1>
-    <p>
-      <%=raw @event.address %>
-    </p>
-  </section>
-  <section>
-    <h1>City</h1>
-    <p>
-      <%=raw @event.city %>
-    </p>
-  </section>
-  <section>
-    <h1>State</h1>
-    <p>
-      <%=raw @event.state %>
-    </p>
-  </section>
-  <section>
-    <h1>Zipcode</h1>
-    <p>
-      <%=raw @event.zipcode %>
-    </p>
-  </section>
-  <section>
-    <h1>Registration Link</h1>
-    <p>
-      <%=raw @event.registration_link %>
-    </p>
-  </section>
-  <section>
-    <h1>Accessibility Note</h1>
-    <p>
-      <%=raw @event.accessibility_note %>
-    </p>
-  </section>
-  <section>
-    <h1>Translation Note</h1>
-    <p>
-      <%=raw @event.translation_note %>
-    </p>
-  </section>
-<% end %>
+<div class="EventShow">
 
-<% content_for :side_body do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="events">
-      <% @events.each do |event| %>
-        <li>
-          <%= link_to event.title, refinery.events_event_path(event) %>
-        </li>
+  <div class="splash">
+    <div class="container">
+      <div class="content-column banner-area">
+        <h1><%= @event.title %></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-column">
+
+      <div class="event-time">
+        <h2 class="hidden-text"><%= t('refinery.events.events.show.time') %></h2>
+        <% if @event.end.day > @event.start.day %>
+          <p><%=@event.start.strftime("%A, %B %-d, %Y at %-l:%M%P")%> to</p>
+          <p><%=@event.start.strftime("%A, %B %-d, %Y at %-l:%M%P")%></p>
+        <% else %>
+          <p><%=@event.start.strftime("%A, %B %-d, %Y")%></p>
+          <p><%=@event.start.strftime("%-l:%M%P")%> - <%=@event.end.strftime("%-l:%M%P")%></p>
+        <% end %>
+      </div>
+
+      <div class="event-location">
+        <h2 class="hidden-text"><%= t('refinery.events.events.show.location') %></h2>
+        <p><%=@event.address%></p>
+        <p><%=@event.city%>, <%=@event.state%> <%=@event.zipcode%></p>
+      </div>
+
+      <div class="event-section event-registration">
+        <h2 class="hidden-text"><%= t('refinery.events.events.show.registration') %></h2>
+        <a href="<%=@event.registration_link%>" target="_blank">
+          <span><%= t('refinery.events.events.show.register') %></span>
+          <span class="hidden-text"><%= t('refinery.events.events.show.for_this_event') %></span>
+        </a>
+      </div>
+
+      <div class="event-section event-description">
+        <h2><%= t('refinery.events.events.show.description') %></h2>
+        <%=raw @event.description %>
+      </div>
+
+      <% if @event.accessibility_note %>
+        <div class="event-section event-accessibility-note">
+          <h2><%= t('refinery.events.events.show.accessibility') %></h2>
+          <%=raw @event.accessibility_note %>
+        </div>
       <% end %>
-    </ul>
-  </aside>
-<% end %>
 
-<%= render '/refinery/content_page' %>
+      <% if @event.translation_note %>
+        <div class="event-section event-translation-note">
+          <h2><%= t('refinery.events.events.show.translation') %></h2>
+          <%=raw @event.translation_note %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

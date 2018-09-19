@@ -1,0 +1,70 @@
+.EventShow {
+  h1 {
+    font-size: $font_size-xlarge;
+    color: $color_font-light;
+  }
+  h2 {
+    font-size: $font_size-medium;
+    color: $color_green-dark;
+  }
+  h3 {
+    font-size: $font_size-small;
+    color: $color_font-grey;
+  }
+  p {
+    color: $color_font-grey;
+  }
+  .event-section {
+    margin-bottom: 2rem;
+  }
+  .event-time,
+  .event-location {
+    margin-bottom: 1.5rem;
+    p {
+      margin: 0;
+    }
+  }
+  .event-registration a {
+    display: block;
+    width: max-content;
+    padding: 0.5em 1em;
+    background-color: $color_bg-dark;
+    color: $color_font-light;
+    &:focus {
+      outline-style: solid;
+      outline-color: $color_blue-medium;
+      outline-width: 2px;
+      outline-offset: 4px;
+    }
+    &:hover {
+      border: 3px solid $color_green-dark;
+      background-color: $color_green-bg;
+      color: $color_green-dark;
+      padding: calc(0.5em - 3px) calc(1em - 3px);
+    }
+  }
+  .splash {
+    background-color: $color_bg-dark;
+    position: relative;
+    p {
+      color: $color_font-light;
+      margin: 0;
+    }
+    .banner-area {
+      margin-top: 8rem;
+      margin-bottom: 8rem;
+    }
+    .container {
+      &:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        bottom: -25px;
+        right: 6rem;
+        border-top: 50px solid $color_green-medium;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+      }
+    }
+  }
+}
