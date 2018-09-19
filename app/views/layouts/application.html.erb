@@ -7,8 +7,16 @@
   </head>
   <body id="<%= canonical_id @page %>" class="<%= view_template_class @page %>">
     <%= site_bar -%>
-    <%= render "/refinery/menu" -%>
     <div id="page_container">
+      <header>
+        <%= link_to refinery.root_path, itemprop: "url" do %>
+          <h1>MetroNext x 2050</h1>
+        <% end %>
+        <%= render "/refinery/shared/navigation_language" %>
+        <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
+        <label for="drawer-toggle" id="drawer-toggle-label"></label>
+        <%= render "/refinery/menu" -%>
+      </header>
       <main id="page" role="main">
         <%= yield %>
       </main>

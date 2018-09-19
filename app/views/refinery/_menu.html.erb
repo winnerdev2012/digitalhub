@@ -1,5 +1,3 @@
-<input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
-<label for="drawer-toggle" id="drawer-toggle-label"></label>
 <% cache [I18n.locale, 'main_menu', @page, Refinery::Page.fast_menu.map(&:updated_at).max] do %>
   <div id="drawer">
     <%= render "/refinery/shared/navigation_search" %>

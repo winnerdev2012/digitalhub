@@ -5,20 +5,12 @@
   font-size: 12px;
   min-width: 4em;
   z-index: 5;
+
   li {
     display: none;
   }
 
   &:hover li {
     display: block;
-  }
-
-  .hidden-text {
-    position: absolute;
-    left: -1000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
   }
 }

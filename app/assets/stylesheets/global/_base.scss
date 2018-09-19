@@ -2,12 +2,26 @@ body {
   font-family: $font_family-primary;
 }
 
-h1, h2, h3 {
-  font-weight: 300;
+h1 {
+  font-size: $font_size-xlarge;
+  color: $color_font-light;
+  font-weight: 400;
+}
+h2 {
+  font-size: $font_size-medium;
+  color: $color_green-dark;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: $font_size-small;
+  color: $color_font-grey;
+  font-weight: 400;
 }
 
 p {
   line-height: 1.5em;
+  color: $color_font-grey;
 }
 
 a {
