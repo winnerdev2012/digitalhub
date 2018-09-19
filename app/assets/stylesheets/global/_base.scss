@@ -56,6 +56,10 @@ input[type="submit"] {
   border: 0.1em solid $color_bg-dark;
 }
 
+.active {
+  margin-right: 25rem;
+}
+
 .hidden-text {
   position: absolute;
   left: -1000px;

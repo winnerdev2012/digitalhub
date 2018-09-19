@@ -1,5 +1,6 @@
 <% cache [I18n.locale, 'main_menu', @page, Refinery::Page.fast_menu.map(&:updated_at).max] do %>
   <div id="drawer">
+    <button class="fa fa-times" onclick="closeDrawer()"></button>
     <%= render "/refinery/shared/navigation_search" %>
     <%=
       main_menu = Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self)

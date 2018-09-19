@@ -9,7 +9,7 @@
   width: 30px;
   display: block;
   background: rgba(255,255,255,0);
-  z-index: 1;
+  z-index: 2;
 
   &:before {
     content: '';
@@ -19,32 +19,6 @@
     background: #ffffff;
     box-shadow: 0 0.4em 0 #ffffff, 0 0.8em 0 #ffffff;
   }
-}
-
-#drawer-toggle:checked ~ #drawer-toggle-label {
-  right: 22em;
-  z-index: 2;
-  transition-duration: 1.5s;
-  @include media(small) {
-    left: 0em;
-    right: initial;
-  }
-}
-
-#drawer-toggle:checked ~ #drawer {
-  right: 0px;
-  z-index: 1;
-  padding-left: 5em;
-  transition-duration: 1.5s;
-  @include media(small) {
-    width: 100%;
-    padding-left: 3em;
-  }
-}
-
-#drawer-toggle:checked ~ #page_container {
-  margin-right: 25em;
-  transition-duration: 1.5s;
 }
 
 #page_container {

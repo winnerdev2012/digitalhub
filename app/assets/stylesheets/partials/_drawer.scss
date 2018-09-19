@@ -19,6 +19,15 @@
     color: $color_bg-dark;
   }
 
+  .fa-times {
+    background: none;
+    border: 0;
+    padding: 0 1rem;
+    position: absolute;
+    right: 0;
+    z-index: 5;
+  }
+
   input[type="search"] {
     border: 0;
     border-bottom: 0.2em solid $color_bg-dark;
