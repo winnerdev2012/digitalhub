@@ -1,0 +1,51 @@
+<section class="search-banner">
+  <%= link_to refinery.root_path, itemprop: "url" do %>
+    <h1>MetroNext x 2050</h1>
+  <% end %>
+  <div class="center">
+    <h2><%= raw @page.content_for(:tagline) %></h2>
+    <%= render "/refinery/shared/search" %>
+  </div>
+</section>
+<div class="container">
+  <section class="search-results">
+    <% content_for :body_content_title do %>
+      <% if params[:query].present? %>
+        <%= t('.search_results_for', what: params[:query]) %>
+      <% else %>
+        <%= t('.no_results') %>
+      <% end %>
+    <% end %>
+
+    <% content_for :body do %>
+      <% if params[:query].present? %>
+        <% if @results.present? %>
+          <ul id="search_results">
+            <% @results.select { |result| result.class == Refinery::Page }.each do |result| %>
+              <li>
+                <%= link_to result_mark(result.title).html_safe, result_url(result) %>
+                <p><%= result.meta_description %></p>
+              </li>
+            <% end %>
+          </ul>
+          <hr>
+          <h2><%= t('.event_results_for', what: params[:query]) %></h2>
+          <ul id="event_results">
+            <% @results.select { |result| result.class == Refinery::Events::Event }.each do |result| %>
+              <li>
+                <%= link_to result_mark(result.title).html_safe, result_url(result) %>
+                <p><%= result.meta_description %></p>
+              </li>
+            <% end %>
+          </ul>
+          <%= will_paginate @results %>
+        <% else %>
+          <%= t('.no_results') %>
+        <% end %>
+      <% else %>
+        <%= t('.no_results') %>
+      <% end %>
+    <% end %>
+    <%= render "/refinery/content_page" %>
+  </section>
+</div>

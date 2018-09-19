@@ -38,7 +38,7 @@ en:
         search_site_for: "What do you want to know?"
         go: "Go"
       search:
-        search_label: "> Let's Talk About"
+        search_label: "Let's Talk About"
         search_site_for: 'Housi...'
         go: "Go"
     events:
@@ -46,3 +46,7 @@ en:
       style_event: "style event" # Used in a sentence
       held_in: "held in" # Used in a sentence
       on_date: "on" # Used in a sentence
+    search:
+      search:
+        show:
+          event_results_for: "Event Results for '%{what}'"

@@ -22,6 +22,21 @@ main {
       bottom: 2em;
     }
 
+    label[for="query"] {
+      &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 1em;
+        width: 1em;
+        background: image-url('triangle_bullet_white.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 0.39em;
+        margin-left: -1.2em;
+      }
+    }
+
     h1 {
       font-size: 1em;
       margin-left: 4em;
