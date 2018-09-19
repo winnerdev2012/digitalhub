@@ -2,7 +2,7 @@
   <%= Refinery::I18n.config.locales[Refinery::I18n.config.current_locale] %> <%= fa_icon 'caret-down' %>
   <% Refinery::I18n.config.frontend_locales.each do |locale| %>
     <li>
-      <%= link_to root_path(locale: locale) do %>
+      <%= link_to("/#{locale.to_s}/" + request.path) do %>
         <span><%= Refinery::I18n.locales[locale] %></span>
       <% end %>
     </li>
