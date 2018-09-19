@@ -1,0 +1,63 @@
+#drawer {
+  position: fixed;
+  height: 100%;
+  width: 25em;
+  right: -25em;
+  background: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 1em;
+  z-index: 1;
+  transition-duration: 1.5s;
+  @include media(small) {
+    width: 100%;
+    right: -100%;
+  }
+
+  .fa-search {
+    color: $color_bg-dark;
+  }
+
+  input[type="search"] {
+    border: 0;
+    border-bottom: 0.2em solid $color_bg-dark;
+    width: 13em;
+  }
+
+  nav {
+    a, a:hover, a:visited {
+      color: $color_bg-dark;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 1em;
+    }
+
+    li {
+      font-size: 20px;
+      margin-bottom: 1em;
+    }
+
+    li ul li {
+      padding: 0 0 0 1em;
+      margin: 0;
+      vertical-align: top;
+      font-size: 1em;
+      margin-bottom: 0.6em;
+      margin-left: 0.8em;
+      &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 1em;
+        width: 1em;
+        background: image-url('triangle_bullet.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 1em;
+        margin-left: -1.8em;
+      }
+    }
+  }
+}
