@@ -58,6 +58,18 @@ input[type="submit"] {
 
 .active {
   margin-right: 25rem;
+
+  @include media(small) {
+    .content {
+      p {
+        display: none;
+      }
+    }
+
+    footer {
+      padding: 0;
+    }
+  }
 }
 
 .hidden-text {

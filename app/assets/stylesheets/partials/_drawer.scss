@@ -10,10 +10,6 @@
   padding: 1em;
   z-index: 1;
   transition-duration: 1.5s;
-  @include media(small) {
-    width: 100%;
-    right: -100%;
-  }
 
   .fa-search {
     color: $color_bg-dark;
@@ -24,7 +20,7 @@
     border: 0;
     padding: 0 1rem;
     position: absolute;
-    right: 0;
+    right: 1rem;
     z-index: 5;
   }
 
