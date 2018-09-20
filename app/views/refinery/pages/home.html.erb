@@ -1,14 +1,21 @@
 <div class="HomePage">
   <section class="banner">
-    <div class="center">
-      <h2><%= raw @page.content_for(:tagline) %></h2>
-      <%= render "/refinery/shared/search" %>
+    <div class="container">
+      <div class="content-column banner-content">
+        <h1><%= @page.title %></h1>
+        <%= render "/refinery/shared/search" %>
+      </div>
+      <%= image_tag("mapc_logo.svg", class: "logo") %>
     </div>
-    <%= image_tag("mapc_logo.svg", class: "logo") %>
   </section>
   <div class="container">
-    <section class="content">
+    <section class="content-column">
       <%= raw @page.content_for(:body) %>
+      <div class="action-boxes">
+        <a href=""><span class="wrapper">Find out</span></a>
+        <a href=""><span class="wrapper">Weigh in</span></a>
+        <a href=""><span class="wrapper">Turn up</span></a>
+      </div>
     </section>
   </div>
 </div>

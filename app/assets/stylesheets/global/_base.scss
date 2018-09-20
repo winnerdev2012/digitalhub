@@ -1,5 +1,6 @@
 body {
   font-family: $font_family-primary;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -53,7 +54,6 @@ input[type="submit"] {
   border: 0;
   background-color: white;
   color: $color_bg-dark;
-  border: 0.1em solid $color_bg-dark;
 }
 
 .active {
@@ -120,7 +120,7 @@ input[type="submit"] {
       position: absolute;
       bottom: -25px;
       right: 6rem;
-      border-top: 50px solid $color_green-medium;
+      border-top: 50px solid $color_green-light;
       border-left: 25px solid transparent;
       border-right: 25px solid transparent;
     }
