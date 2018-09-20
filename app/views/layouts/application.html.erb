@@ -7,8 +7,9 @@
   </head>
   <body id="<%= canonical_id @page %>" class="<%= view_template_class @page %>">
     <%= site_bar -%>
-    <%= render "/refinery/menu" -%>
     <div id="page_container">
+      <div class="skip-header"><a href="#page">Skip navigation</a></div>
+      <%= render "/refinery/header" -%>
       <main id="page" role="main">
         <%= yield %>
       </main>

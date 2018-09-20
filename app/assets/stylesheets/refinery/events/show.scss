@@ -1,19 +1,4 @@
 .EventShow {
-  h1 {
-    font-size: $font_size-xlarge;
-    color: $color_font-light;
-  }
-  h2 {
-    font-size: $font_size-medium;
-    color: $color_green-dark;
-  }
-  h3 {
-    font-size: $font_size-small;
-    color: $color_font-grey;
-  }
-  p {
-    color: $color_font-grey;
-  }
   .event-section {
     margin-bottom: 2rem;
   }
@@ -41,30 +26,6 @@
       background-color: $color_green-bg;
       color: $color_green-dark;
       padding: calc(0.5em - 3px) calc(1em - 3px);
-    }
-  }
-  .splash {
-    background-color: $color_bg-dark;
-    position: relative;
-    p {
-      color: $color_font-light;
-      margin: 0;
-    }
-    .banner-area {
-      margin-top: 8rem;
-      margin-bottom: 8rem;
-    }
-    .container {
-      &:after {
-        content: ' ';
-        display: block;
-        position: absolute;
-        bottom: -25px;
-        right: 6rem;
-        border-top: 50px solid $color_green-medium;
-        border-left: 25px solid transparent;
-        border-right: 25px solid transparent;
-      }
     }
   }
 }

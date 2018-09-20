@@ -5,51 +5,20 @@
 }
 
 #drawer-toggle-label {
-  right: 0px;
-  height:50px;
-  width: 50px;
+  height:30px;
+  width: 30px;
   display: block;
-  position: fixed;
   background: rgba(255,255,255,0);
-  z-index: 1;
+  z-index: 2;
 
   &:before {
     content: '';
     display: block;
-    position: absolute;
     height: 2px;
     width: 24px;
-    background: #8d8d8d;
-    left: 13px;
-    top: 18px;
-    box-shadow: 0 0.4em 0 #8d8d8d, 0 0.8em 0 #8d8d8d;
+    background: #ffffff;
+    box-shadow: 0 0.4em 0 #ffffff, 0 0.8em 0 #ffffff;
   }
-}
-
-#drawer-toggle:checked ~ #drawer-toggle-label {
-  right: 22em;
-  z-index: 2;
-  transition-duration: 1.5s;
-  @include media(small) {
-    left: 0em;
-    right: initial;
-  }
-}
-
-#drawer-toggle:checked ~ #drawer {
-  right: 0px;
-  z-index: 1;
-  padding-left: 5em;
-  transition-duration: 1.5s;
-  @include media(small) {
-    width: 100%;
-    padding-left: 3em;
-  }
-}
-
-#drawer-toggle:checked ~ #page_container {
-  margin-right: 25em;
-  transition-duration: 1.5s;
 }
 
 #page_container {

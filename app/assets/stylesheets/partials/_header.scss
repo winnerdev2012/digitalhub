@@ -1,0 +1,37 @@
+header {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  z-index: 1;
+
+  h1 {
+    margin: 0;
+  }
+
+  .header-content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .header-content-right {
+    display: flex;
+    flex-wrap: nowrap;
+    width: fit-content;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    transition-duration: 1.5s;
+  }
+
+  .site-name {
+    color: $color_font-light;
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+
+  a.focus--keyboard .site-name {
+    color: $color_blue-medium;
+  }
+}

@@ -1,24 +1,33 @@
 .navigation-language {
-  position: absolute;
-  right: 5em;
-  top: 0.2em;
+  margin-top: 0;
   font-size: 12px;
   min-width: 4em;
-  z-index: 5;
-  li {
-    display: none;
-  }
+  z-index: 1;
+  padding-right: 1rem;
+  padding-bottom: 0;
 
-  &:hover li {
-    display: block;
-  }
-
-  .hidden-text {
+  ul {
     position: absolute;
-    left: -1000px;
-    top: auto;
-    width: 1px;
     height: 1px;
     overflow: hidden;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 1px 0;
+
+    li:not(:last-child) {
+      margin-bottom: 0.25em;
+    }
+  }
+
+  &:hover ul, &:focus-within ul {
+    height: max-content;
+  }
+
+  a, span {
+    color: $color_font-light;
+  }
+  a.focus--keyboard span {
+    color: $color_blue-medium;
   }
 }

@@ -1,6 +1,7 @@
 #drawer {
-  position: fixed;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  height: 100vh;
   width: 25em;
   right: -25em;
   background: white;
@@ -9,13 +10,18 @@
   padding: 1em;
   z-index: 1;
   transition-duration: 1.5s;
-  @include media(small) {
-    width: 100%;
-    right: -100%;
-  }
 
   .fa-search {
     color: $color_bg-dark;
+  }
+
+  .fa-times {
+    background: none;
+    border: 0;
+    padding: 0 1rem;
+    position: absolute;
+    right: 1rem;
+    z-index: 5;
   }
 
   input[type="search"] {

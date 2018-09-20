@@ -7,10 +7,16 @@ footer {
   font-family: $font_family-secondary;
   color: $color_font-light;
   line-height: $font_size-small;
+  transition-duration: 1.5s;
 
+  // Override normal green coloring
   a {
     color: $color_font-light;
+    &:hover {
+      color: $color_bg-light;
+    }
   }
+
   li {
     margin-bottom: 0.3em;
   }
@@ -61,5 +67,10 @@ footer {
       margin: 0 0.4em;
       font-size: 16px;
     }
+  }
+
+  .link-category-heading {
+    font-size: 16px;
+    color: $color_font-light;
   }
 }

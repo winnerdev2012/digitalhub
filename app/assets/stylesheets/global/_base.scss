@@ -2,12 +2,26 @@ body {
   font-family: $font_family-primary;
 }
 
-h1, h2, h3 {
-  font-weight: 300;
+h1 {
+  font-size: $font_size-xlarge;
+  color: $color_font-light;
+  font-weight: 400;
+}
+h2 {
+  font-size: $font_size-medium;
+  color: $color_green-dark;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: $font_size-small;
+  color: $color_font-grey;
+  font-weight: 400;
 }
 
 p {
   line-height: 1.5em;
+  color: $color_font-grey;
 }
 
 a {
@@ -42,6 +56,22 @@ input[type="submit"] {
   border: 0.1em solid $color_bg-dark;
 }
 
+.active {
+  margin-right: 25rem;
+
+  @include media(small) {
+    .content {
+      p {
+        display: none;
+      }
+    }
+
+    footer {
+      padding: 0;
+    }
+  }
+}
+
 .hidden-text {
   position: absolute;
   left: -1000px;
@@ -66,4 +96,75 @@ input[type="submit"] {
 .event-content-column {
   margin-left: 44%;
   margin-right: 10%;
+}
+
+.skip-header {
+  width: 100%;
+  a {
+    width: calc(100% - 0.5rem);
+    height: 0;
+    padding: 0;
+    display: block;
+    box-sizing: border-box;
+    &:focus {
+      height: max-content;
+      padding: 0.25rem;
+      margin: 0.5rem;
+    }
+  }
+}
+
+.banner {
+  background-color: $color_bg-dark;
+  position: relative;
+  padding-top: 2em;
+  padding-bottom: 8rem;
+  color: $color_font-light;
+  font-size: 20px;
+  font-weight: normal;
+  background: $color_bg-dark;
+  background-size: 40%;
+
+  .center {
+    margin: 8rem auto 0 auto;
+    width: fit-content;
+  }
+
+  h1 {
+    font-size: 1em;
+    margin-left: 4em;
+    font-weight: normal;
+    color: inherit;
+  }
+
+  p {
+    color: $color_font-light;
+    margin: 0;
+  }
+
+  .logo {
+    bottom: 2em;
+    height: 45px;
+    position: absolute;
+    right: 1em;
+    width: 90px;
+  }
+
+  .banner-content {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+  }
+
+  .container {
+    &:after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      bottom: -25px;
+      right: 6rem;
+      border-top: 50px solid $color_green-medium;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+    }
+  }
 }
