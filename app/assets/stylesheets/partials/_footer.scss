@@ -4,7 +4,6 @@ footer {
   background-color: $color_bg-dark;
   padding: 1.5rem;
   font-size: $font_size-xsmall;
-  font-family: $font_family-secondary;
   color: $color_font-light;
   line-height: $font_size-small;
   transition-duration: 1.5s;
@@ -12,18 +11,30 @@ footer {
   // Override normal green coloring
   a {
     color: $color_font-light;
-    &:hover {
-      color: $color_bg-light;
+  }
+
+
+  ul {
+    margin: 1rem 0 0 0;
+    li:not(:last-child) {
+      margin-bottom: 0.3em;
     }
   }
 
-  li {
-    margin-bottom: 0.3em;
+  .link-section {
+    margin: 1rem 2rem 1rem 0;
+  }
+
+  .link-category-heading {
+    font-size: $font_size-medium;
   }
 
   .footer-top {
     display: flex;
     flex-basis: 100%;
+    @include media(small) {
+      display: initial;
+    }
   }
 
   .footer-bottom {
@@ -36,8 +47,23 @@ footer {
     }
   }
 
-  .footer-about-links {
+  .footer-about-links, .resource-links {
     flex-basis: 10em;
+  }
+
+  .other-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    a.link-button {
+      margin: 1rem 0;
+      display: block;
+      width: max-content;
+      background-color: $color_green-medium;
+      color: $color_font-light;
+      padding: 0.5em 1em;
+    }
   }
 
   .footer-mapc-brand {
