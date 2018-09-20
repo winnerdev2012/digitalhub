@@ -9,11 +9,6 @@ footer {
   line-height: $font_size-small;
   transition-duration: 1.5s;
 
-  // Override normal grey headings
-  h3 {
-    color: $color_font-light;
-  }
-
   // Override normal green coloring
   a {
     color: $color_font-light;
@@ -72,5 +67,10 @@ footer {
       margin: 0 0.4em;
       font-size: 16px;
     }
+  }
+
+  .link-category-heading {
+    font-size: 16px;
+    color: $color_font-light;
   }
 }
