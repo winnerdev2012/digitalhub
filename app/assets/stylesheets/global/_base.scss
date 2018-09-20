@@ -105,14 +105,50 @@ input[type="submit"] {
 .banner {
   background-color: $color_bg-dark;
   position: relative;
+  padding-top: 2em;
+  padding-bottom: 8rem;
+  color: $color_font-light;
+  font-size: 20px;
+  font-weight: normal;
+  background: $color_bg-dark;
+  background-size: 40%;
+
+  .center {
+    margin: 8rem auto 0 auto;
+    width: fit-content;
+  }
+
+  h1 {
+    font-size: 1em;
+    margin-left: 4em;
+    font-weight: normal;
+    color: inherit;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-weight: normal;
+    color: inherit;
+  }
+
   p {
     color: $color_font-light;
     margin: 0;
   }
+
+  .logo {
+    bottom: 2em;
+    height: 45px;
+    position: absolute;
+    right: 1em;
+    width: 90px;
+  }
+
   .banner-content {
     margin-top: 8rem;
     margin-bottom: 8rem;
   }
+
   .container {
     &:after {
       content: ' ';
