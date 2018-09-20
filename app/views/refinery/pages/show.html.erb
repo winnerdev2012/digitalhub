@@ -1,6 +1,6 @@
 <section class="banner">
   <div class="center">
-    <h1><%= raw @page.title %></h1>
+    <h1><%= raw @page.try(:title) %></h1>
   </div>
   <%= image_tag("mapc_logo.svg", class: "logo") %>
 </section>
