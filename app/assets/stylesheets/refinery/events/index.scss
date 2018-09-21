@@ -10,17 +10,5 @@
       margin-top: 8rem;
       margin-bottom: 8rem;
     }
-    .container {
-      &:after {
-        content: ' ';
-        display: block;
-        position: absolute;
-        bottom: -25px;
-        right: 6rem;
-        border-top: 50px solid $color_green-medium;
-        border-left: 25px solid transparent;
-        border-right: 25px solid transparent;
-      }
-    }
   }
 }
