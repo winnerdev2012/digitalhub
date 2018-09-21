@@ -18,4 +18,22 @@
       </div>
     </section>
   </div>
+  <div class="interruption">
+    <div class="container">
+      <div class="content-column">
+        <% if @next_event %>
+          <div class="next-event-floater">
+            <h2>Next event</h2>
+            <%= link_to(refinery.events_event_path(@next_event)) do %>
+              <div class="hidden-text"><%= @next_event.start.strftime("%B %-d, %Y at %-l:%M%p") %></div>
+              <div aria-hidden="true"><%= @next_event.start.strftime("%b %-d %-l:%M%P") %></div>
+              <div><%= @next_event.title %></div>
+            <% end %>
+          </div>
+        <% end %>
+        <h2>Sign up for email updates</h2>
+        <a class="link-button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank">Join our email list</a>
+      </div>
+    </div>
+  </div>
 </div>
