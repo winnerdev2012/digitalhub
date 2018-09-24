@@ -98,8 +98,8 @@ input[type="submit"] {
 }
 
 .content-column {
-  margin-left: 44%;
-  margin-right: 18%;
+  margin-left: 42%;
+  margin-right: 16%;
 }
 
 .event-content-column {
@@ -126,11 +126,24 @@ input[type="submit"] {
 .banner {
   background-color: $color_bg-dark;
   position: relative;
+  padding-top: 2em;
   color: $color_font-light;
   font-size: 20px;
   font-weight: normal;
   background: $color_bg-dark;
   background-size: 40%;
+
+  .center {
+    margin: 8rem auto 0 auto;
+    width: fit-content;
+  }
+
+  h1 {
+    font-size: 1em;
+    margin-left: 4em;
+    font-weight: normal;
+    color: inherit;
+  }
 
   p {
     color: $color_font-light;
@@ -138,16 +151,16 @@ input[type="submit"] {
   }
 
   .logo {
-    bottom: 2em;
-    height: 45px;
+    width: 6rem;
+    height: auto;
     position: absolute;
-    right: 1em;
-    width: 90px;
+    right: 4.5rem;
+    bottom: 2.5rem;
   }
 
   .banner-content {
-    margin-top: 8rem;
-    margin-bottom: 8rem;
+    margin-top: 11rem;
+    margin-bottom: 11rem;
   }
 
   .container {
