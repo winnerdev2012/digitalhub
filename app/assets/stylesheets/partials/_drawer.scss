@@ -4,12 +4,20 @@
   height: 100vh;
   width: 25rem;
   right: -25rem;
+  max-width: 100%;
   background: white;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 1em;
-  z-index: 1;
-  transition-duration: 1.5s;
+  padding: 2rem;
+  z-index: 5;
+  transition-duration: 1s;
+  border-left: 1px solid $color_bg-dark;
+
+  @include media(medium) {
+    &.active {
+      right: 0;
+    }
+  }
 
   .fa-search {
     color: $color_bg-dark;

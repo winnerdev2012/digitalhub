@@ -1,6 +1,10 @@
+html {
+  overflow: hidden;
+}
 body {
   font-family: $font_family-primary;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 h1 {
@@ -50,7 +54,7 @@ a {
 button, img { outline: none; }
 
 main {
-  transition: 1.5s
+  transition: 1.5s;
 }
 
 ul {
@@ -64,18 +68,13 @@ input[type="submit"] {
   color: $color_bg-dark;
 }
 
-.active {
-  margin-right: 25rem;
+#page_container {
+  transition-duration: 1s;
+  &.active {
+    margin-right: 25rem;
 
-  @include media(small) {
-    .content {
-      p {
-        display: none;
-      }
-    }
-
-    footer {
-      padding: 0;
+    @include media(medium) {
+      margin-right: 0rem;
     }
   }
 }
