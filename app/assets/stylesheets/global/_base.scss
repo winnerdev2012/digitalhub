@@ -99,6 +99,10 @@ input[type="submit"] {
 .content-column {
   margin-left: 42%;
   margin-right: 16%;
+  @include media(small) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 .event-content-column {
@@ -172,6 +176,11 @@ input[type="submit"] {
       border-top: 50px solid $color_green-light;
       border-left: 25px solid transparent;
       border-right: 25px solid transparent;
+
+      @include media(small) {
+        right: initial;
+        margin-left: 10rem;
+      }
     }
   }
 }

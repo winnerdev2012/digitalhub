@@ -37,6 +37,11 @@
 
     form {
       margin-left: 1.2em;
+
+      @include media(small) {
+        margin-left: initial;
+      }
+
       label[for="query"] {
         position: relative;
         &:before {
@@ -50,17 +55,27 @@
           background-repeat: no-repeat;
           margin-top: 0.39em;
           margin-left: -1.2em;
+
+          @include media(small) {
+            display: none;
+          }
         }
       }
 
       input[type="submit"] {
-        height: 1.8em;
-        padding: 2px 6px;
+        padding: 0.35rem 0.5rem;
+
+        @include media(small) {
+          padding: 0.65rem 0.5rem;
+        }
       }
 
       input[type="search"] {
-        height: 1.5em;
+        height: 1.8rem;
         color: black;
+        @include media(small) {
+          width: 85%;
+        }
       }
     }
 
