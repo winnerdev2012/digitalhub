@@ -2,7 +2,6 @@ footer {
   display: flex;
   flex-wrap: wrap;
   background-color: $color_bg-dark;
-  padding: 1.5rem;
   font-size: $font_size-xsmall;
   color: $color_font-light;
   line-height: $font_size-small;
@@ -55,15 +54,6 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    a.link-button {
-      margin: 1rem 0;
-      display: block;
-      width: max-content;
-      background-color: $color_green-medium;
-      color: $color_font-light;
-      padding: 0.5em 1em;
-    }
   }
 
   .footer-mapc-brand {

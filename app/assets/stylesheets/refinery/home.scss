@@ -71,8 +71,6 @@
       }
     }
 
-
-
     a, a:hover, a:visited {
       color: white;
     }
@@ -115,6 +113,29 @@
           background-color: $color_green-light;
           transition: height ease 0.25s;
         }
+      }
+    }
+  }
+  .interruption {
+    background-color: $color_bg-lightest;
+    padding: 1rem 0;
+    .content-column-row {
+      display: flex;
+      .content-column-one {
+        width: 44%;
+      }
+      .content-column-two {
+        flex: 1;
+        margin-right: 18%;
+      }
+      .next-event-time {
+        font-size: $font_size-medium;
+      }
+      .next-event-title {
+        font-size: $font_size-large;
+      }
+      h2 {
+        margin-top: 0;
       }
     }
   }
