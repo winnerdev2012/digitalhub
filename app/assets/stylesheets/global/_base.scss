@@ -51,6 +51,18 @@ a {
   }
 }
 
+button {
+  &.focus--keyboard {
+    outline-style: solid;
+    outline-color: $color_blue-medium;
+    outline-width: 2px;
+    outline-offset: 4px;
+    background-color: $color_yellow-light;
+    box-shadow: 0px 0px 0px 8px $color_yellow-light;
+    color: $color_blue-medium;
+  }
+}
+
 button, img { outline: none; }
 
 main {

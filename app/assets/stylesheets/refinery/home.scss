@@ -1,17 +1,25 @@
 #drawer-toggle {
-  position: absolute;
-  opacity: 0;
-  right: 0;
-}
-
-#drawer-toggle-label {
-  height:30px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 30px;
   width: 30px;
   display: block;
   background: rgba(255,255,255,0);
   z-index: 2;
 
+  &.focus--keyboard {
+    background-color: $color_yellow-light;
+    &:before {
+      background: $color_blue-medium;
+      box-shadow: 0 0.4em 0 $color_blue-medium, 0 0.8em 0 $color_blue-medium;
+    }
+  }
+
   &:before {
+    position: absolute;
+    top: 8px;
+    left: 3px;
     content: '';
     display: block;
     height: 2px;
@@ -20,6 +28,23 @@
     box-shadow: 0 0.4em 0 #ffffff, 0 0.8em 0 #ffffff;
   }
 }
+
+// #drawer-toggle-label {
+//   height:30px;
+//   width: 30px;
+//   display: block;
+//   background: rgba(255,255,255,0);
+//   z-index: 2;
+
+//   &:before {
+//     content: '';
+//     display: block;
+//     height: 2px;
+//     width: 24px;
+//     background: #ffffff;
+//     box-shadow: 0 0.4em 0 #ffffff, 0 0.8em 0 #ffffff;
+//   }
+// }
 
 .HomePage {
   background-color: $color_bg-light;
