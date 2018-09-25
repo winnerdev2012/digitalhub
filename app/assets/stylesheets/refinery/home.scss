@@ -35,14 +35,6 @@
     background: $color_bg-dark image-url('triangle_background.svg');
     background-size: 40%;
 
-    .logo {
-      width: 6rem;
-      height: auto;
-      position: absolute;
-      right: 4.5rem;
-      bottom: 2.5rem;
-    }
-
     form {
       margin-left: 1.2em;
       label[for="query"] {
@@ -62,7 +54,8 @@
       }
 
       input[type="submit"] {
-        height: 2em;
+        height: 1.8em;
+        padding: 2px 6px;
       }
 
       input[type="search"] {
