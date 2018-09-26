@@ -61,6 +61,7 @@ form.search-form {
     }
     input[type="search"] {
       min-width: 0;
+      color: black;
     }
     & > *:not(:last-child) {
       margin-right: 0.5rem;
