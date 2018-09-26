@@ -21,4 +21,10 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+# Special Instructions
+
+## Home Page
+
+In order to add content on the home page below the interruption bar
+("below the fold"), an editor must add a new page part called "Bottom", with the
+slug "bottom".
