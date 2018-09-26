@@ -19,8 +19,9 @@ header {
   .header-content-right {
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
     width: fit-content;
-    padding-right: 3rem;
+    padding-right: 1rem;
     padding-top: 1rem;
     transition-duration: 1.5s;
   }

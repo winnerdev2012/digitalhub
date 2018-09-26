@@ -5,8 +5,10 @@
     <% end %>
     <div class="header-content-right">
       <%= render "/refinery/shared/navigation_language" %>
-      <input type="checkbox" id="drawer-toggle" name="drawer-toggle" onclick="openDrawer()" />
-      <label for="drawer-toggle" id="drawer-toggle-label"></label>
+      <button id="drawer-toggle" onclick="toggleDrawer()" aria-haspopup="true" aria-controls="drawer">
+        <label for="drawer-toggle" id="drawer-toggle-label"></label>
+        <span class="hidden-text">Toggle site navigation</span>
+      </button>
     </div>
   </div>
   <%= render "/refinery/menu" -%>
