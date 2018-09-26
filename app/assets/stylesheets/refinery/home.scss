@@ -35,35 +35,6 @@
     background: $color_bg-dark image-url('triangle_background.svg');
     background-size: 40%;
 
-    form {
-      margin-left: 1.2em;
-      label[for="query"] {
-        position: relative;
-        &:before {
-          position: absolute;
-          display: block;
-          content: '';
-          height: 1em;
-          width: 1em;
-          background: image-url('triangle_bullet_white.svg');
-          background-size: contain;
-          background-repeat: no-repeat;
-          margin-top: 0.39em;
-          margin-left: -1.2em;
-        }
-      }
-
-      input[type="submit"] {
-        height: 1.8em;
-        padding: 2px 6px;
-      }
-
-      input[type="search"] {
-        height: 1.5em;
-        color: black;
-      }
-    }
-
     a, a:hover, a:visited {
       color: white;
     }

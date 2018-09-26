@@ -1,5 +1,7 @@
-<%= form_tag refinery.search_root_path, method: 'get' do %>
+<%= form_tag refinery.search_root_path, { method: 'get', class: 'search-form' } do %>
   <%= label_tag 'query', t('.search_label') %>
-  <%= text_field_tag :query, {}, {type: "search", placeholder: t(".search_site_for"), value: (params[:query] if params[:query])} %>
-  <%= submit_tag t(".go") %>
+  <div class="search-input-submit">
+    <%= text_field_tag :query, {}, {type: "search", placeholder: t(".search_site_for"), value: (params[:query] if params[:query])} %>
+    <%= submit_tag t(".go") %>
+  </div>
 <% end %>

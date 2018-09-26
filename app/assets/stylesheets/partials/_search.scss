@@ -1,12 +1,12 @@
 .search {
-  input[type="submit"] {
-    height: 2em;
-  }
+  // input[type="submit"] {
+  //   height: 2em;
+  // }
 
-  input[type="search"] {
-    height: 1.5em;
-    color: black;
-  }
+  // input[type="search"] {
+  //   height: 1.5em;
+  //   color: black;
+  // }
 
   a, a:hover, a:visited {
     color: white;
@@ -14,6 +14,64 @@
 
   @include media(small) {
     font-size: 12px;
+  }
+}
+
+form.search-form {
+  display: flex;
+  align-items: center;
+  font-size: $font_size-medium;
+  @include media(small) {
+    display: block;
+    font-size: $font_size-small;
+  }
+
+  label[for="query"] {
+    position: relative;
+    margin-right: 0.5rem;
+    margin-left: 1.5em;
+    min-width: max-content;
+    @include media(small) {
+      margin-left: 0em;
+    }
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+      height: 1em;
+      width: 1em;
+      background: image-url('triangle_bullet_white.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: -1.5em;
+
+      @include media(small) {
+        display: none;
+      }
+    }
+  }
+
+  .search-input-submit {
+    margin-top: 0rem;
+    display: flex;
+    min-width: 0;
+    input {
+      border: none;
+      padding: 0.5rem 0.75rem;
+    }
+    input[type="search"] {
+      min-width: 0;
+    }
+    & > *:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+    @include media(small) {
+      margin-top: 0.5rem;
+      width: 100%;
+      input[type="search"] {
+        flex: 1;
+      }
+    }
   }
 }
 
