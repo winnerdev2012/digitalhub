@@ -9,11 +9,12 @@
       position: relative;
       min-height: 3rem;
       width: 100%;
-      display: flex;
-      align-items: center;
+      display: block;
       border: 1px solid $color_green-dark;
-      padding: 0.75em;
+      padding: 1em;
       color: $color_green-dark;
+      text-decoration: none;
+
       &:focus, &:hover {
         border: 3px solid $color_green-dark;
         background-color: $color_green-bg;
@@ -26,11 +27,10 @@
         margin: 0;
       }
 
-      .event-title {
+      .event-content-area {
+        display: flex;
+        align-items: center;
         padding-left: 2rem;
-        width: 40%;
-        font-size: $font_size-medium;
-        line-height: $font_size-medium;
         &:before {
           $half-font-size: $font_size-medium / 2;
           content: ' ';
@@ -40,11 +40,19 @@
           border-bottom: $half-font-size solid transparent;
           border-left: $font_size-medium solid $color_green-light;
           left: 0;
-          top: 0;
+          top: 50%;
+          transform: translateY(-50%);
         }
+      }
+
+      .event-title {
+        width: 40%;
+        font-size: $font_size-medium;
+        line-height: $font_size-medium;
         h3 {
           font-weight: $font_weight-normal;
           font-size: $font_size-medium;
+          color: $color_green-dark;
           margin: 0;
         }
       }
@@ -62,10 +70,39 @@
           font-style: italic;
         }
       }
+
+      .event-ordering-flex {
+        display: flex;
+        align-items: center;
+        width: 40%;
+      }
+
       .event-city, .event-start {
-        width: 20%;
+        width: 50%;
         span {
           font-size: $font_size-small;
+        }
+      }
+
+      @include media(small) {
+        .event-content-area {
+          display: block;
+          &:before {
+            top: 0;
+            transform: none;
+          }
+        }
+        .event-title, .event-city, .event-start {
+          width: 100%;
+        }
+        .event-type {
+          display: none;
+        }
+        .event-ordering-flex {
+          flex-direction: column-reverse;
+          & > * {
+            margin-top: 0.5rem;
+          }
         }
       }
     }
