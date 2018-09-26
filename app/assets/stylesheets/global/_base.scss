@@ -99,7 +99,7 @@ input[type="submit"] {
 .content-column {
   margin-left: 42%;
   margin-right: 16%;
-  @include media(small) {
+  @include media(medium) {
     margin-left: 1rem;
     margin-right: 1rem;
   }

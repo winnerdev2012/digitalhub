@@ -35,54 +35,6 @@
     background: $color_bg-dark image-url('triangle_background.svg');
     background-size: 40%;
 
-    form {
-      margin-left: 1.2em;
-
-      @include media(small) {
-        margin-left: initial;
-      }
-
-      label[for="query"] {
-        margin-bottom: 1rem;
-        position: relative;
-        &:before {
-          position: absolute;
-          display: block;
-          content: '';
-          height: 1em;
-          width: 1em;
-          background: image-url('triangle_bullet_white.svg');
-          background-size: contain;
-          background-repeat: no-repeat;
-          margin-top: 0.39em;
-          margin-left: -1.2em;
-
-          @include media(small) {
-            display: none;
-          }
-        }
-      }
-
-      input[type="submit"] {
-        padding: 0.35rem 0.5rem;
-
-        @include media(small) {
-          padding: 0.45rem 0.5rem;
-        }
-      }
-
-      input[type="search"] {
-        color: black;
-        border: none;
-        padding: 0.28em 0.5em;
-        @include media(small) {
-          font-size: 16px;
-          width: 80%;
-          margin-top: 0.5rem;
-        }
-      }
-    }
-
     a, a:hover, a:visited {
       color: white;
     }
