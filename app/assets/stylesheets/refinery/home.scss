@@ -45,7 +45,7 @@
           padding-top: 22%;
         }
         &:not(:last-child) {
-          margin-right: initial;
+          margin-right: 0;
         }
       }
 
@@ -67,7 +67,7 @@
         }
 
         @include media(small) {
-          font-size: 24px;
+          font-size: $font_size-medium;
           &:after {
             display: none;
           }
