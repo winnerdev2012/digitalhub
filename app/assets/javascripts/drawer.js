@@ -6,12 +6,20 @@ function toggleDrawer() {
     drawer.classList.remove("active");
     // Drawer starts out aria-hidden
     // Hidden removes the menu from the tab order until the menu is opened
-    drawer.hidden = true;
-    drawer.setAttribute('aria-hidden', 'true');
+    // Timeout matches CSS transition
+    setTimeout(function() {
+      if (!page.classList.contains("active")) {
+        drawer.hidden = true;
+        drawer.setAttribute('aria-hidden', 'true');
+      }
+    }, 1000);
   } else {
-    page.classList.add("active");
-    drawer.classList.add("active");
     drawer.hidden = false;
     drawer.setAttribute('aria-hidden', 'false');
+    // Need time for hidden: false to take effect
+    setTimeout(function() {
+      page.classList.add("active");
+      drawer.classList.add("active");
+    }, 80);
   }
 }
