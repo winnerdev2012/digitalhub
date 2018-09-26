@@ -159,6 +159,11 @@ input[type="submit"] {
     position: absolute;
     right: 4.5rem;
     bottom: 2.5rem;
+
+    @include media(small) {
+      right: 1.5rem;
+      bottom: 1rem;
+    }
   }
 
   .banner-content {
@@ -178,8 +183,11 @@ input[type="submit"] {
       border-right: 25px solid transparent;
 
       @include media(small) {
-        right: initial;
-        margin-left: 10rem;
+        border-top: 25px solid $color_green-light;
+        border-left: 12.5px solid transparent;
+        border-right: 12.5px solid transparent;
+        right: 4rem;
+        bottom: -15px;
       }
     }
   }
