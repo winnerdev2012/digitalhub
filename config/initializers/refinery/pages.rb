@@ -6,10 +6,10 @@ Refinery::Pages.configure do |config|
   # end
 
   # Configure global page default parts
-  config.default_parts = [{:title=>"Body", :slug=>"body"}, {:title=>"Headline", :slug=>"headline"}, {:title=>"Subheadline", :slug=>"subheadline"}]
+  config.default_parts = [{:title=>"Body", :slug=>"body"}]
 
   # Configure whether to allow adding new page parts
-  # config.new_page_parts = false
+  config.new_page_parts = true
 
   # Configure whether to enable marketable_urls
   # config.marketable_urls = true

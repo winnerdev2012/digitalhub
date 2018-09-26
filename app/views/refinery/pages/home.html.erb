@@ -36,4 +36,11 @@
       </div>
     </div>
   </div>
+  <% if @page.content_for(:bottom) %>
+    <div class="container">
+      <section class="content-column">
+        <%= raw @page.content_for(:bottom) %>
+      </section>
+    </div>
+  <% end %>
 </div>
