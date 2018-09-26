@@ -26,12 +26,9 @@
     margin-top: 4rem;
     color: $color_bg-dark;
   }
-  a, a:visited {
-    color: $color_bg-dark;
-  }
   mark {
+    color: inherit;
     background: $color_bg-light;
-    color: $color_bg-dark;
   }
   p {
     margin: 0;

@@ -27,7 +27,6 @@ p {
 
 a {
   color: $color_bg-dark;
-  text-decoration: none;
   &.focus--keyboard {
     outline-style: solid;
     outline-color: $color_blue-medium;
@@ -44,6 +43,13 @@ a {
     background-color: $color_green-medium;
     color: $color_font-light;
     padding: 0.5em 1em;
+    &:hover {
+      background-color: $color_green-dark;
+      color: $color_font-light;
+    }
+  }
+  &:hover {
+    color: $color_green-medium;
   }
 }
 
