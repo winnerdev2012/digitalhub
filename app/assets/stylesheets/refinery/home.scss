@@ -84,12 +84,25 @@
     padding: 1rem 0;
     .content-column-row {
       display: flex;
+
       .content-column-one {
         width: 44%;
+        @include media(small) {
+          flex-basis: 100%;
+          margin-bottom: 1rem;
+
+          h2 {
+            text-decoration: underline;
+            margin-bottom: 0.5rem;
+          }
+        }
       }
       .content-column-two {
         flex: 1;
         margin-right: 18%;
+        @include media(small) {
+          flex-basis: 100%;
+        }
       }
       .next-event-time {
         font-size: $font_size-medium;
@@ -99,6 +112,10 @@
       }
       h2 {
         margin-top: 0;
+      }
+
+      @include media(small) {
+        flex-wrap: wrap;
       }
     }
     a {
