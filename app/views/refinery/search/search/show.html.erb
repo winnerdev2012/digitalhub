@@ -30,8 +30,8 @@
           <ul id="event_results">
             <% @results.select { |result| result.class == Refinery::Events::Event }.each do |result| %>
               <li>
-                <%= link_to result_mark(result.title).html_safe, result_url(result) %>
-                <p><%= result.meta_description %></p>
+                <%= link_to result_mark(result.title).html_safe, result_url(result) %> | <%= result.start.strftime("%b %-d %l:%M %P") %>
+                <p><%= result.meta_description.blank? ? result_mark(result.description.truncate(150)).html_safe : result.meta_description.truncate(150) %></p>
               </li>
             <% end %>
           </ul>
