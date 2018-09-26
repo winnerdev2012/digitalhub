@@ -83,6 +83,8 @@ input[type="submit"] {
 #page_container {
   transition-duration: 1s;
   &.active {
+    height: 100vh;
+    overflow: hidden;
     margin-right: 25rem;
     @include media(medium) {
       margin-right: 0rem;
