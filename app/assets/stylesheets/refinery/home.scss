@@ -87,8 +87,11 @@
         display: block;
         padding-top: 100%;
       }
-      &:hover span.wrapper:after {
-        height: 0.5rem;
+      &:hover {
+        color: $color_bg-dark;
+        span.wrapper:after {
+          height: 0.5rem;
+        }
       }
       span.wrapper {
         position: absolute;
@@ -129,6 +132,12 @@
       }
       h2 {
         margin-top: 0;
+      }
+    }
+    a {
+      text-decoration: none;
+      &:not(.link-button):hover {
+        color: $color_green-medium;
       }
     }
   }

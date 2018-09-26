@@ -31,7 +31,10 @@ header {
     margin-top: 1rem;
   }
 
-  a.focus--keyboard .site-name {
-    color: $color_blue-medium;
+  a {
+    text-decoration: none;
+    &.focus--keyboard .site-name {
+      color: $color_blue-medium;
+    }
   }
 }
