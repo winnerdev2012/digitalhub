@@ -37,6 +37,18 @@
           height: 0.5rem;
         }
       }
+
+      @include media(small) {
+        flex-basis: 100%;
+        margin: 0.5rem 0;
+        &:before {
+          padding-top: 22%;
+        }
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+      }
+
       span.wrapper {
         position: absolute;
         width: max-content;
@@ -53,7 +65,18 @@
           background-color: $color_green-light;
           transition: height ease 0.25s;
         }
+
+        @include media(small) {
+          font-size: $font_size-medium;
+          &:after {
+            display: none;
+          }
+        }
       }
+    }
+
+    @include media(small) {
+      flex-wrap: wrap;
     }
   }
   .interruption {
