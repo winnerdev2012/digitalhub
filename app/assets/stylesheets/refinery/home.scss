@@ -66,15 +66,17 @@
         padding: 0.35rem 0.5rem;
 
         @include media(small) {
-          padding: 0.65rem 0.5rem;
+          padding: 0.45rem 0.5rem;
         }
       }
 
       input[type="search"] {
-        height: 1.8rem;
         color: black;
+        border: none;
+        padding: 0.28em 0.5em;
         @include media(small) {
-          width: 85%;
+          font-size: 16px;
+          width: 80%;
         }
       }
     }
