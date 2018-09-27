@@ -60,7 +60,7 @@ form.search-form {
       padding: 0.5rem 0.75rem;
     }
     input[type="search"] {
-      min-width: 0;
+      min-width: 8rem;
       color: black;
     }
     & > *:not(:last-child) {
