@@ -1,6 +1,6 @@
 <nav class="navigation-language" aria-label="Select language">
   <span aria-label="Current language:">
-    <%= Refinery::I18n.config.locales[Refinery::I18n.config.current_locale] %> <%= fa_icon 'caret-down' %>
+    <%= Refinery::I18n.config.locales[Mobility.locale] %> <%= fa_icon 'caret-down' %>
   </span>
   <ul class="navigation-language">
     <% locales = (Refinery::I18n.config.frontend_locales.map { |l| "/#{l.to_s}" }).join("|") %>
