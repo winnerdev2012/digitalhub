@@ -122,6 +122,9 @@ input[type="submit"] {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  @include media(large) {
+    margin-left: 20%;
+  }
 }
 
 .event-content-column {
