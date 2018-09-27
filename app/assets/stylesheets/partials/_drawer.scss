@@ -14,7 +14,7 @@
   border-left: 1px solid $color_bg-dark;
 
   @include media(medium) {
-    &.active {
+    &.menu-open {
       right: 0;
     }
   }

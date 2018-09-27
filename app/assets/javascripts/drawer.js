@@ -1,14 +1,16 @@
 function toggleDrawer() {
   var page = document.getElementById("page_container");
   var drawer = document.getElementById("drawer");
-  if (page.classList.contains("active")) {
-    page.classList.remove("active");
-    drawer.classList.remove("active");
+  var body = document.getElementsByTagName("body")[0];
+  if (page.classList.contains("menu-open")) {
+    page.classList.remove("menu-open");
+    drawer.classList.remove("menu-open");
+    body.classList.remove("menu-open");
     // Drawer starts out aria-hidden
     // Hidden removes the menu from the tab order until the menu is opened
     // Timeout matches CSS transition
     setTimeout(function() {
-      if (!page.classList.contains("active")) {
+      if (!page.classList.contains("menu-open")) {
         drawer.hidden = true;
         drawer.setAttribute('aria-hidden', 'true');
       }
@@ -18,8 +20,9 @@ function toggleDrawer() {
     drawer.setAttribute('aria-hidden', 'false');
     // Need time for hidden: false to take effect
     setTimeout(function() {
-      page.classList.add("active");
-      drawer.classList.add("active");
+      page.classList.add("menu-open");
+      drawer.classList.add("menu-open");
+      body.classList.add("menu-open");
     }, 80);
   }
 }
