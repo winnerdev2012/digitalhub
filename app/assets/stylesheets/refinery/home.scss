@@ -84,12 +84,26 @@
     padding: 1rem 0;
     .content-column-row {
       display: flex;
+      @include media(small) {
+        display: block;
+      }
+
       .content-column-one {
         width: 44%;
+        @include media(small) {
+          margin-bottom: 1rem;
+          width: 100%;
+          h2 {
+            margin-bottom: 0.5rem;
+          }
+        }
       }
       .content-column-two {
         flex: 1;
         margin-right: 18%;
+        @include media(small) {
+          width: 100%;
+        }
       }
       .next-event-time {
         font-size: $font_size-medium;
