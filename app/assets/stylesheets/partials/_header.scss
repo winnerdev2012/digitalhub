@@ -30,6 +30,9 @@ header {
     color: $color_font-light;
     margin-left: 2rem;
     margin-top: 1rem;
+    img.wordmark {
+      height: $font_size-small;
+    }
   }
 
   a {
