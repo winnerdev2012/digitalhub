@@ -26,7 +26,6 @@
               </li>
             <% end %>
           </ul>
-          <hr>
           <h2><%= t('.event_results_for', what: params[:query]) %></h2>
           <ul id="event_results">
             <% @results.select { |result| result.class == Refinery::Events::Event }.each do |result| %>

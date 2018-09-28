@@ -92,6 +92,10 @@ form.search-form {
   p {
     margin: 0;
   }
+  ul ~ h2 {
+    border-top: 0.1rem solid;
+    padding-top: 1rem;
+  }
   li {
     margin: 2rem 0;
   }
