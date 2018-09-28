@@ -211,6 +211,7 @@ GEM
       factory_bot (~> 4.11.0)
       railties (>= 3.0.0)
     ffi (1.9.25)
+    flipper (0.16.0)
     fog-aws (3.0.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -484,6 +485,7 @@ DEPENDENCIES
   chromedriver-helper
   dotenv-rails
   factory_bot_rails
+  flipper
   font-awesome-rails
   guard
   guard-livereload
