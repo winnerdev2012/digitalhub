@@ -1,8 +1,7 @@
 require 'flipper'
-require 'flipper/adapters/memory'
 
 Flipper.configure do |config|
-  config.default { Flipper.new(Flipper::Adapters::Memory.new) }
+  config.default { Flipper.new(Flipper::Adapters::ActiveRecord.new) }
 end
 
 Flipper.enable(:search)

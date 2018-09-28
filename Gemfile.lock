@@ -212,6 +212,9 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.25)
     flipper (0.16.0)
+    flipper-active_record (0.16.0)
+      activerecord (>= 3.2, < 6)
+      flipper (~> 0.16.0)
     fog-aws (3.0.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -486,6 +489,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   flipper
+  flipper-active_record
   font-awesome-rails
   guard
   guard-livereload
