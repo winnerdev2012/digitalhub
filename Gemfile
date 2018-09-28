@@ -21,6 +21,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
+  gem 'flipper'
+  gem 'flipper-active_record'
 end
 
 group :development do
