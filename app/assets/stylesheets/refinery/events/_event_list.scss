@@ -18,7 +18,7 @@
       &:focus, &:hover {
         border: 3px solid $color_green-dark;
         background-color: $color_green-bg;
-        padding: calc(0.75em - 2px);
+        padding: calc(1em - 2px);
       }
       & > *:not(:last-child) {
         margin-right: 1em;

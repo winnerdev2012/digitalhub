@@ -95,7 +95,7 @@ input[type="submit"] {
   &.menu-open {
     height: 100vh;
     margin-right: 25rem;
-    @include media(medium) {
+    @include media(large) {
       margin-right: 0rem;
     }
   }
@@ -115,27 +115,24 @@ input[type="submit"] {
   margin: auto;
   max-width: 90rem;
   width: 100%;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .content-column {
   margin-left: calc(calc(calc(calc(100% - 6rem) / 7) * 3) + 3rem);
   margin-right: calc(calc(calc(calc(100% - 6rem) / 7) * 1) + 1rem);
   @include media(medium) {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-  @include media(large) {
-    margin-left: 20%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 .event-content-column {
-  margin-left: 44%;
-  margin-right: 10%;
+  margin-left: calc(calc(calc(calc(100% - 6rem) / 7) * 3) + 3rem);
+  margin-right: calc(calc(calc(calc(100% - 6rem) / 7) * 0.5) + 1rem);
   @include media(medium) {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -170,12 +167,6 @@ input[type="submit"] {
     width: fit-content;
   }
 
-  h1 {
-    margin-left: 4rem;
-    font-weight: normal;
-    color: inherit;
-  }
-
   p {
     color: $color_font-light;
     margin: 0;
@@ -197,6 +188,10 @@ input[type="submit"] {
   .banner-content {
     margin-top: 11rem;
     margin-bottom: 11rem;
+    @include media(medium) {
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+    }
   }
 
   .container {

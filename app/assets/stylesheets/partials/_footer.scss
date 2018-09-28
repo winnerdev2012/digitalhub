@@ -36,17 +36,22 @@ footer {
     display: flex;
     flex-basis: 100%;
     @include media(small) {
-      display: initial;
+      display: block;
     }
   }
 
   .footer-bottom {
+    padding-top: 1rem;
     display: flex;
+    justify-content: space-between;
     flex-basis: 100%;
     border-top: solid white 1px;
     align-items: center;
-    @include media(small) {
-      display: initial;
+    @include media(medium) {
+      display: block;
+      & > *:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
     }
   }
 
@@ -63,26 +68,43 @@ footer {
   .footer-mapc-brand {
     display: flex;
     align-items: center;
-    flex-basis: 30%;
-    padding-top: 1em;
     .logo {
-        width: 72px;
-        height: 36px;
-        margin-right: 1em;
+      width: 72px;
+      height: 36px;
+      margin-right: 1em;
+    }
+    @include media(medium) {
+      display: block;
+      & > *:not(:last-child) {
+        margin-bottom: 0.5rem;
       }
+    }
   }
 
   .footer-contact-information {
-    padding-top: 1em;
-    flex-basis: 50%;
-    a {
-      white-space:nowrap;
+    & > *:not(:last-child) {
+      border-right: 1px solid white;
+      padding-right: 0.5rem;
+    }
+    & > *:not(:first-child) {
+      padding-left: 0.5rem;
+    }
+    @include media(medium) {
+      & > * {
+        display: block;
+      }
+      & > *:not(:last-child) {
+        border-right: none;
+        margin-bottom: 0.5rem;
+        padding-right: 0;
+      }
+      & > *:not(:first-child) {
+        padding-left: 0;
+      }
     }
   }
 
   .footer-right {
-    padding-top: 1em;
-    flex-basis: 20%;
     a {
       margin: 0 0.4em;
       font-size: 16px;
