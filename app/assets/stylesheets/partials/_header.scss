@@ -23,6 +23,16 @@ header {
     align-items: center;
     width: fit-content;
     transition-duration: 1.5s;
+    @include media(x-small) {
+      display: block;
+      nav {
+        position: absolute;
+        padding-right: 0;
+        width: max-content;
+        top: 100%;
+        right: 0;
+      }
+    }
   }
 
   .site-name {
@@ -31,6 +41,9 @@ header {
     align-items: center;
     img.wordmark {
       height: $font_size-small;
+      @include media(x-small) {
+        height: $font_size-xsmall;
+      }
     }
   }
 

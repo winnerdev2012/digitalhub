@@ -1,8 +1,13 @@
-<nav class="navigation-language" aria-label="Select language">
-  <span aria-label="Current language:">
+<nav id="navigation-language" class="navigation-language" aria-label="Select language">
+  <button
+    aria-label="Select langauge. Current language is <%= Refinery::I18n.config.locales[Mobility.locale] %>."
+    aria-expanded="false"
+    aria-haspopup="true"
+    onclick="toggleLanguageList()"
+  >
     <%= Refinery::I18n.config.locales[Mobility.locale] %> <%= fa_icon 'caret-down' %>
-  </span>
-  <ul class="navigation-language">
+  </button>
+  <ul class="navigation-language" role="menu" aria-label="Available languages">
     <% locales = (Refinery::I18n.config.frontend_locales.map { |l| "/#{l.to_s}" }).join("|") %>
     <% Refinery::I18n.config.frontend_locales.each do |locale| %>
       <li>
