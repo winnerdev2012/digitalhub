@@ -2,6 +2,16 @@
 <%= render "/refinery/html_tag" %>
   <% site_bar = render('/refinery/site_bar', :head => true) -%>
   <head>
+    <% if Rails.env.production? %>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5547782-36"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-5547782-36');
+      </script>
+    <% end %>
     <%= render "/refinery/head" %>
     <%= render "/refinery/javascripts" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
