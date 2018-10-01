@@ -3,31 +3,52 @@
   font-size: 12px;
   min-width: 4em;
   z-index: 1;
-  padding-right: 1rem;
+
   padding-bottom: 0;
+
+  button {
+    padding: 0.5rem;
+    background-color: transparent;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px 1px 0 1px;
+  }
 
   ul {
     position: absolute;
-    height: 1px;
-    overflow: hidden;
+    display: none;
     top: 100%;
     left: 0;
+    width: 100%;
     margin: 0;
-    padding: 1px 0;
+    padding: 0 0.5rem 0.5rem 0.5rem;
 
     li:not(:last-child) {
       margin-bottom: 0.25em;
     }
   }
 
-  &:hover ul, &:focus-within ul {
-    height: max-content;
-  }
-
-  a, span {
+  a, button {
     color: $color_font-light;
   }
-  a.focus--keyboard span {
+  button.focus--keyboard, a.focus--keyboard span {
     color: $color_blue-medium;
+  }
+
+  &.menu-open {
+    background-color: $color_bg-light;
+    ul {
+      display: block;
+      background-color: $color_bg-light;
+      border-style: solid;
+      border-color: $color_green-dark;
+      border-width: 0 1px 1px 1px;
+    }
+    button, a {
+      color: $color_green-dark;
+    }
+    button {
+      border-color: $color_green-dark;
+    }
   }
 }

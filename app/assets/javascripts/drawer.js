@@ -26,3 +26,15 @@ function toggleDrawer() {
     }, 80);
   }
 }
+
+function toggleLanguageList() {
+  var navLang = document.getElementById("navigation-language");
+  // var dropdown = navLang.getElementsByTagName("ul")[0];
+  if (navLang.classList.contains("menu-open")) {
+    navLang.classList.remove("menu-open");
+    navLang.setAttribute("aria-expanded", "false");
+  } else {
+    navLang.classList.add("menu-open");
+    navLang.setAttribute("aria-expanded", "true");
+  }
+}
