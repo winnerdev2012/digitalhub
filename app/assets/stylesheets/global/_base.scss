@@ -162,6 +162,12 @@ input[type="submit"] {
   background: $color_bg-dark;
   background-size: 40%;
 
+  .container {
+    @include media(small) {
+      padding: 0.1rem 2rem;
+    }
+  }
+
   .center {
     margin: 8rem auto 0 auto;
     width: fit-content;
