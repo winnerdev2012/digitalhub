@@ -10,6 +10,14 @@ header {
     margin: 0;
   }
 
+  .language-disclaimer {
+    color: $color_font-light;
+    background-color: $color_bg-black;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: $font_size-xsmall;
+  }
+
   .header-content {
     display: flex;
     flex-wrap: nowrap;

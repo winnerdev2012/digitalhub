@@ -1,0 +1,732 @@
+---
+zh:
+  i18n:
+    plural:
+      keys:
+      - :other
+      rule: "<Proc:0x00007f90602fa380@/Users/ihill/.rvm/gems/ruby-2.5.1/gems/rails-i18n-5.1.1/lib/rails_i18n/common_pluralizations/one_other.rb:7
+        (lambda)>#"
+  refinery:
+    plugins:
+      events:
+        title: Events
+      refinery_authentication_devise:
+        description: 管理用户
+        title: 用户
+      refinery_core:
+        description: 核心炼油厂插件
+        title: 炼油厂
+      refinery_dialogs:
+        description: 炼油厂对话插件
+        title: 对话框
+      refinery_files:
+        description: 上传和链接到文件
+        title: 档案
+      refinery_images:
+        description: 管理图片
+        title: 图片
+      refinery_pages:
+        description: 管理内容页面
+        title: 页
+      refinerycms_search:
+        description: 炼油厂CMS的额外搜索处理
+        title: 搜索
+    events:
+      admin:
+        events:
+          actions:
+            create_new: 建立新的 Event
+            reorder: 对 Events 重新排序
+            reorder_done: 对 Events 的重新排序结束
+          records:
+            title: Events
+            sorry_no_results: 对不起，未找到结果。
+            no_items_yet: 目前没有 Events . 点击 "Add New Event" 创建一个event.
+          event:
+            view_live_html: 查看 event 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 event
+            delete: 永久删除 event
+      events:
+        show:
+          other: 其他 Events
+          accessibility: 无障碍环境
+          description: 描述
+          for_this_event: 对于此事件
+          location: 位置
+          register: 注册
+          registration: 注册
+          time: 日期和时间
+          translation: 翻译
+        index:
+          heading: 这些是事件
+          next_month: 下个月
+          upcoming: 即将到来
+      event_style: 事件样式
+      held_in: 持有的在
+      on_date: 上
+      style_event: 风格事件
+    admin:
+      continue_editing:
+        save_and_continue_editing: 保存并继续编辑
+      delete:
+        message: 您确定要删除“%{title}”吗?
+      dialogs:
+        show:
+          cancel: 取消
+          save: 保存
+      error_messages:
+        problems_in_following_fields: 以下字段有问题
+      form_actions:
+        cancel: 取消
+        cancel_lose_changes: 如果您取消,您将丢失您在此处所做的任何更改
+        close: 接近
+        delete: 删除
+        save: 保存
+      form_advanced_options_menu:
+        advanced_options: 高级选项
+        save_as_draft: 另存为草稿
+        toggle_advanced_options: 切换高级选项
+      help: 帮助
+      image_picker:
+        change: 点击这里选一张图片
+        none_selected: 未选择图片,请点击此处添加图片。
+        remove_current: 删除当前图像
+        show: 演出
+      images:
+        actions:
+          create_new_image: 添加新图片
+        crop:
+          delete_crop: "%{title} -作物%{id}"
+        delete: 永久删除此图像
+        edit: 编辑此图片
+        existing_image:
+          button_text: 插入
+          resize_image: 调整图像大小?
+          select_resize: 选择调整大小
+          size: 尺寸
+        form:
+          available_crops: 可用作物
+          choose_crop: 要编辑裁剪,请从以下列表中选择一个格式
+          crop_success: 作物已成功生成
+          current_image: 当前图像
+          format: 格式
+          image: 图像
+          image_alt: 备选案文
+          image_alt_help: 无法显示图像时使用的文本。
+          image_title: 标题
+          image_title_help: 有关图像的额外信息
+          maximum_image_size: 图片的最大尺寸为%{bytes}。
+          no_crops_yet: 目前还没有图像裁剪,点击“保存裁剪”添加您的第一个图像裁剪。
+          or: 或
+          ratios: 比率
+          replace_image: 用这个替换它...
+          save: 保存作物
+          use_current_image: 使用当前图像
+        index:
+          view:
+            grid: 网格
+            list: 列表中
+            switch_to: 切换到%{视图_name}视图
+        insert:
+          existing_image: 图书馆
+          new_image: 上传
+        records:
+          no_images_yet: 目前尚无图片,请点击“添加新图片”添加您的第一张图片。
+        view_live_html: 查看此图像<br/><em>在新窗口中打开</em>
+      locale_picker:
+        language: 语言
+      menu:
+        reorder_menu: 重新排序菜单
+        reorder_menu_done: 完成菜单重新排序
+      pages:
+        actions:
+          create_new_page: 添加新页面
+          reorder_pages: 重新排序页面
+          reorder_pages_done: 完成重新排序页面
+        delete: 永远删除此页面
+        edit: 编辑此页面
+        expand_collapse: 展开或折叠子页
+        form:
+          preview: 预览
+          preview_changes: 在启用之前预览您的更改
+        form_advanced_options:
+          custom_slug: 定制弹头
+          custom_slug_help: Slug是一个人类可读的ID,用于创建页面的完整URL,例如“关于我们的信息”。 要覆盖炼油厂自动创建的弹头,请在此输入您的自定义弹头。
+          layout_template: 布局模板
+          layout_template_help: 您可以为此页面选择其他布局模板
+          link_url: 将此页面转发至其他网站或页面
+          link_url_help: 如果您希望此页面在菜单中点击此页面时转到其他网站或页面,请输入一个URL。例如https://google.com否则将它留空
+          menu_title: 菜单标题
+          menu_title_help: 如果您希望菜单显示与页面上显示的标题不同的标题,请在此处输入。
+          page_options: 页面选项
+          parent_page: 父页面
+          parent_page_help: 您可以通过在列表中选择页面将页面放到另一个页面下。 如果您希望此页面成为顶级页面,请将其留空。
+          show_in_menu_description: 在网站菜单中显示此页面
+          show_in_menu_help: 如果您要从站点菜单中删除页面,请取消选中此复选框。 如果您有一个页面想要直接链接到别人,但不想在菜单中显示页面,这可能会非常方便。
+          show_in_menu_title: 在菜单中显示
+          skip_to_first_child: 跳过顶级页面
+          skip_to_first_child_help: 此选项使此页面链接到下方的第一页。 当将页面分组到一起时,这很有用。
+          skip_to_first_child_label: 将访问者重定向到第一个子级页面。
+          view_template: 查看模板
+          view_template_help: 您可以为此页面选择不同的视图模板
+        form_new_page_parts:
+          slug: 弹头
+          title: 标题
+        form_page_parts:
+          create_content_section: 添加内容部分
+          delete_content_section: 删除内容部分
+          reorder_content_section: 重新排序内容部分
+          reorder_content_section_done: 我已经重新排序内容部分
+        new: 添加新的子页面
+        page:
+          draft: 草案
+          hidden: 隐藏
+          redirected: 重定向
+          skip_to_first_child: 跳至第一个孩子
+          view_live_html: 实时查看此页面<br/><em>(在新窗口中打开)</em>
+        records:
+          no_pages_yet: 目前还没有页面,请点击“添加新页面”来添加您的第一页。
+      pages_dialogs:
+        link_to:
+          email_address:
+            body_optional: 任选机构
+            not_sure: 不确定要放在上面的盒子里放什么?
+            step1_html: 写入、复制并粘贴要链接的电子邮件地址(例如从您的地址簿)到上述“<strong>电子邮件地址</strong>”框中。
+            step2_html: 如果您希望邮件由<strong>预写的<strong>主题行</strong>组成,请使用上方的“主题行”</strong>框。
+            step3_html: 如果您希望<strong>邮件</strong>由<strong>预写的邮件组成,请使用上面的“电子邮件正文”</strong>框。
+            subject_line_optional: 可选主题
+            tab_name: 电子邮件地址
+          insert: 插入
+          web_address:
+            location: 位置
+            new_window: 新建窗口
+            new_window_label: 选中此复选框可在新的浏览器窗口中打开链接。
+            not_sure: 不确定要放在上面的盒子里放什么?
+            step1: 在网页上找到您要链接的页面。
+            step2: 从浏览器的地址栏中复制Web地址,并将其粘贴到上方框中。
+            tab_name: 网站
+          your_page:
+            tab_name: 您的页面
+          your_resource:
+            link_to_this_resource: 链接到此文件
+            tab_name: 您的文件
+        page_link:
+          link_to_this_page: 链接到此页面
+      resource_picker:
+        current: 当前文件
+        download_current: 下载当前文件
+        name: 添加文件
+        no_resource_selected: 当前没有选择任何文件,请单击此处添加一个。
+        opens_in_new_window: 在新窗口中打开
+        remove_current: 删除当前文件
+      resources:
+        actions:
+          upload_new: 上传新文件
+        delete: 永久删除此文件
+        edit: 编辑此文件
+        existing_resource:
+          button_text: 插入
+          link_to_file: 链接到此文件
+        form:
+          download_current: 下载当前文件
+          maximum_file_size: 最大文件大小为%{bytes}。
+          or: 或
+          replace: 用这个替换它...
+          resource_file: 文件
+          resource_title: 标题
+          resource_title_help: 用户可见的标题。
+        insert:
+          existing: 现有文件
+          new: 新建文件
+          no_files: 没有文件。
+        records:
+          no_files_yet: 目前尚无文件。点击“上传新文件”添加您的第一个文件。
+        resource:
+          download: 下载此文件(%{size})
+      search:
+        button_text: 搜索
+        cancel_search: 取消搜索
+        input:
+          help: 输入要搜索的单词或短语
+          placeholder: 搜索...
+        no_results: 抱歉,未找到任何结果
+        results_for_html: "'<em>%{query}</em> '的搜索结果"
+    authentication:
+      devise:
+        admin:
+          users:
+            actions:
+              create_new_user: 添加新用户
+            delete: 永远删除此用户
+            edit: 编辑此用户
+            form:
+              blank_password_keeps_current: 将密码留空保留当前密码
+              enable_all: 启用全部
+              plugin_access: 插件访问
+              role_access: 角色访问
+            update:
+              lockout_prevented: 您无法从当前登录帐户中删除“用户”插件。
+            user:
+              email_user: 向此用户发送电子邮件
+              preview: "(%{who})添加了%{create_at}"
+        delete:
+          message: 您确定要永久删除%{title}吗?
+        roles:
+          refinery: 炼油厂
+          superuser: 超级用户
+        sessions:
+          new:
+            forgot_password: 我忘记了密码
+            hello_please_sign_in: 你好请登录
+            sign_in: 登录
+        user_mailer:
+          reset_notification:
+            remain_same_if_no_action: 如果不执行任何操作,您的密码将保持不变
+            reset_request_received_for: 重置已收到的%{username}密码的请求
+            subject: 重置密码的链接
+            visit_this_url: 访问此URL以选择新密码
+        users:
+          create:
+            welcome: 欢迎来到炼油厂, %{who}。
+          forgot:
+            blank_email: 您未输入电子邮件地址。
+            email_address: 电子邮件地址
+            email_not_associated_with_account_html: 很抱歉, “%{email}”未与任何账户关联。 <br />您确定输入正确的电子邮件地址吗?
+            email_reset_sent: 已向您发送一封电子邮件,其中包含重置密码的链接。
+            enter_email_address: 请输入您帐户的电子邮件地址。
+            password_encryption: 您需要重置密码,因为Ferery使用的密码加密方法有更改,因此密码的存储方式比以前更强密。
+            reset_password: 重置密码
+          new:
+            fill_form: 请在下面填写您的详细信息,以便我们帮助您开始。
+            sign_up: 注册
+          reset:
+            pick_new_password_for: 选择%{email}的新密码
+            reset_password: 重置密码
+            successful: "“%{email}”成功重置密码"
+    crudify:
+      created: "%{what}已成功添加。"
+      destroyed: "%{what}已成功移除。"
+      not_destroyed: "%{what}未移除。"
+      updated: "%{what}已成功更新。"
+    draft_page_message:
+      not_live: 此页面不供公众浏览。
+    footer:
+      copyright: 版权所有© %{年} %{site_name}
+    home:
+      actions:
+        engage: 称重
+        events: 转身
+        learn: 查找
+      email_sign_up:
+        join: 加入我们的电子邮件列表
+        sign_up: 注册电子邮件更新
+      interruption:
+        event_at: 在
+        next_event: 下一个事件
+    js:
+      admin:
+        confirm_changes: 您所做的任何更改都将丢失。您确定要继续而不保存吗?
+    message:
+      close: 接近
+      close_this_message: 关闭此消息
+    no_script:
+      enable_javascript_html: 对于此页面的完整功能,有必要启用JavaScript。
+      here_are: 这里是
+      instructions_enable_javascript_html: 说明如何在浏览器中启用JavaScript
+    search:
+      search:
+        show:
+          event_results_for: "'%{what}'的事件结果"
+          no_results: 未找到结果。
+          no_results_for: 未找到您的搜索'%{what}'的结果。
+          search_results_for: "'%{what}'的搜索结果"
+    shared:
+      navigation_language:
+        current_language: 当前语言
+        select_language: 选择语言
+      navigation_search:
+        go: 去吧
+        search_site_for: 你想知道什么?
+      search:
+        go: 去吧
+        search_label: 了解有关
+        search_site_for: 胡西...
+    site_bar:
+      log_out: 注销
+      switch_to_your_website: 切换至您的网站
+      switch_to_your_website_editor: 切换到网站编辑器
+    skip_to_first_child_page_message:
+      skip_to_first_child: 此页面使用选项“跳到第一个孩子”,永远不会显示给游客。
+    welcome:
+      there_are_no_users: 目前还没有用户,所以我们会先设置您。
+  activerecord:
+    attributes:
+      refinery/events/event:
+        title: Title
+        description: Description
+        start: Start
+        end: End
+        image: Image
+        event_type: Event Type
+        address: Address
+        city: City
+        state: State
+        zipcode: Zipcode
+        registration_link: Registration Link
+        accessibility_note: Accessibility Note
+        translation_note: Translation Note
+      refinery/authentication/devise/user:
+        email: 电子邮件
+        full_name: 全名
+        login: 用户名或电子邮件
+        password: 密码
+        password_confirmation: 密码确认
+        remember_me: 记住我
+        username: 用户名
+      refinery/page:
+        title: 标题
+    errors:
+      messages:
+        record_invalid: '验证失败: %{errors}'
+        restrict_dependent_destroy:
+          has_many: 无法删除记录,因为存在依赖的%{record}
+          has_one: 无法删除记录,因为存在依赖的%{record}
+      models:
+        refinery/image:
+          blank: 您必须指定要上传的图片
+          different_file_name: 新图片不能有不同的文件名
+          incorrect_format: 您的图片必须是JPG、PNG或GIF
+          too_big: 图片的大小应小于%{size}字节
+        refinery/resource:
+          blank: 您必须指定要上传的文件
+          too_big: 文件大小应小于%{size}字节
+    models:
+      refinery/authentication/devise/user: 用户
+      refinery/image: 图像
+      refinery/page: 页面
+      refinery/resource: 文件
+  date:
+    abbr_day_names: "[“太阳”, “星期一”, “星期三”, “星期五”, “星期六”]"
+    abbr_month_names: "[无、“一月”、“二月”、“三月”、“四月”、“五月”、“七月”、“八月”、“九月”、“十月”、“十一月”、“十二月”]]"
+    day_names: "[“星期日”、“星期一”、“星期二”、“星期三”、“星期四”、“星期五”、“星期六”]"
+    formats:
+      default: "% % % % m % d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: "[无、“1月”、“2月”、“3月”、“4月”、“5月”、“6月”、“7月”、“8月”、“9月”、“10月”、“11月”、“12月”]"
+    order: "[:年,:月,:日]"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 约1小时
+        other: 约%{count}小时
+      about_x_months:
+        one: 约1个月
+        other: 约%{count}个月
+      about_x_years:
+        one: 约1年
+        other: 约%{count}年
+      almost_x_years:
+        one: 几乎一年
+        other: 几乎%{count}年
+      half_a_minute: 半分钟
+      less_than_x_minutes:
+        one: 不到一分钟
+        other: 小于%{count}分钟
+      less_than_x_seconds:
+        one: 小于1秒
+        other: 小于%{计数}秒
+      over_x_years:
+        one: 一年以上
+        other: 超过%{count}年
+      x_days:
+        one: 1天
+        other: "%{count}天"
+      x_minutes:
+        one: 1分钟
+        other: "%{计数}分钟"
+      x_months:
+        one: 1个月
+        other: "%{count}个月"
+      x_seconds:
+        one: 一秒钟
+        other: "%{计数}秒"
+      x_years:
+        one: 1年
+        other: "%{count}年"
+    prompts:
+      day: 一天
+      hour: 小时
+      minute: 分钟
+      month: 月
+      second: 几秒钟
+      year: 年
+  devise:
+    confirmations:
+      confirmed: 您的电子邮件地址已成功确认。
+      send_instructions: 您将在几分钟内收到一封电子邮件,说明如何确认您的电子邮件地址。
+      send_paranoid_instructions: 如果您的电子邮件地址存在于我们的数据库中,您将收到一封电子邮件,说明如何在几分钟内确认您的电子邮件地址。
+    failure:
+      already_authenticated: 您已登录。
+      inactive: 您的账户尚未激活。
+      invalid: 抱歉,您的登录名或密码不正确。
+      last_attempt: 在帐户被锁定之前,您还有一次尝试。
+      locked: 您的帐户已锁定。
+      not_found_in_database: 抱歉,您的登录名或密码不正确。
+      timeout: 您的会话已过期。请再次登录以继续。
+      unauthenticated: 您需要先登录,然后再继续。
+      unconfirmed: 您必须先确认您的电子邮件地址,然后再继续。
+    mailer:
+      confirmation_instructions:
+        subject: 确认说明
+      email_changed:
+        subject: 电子邮件已更改
+      password_change:
+        subject: 密码已更改
+      reset_password_instructions:
+        subject: 重置密码说明
+      unlock_instructions:
+        subject: 解锁说明
+    omniauth_callbacks:
+      failure: 因为“%{kind}”,无法对您进行身份验证。
+      success: 从%{kind}账户成功进行身份验证。
+    passwords:
+      no_token: 您无法通过密码重置电子邮件访问此页面。 如果您来自密码重置电子邮件,请确保您使用了所提供的完整URL。
+      send_instructions: 您将在几分钟内收到一封电子邮件,说明如何重置密码。
+      send_paranoid_instructions: 如果您的电子邮件地址存在于我们的数据库中,您将在几分钟后在您的电子邮件地址收到密码恢复链接。
+      updated: 您的密码已成功更改。您现在已登录。
+      updated_not_active: 您的密码已成功更改。
+    registrations:
+      destroyed: 再见!您的账户已成功取消,希望能尽快再见到您。
+      signed_up: 欢迎光临,您已成功注册。
+      signed_up_but_inactive: 您已成功注册。 但是,由于您的账户尚未激活,我们无法登录您。
+      signed_up_but_locked: 您已成功注册。但是,由于您的帐户被锁定,我们无法登录您。
+      signed_up_but_unconfirmed: 包含确认链接的消息已发送至您的电子邮件地址。 请点击链接激活您的帐户。
+      update_needs_confirmation: 您已成功更新您的帐户,但我们需要验证您的新电子邮件地址。 请检查您的电子邮件,并按照确认链接确认您的新电子邮件地址。
+      updated: 您的帐户已成功更新。
+    sessions:
+      already_signed_out: 已成功退出。
+      refinery_user:
+        signed_out: 已成功退出。
+      signed_in: 已成功登录。
+      signed_out: 已成功退出。
+    unlocks:
+      send_instructions: 几分钟后,您将收到一封电子邮件,其中包含如何解锁帐户的说明。
+      send_paranoid_instructions: 如果您的帐户存在,您将在几分钟内收到一封电子邮件,说明如何解锁帐户。
+      unlocked: 您的帐户已成功解锁。请登录以继续。
+  errors:
+    connection_refused: 哎呀! 连接到Web控制台中间件失败。 请确保导轨开发服务器正在运行。
+    format: "%{归因} %{message}"
+    messages:
+      accepted: 必须接受
+      already_confirmed: 已确认,请尝试登录
+      blank: 不能为空
+      confirmation: 不匹配%{归因}
+      confirmation_period_expired: 需要在%{period}进行确认,请请求一个新的
+      empty: 不能为空
+      equal_to: 必须等于%{count}
+      even: 必须均匀
+      exclusion: 保留的
+      expired: 已过期,请请求新的
+      greater_than: 必须大于%{count}
+      greater_than_or_equal_to: 必须大于或等于%{count}
+      inclusion: 未包含在列表中
+      invalid: 无效
+      less_than: 必须小于%{count}
+      less_than_or_equal_to: 必须小于或等于%{count}
+      model_invalid: '验证失败: %{errors}'
+      not_a_number: 不是数字
+      not_an_integer: 必须为整数
+      not_found: 未找到
+      not_locked: 未锁定
+      not_saved:
+        one: '1个错误禁止保存此%{refce}:'
+        other: "%{count}个错误禁止保存此%{refce}:"
+      odd: 必须是奇数
+      other_than: 必须不是%{count}
+      present: 必须为空
+      required: 必须存在
+      taken: 已采取
+      too_long:
+        one: 太长(最多为1个字符)
+        other: 太长(最大值为%{count}个字符)
+      too_short:
+        one: 太短(最小为1个字符)
+        other: 太短(最小值为%{count}个字符)
+      wrong_length:
+        one: 长度错误(应为1个字符)
+        other: 长度错误(应为%{count}个字符)
+    template:
+      body: '以下字段存在问题:'
+      header:
+        one: 1个错误禁止保存此%{model}
+        other: "%{count}个错误禁止保存此%{model}"
+    unacceptable_request: "“接受”标头中预计会有一个受支持的版本。"
+    unavailable_session: 会话%{id}在内存中不再可用。 如果您碰巧在多进程服务器(如Unicorn或Puma)上运行,此请求命中的进程不会存储在内存中%{id}。
+      考虑将进程/工作程序数转成一(1)或在开发中使用不同的服务器。
+  flash:
+    actions:
+      create:
+        notice: "%{资源_name}已成功创建。"
+      destroy:
+        alert: "%{资源_name}无法销毁。"
+        notice: "%{资源_name}已成功销毁。"
+      update:
+        notice: "%{资源_name}已成功更新。"
+  footer:
+    about_mapc: 关于MAPC
+    follow_mapc: '遵循MAPC:'
+    join_our_email_list: 加入我们的电子邮件列表
+    privacy_policy: 隐私政策
+    receive_updates: 接收更新
+    staff: 工作人员
+  header:
+    close_site_navigation: 关闭站点导航
+    toggle_site_navigation: 切换网站导航
+  helpers:
+    select:
+      prompt: 请选择
+    submit:
+      create: 创建%{model}
+      submit: 保存%{model}
+      update: 更新%{model}
+  logo_alt: 都市区规划委员会标志
+  mapc: 都市規劃局
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: '2'
+        separator: "."
+        unit: 美元
+    format:
+      delimiter: ","
+      precision: '3'
+      separator: "."
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: 十亿
+          million: 百万
+          quadrillion: 四亿
+          thousand: 一千块
+          trillion: 万亿
+      format:
+        precision: '3'
+        significant: 是真的
+        strip_insignificant_zeros: 是真的
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: 字节
+            other: 字节
+          eb: EB
+          gb: GB
+          kb: KB
+          mb: MB
+          pb: PB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  seo_meta:
+    form:
+      meta_description_help: 输入两个或三个简短的句子,描述这篇文章的内容。
+      meta_description_title: 元描述
+      seo: 搜索引擎优化
+      seo_override_title: 浏览器标题
+      seo_override_title_help: 输入一个5-10字的标题,总结了这篇文章的内容。
+  skip_navigation: 跳过导航
+  stringex:
+    characters:
+      and: 和
+      at: 在
+      degrees: 度
+      divide: 除以
+      dot: 一點點二號
+      ellipsis: 圆点
+      equals: 平等
+      number: 号码
+      percent: 百分比
+      plus: 加
+      slash: 斜线
+      star: 明星
+    currencies:
+      dollars: 一块
+      dollars_cents: 一美分两美分
+      euros: 1欧元
+      euros_cents: 一欧元两美分
+      generic: 1磅
+      pounds: 1磅
+      pounds_pence: 1磅2便士
+      reais: 1雷亚尔
+      reais_cents: 1雷亚尔2美分
+      yen: 1日元
+    html_entities:
+      amp: 和
+      cent: 美分
+      copy: "(c)"
+      deg: 学位
+      divide: 除以
+      double_quote: "“"
+      ellipsis: "..."
+      em_dash: "- - -"
+      en_dash: "- - -"
+      frac12: 一半
+      frac14: 四分之一
+      frac34: 四分之三
+      gt: "> >"
+      lt: "<"
+      pound: 英镑
+      reg: "(r)"
+      single_quote: "'"
+      times: 十
+      trade: "(tm)"
+      yen: 日元
+    vulgar_fractions:
+      five_eighths: 五八
+      five_sixths: 五六分之五
+      four_fifths: 五分之四
+      half: 一半
+      one_eighth: 八分之一
+      one_fifth: 五分之一
+      one_fourth: 四分之一
+      one_sixth: 六分之一
+      one_third: 三分之一
+      seven_eighths: 七八
+      three_eighths: 八分之三
+      three_fifths: 五分之三
+      three_fourths: 四分之三
+      two_fifths: 五分之二
+      two_thirds: 三分之二
+  support:
+    array:
+      last_word_connector: ",以及"
+      two_words_connector: 和
+      words_connector: ","
+  time:
+    am: 上午
+    formats:
+      default: "%a, %d %b %h: %m: %s %z"
+      long: "%b %d %y %h: %m"
+      short: "%A %d %B %Y"
+    pm: 下午
+  will_paginate:
+    next_label: "“"
+    page_entries_info:
+      multi_page: 总共显示%{model} %{from} - %{to}个%{count}个
+      multi_page_html: 总共显示%{model} <b>%{from} - %{to}个</b><b>%{count}</b>个
+      single_page:
+        one: 显示1% {model}
+        other: 显示所有%{count} %{model}
+        zero: 未找到%{model}
+      single_page_html:
+        one: 显示<b>1</b>% {model}
+        other: 显示<b>所有%{count}</b> %{model}
+        zero: 未找到%{model}
+    page_gap: "..."
+    previous_label: "“"
+  language_disclaimer: 请注意,有些内容可能已被机器翻译。 某些词语可能没有准确翻译。

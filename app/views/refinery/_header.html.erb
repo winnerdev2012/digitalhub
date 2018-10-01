@@ -1,13 +1,17 @@
 <header>
+  <% if Mobility.locale != :en %>
+    <div class="container language-disclaimer">
+      <%= t('language_disclaimer') %>
+    </div>
+  <% end %>
   <div class="container header-content">
     <%= link_to refinery.root_path, itemprop: "url", class: "site-name" do %>
       <%= image_tag("branding/MAPC-MetroCommon-White-RGB.png", class: "wordmark", alt: "MetroCommon by 2050") %>
     <% end %>
     <div class="header-content-right">
       <%= render "/refinery/shared/navigation_language" %>
-      <button id="drawer-toggle" onclick="toggleDrawer()" aria-haspopup="true" aria-controls="drawer">
+      <button id="drawer-toggle" onclick="toggleDrawer()" aria-haspopup="true" aria-controls="drawer" aria-label="<%= t('header.toggle_site_navigation') %>">
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
-        <span class="hidden-text">Toggle site navigation</span>
       </button>
     </div>
   </div>
