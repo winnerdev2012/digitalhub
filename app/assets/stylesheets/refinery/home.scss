@@ -81,7 +81,7 @@
   }
   .interruption {
     background-color: $color_bg-lightest;
-    padding: 1rem 0;
+    padding: 0;
     .content-column-row {
       display: flex;
       @include media(small) {
@@ -89,7 +89,7 @@
       }
 
       .content-column-one {
-        width: 44%;
+        width: calc(calc(calc(calc(100% - 6rem) / 7) * 3) + 2rem);
         @include media(small) {
           margin-bottom: 1rem;
           width: 100%;
@@ -100,9 +100,11 @@
       }
       .content-column-two {
         flex: 1;
-        margin-right: 18%;
+        margin-right: calc(calc(calc(calc(100% - 6rem) / 7) * 1) + 1rem);
+        margin-left: 1rem;
         @include media(small) {
           width: 100%;
+          margin-left: 0;
         }
       }
       .next-event-time {

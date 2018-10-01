@@ -20,21 +20,23 @@
     </section>
   </div>
   <div class="interruption">
-    <div class="container content-column-row">
-      <div class="content-column-one next-event-floater">
-        <% if @next_event %>
-          <h2>Next event</h2>
-          <%= link_to(refinery.events_event_path(@next_event)) do %>
-            <div class="next-event-time hidden-text"><%= @next_event.start.strftime("%B %-d, %Y at %-l:%M%p") %></div>
-            <div class="next-event-time" aria-hidden="true"><%= @next_event.start.strftime("%b %-d %-l:%M%P") %></div>
-            <div class="next-event-title"><%= @next_event.title %></div>
+    <div class="container">
+      <div class="content-column-row">
+        <div class="content-column-one next-event-floater">
+          <% if @next_event %>
+            <h2>Next event</h2>
+            <%= link_to(refinery.events_event_path(@next_event)) do %>
+              <div class="next-event-time hidden-text"><%= @next_event.start.strftime("%B %-d, %Y at %-l:%M%p") %></div>
+              <div class="next-event-time" aria-hidden="true"><%= @next_event.start.strftime("%b %-d %-l:%M%P") %></div>
+              <div class="next-event-title"><%= @next_event.title %></div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
-      <div class="content-column-two">
+        </div>
+        <div class="content-column-two">
 
-        <h2>Sign up for email updates</h2>
-        <a class="link-button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank">Join our email list</a>
+          <h2>Sign up for email updates</h2>
+          <a class="link-button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank">Join our email list</a>
+        </div>
       </div>
     </div>
   </div>
