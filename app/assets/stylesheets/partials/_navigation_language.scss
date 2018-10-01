@@ -33,6 +33,7 @@
   }
   button.focus--keyboard, a.focus--keyboard span {
     color: $color_blue-medium;
+    background-color: $color_yellow-light;
   }
 
   &.menu-open {
