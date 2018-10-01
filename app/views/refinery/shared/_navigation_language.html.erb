@@ -1,6 +1,6 @@
-<nav id="navigation-language" class="navigation-language" aria-label="Select language">
+<nav id="navigation-language" class="navigation-language" aria-label="<%= t('refinery.shared.navigation_language.select_language') %>">
   <button
-    aria-label="Select langauge. Current language is <%= Refinery::I18n.config.locales[Mobility.locale] %>."
+    aria-label="<%= t('refinery.shared.navigation_language.select_language') %>. <%= t('refinery.shared.navigation_language.current_language') %> <%= Refinery::I18n.config.locales[Mobility.locale] %>."
     aria-expanded="false"
     aria-haspopup="true"
     onclick="toggleLanguageList()"

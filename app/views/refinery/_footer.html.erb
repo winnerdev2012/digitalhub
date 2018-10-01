@@ -1,27 +1,26 @@
 <div class="container">
   <div class="footer-top">
     <div class="link-section footer-about-links">
-      <span class="link-category-heading">About MAPC</span>
+      <span class="link-category-heading"><%= t('footer.about_mapc') %></span>
       <ul>
-        <li><a href="">Plan Process</a></li>
-        <li><a href="https://www.mapc.org/about-mapc/staff/">Staff</a></li>
+        <li><a href="https://www.mapc.org/about-mapc/staff/"><%= t('footer.staff') %></a></li>
         <li><a href="https://www.mapc.org/get-involved/metrofuture-our-regional-plan/">MetroFuture</a></li>
       </ul>
     </div>
     <div class="link-section other-links">
       <div class="top-links">
-        <span class="link-category-heading">Receive Updates</span>
-        <a class="link-button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank">Join our email list</a>
+        <span class="link-category-heading"><%= t('footer.receive_updates') %></span>
+        <a class="link-button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('footer.join_our_email_list') %></a>
       </div>
       <div class="bottom-links">
-        <a href="/privacy">Privacy Policy</a>
+        <a href="/privacy"><%= t('footer.privacy_policy') %></a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="footer-mapc-brand">
-      <%= image_tag("mapc_logo.svg", class: "logo") %>
-      <div class="mapc">Metropolitan Area Planning Council</div>
+      <%= image_tag("mapc_logo.svg", class: "logo", alt: t('logo_alt')) %>
+      <div class="mapc"><%= t('mapc') %></div>
     </div>
     <div class="footer-contact-information">
       <span>60 Temple Pl., Boston, MA 02111</span>
@@ -29,7 +28,7 @@
       <span><a href="mailto:hello@digitalhub.com">hello@digitalhub.com</a></span>
     </div>
     <div class="footer-right">
-      Follow MAPC:
+      <%= t('footer.follow_mapc') %>
       <a href="https://twitter.com/mapcmetroboston"><%= fa_icon "twitter" %></a>
       <a href="https://www.instagram.com/mapcmetroboston"><%= fa_icon "instagram" %></a>
       <a href="https://www.facebook.com/mapcmetroboston"><%= fa_icon "facebook" %></a>

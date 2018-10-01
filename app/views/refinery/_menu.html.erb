@@ -1,6 +1,6 @@
 <% cache [I18n.locale, 'main_menu', @page, Refinery::Page.fast_menu.map(&:updated_at).max] do %>
   <div id="drawer" aria-labelledby="drawer-toggle" aria-hidden="true" hidden>
-    <button class="fa fa-times" onclick="toggleDrawer()"><span class="hidden-text">Close site navigation</span></button>
+    <button class="fa fa-times" onclick="toggleDrawer()"><span class="hidden-text"><%= t('header.close_site_navigation') %></span></button>
     <% if Flipper.enabled?(:search) %>
       <%= render "/refinery/shared/navigation_search" %>
     <% end %>

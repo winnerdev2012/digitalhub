@@ -30,17 +30,43 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  skip_navigation: "Skip navigation"
+  logo_alt: "Logo of the Metropolitan Area Planning Council"
+  mapc: "Metropolitan Area Planning Council"
+  header:
+    toggle_site_navigation: "Toggle site navigation"
+    close_site_navigation: "Close site navigation"
+  footer:
+    about_mapc: "About MAPC"
+    staff: "Staff"
+    receive_updates: "Receive Updates"
+    join_our_email_list: "Join our email list"
+    privacy_policy: "Privacy Policy"
+    follow_mapc: "Follow MAPC:"
   refinery:
     shared:
       navigation_search:
         search_label: ""
         search_site_for: "What do you want to know?"
         go: "Go"
+      navigation_language:
+        select_language: "Select language"
+        current_language: "Current language"
       search:
         search_label: "Find out about"
         search_site_for: 'Housi...'
         go: "Go"
+    home:
+      actions:
+        learn: "Find out"
+        engage: "Weigh in"
+        events: "Turn up"
+      interruption:
+        next_event: "Next event"
+        event_at: "at" # date /at/ time
+      email_sign_up:
+        sign_up: "Sign up for email updates"
+        join: "Join our email list"
     events:
       event_style: "Event Style" # Used as a heading
       style_event: "style event" # Used in a sentence

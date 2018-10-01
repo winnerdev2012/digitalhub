@@ -6,16 +6,16 @@
           <%= render "/refinery/shared/search" %>
         <% end %>
       </div>
-      <%= image_tag("mapc_logo.svg", class: "logo") %>
+      <%= image_tag("mapc_logo.svg", class: "logo", alt: t('logo_alt')) %>
     </div>
   </section>
   <div class="container">
     <section class="content-column">
       <%= raw @page.content_for(:body) %>
       <div class="action-boxes">
-        <a href=""><span class="wrapper">Find out</span></a>
-        <a href=""><span class="wrapper">Weigh in</span></a>
-        <a href=""><span class="wrapper">Turn up</span></a>
+        <a href=""><span class="wrapper"><%= t('refinery.home.actions.learn') %></span></a>
+        <a href=""><span class="wrapper"><%= t('refinery.home.actions.engage') %></span></a>
+        <a href=""><span class="wrapper"><%= t('refinery.home.actions.events') %></span></a>
       </div>
     </section>
   </div>
@@ -24,9 +24,9 @@
       <div class="content-column-row">
         <div class="content-column-one next-event-floater">
           <% if @next_event %>
-            <h2>Next event</h2>
+            <h2><%= t('refinery.home.interruption.next_event') %></h2>
             <%= link_to(refinery.events_event_path(@next_event)) do %>
-              <div class="next-event-time hidden-text"><%= @next_event.start.strftime("%B %-d, %Y at %-l:%M%p") %></div>
+              <div class="next-event-time hidden-text"><%= @next_event.start.strftime("%B %-d, %Y " + t('refinery.home.interruption.event_at') + " %-l:%M%p") %></div>
               <div class="next-event-time" aria-hidden="true"><%= @next_event.start.strftime("%b %-d %-l:%M%P") %></div>
               <div class="next-event-title"><%= @next_event.title %></div>
             <% end %>
@@ -34,8 +34,8 @@
         </div>
         <div class="content-column-two">
 
-          <h2>Sign up for email updates</h2>
-          <a class="link-button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank">Join our email list</a>
+          <h2><%= t('refinery.home.email_sign_up.sign_up') %></h2>
+          <a class="link-button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('refinery.home.email_sign_up.join') %></a>
         </div>
       </div>
     </div>
