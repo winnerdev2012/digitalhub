@@ -1,0 +1,905 @@
+---
+fr:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
+            dépendant(e) existe
+          has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
+            dépendants existent
+      models:
+        refinery/image:
+          blank: Vous devez sélectionner une image à télécharger
+          too_big: L'image doit être plus petite que %{size} megaoctets
+          incorrect_format: Seules les images aux formats JPG, PNG or GIF sont acceptées
+          different_file_name: La nouvelle image ne peut pas avoir un nom de fichier
+            différent
+        refinery/resource:
+          blank: Vous devez spécifier un fichier à télécharger
+          too_big: Le poids maximal des fichiers est de %{size} megaoctets
+    models:
+      refinery/image: image
+      refinery/resource: fichier
+      refinery/page: page
+      refinery/authentication/devise/user: utilisateur
+    attributes:
+      refinery/page:
+        title: Titre
+      refinery/authentication/devise/user:
+        login: Nom d'utilisateur
+        username: Nom d'utilisateur
+        email: Courriel
+        password: Mot de passe
+        password_confirmation: Confirmer mot de passe
+        remember_me: Se souvenir de moi
+        full_name: Nom complet
+      refinery/events/event:
+        title: Title
+        description: Description
+        start: Start
+        end: End
+        image: Image
+        event_type: Event Type
+        address: Address
+        city: City
+        state: State
+        zipcode: Zipcode
+        registration_link: Registration Link
+        accessibility_note: Accessibility Note
+        translation_note: Translation Note
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    - 
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+    month_names:
+    - 
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+      half_a_minute: une demi-minute
+      less_than_x_minutes:
+        zero: moins d'une minute
+        one: moins d'une minute
+        other: moins de %{count} minutes
+      less_than_x_seconds:
+        zero: moins d'une seconde
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      x_days:
+        one: 1 jour
+        other: "%{count} jours"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 mois
+        other: "%{count} mois"
+      x_years:
+        one: un an
+        other: "%{count} ans"
+      x_seconds:
+        one: 1 seconde
+        other: "%{count} secondes"
+    prompts:
+      day: Jour
+      hour: Heure
+      minute: Minute
+      month: Mois
+      second: Seconde
+      year: Année
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      present: doit être vide
+      confirmation: ne concorde pas avec %{attribute}
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      model_invalid: 'Validation échouée : %{errors}'
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      required: doit exister
+      taken: n'est pas disponible
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+      other_than: doit être différent de %{count}
+      already_confirmed: a déjà été confirmé, veuillez essayer de vous connecter
+      confirmation_period_expired: doit être confirmé dans %{period}, veuillez en
+        demander un nouveau.
+      expired: a expiré, s'il vous plaît en demander un nouveau
+      not_found: introuvable
+      not_locked: n'a pas été verrouillé
+      not_saved:
+        one: '1 erreur a empêché l''enregistrement de cette %{resource} :'
+        other: "%{count} erreurs ont interdit l'enregistrement de cette %{resource} :"
+    template:
+      body: 'Veuillez vérifier les champs suivants : '
+      header:
+        one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+    connection_refused: Oups ! Échec de la connexion au middleware de la console Web.
+      Assurez-vous qu'un serveur de développement rails est en cours d'exécution.
+    unacceptable_request: Une version prise en charge est attendue dans l'en-tête
+      Accepter.
+    unavailable_session: La session %{id} n'est plus disponible en mémoire. Si vous
+      exécutez sur un serveur multi-processus (comme Unicorn ou Puma), le processus
+      que cette requête a frappé ne stocke pas %{id} en mémoire. Envisagez de transformer
+      le nombre de processus/de travailleurs en un (1) ou d'utiliser un serveur différent
+      dans le développement.
+  helpers:
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un(e) %{model}
+      submit: Enregistrer ce(tte) %{model}
+      update: Modifier ce(tte) %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milliard
+          million: million
+          quadrillion: million de milliards
+          thousand: millier
+          trillion: billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: octet
+            other: octets
+          gb: Go
+          kb: ko
+          mb: Mo
+          tb: To
+          eb: EB
+          pb: PB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%A %d %B %Y %Hh%M"
+      short: "%A, %d %B %Y"
+    pm: pm
+  i18n:
+    plural:
+      keys:
+      - :one
+      - :other
+      rule: "<Proc:0x00007f90602fa380@/Users/ihill/.rvm/gems/ruby-2.5.1/gems/rails-i18n-5.1.1/lib/rails_i18n/common_pluralizations/one_other.rb:7
+        (lambda)># #"
+    transliterate:
+      rule:
+        à: a
+        â: a
+        æ: ae
+        ç: c
+        é: e
+        è: e
+        ê: e
+        ë: e
+        î: i
+        ï: i
+        ô: o
+        œ: oe
+        ù: u
+        û: u
+        ü: u
+        ÿ: y
+        À: A
+        Â: A
+        Æ: Ae
+        Ç: C
+        É: E
+        È: E
+        Ê: E
+        Ë: E
+        Î: I
+        Ï: I
+        Ô: O
+        Œ: Oe
+        Ù: U
+        Û: U
+        Ü: U
+        Ÿ: Y
+  refinery:
+    js:
+      admin:
+        confirm_changes: Toute modification sera perdue. Êtes-vous sûr(e) de vouloir
+          de vouloir continuer ?
+    plugins:
+      refinery_core:
+        title: Refinery
+        description: Base de Refinery
+      refinery_dialogs:
+        title: Boîtes de dialogue
+        description: Plugin de boîtes de dialogue pour Refinery
+      refinery_images:
+        title: Images
+        description: Gestion des images
+      refinery_files:
+        title: Fichiers
+        description: Gestion des fichiers
+      refinery_pages:
+        title: Pages
+        description: Gestion du contenu des pages
+      refinery_authentication_devise:
+        title: Utilisateurs
+        description: Gestion des utilisateurs
+      refinerycms_search:
+        title: Recherche
+        description: Moteur de recherche pour Refinery CMS.
+      events:
+        title: Events
+    welcome:
+      there_are_no_users: Il n'y actuellement aucun utilisateur enregistré, nous allons
+        donc vous enregistrer pour commencer.
+    crudify:
+      created: "%{what} a été correctement créé."
+      updated: "%{what} a été correctement mis à jour."
+      destroyed: "%{what} a été correctement supprimé."
+      not_destroyed: "%{what} n'a pas été supprimé."
+    site_bar:
+      log_out: Me déconnecter
+      switch_to_your_website: Voir le site
+      switch_to_your_website_editor: Voir le tableau de bord
+    admin:
+      menu:
+        reorder_menu: Réorganiser le menu
+        reorder_menu_done: J'ai fini de réorganiser le menu
+      dialogs:
+        show:
+          save: Enregistrer
+          cancel: Annuler
+      continue_editing:
+        save_and_continue_editing: Enregistrer et continuer d'éditer
+      form_actions:
+        save: Enregistrer
+        cancel: Annuler
+        cancel_lose_changes: Si vous annulez, tous les changements non sauvegardés
+          seront perdus
+        delete: Supprimer
+        close: Fermer
+      image_picker:
+        none_selected: Il n'y a actuellement aucune image sélectionnée, veuillez cliquer
+          ici pour en ajouter une.
+        remove_current: Supprimer l'image actuelle
+        change: Cliquer ici pour sélectionner une image
+        show: Afficher
+      locale_picker:
+        language: Langue
+      resource_picker:
+        download_current: Télécharger le fichier actuel
+        opens_in_new_window: Ouvre une nouvelle fenêtre
+        remove_current: Supprimer le fichier actuel
+        no_resource_selected: Il n'y a actuellement aucun fichier de sélectionné.
+          Veuillez cliquer ici pour en ajouter un.
+        name: Ajouter un fichier
+        current: Fichier courrant
+      search:
+        button_text: Rechercher
+        results_for_html: Résultats de la recherche &#8216;<em>%{query}</em>&#8217;
+        no_results: Aucun résultat ne correspond à votre recherche
+        cancel_search: Annuler la recherche
+        input:
+          placeholder: Rechercher&8230;
+          help: Entrez ici le texte recherché. La longueur minimale est de 3 caractères.
+      delete:
+        message: Êtes-vous sûr(e) de vouloir supprimer '%{title}'?
+      error_messages:
+        problems_in_following_fields: Les champs suivants comportent des problèmes
+      help: aide
+      form_advanced_options_menu:
+        advanced_options: Options avancées
+        toggle_advanced_options: Cliquez ici pour paramétrer les étiquettes et accéder
+          au menu des options
+        save_as_draft: Enregistrer comme brouillon
+      images:
+        delete: Supprimer définitivement cette image
+        edit: Modifier cette image
+        form:
+          image: Image
+          use_current_image: Utiliser l'image actuelle
+          or: ou
+          replace_image: " la remplacer par celle-ci..."
+          current_image: Image actuelle
+          maximum_image_size: La taille de l'image ne doit pas excéder %{bytes}.
+          image_title: Titre
+          image_title_help: Information complémentaire sur l'image
+          image_alt: Alt
+          image_alt_help: Texte utilise si l'image ne peut pas être affichée.
+          ratios: Ratios
+          choose_crop: Pour éditer un recadrage, veuillez sélectionner un format parmi
+            la liste suivante
+          available_crops: Liste des recadrages disponibles
+          save: Sauvegarder le recadrage
+          format: Format
+          crop_success: Le recadrage a été généré avec succès
+          no_crops_yet: Il n'y a actuellement aucun recadrage d'image. Cliquez sur
+            'Sauvegarder le recadrage' pour en ajouter un.
+        crop:
+          delete_crop: "%{title} - Recadrage %{id}"
+        actions:
+          create_new_image: Ajouter une image
+        records:
+          no_images_yet: Il n'y a pas encore d'image. Cliquer sur 'Ajouter une image'
+            pour en ajouter une.
+        index:
+          view:
+            switch_to: Afficher sous forme de %{view_name}
+            list: liste
+            grid: grille
+        view_live_html: Voir cette image<br/><em>Ouvre une nouvelle fenêtre</em>
+        existing_image:
+          button_text: Insérer
+          resize_image: Redimensionner l'image ?
+          size: Taille
+          select_resize: Sélectionnez une taille
+        insert:
+          existing_image: Image existante
+          new_image: Nouvelle image
+      resources:
+        delete: Supprimer définitivement ce fichier
+        edit: Modifier ce fichier
+        form:
+          download_current: Télécharger ce fichier
+          or: ou
+          replace: " le remplacer par celui-ci..."
+          maximum_file_size: La taille du fichier ne doit pas excéder %{bytes}.
+          resource_file: Fichier
+          resource_title: Titre
+          resource_title_help: Le titre visible pour les utilisateurs.
+        resource:
+          download: Télécharger ce fichier (%{size})
+        actions:
+          upload_new: Ajouter un nouveau fichier
+        records:
+          no_files_yet: Il n'y a actuellement aucun fichier. Cliquez sur 'Ajouter
+            un nouveau fichier' afin d'en ajouter un.
+        insert:
+          existing: Fichier existant
+          new: Nouveau fichier
+          no_files: Il n'y a aucun fichier.
+        existing_resource:
+          link_to_file: Lien vers ce fichier
+          button_text: Insertion
+      pages_dialogs:
+        page_link:
+          link_to_this_page: Créer un lien vers cette page
+        link_to:
+          insert: Insérer
+          your_page:
+            tab_name: Votre page
+          web_address:
+            tab_name: Website
+            location: Location
+            new_window: Nouvelle fenêtre
+            new_window_label: Cocher cette case si vous souhaitez que la destination
+              du lien s'ouvre dans une nouvelle fenêtre.
+            not_sure: Vous n'êtes pas certain de ce qu'il faut entrer dans le champ
+              ci-dessus ?
+            step1: Trouvez sur le net la page vers laquelle vous voulez créer un lien.
+            step2: Copiez l'adresse de cette page dans la barre d'adresse de votre
+              navigateur, et collez-la dans ce champ.
+          email_address:
+            tab_name: Adresse e-mail
+            subject_line_optional: Sujet optionnel
+            body_optional: Corps de texte optionnel
+            not_sure: Vous n'êtes pas certain de ce qu'il faut entrer dans les champs
+              ci-dessus ?
+            step1_html: Ecrivez, ou copiez-collez (par exemple à partir de votre carnet
+              d'adresses) l'adresse e-mail à mettre en lien dans le champ '<strong>Adresse
+              e-mail</strong>'.
+            step2_html: Utilisez le champ '<strong>Sujet optionnel</strong>' si vous
+              souhaitez que le message possède un <strong>sujet pré-défini</strong>.
+            step3_html: Utilisez le champ '<strong>Corps de texte optionnel</strong>'
+              si vous souhaitez que le message possède un <strong>texte pré-défini</strong>.
+          your_resource:
+            tab_name: Votre fichier
+            link_to_this_resource: Lien vers ce fichier
+      pages:
+        delete: Supprimer définitivement cette page
+        edit: Modifier cette page
+        new: Ajouter une nouvelle sous-page
+        expand_collapse: Développer ou réduire les sous-pages
+        page:
+          draft: brouillon
+          hidden: caché
+          redirected: redirigé
+          skip_to_first_child: redirigé vers 1er enfant
+          view_live_html: Voir cette page<br/><em>(Ouvre une nouvelle fenêtre)</em>
+        form:
+          preview: Prévisualiser
+          preview_changes: Prévisualiser vos changements avant de les appliquer
+        form_new_page_parts:
+          title: Titre
+          slug: Slug
+        form_page_parts:
+          create_content_section: Créer une nouvelle section de contenu
+          delete_content_section: Supprimer une section de contenu
+          reorder_content_section: Réordonner les sections de contenu
+          reorder_content_section_done: J'ai terminé de réordonner les sections de
+            contenu
+        form_advanced_options:
+          page_options: Page Options
+          parent_page: Page parente
+          menu_title: Titre dans le menu
+          custom_slug: Slug personnalisé
+          show_in_menu_title: Placer dans le menu
+          show_in_menu_description: Placer cette page dans le menu du site
+          show_in_menu_help: Décochez cette case si vous souhaitez supprimer une page
+            du menu de votre site. Ceci peut être utile si vous voulez diriger les
+            utilisateurs directement vers une page, sans qu'elle n'apparaisse dans
+            le menu.
+          skip_to_first_child: Ignorer la page parente
+          skip_to_first_child_label: Rediriger les visiteurs vers la première page
+            fille.
+          skip_to_first_child_help: Cette option assure que cette page est liée à
+            la première page sous-jacente. Cela peut être utile losque l'on groupe
+            des pages.
+          link_url: Cette page redirige le visiteur vers un autre site ou une autre
+            page
+          link_url_help: Si vous souhaitez que cette page mène à un autre site internet
+            ou à une autre page lorsque l'on clique dessus dans le menu, entrez une
+            URL '(par exemple https://google.com)'. Sinon laissez ce champ vide.
+          parent_page_help: Vous pouvez placer une page sous une autre page en la
+            sélectionnant dans la liste. Si vous voulez que cette page soit une page
+            parente, laissez ce champ vide.
+          menu_title_help: Si vous voulez que le menu affiche un titre différent que
+            celui qui sera affiché sur la page, entrez-le ici.
+          custom_slug_help: Un slug est un identifiant plus humain utilisé dans l'adresse
+            d'une page, par exemple &apos;a-propos&apos;. Pour écraser le slug généré
+            automatiquement par Refinery, entrez votre slug personnalisé ici.
+          layout_template: Agencement
+          layout_template_help: Vous pouvez choisir un agencement différent pour cette
+            page
+          view_template: Modèle de vue
+          view_template_help: Vous pouvez choisir un différent modèle de vue pour
+            cette page
+        actions:
+          create_new_page: Créer une nouvelle page
+          reorder_pages: Réordonner les pages
+          reorder_pages_done: Fin de réordonnancement des pages
+        records:
+          no_pages_yet: Il n'y a actuellement aucune page. Cliquer sur 'Créer une
+            nouvelle page' pour en ajouter une.
+    message:
+      close: Fermer
+      close_this_message: Fermer ce message
+    draft_page_message:
+      not_live: Cette page n'est pas visible par le public.
+    footer:
+      copyright: Tous droits réservés © %{year} %{site_name}
+    no_script:
+      enable_javascript_html: Pour obtenir l'ensemble des fonctionnalités de cette
+        page il est nécessaire d'activer JavaScript.
+      here_are: Ici sont les
+      instructions_enable_javascript_html: instructions pour activer JavaScript dans
+        votre navigateur
+    authentication:
+      devise:
+        admin:
+          users:
+            delete: Supprimer définitivement cet utilisateur
+            edit: Modifier cet utilisateur
+            update:
+              lockout_prevented: Vous ne pouvez pas supprimer l'accès au plugin de
+                gestion des utilisateurs pour l'utilisateur sur lequel vous êtes actuellement
+                authentifié.
+            form:
+              blank_password_keeps_current: Laisser le mot de passe vide permet de
+                conserver le mot de passe actuel.
+              plugin_access: Plugin d'accès
+              role_access: Rôle d'accès
+              enable_all: tout activer
+            actions:
+              create_new_user: Créer un nouvel utilisateur
+            user:
+              email_user: Envoyer un e-mail à cet utilisateur
+              preview: "(%{who}) créé le %{created_at}"
+        delete:
+          message: Êtes-vous sûr de vouloir supprimer définitivement %{title}?
+        roles:
+          superuser: Superuser
+          refinery: Refinery
+        sessions:
+          new:
+            hello_please_sign_in: Bonjour! Veuillez vous identifier.
+            sign_in: Authentification
+            forgot_password: J'ai oublié mon mot de passe
+        user_mailer:
+          reset_notification:
+            subject: Lien pour changer votre mot de passe
+            reset_request_received_for: Une demande de changement de mot de passe
+              a été reçue pour %{username}.
+            visit_this_url: Visitez cette URL pour choisir un nouveau mot de passe.
+            remain_same_if_no_action: Votre mot de passe restera le même si aucune
+              action n'est choisie.
+        users:
+          new:
+            fill_form: Remplissez vos coordonnées ci-dessous pour commencer.
+            sign_up: Enregistrement
+          create:
+            welcome: Bienvenue dans Refinery, %{who}
+          forgot:
+            email_address: Adresse courriel
+            enter_email_address: Veuillez entrer votre adresse courriel.
+            reset_password: Changer le mot de passe
+            blank_email: Vous n'avez pas entré d'adresse courriel.
+            email_not_associated_with_account_html: Désolé, '%{email}' n'est asssocié
+              à aucun compte.<br />Êtes-vous sûr d'avoir correctement entré votre
+              adresse courriel?
+            email_reset_sent: Un courriel vous a été envoyé. Il contient un lien vous
+              permettant de changer votre mot de passe.
+            password_encryption: Vous devez modifier votre mot de passe car Refinery
+              utilise de nouvelles méthodes de cryptage. Les nouveaux mots de passe
+              seront stockés avec un niveau de sécurité plus élevé.
+          reset:
+            successful: Le mot de passe pour '%{email}' a bien été changé.
+            pick_new_password_for: Choisissez un nouveau mot de passe pour %{email}.
+            reset_password: Changer le mot de passe
+    search:
+      search:
+        show:
+          search_results_for: Résultats de la recherche pour '%{what}'
+          no_results: Aucun résultat.
+          no_results_for: Aucun résultat pour votre recherche '%{what}'.
+          event_results_for: Résultats de l'événement pour '%{what}'
+    shared:
+      search:
+        search_site_for: Rechercher dans le site...
+        go: Rechercher
+        search_label: Pour en savoir plus sur
+      navigation_language:
+        current_language: Langue actuelle
+        select_language: Sélectionner la langue
+      navigation_search:
+        go: Aller
+        search_site_for: Qu'est-ce que tu veux savoir ?
+    events:
+      admin:
+        events:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Event
+            reorder: Réordonner les Events
+            reorder_done: Fin de réordonnancement des Events
+          records:
+            title: Events
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Event. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Event" pour créer votre premi(er/ère) event.
+          event:
+            view_live_html: Voir ce(t/tte) event <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) event
+            delete: Supprimer définitivement ce(t/tte) event
+      events:
+        show:
+          other: Autres Events
+          accessibility: Accessibilité
+          description: Description
+          for_this_event: pour cet événement
+          location: Emplacement
+          register: Inscrivez-vous
+          registration: Inscription
+          time: Date et heure
+          translation: Traductions
+        index:
+          heading: Ce sont les événements
+          next_month: Mois suivant
+          upcoming: À venir
+      event_style: Style de l'événement
+      held_in: tenue à
+      on_date: sur
+      style_event: événement style
+    home:
+      actions:
+        engage: Peser dans
+        events: Montez.
+        learn: Découvrez-en
+      email_sign_up:
+        join: Inscrivez-vous à notre liste de diffusion
+        sign_up: Inscrivez-vous pour recevoir des mises à jour par e-mail
+      interruption:
+        event_at: à
+        next_event: Prochain événement
+    skip_to_first_child_page_message:
+      skip_to_first_child: Cette page utilise l'option « Passer au premier enfant »
+        et ne sera jamais affichée aux visiteurs.
+  will_paginate:
+    previous_label: "&laquo;"
+    next_label: "&raquo;"
+    page_entries_info:
+      multi_page: Affichage de %{model} %{from} - %{to} sur %{count} au total
+      multi_page_html: Affichage de %{model} <b>%{from} - %{to}</b> sur <b>%{count}</b>
+        au total
+      single_page:
+        one: Affichage de 1 %{model}
+        other: Affichage de tous les %{count} %{model}
+        zero: Aucun %{model} trouvé
+      single_page_html:
+        one: Affichage de <b>1</b> %{model}
+        other: Affichage de <b>tous les %{count}</b> %{model}
+        zero: Aucun %{model} trouvé
+    page_gap: "..."
+  seo_meta:
+    form:
+      seo: Optimisations pour les moteurs de recherche (SEO)
+      seo_override_title: Titre du navigateur
+      seo_override_title_help: Entrez entre 5 et 10 mots qui résument votre article.
+      meta_description_title: Description
+      meta_description_help: Entrez deux ou trois phrases concises décrivants le sujet
+        de votre article.
+  devise:
+    failure:
+      invalid: Courriel ou mot de passe incorrect.
+      not_found_in_database: Désolé, identifiant ou mot de passe incorrect.
+      unauthenticated: Vous devez vous connecter ou vous inscrire pour continuer.
+      already_authenticated: Vous êtes déjà connecté.
+      inactive: Votre compte n'est pas encore activé.
+      last_attempt: Vous avez encore une tentative avant que votre compte ne soit
+        verrouillé.
+      locked: Votre compte est verrouillé.
+      timeout: Votre session a expiré. Veuillez vous reconnecter pour continuer.
+      unconfirmed: Vous devez confirmer votre adresse e-mail avant de continuer.
+    sessions:
+      refinery_user:
+        signed_out: Réussite de la déconnexion
+      signed_in: Réussite de la connexion
+      already_signed_out: Déconnecté avec succès.
+      signed_out: Déconnecté avec succès.
+    confirmations:
+      confirmed: Votre adresse e-mail a été confirmée avec succès.
+      send_instructions: Vous recevrez un courriel contenant des instructions pour
+        confirmer votre adresse électronique dans quelques minutes.
+      send_paranoid_instructions: Si votre adresse e-mail existe dans notre base de
+        données, vous recevrez un e-mail contenant des instructions pour confirmer
+        votre adresse e-mail dans quelques minutes.
+    mailer:
+      confirmation_instructions:
+        subject: Instructions de confirmation
+      email_changed:
+        subject: E-mail modifié
+      password_change:
+        subject: Mot de passe modifié
+      reset_password_instructions:
+        subject: Réinitialiser les instructions du mot de passe
+      unlock_instructions:
+        subject: Déverrouiller les instructions
+    omniauth_callbacks:
+      failure: Impossible de vous authentifier à partir de %{kind} car « %{raison} ».
+      success: Authentification réussie à partir du compte %{kind}.
+    passwords:
+      no_token: Vous ne pouvez pas accéder à cette page sans venir d'un e-mail de
+        réinitialisation de mot de passe. Si vous venez d'un e-mail de réinitialisation
+        de mot de passe, assurez-vous d'avoir utilisé l'URL complète fournie.
+      send_instructions: Vous recevrez un e-mail contenant des instructions sur la
+        façon de réinitialiser votre mot de passe dans quelques minutes.
+      send_paranoid_instructions: Si votre adresse e-mail existe dans notre base de
+        données, vous recevrez un lien de récupération de mot de passe à votre adresse
+        e-mail dans quelques minutes.
+      updated: Votre mot de passe a été modifié avec succès. Vous êtes maintenant
+        connecté.
+      updated_not_active: Votre mot de passe a été modifié avec succès.
+    registrations:
+      destroyed: Au revoir ! Votre compte a été annulé avec succès. Nous espérons
+        vous revoir bientôt.
+      signed_up: Bienvenue ! Vous vous êtes inscrit avec succès.
+      signed_up_but_inactive: Vous vous êtes inscrit avec succès. Toutefois, nous
+        n'avons pas pu vous connecter car votre compte n'est pas encore activé.
+      signed_up_but_locked: Vous vous êtes inscrit avec succès. Toutefois, nous n'avons
+        pas pu vous connecter car votre compte est verrouillé.
+      signed_up_but_unconfirmed: Un message avec un lien de confirmation a été envoyé
+        à votre adresse e-mail. Veuillez suivre le lien pour activer votre compte.
+      update_needs_confirmation: Vous avez mis à jour votre compte avec succès, mais
+        nous devons vérifier votre nouvelle adresse e-mail. Veuillez vérifier votre
+        adresse e-mail et suivre le lien de confirmation pour confirmer votre nouvelle
+        adresse e-mail.
+      updated: Votre compte a été mis à jour avec succès.
+    unlocks:
+      send_instructions: Vous recevrez un e-mail contenant des instructions pour déverrouiller
+        votre compte dans quelques minutes.
+      send_paranoid_instructions: Si votre compte existe, vous recevrez un e-mail
+        contenant des instructions sur la façon de le déverrouiller dans quelques
+        minutes.
+      unlocked: Votre compte a été déverrouillé avec succès. Veuillez vous connecter
+        pour continuer.
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} a été créé avec succès."
+      destroy:
+        alert: "%{resource_name} n'a pas pu être détruit."
+        notice: "%{resource_name} a été détruit avec succès."
+      update:
+        notice: "%{resource_name} a été mis à jour avec succès."
+  footer:
+    about_mapc: À propos de MAPC
+    follow_mapc: 'Suivez MAPC:'
+    join_our_email_list: Inscrivez-vous à notre liste de diffusion
+    privacy_policy: Politique de confidentialité
+    receive_updates: Recevoir des mises à jour
+    staff: Personnel
+  header:
+    close_site_navigation: Fermer la navigation sur le site
+    toggle_site_navigation: Basculer la navigation du site
+  logo_alt: Logo du Conseil d'aménagement du territoire métropolitain
+  mapc: Conseil d'aménagement du territoire métropolitain
+  skip_navigation: Ignorer la navigation
+  stringex:
+    characters:
+      and: et
+      at: à
+      degrees: degrés
+      divide: divisé par
+      dot: 1 point 2
+      ellipsis: point point point point point
+      equals: égal à égal
+      number: nombre
+      percent: pourcent
+      plus: en plus
+      slash: barre oblique
+      star: Étoile
+    currencies:
+      dollars: 1 Dollars
+      dollars_cents: 1 dollars 2 cents
+      euros: 1 euros
+      euros_cents: 1 euros 2 cents
+      generic: 1 livre
+      pounds: 1 livre
+      pounds_pence: 1 livres 2 pence
+      reais: 1 reais
+      reais_cents: 1 reais 2 cents
+      yen: 1 yen
+    html_entities:
+      amp: et
+      cent: cents
+      copy: c)
+      deg: degrés
+      divide: divisé par
+      double_quote: "« ."
+      ellipsis: "..."
+      em_dash: "- Quoi ?"
+      en_dash: "- Quoi ?"
+      frac12: moitié
+      frac14: un quatrième
+      frac34: trois quarts
+      gt: ">"
+      lt: "< <"
+      pound: livres
+      reg: r)
+      single_quote: "« ."
+      times: x
+      trade: "(tm)"
+      yen: yen
+    vulgar_fractions:
+      five_eighths: cinq huitièmes
+      five_sixths: cinq sixièmes
+      four_fifths: quatre cinquièmes
+      half: moitié
+      one_eighth: un huitième
+      one_fifth: un cinquième
+      one_fourth: un quatrième
+      one_sixth: un sixième
+      one_third: un tiers
+      seven_eighths: sept huitièmes
+      three_eighths: trois huitièmes
+      three_fifths: trois cinquièmes
+      three_fourths: trois quarts
+      two_fifths: deux cinquièmes
+      two_thirds: deux tiers
+  language_disclaimer: Veuillez noter que certains contenus peuvent avoir été traduits
+    par machine. Il se peut que certains mots n'aient pas été traduits avec exactitude.

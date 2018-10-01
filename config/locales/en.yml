@@ -33,6 +33,7 @@ en:
   skip_navigation: "Skip navigation"
   logo_alt: "Logo of the Metropolitan Area Planning Council"
   mapc: "Metropolitan Area Planning Council"
+  language_disclaimer: "Please be aware that some content may have been machine translated. Certain words may not have been translated accurately."
   header:
     toggle_site_navigation: "Toggle site navigation"
     close_site_navigation: "Close site navigation"
