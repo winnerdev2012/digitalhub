@@ -188,6 +188,15 @@ input[type="submit"] {
   .banner-content {
     margin-top: 11rem;
     margin-bottom: 11rem;
+    & > * {
+      margin: 0;
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+    .search-form {
+      margin-top: 3rem;
+    }
     @include media(medium) {
       margin-top: 3rem;
       margin-bottom: 3rem;

@@ -15,4 +15,5 @@ Refinery::Search::Engine.load_seed
 # Added by Refinery CMS Events extension
 Refinery::Events::Engine.load_seed
 
-Flipper.enable(:search)
+Flipper.disable(:search)
+Flipper.disable(:action_buttons)

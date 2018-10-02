@@ -2,6 +2,8 @@
   <section class="banner">
     <div class="container">
       <div class="content-column banner-content">
+        <h1><%= @page.title %></h1>
+        <%= raw @page.content_for(:subtitle) %>
         <% if Flipper.enabled?(:search) %>
           <%= render "/refinery/shared/search" %>
         <% end %>
@@ -9,16 +11,20 @@
       <%= image_tag("mapc_logo.svg", class: "logo", alt: t('logo_alt')) %>
     </div>
   </section>
+
   <div class="container">
     <section class="content-column">
       <%= raw @page.content_for(:body) %>
-      <div class="action-boxes">
-        <a href=""><span class="wrapper"><%= t('refinery.home.actions.learn') %></span></a>
-        <a href=""><span class="wrapper"><%= t('refinery.home.actions.engage') %></span></a>
-        <a href=""><span class="wrapper"><%= t('refinery.home.actions.events') %></span></a>
-      </div>
+      <% if Flipper.enabled?(:action_buttons) %>
+        <div class="action-boxes">
+          <a href=""><span class="wrapper"><%= t('refinery.home.actions.learn') %></span></a>
+          <a href=""><span class="wrapper"><%= t('refinery.home.actions.engage') %></span></a>
+          <a href=""><span class="wrapper"><%= t('refinery.home.actions.events') %></span></a>
+        </div>
+      <% end %>
     </section>
   </div>
+
   <div class="interruption">
     <div class="container">
       <div class="content-column-row">
