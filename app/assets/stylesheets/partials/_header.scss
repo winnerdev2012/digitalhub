@@ -13,9 +13,12 @@ header {
   .language-disclaimer {
     color: $color_font-light;
     background-color: $color_bg-black;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    width: 100%;
     font-size: $font_size-xsmall;
+    .container {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
   }
 
   .header-content {
