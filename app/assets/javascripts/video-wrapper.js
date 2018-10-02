@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var videos = document.getElementsByTagName('iframe');
   for (var i = 0; i < videos.length; i++) {
     var video = videos[i];
-    var match = video.src.match(/https:\/\/www\.youtube\.com\/embed\/(.*)\?/);
+    var match = video.src.match(/https:\/\/www\.youtube\.com\/embed\/([^\?]*)(?:\?|$)/);
     var parent = video.parentNode;
     if (match) {
       var videoId = match[1];
