@@ -30,6 +30,10 @@ server "live.mapc.org", user: "digitalhub", roles: %w{app db web}
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
+set :branch, 'master'
+set :passenger_restart_command, 'passenger-config restart-app'
+set :rvm_custom_path, '/usr/share/rvm'
+set :rvm_ruby_version, '2.5.1'
 
 
 
