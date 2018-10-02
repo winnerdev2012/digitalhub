@@ -1,0 +1,43 @@
+.ProcessTimeline {
+  .phases {
+    padding-top: 1rem;
+    h2 {
+      margin-top: 0;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+    .phase {
+      border-left: 2px dotted $color_green-medium;
+      padding-left: 1.5rem;
+      margin-left: 1.5rem;
+      padding-bottom: 2rem;
+      &:first-child {
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          height: 1rem;
+          width: 1rem;
+          left: calc(-0.5rem - 1px);
+          background: image-url('filled_downwards_triangle.svg');
+        }
+
+      }
+      &:nth-child(n+2) {
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          height: 1rem;
+          width: 1rem;
+          left: calc(-0.5rem - 1px);
+          background: image-url('empty_downwards_triangle.svg');
+        }
+      }
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
