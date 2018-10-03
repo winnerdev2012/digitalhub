@@ -1,3 +1,5 @@
+MAX_TRANSLATE_LENGTH = 5000
+
 Refinery::Page.class_eval do
 
   after_save :translate_content
@@ -24,12 +26,40 @@ Refinery::Page.class_eval do
       end
 
       for attribute_name, locale in translations_required
-        response = client.translate_text({
-          text: obj.send("#{attribute_name}_en"),
-          source_language_code: "en",
-          target_language_code: locale,
-        })
-        obj.translations.in_locale(locale).send("#{attribute_name}=", response.translated_text)
+        attribute_value = obj.send("#{attribute_name}_en")
+        translated_value = ""
+        if attribute_value.length > MAX_TRANSLATE_LENGTH
+          chunk_index = 0
+          translated_chunks = []
+          while attribute_value.length > 0
+            if attribute_value.length > MAX_TRANSLATE_LENGTH
+              chunk = attribute_value.slice(0, MAX_TRANSLATE_LENGTH * (chunk_index + 1)).match(/(^.*<\/[A-Za-z0-9]*>)/m).captures.last
+              if attribute_value.length > 0 && !chunk
+                chunk = attribute_value.slice(0, MAX_TRANSLATE_LENGTH * (chunk_index + 1)).match(/(^.*\s)/m).captures.last
+              end
+              attribute_value = attribute_value.slice(chunk.length, attribute_value.length) || ""
+            else
+              chunk = attribute_value
+              attribute_value = ""
+            end
+            chunk_index += 1
+            response = client.translate_text({
+              text: chunk,
+              source_language_code: "en",
+              target_language_code: locale,
+            })
+            translated_chunks.push(response.translated_text)
+          end
+          translated_value = translated_chunks.join
+        else
+          response = client.translate_text({
+            text: attribute_value,
+            source_language_code: "en",
+            target_language_code: locale,
+          })
+          translated_value = response.translated_text
+        end
+        obj.translations.in_locale(locale).send("#{attribute_name}=", translated_value)
         obj.translations.in_locale(locale).save!
       end
     end
