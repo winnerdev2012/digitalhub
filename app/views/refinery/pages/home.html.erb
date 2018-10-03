@@ -29,7 +29,7 @@
     <div class="container">
       <div class="content-column-row">
         <div class="content-column-one next-event-floater">
-          <% if @next_event %>
+          <% if @next_event && Flipper.enabled?(:next_event) %>
             <h2><%= t('refinery.home.interruption.next_event') %></h2>
             <%= link_to(refinery.events_event_path(@next_event)) do %>
               <div class="next-event-time hidden-text"><%= @next_event.start.strftime("%B %-d, %Y " + t('refinery.home.interruption.event_at') + " %-l:%M%p") %></div>
