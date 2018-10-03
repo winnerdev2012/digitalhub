@@ -15,5 +15,9 @@ module Digitalhub
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # To allow embedding YouTube videos
+    config.action_view.sanitized_allowed_tags = %w( iframe )
+    config.action_view.sanitized_allowed_attributes = %w( src frameborder webkitAllowFullScreen mozallowfullscreen allowFullScreen )
   end
 end
