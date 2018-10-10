@@ -13,7 +13,7 @@
         <a class="link-button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('footer.join_our_email_list') %></a>
       </div>
       <div class="bottom-links">
-        <a href="/privacy-policy"><%= t('footer.privacy_policy') %></a>
+        <a href="<%= (Mobility.locale != Refinery::I18n.config.default_locale ? "/#{Mobility.locale.to_s}" : "") %>/privacy-policy"><%= t('footer.privacy_policy') %></a>
       </div>
     </div>
   </div>
