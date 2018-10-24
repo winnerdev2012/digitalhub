@@ -8,7 +8,7 @@
   margin-top: 0.1rem;
   cursor: pointer;
 
-  &:first-child {
+  &:nth-of-type(n) {
     transform: translate(-1.5rem, 0rem);
 
     &:before {
@@ -19,8 +19,8 @@
       width: 1rem;
       left: calc(-0.5rem - 1px);
       background: image-url('filled_downwards_triangle.svg');
-      transform: rotate(-90deg) translate(-0.3rem,0.2rem);
-      transition: 0.4s;
+      transform: rotate(-90deg) translate(-.3rem, .2rem);
+      transition: .4s;
     }
 
     &:after {
@@ -28,36 +28,7 @@
       font-size: $font_size-small;
       color: $color_font-grey;
       display: block;
-      border-left: 2px dotted $color_green-medium;
-      transform: translate(-1.5rem, -0.6rem);
-      padding-left: 1.5rem;
-      padding-top: 0.5rem;
-      margin-bottom: -0.6rem;
-    }
-  }
-
-  &:nth-child(1n+2) {
-    border-left: 2px dotted $color_green-medium;
-    transform: translate(-1.5rem, 0rem);
-
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      height: 1rem;
-      width: 1rem;
-      left: calc(-0.5rem - 1px);
-      background: image-url('filled_downwards_triangle.svg');
-      transform: rotate(-90deg) translate(-0.3rem,0.2rem);
-      transition: 0.4s;
-    }
-
-    &:after {
-      content: 'Read more...';
-      font-size: $font_size-small;
-      color: $color_font-grey;
-      display: block;
-      transform: translate(-1.5rem, -0.6rem);
+      transform: translate(-1.4rem, -.6rem);
       padding-left: 1.5rem;
       padding-top: 0.5rem;
     }
@@ -66,7 +37,7 @@
   &.active {
     border-left: 2px dotted $color_green-medium;
 
-    &:nth-child(1n) {
+    &:nth-of-type(1n) {
       &:before {
         transform: none;
       }
