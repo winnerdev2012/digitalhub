@@ -1,0 +1,61 @@
+.accordion-title {
+  font-size: $font_size-medium;
+  color: $color_green-dark;
+  font-weight: 400;
+  padding-left: 1.5rem;
+  margin-left: 1.5rem;
+  margin-bottom: 0rem;
+  margin-top: 0.1rem;
+  cursor: pointer;
+
+  &:nth-of-type(n) {
+    transform: translate(-1.5rem, 0rem);
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 1rem;
+      width: 1rem;
+      left: calc(-0.5rem - 1px);
+      background: image-url('filled_downwards_triangle.svg');
+      transform: rotate(-90deg) translate(-.3rem, .2rem);
+      transition: .4s;
+    }
+
+    &:after {
+      content: 'Read more...';
+      font-size: $font_size-small;
+      color: $color_font-grey;
+      display: block;
+      transform: translate(-1.4rem, -.6rem);
+      padding-left: 1.5rem;
+      padding-top: 0.5rem;
+    }
+  }
+
+  &.active {
+    border-left: 2px dotted $color_green-medium;
+
+    &:nth-of-type(1n) {
+      &:before {
+        transform: none;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.accordion-content {
+  display: none;
+  overflow: hidden;
+  border-left: 2px dotted $color_green-medium;
+  padding-left: 1.5rem;
+  padding-bottom: 0.5rem;
+  transition: 0.4s;
+  margin-top: 0.1rem;
+  margin-bottom: 0;
+  transition: 10s;
+}
