@@ -33,7 +33,7 @@ server "prep.mapc.org", user: "digitalhub", roles: %w{app db web}
 set :branch, 'develop'
 set :passenger_restart_command, 'passenger-config restart-app'
 set :rvm_custom_path, '/usr/share/rvm'
-set :rvm_ruby_version, '2.5.1'
+set :rvm_ruby_version, '2.5.3'
 
 
 
