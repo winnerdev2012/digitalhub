@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", function() {
       wrapper.classList.add('video-wrapper');
 
       var videoPlaceholder = document.createElement('div');
-      videoPlaceholder.setAttribute('id', `video-${videoId}`);
+      videoPlaceholder.setAttribute('id', "video-" + videoId);
 
       var thumbnail = document.createElement('button');
       thumbnail.classList.add('thumbnail');
-      thumbnail.setAttribute('id', `video-button-${videoId}`);
-      thumbnail.style.backgroundImage = `url(http://img.youtube.com/vi/${videoId}/maxresdefault.jpg)`;
+      thumbnail.setAttribute('id', "video-button-" + videoId);
+      thumbnail.style.backgroundImage = "url(http://img.youtube.com/vi/" + videoId + "/maxresdefault.jpg)";
 
       wrapper.appendChild(videoPlaceholder);
       wrapper.appendChild(thumbnail);
@@ -44,10 +44,10 @@ function onYouTubeIframeAPIReady() {
   for (var i = 0; i < videos.length; i++) {
     var video = videos[i];
     var videoId = video.getAttribute('data-video');
-    var button = document.getElementById(`video-button-${videoId}`);
+    var button = document.getElementById("video-button-" + videoId);
     var playWhenReady = false;
     var playerReady = false;
-    var player = new YT.Player(`video-${videoId}`, {
+    var player = new YT.Player("video-" + videoId, {
       height: '244',
       width: '434',
       videoId: videoId,
