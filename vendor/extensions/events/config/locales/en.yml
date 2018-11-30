@@ -30,7 +30,7 @@ en:
           translation: "Translations"
           other: Other Events
         index:
-          heading: "These are the events"
+          heading: "Join us for an event!"
           upcoming: "Upcoming"
           next_month: "Next Month"
   activerecord:
