@@ -1,0 +1,15 @@
+<section class="banner">
+  <div class="container">
+    <div class="content-column banner-content">
+      <h1>Share Your Ideas</h1>
+    </div>
+    <%= image_tag("mapc_logo.svg", class: "logo", alt: t('logo_alt')) %>
+  </div>
+</section>
+<section class="content">
+  <div class="container">
+    <div class="content-column">
+      <%= render 'form', story: @story %>
+    </div>
+  </div>
+</section>
