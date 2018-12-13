@@ -17,7 +17,7 @@
 
   <div class="field">
     <%= hidden_field_tag(:question, 1) %>
-    <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", onchange: "form.submit()" %>
+    <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", onchange: "form.submit()", class: "actions" %>
     <%= form.label :video, 'Upload or Take Video' %>
   </div>
 

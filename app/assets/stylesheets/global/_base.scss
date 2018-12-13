@@ -56,18 +56,7 @@ a {
       color: $color_font-light;
     }
   }
-  &.link-button-row:nth-child(even) {
-    margin: 0;
-    display: block;
-    width: 100%;
-    background-color: $color_green-medium;
-    color: $color_font-light;
-    padding: 0.5em 1em;
-    text-align: center;
-    font-size: $font_size-large;
-    text-decoration: none;
-  }
-  &.link-button-row:nth-child(odd) {
+  &.link-button-row {
     margin: 0;
     display: block;
     width: 100%;
@@ -77,6 +66,8 @@ a {
     text-align: center;
     font-size: $font_size-large;
     text-decoration: none;
+
+    &:nth-child(even) { background-color: $color_green-medium; }
   }
   &:hover {
     color: $color_green-light;
@@ -298,15 +289,6 @@ iframe {
   @include media(medium) {
     width: 100%;
   }
-}
-
-#story_video {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
 }
 
 .actions {
