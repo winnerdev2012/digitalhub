@@ -59,7 +59,7 @@ fr:
     - ven
     - sam
     abbr_month_names:
-    - 
+    -
     - jan.
     - fév.
     - mar.
@@ -85,7 +85,7 @@ fr:
       short: "%e %b"
       long: "%e %B %Y"
     month_names:
-    - 
+    -
     - janvier
     - février
     - mars
@@ -701,7 +701,7 @@ fr:
           heading: Ce sont les événements
           next_month: Mois suivant
           upcoming: À venir
-      event_style: Style de l'événement
+      event_style: "Type d'événement:"
       held_in: tenue à
       on_date: sur
       style_event: événement style

@@ -69,7 +69,7 @@ en:
         sign_up: "Sign up for email updates"
         join: "Join our email list"
     events:
-      event_style: "Event Style" # Used as a heading
+      event_style: "Event Type:" # Used as a heading
       style_event: "style event" # Used in a sentence
       held_in: "held in" # Used in a sentence
       on_date: "on" # Used in a sentence

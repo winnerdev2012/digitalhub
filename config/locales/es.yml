@@ -57,7 +57,7 @@ es:
     - vie
     - sáb
     abbr_month_names:
-    - 
+    -
     - ene
     - feb
     - mar
@@ -83,7 +83,7 @@ es:
       long: "%-d de %B de %Y"
       short: "%-d de %b"
     month_names:
-    - 
+    -
     - enero
     - febrero
     - marzo
@@ -658,7 +658,7 @@ es:
           heading: Estos son los eventos
           next_month: Mes Próximo
           upcoming: Próximamente
-      event_style: Estilo de evento
+      event_style: "Tipo de evento:"
       held_in: celebrada en
       on_date: sobre
       style_event: evento de estilo
