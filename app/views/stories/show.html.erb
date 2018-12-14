@@ -1,0 +1,15 @@
+<%= render "banner" %>
+<section class="content">
+  <div class="container">
+    <div class="content-column">
+      <p>
+        <%= video_tag rails_blob_path(@story.video), autoplay: 'autoplay' %>
+      </p>
+    </div>
+  </div>
+
+
+<%= link_to 'Submit', stories_path, class: 'link-button-row' %>
+<%= link_to 'Edit', edit_story_path(@story), class: 'link-button-row' %>
+<%= link_to 'Delete', story_path(@story), method: :delete, class: 'link-button-row' %>
+</section>

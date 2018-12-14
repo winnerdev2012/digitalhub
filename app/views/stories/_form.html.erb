@@ -1,0 +1,27 @@
+<%= form_with(model: story, local: true) do |form| %>
+  <% if story.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h2>
+
+      <ul>
+      <% story.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <h2>Should Amazon come to Boston?</h2>
+  </div>
+
+  <div class="field">
+    <%= hidden_field_tag(:question, 1) %>
+    <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", onchange: "form.submit()", class: "actions" %>
+    <%= form.label :video, 'Upload or Take Video' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit('Submit', class: 'button') %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<%= render "banner" %>
+<section class="content">
+  <div class="container">
+    <div class="content-column">
+      <h1>Stories</h1>
+        <% @stories.each do |story| %>
+          <% if story.video.present? %>
+            <%= video_tag rails_blob_path(story.video), class: 'user-video', onclick: "this.paused ? this.play() : this.pause();" %>
+           <% end %>
+        <% end %>
+      </div>
+    </div>
+  <%= link_to 'Speak Out!', new_story_path, class: 'link-button-row' %>
+</section>
