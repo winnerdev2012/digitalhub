@@ -61,7 +61,7 @@ zh:
           heading: 这些是事件
           next_month: 下个月
           upcoming: 即将到来
-      event_style: 事件样式
+      event_style: "事件类型："
       held_in: 持有的在
       on_date: 上
       style_event: 风格事件
