@@ -289,7 +289,7 @@ video {
 }
 
 .user-video {
-  margin: 0 auto;
+  margin: 1rem auto;
   @include media(medium) {
     width: 100%;
   }
