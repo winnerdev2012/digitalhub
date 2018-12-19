@@ -3,7 +3,15 @@
   <div class="container">
     <div class="content-column">
       <p>
-        <%= video_tag rails_blob_path(@story.video), autoplay: 'autoplay' %>
+        <% if @story.video.attached? %>
+          <%= video_tag rails_blob_path(@story.video), autoplay: 'autoplay' %>
+        <% elsif @story.audio.attached? %>
+          <%= audio_tag rails_blob_path(@story.audio), controls: 'true' %>
+        <% elsif response.present? %>
+          <%= @story.response %>
+        <% else %>
+          Sorry, there was an error in uploading your content.
+        <% end %>
       </p>
     </div>
   </div>

@@ -17,11 +17,20 @@
 
   <div class="field">
     <%= hidden_field_tag(:question, 1) %>
-    <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", onchange: "form.submit()", class: "actions" %>
-    <%= form.label :video, 'Upload or Take Video' %>
+    <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", class: "actions" %>
+    <%= form.label :video, t('stories.upload_or_take_video') %>
   </div>
-
-  <div class="actions">
-    <%= form.submit('Submit', class: 'button') %>
+  <div class="field">
+    <%= form.label :response, t('stories.response') %>
+    <%= form.text_area :response %>
+  </div>
+  <div class="field" id="audio-recording">
+    Audio Recording
+    <button type="button" id="recordButton" class="button">Record</button>
+    <button type="button" id="stopButton" class="button">Stop</button>
+    <%= form.file_field :audio, accept: "audio/*", direct_upload: true, class: "actions" %>
+  </div>
+  <div>
+    <%= form.submit(t('stories.submit'), class: 'button') %>
   </div>
 <% end %>

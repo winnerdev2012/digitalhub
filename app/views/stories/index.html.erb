@@ -4,7 +4,7 @@
     <div class="content-column">
       <h1>Stories</h1>
         <% @stories.each do |story| %>
-          <% if story.video.present? %>
+          <% if story.video.attached? %>
             <%= video_tag rails_blob_path(story.video), class: 'user-video', onclick: "this.paused ? this.play() : this.pause();" %>
            <% end %>
         <% end %>

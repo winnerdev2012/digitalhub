@@ -1,4 +1,4 @@
 class Story < ApplicationRecord
   has_one_attached :video
-  validates_presence_of :video
+  has_one_attached :audio
 end

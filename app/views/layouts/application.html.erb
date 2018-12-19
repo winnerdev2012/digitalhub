@@ -15,6 +15,8 @@
     <% end %>
     <%= render "/refinery/head" %>
     <%= render "/refinery/javascripts" %>
+    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'polyfill' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body id="<%= canonical_id @page %>" class="<%= view_template_class @page %>">
