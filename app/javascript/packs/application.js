@@ -6,4 +6,7 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
-import '../audio-recorder.js';
+if((window.location.pathname === '/stories/new') || window.location.pathname.includes('edit')) {
+  import('../audio-recorder.js')
+  .then()
+}
