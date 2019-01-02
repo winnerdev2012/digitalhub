@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
   const audioUnsupported = Object.keys(fileTypes).every(type => !MediaRecorder.isTypeSupported(type));
 
   if (audioUnsupported || !audioContainer) {
-    audioContainer.parentNode.removeChild(audioContainer);
+    audioContainer && audioContainer.parentNode.removeChild(audioContainer);
   }
   else {
     const input = audioContainer.querySelector('#story_audio')
