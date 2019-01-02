@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
       upload.create((error, blob) => {
         if (error) {
-          console.log('There was an error!')
+          const errorAlert = document.createElement('div')
+          errorAlert.textContent = 'Sorry, there was an error submitting your audio.'
+          document.querySelector('.content > .container > .content-column').appendChild(errorAlert)
         } else {
           // Add an appropriately-named hidden input to the form with a
           //  value of blob.signed_id so that the blob ids will be
@@ -53,9 +55,8 @@ document.addEventListener("DOMContentLoaded", function(){
       // Request permissions to record audio
       navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
         recorder = new MediaRecorder(stream)
-        recorder.addEventListener('dataavailable', e => {
-          debugger;
-          const file = new File([e.data], responseFileName(e.data.type), {type: e.data.type})
+        recorder.addEventListener('dataavailable', ({ data }) => {
+          const file = new File([data], responseFileName(data.type), {type: data.type})
           uploadFile(file)
         })
         recorder.start()
@@ -63,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 
     stopButton.addEventListener('click', () => {
-      // Stop recording
       recorder.stop()
       // Remove “recording” icon from browser tab
       recorder.stream.getTracks().forEach(i => i.stop())
