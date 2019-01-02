@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function(){
   }
   else {
     const input = audioContainer.querySelector('#story_audio')
-    const recordButton = audioContainer.getElementById("recordButton");
-    const stopButton = audioContainer.getElementById("stopButton");
+    const recordButton = document.getElementById("recordButton");
+    const stopButton = document.getElementById("stopButton");
     let recorder = null;
 
     const uploadFile = (file) => {
