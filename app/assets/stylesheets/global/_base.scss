@@ -44,18 +44,6 @@ a {
     box-shadow: 0px 0px 0px 8px $color_yellow-light;
     color: $color_blue-medium;
   }
-  &.link-button {
-    margin: 1rem 0;
-    display: block;
-    width: max-content;
-    background-color: $color_green-medium;
-    color: $color_font-light;
-    padding: 0.5em 1em;
-    &:hover {
-      background-color: $color_green-dark;
-      color: $color_font-light;
-    }
-  }
   &.link-button-row {
     margin: 0;
     display: block;
@@ -95,12 +83,6 @@ main {
 ul {
   padding: 0;
   list-style: none;
-}
-
-input[type="submit"] {
-  border: 0;
-  background-color: white;
-  color: $color_bg-dark;
 }
 
 #page_container {
@@ -304,6 +286,23 @@ video {
   z-index: -1;
 }
 
+.button {
+  display: inline-block;
+  cursor: pointer;
+  margin: 1rem 0;
+  width: max-content;
+  background-color: $color_green-medium;
+  color: $color_font-light;
+  padding: 0.5em 1em;
+  border: 0;
+  &:hover {
+      background-color: $color_green-light;
+      color: $color_font-grey;
+      outline: 1px dotted #000;
+      outline: -webkit-focus-ring-color auto 5px;
+    }
+}
+
 #story_video + label {
     display: inline-block;
     cursor: pointer;
@@ -312,12 +311,13 @@ video {
     background-color: $color_green-medium;
     color: $color_font-light;
     padding: 0.5em 1em;
+    border: 0;
 }
 
 #story_video:focus + label,
 #story_video + label:hover {
-    background-color: $color_green-dark;
-    color: $color_font-light;
+    background-color: $color_green-light;
+    color: $color_font-grey;
     outline: 1px dotted #000;
     outline: -webkit-focus-ring-color auto 5px;
 }

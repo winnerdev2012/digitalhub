@@ -3,7 +3,7 @@
   <div class="container">
     <div class="content-column">
       <p>
-        <%= video_tag rails_blob_path(@story.video), autoplay: 'autoplay' %>
+        <%= render partial: 'media', locals: { media: @story } %>
       </p>
     </div>
   </div>
