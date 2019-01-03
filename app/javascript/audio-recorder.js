@@ -1,19 +1,29 @@
-import { DirectUpload } from "activestorage"
+import { DirectUpload } from "activestorage";
+import Element from './classes/Element';
 
 (() => {
 
+/*
+ * Declarations
+ */
 const fileTypes = {
   'audio/wav': 'wav',
   'audio/ogg;codecs=opus': 'ogg',
 };
 
-function responseFileName (codec) {
-  return `response-${Date.now()}.${fileTypes[codec]}`;
-}
+/*
+ * State
+ */
+const audioUnsupported = Object.keys(fileTypes).every(type => !MediaRecorder.isTypeSupported(type));
 
-document.addEventListener("DOMContentLoaded", function(){
+/*
+ * Functions
+ */
+const responseFileName = codec => `response-${Date.now()}.${fileTypes[codec]}`;
+
+
+document.addEventListener("DOMContentLoaded", () => {
   const audioContainer = document.querySelector('#audio-recording')
-  const audioUnsupported = Object.keys(fileTypes).every(type => !MediaRecorder.isTypeSupported(type));
 
   if (audioUnsupported || !audioContainer) {
     audioContainer && audioContainer.parentNode.removeChild(audioContainer);
@@ -23,25 +33,28 @@ document.addEventListener("DOMContentLoaded", function(){
     const recordButton = document.getElementById("recordButton");
     const stopButton = document.getElementById("stopButton");
     let recorder = null;
+    let errorNode = null;
 
     const uploadFile = (file) => {
       const url = input.dataset.directUploadUrl
       const upload = new DirectUpload(file, url)
 
       upload.create((error, blob) => {
+        if (errorNode) errorNode.remove();
+
         if (error) {
-          const errorAlert = document.createElement('div')
-          errorAlert.textContent = 'Sorry, there was an error submitting your audio.'
-          document.querySelector('.content > .container > .content-column').appendChild(errorAlert)
+          errorNode = (new Element)
+            .set('textContent', '')
+            .add('.content > .container > .content-column');
         } else {
           // Add an appropriately-named hidden input to the form with a
-          //  value of blob.signed_id so that the blob ids will be
-          //  transmitted in the normal upload flow
-          const hiddenField = document.createElement('input')
-          hiddenField.setAttribute("type", "hidden");
-          hiddenField.setAttribute("value", blob.signed_id);
-          hiddenField.name = input.name
-          document.querySelector('form').appendChild(hiddenField)
+          // value of blob.signed_id so that the blob ids will be
+          // transmitted in the normal upload flow
+          const hiddenField = (new Element('input'))
+            .set('type', 'hidden')
+            .set('value', blob.signed_id)
+            .set('name', input.name)
+            .add('form');
         }
       })
     }
