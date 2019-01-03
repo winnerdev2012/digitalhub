@@ -1,5 +1,5 @@
 import { DirectUpload } from "activestorage";
-import Element from './classes/Element';
+import HyperElement from './classes/Element';
 
 (() => {
 
@@ -8,6 +8,7 @@ import Element from './classes/Element';
  */
 const fileTypes = {
   'audio/wav': 'wav',
+  'audio/ogg': 'ogg',
   'audio/ogg;codecs=opus': 'ogg',
 };
 
@@ -30,31 +31,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   else {
     const input = audioContainer.querySelector('#story_audio')
-    const recordButton = document.getElementById("recordButton");
-    const stopButton = document.getElementById("stopButton");
+    const recordButton = new HyperElement(audioContainer.querySelector("#recordButton"));
+    const stopButton = new HyperElement(audioContainer.querySelector("#stopButton"));
     let recorder = null;
     let errorNode = null;
 
-    const uploadFile = (file) => {
+    stopButton.unmount();
+
+    const uploadFile = file => {
       const url = input.dataset.directUploadUrl
       const upload = new DirectUpload(file, url)
 
       upload.create((error, blob) => {
-        if (errorNode) errorNode.remove();
+        if (errorNode) errorNode.unmount();
 
         if (error) {
-          errorNode = (new Element)
-            .set('textContent', '')
-            .add('.content > .container > .content-column');
+          errorNode = (new HyperElement)
+            .setAttr('textContent', '')
+            .mount('.content > .container > .content-column');
         } else {
           // Add an appropriately-named hidden input to the form with a
           // value of blob.signed_id so that the blob ids will be
           // transmitted in the normal upload flow
-          const hiddenField = (new Element('input'))
-            .set('type', 'hidden')
-            .set('value', blob.signed_id)
-            .set('name', input.name)
-            .add('form');
+          const hiddenField = (new HyperElement('input'))
+            .setAttr('type', 'hidden')
+            .setAttr('value', blob.signed_id)
+            .setAttr('name', input.name)
+            .mount('form');
         }
       })
     }
@@ -64,7 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
       input.value = null
     })
 
-    recordButton.addEventListener('click', () => {
+    recordButton.addEvent('click', () => {
+      stopButton.mount();
+      recordButton.unmount();
+
       // Request permissions to record audio
       navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
         recorder = new MediaRecorder(stream)
@@ -76,8 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
 
-    stopButton.addEventListener('click', () => {
-      recorder.stop()
+    stopButton.addEvent('click', () => {
+      recorder.stop();
+      recordButton.mount();
+      stopButton.unmount();
+
       // Remove “recording” icon from browser tab
       recorder.stream.getTracks().forEach(i => i.stop())
     })
