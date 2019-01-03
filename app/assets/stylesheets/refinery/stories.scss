@@ -21,4 +21,14 @@
     font-size: $font_size-xsmall;
   }
 
+  .quote-mark {
+    display: inline-block;
+    top: 8px;
+    height: 0;
+
+    color: $color_green-dark;
+    font-size: $font_size-large;
+    font-weight: 700;
+  }
+
 }

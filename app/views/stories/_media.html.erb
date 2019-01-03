@@ -1,9 +1,10 @@
 <div class="media-display">
   <% if media.video.attached? %>
-    <%= video_tag rails_blob_path(media.video), autoplay: 'autoplay' %>
+    <%= video_tag rails_blob_path(media.video), autoplay: 'autoplay', muted: 'true', controls: 'true' %>
   <% elsif media.audio.attached? %>
     <%= audio_tag rails_blob_path(media.audio), controls: 'true' %>
   <% elsif media.response.present? %>
+    <span class="quote-mark">“</span>
     <%= media.response %>
   <% else %>
     Sorry, there was an error displaying the content.
