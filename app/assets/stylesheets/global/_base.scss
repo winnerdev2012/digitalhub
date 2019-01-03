@@ -248,6 +248,18 @@ video {
     }
   }
 
+  &.small {
+    .banner-content {
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+
+      @include media(medium) {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
   .container {
     &:after {
       content: ' ';
