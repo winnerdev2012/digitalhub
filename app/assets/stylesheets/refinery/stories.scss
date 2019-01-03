@@ -28,7 +28,44 @@
 
     color: $color_green-dark;
     font-size: $font_size-large;
-    font-weight: 700;
+    font-style: italic;
+  }
+
+  .story-form-wrapper {
+    h4 {
+      color: $color_font-grey;
+      font-weight: 400;
+    }
+
+    .form-break {
+      display: flex;
+
+      margin: $font_size-base 0;
+
+      color: $color_font-grey;
+      font-size: $font_size-small;
+
+      &:before, &:after {
+        content: '';
+
+        flex: 1 1;
+        position: relative;
+        display: inline-block;
+
+        height: 1px;
+        width: auto;
+        margin: auto $font_size-base;
+
+        background: $color_bg-dark;
+      }
+    }
+
+    .text-response {
+      textarea {
+        width: 100%;
+        min-height: 200px;
+      }
+    }
   }
 
 }
