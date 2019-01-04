@@ -28,7 +28,10 @@ export default class HyperElement {
     }
 
     const parentOrBody = this.parentNode || document.querySelector('body');
-    this.parentNode = parent ? document.querySelector(parent) : parentOrBody;
+    this.parentNode = parent ? (
+      parent instanceof Element ? parent : document.querySelector(parent)
+    ) : parentOrBody;
+
     this.parentNode.appendChild(this.node);
     this.isMounted = true;
 
@@ -45,6 +48,14 @@ export default class HyperElement {
     }
 
     return this;
+  }
+
+  addClass(className) {
+    this.node.classList.add(className);
+  }
+
+  removeClass(className) {
+    this.node.classList.remove(className);
   }
 
   addEvent(type = 'click', listener) {

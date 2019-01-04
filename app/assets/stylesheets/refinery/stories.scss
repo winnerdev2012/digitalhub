@@ -9,7 +9,6 @@
   .story {
     padding: 20px 0;
 
-
     & + .story { border-top: 1px solid $color_bg-light; }
   }
 
@@ -29,6 +28,11 @@
     color: $color_green-dark;
     font-size: $font_size-large;
     font-style: italic;
+  }
+
+  .session-info.recording {
+    animation: blinking 1s infinite;
+    color: $color_red-medium;
   }
 
   .story-form-wrapper {
