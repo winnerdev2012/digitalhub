@@ -40,6 +40,12 @@
     color: $color_red-medium;
   }
 
+  .button-wrapper { @extend ._clear; }
+
+  .left-buttons { float: left; }
+  .right-buttons { float: right; }
+
+
   .story-form-wrapper {
     h4 {
       color: $color_font-grey;

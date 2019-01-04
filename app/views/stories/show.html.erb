@@ -1,15 +1,25 @@
 <%= render "banner" %>
+
 <section class="content StoriesPage">
   <div class="container">
     <div class="content-column">
+      <h2>Your Response</h2>
+      <h4><%= @story.question %></h4>
+
       <p>
         <%= render partial: 'media', locals: { media: @story } %>
       </p>
     </div>
+
+    <div class="content-column button-wrapper">
+      <div class="left-buttons">
+        <%= link_to 'Submit', stories_path, class: 'button' %>
+      </div>
+
+      <div class="right-buttons">
+        <%= link_to 'Edit', edit_story_path(@story), class: 'button neutral' %>
+        <%= link_to 'Delete', story_path(@story), method: :delete, class: 'button negative' %>
+      </div>
+    </div>
   </div>
-
-
-<%= link_to 'Submit', stories_path, class: 'link-button-row' %>
-<%= link_to 'Edit', edit_story_path(@story), class: 'link-button-row' %>
-<%= link_to 'Delete', story_path(@story), method: :delete, class: 'link-button-row' %>
 </section>

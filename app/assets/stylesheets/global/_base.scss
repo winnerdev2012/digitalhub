@@ -313,6 +313,21 @@ video {
       outline: 1px dotted #000;
       outline: -webkit-focus-ring-color auto 5px;
     }
+
+  &.neutral {
+    background-color: $color_bg-dark;
+
+    &:hover { background-color: $color_green-medium; }
+  }
+
+  &.negative {
+    background-color: $color_bg-grey;
+
+    &:hover {
+      color: $color_font-light;
+      background-color: $color_bg-darkgrey;
+    }
+  }
 }
 
 #story_video + label {
