@@ -30,6 +30,11 @@
     font-style: italic;
   }
 
+  .video-info {
+    color: $color_font-grey;
+    font-size: $font_size-xsmall;
+  }
+
   .session-info.recording {
     animation: blinking 1s infinite;
     color: $color_red-medium;
