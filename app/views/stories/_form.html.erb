@@ -1,36 +1,50 @@
-<%= form_with(model: story, local: true) do |form| %>
-  <% if story.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h2>
+<div class="story-form-wrapper">
+  <%= form_with(model: story, local: true) do |form| %>
+    <% if story.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h2>
 
-      <ul>
-      <% story.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% story.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <h2>Should Amazon come to Boston?</h2>
+    </div>
+
+
+    <div class="field text-response">
+      <h4><%= form.label :response, t('stories.response') %></h4>
+      <%= form.text_area :response %>
+    </div>
+
+    <div class="form-break">or</div>
+
+    <div class="field video-response">
+      <%= hidden_field_tag(:question, 1) %>
+      <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", class: "actions" %>
+      <%= form.label :video, t('stories.upload_or_take_video') %>
+    </div>
+
+    <div class="form-break">or</div>
+
+    <div class="field audio-response" id="audio-recording">
+      <h4>Audio Recording</h4>
+
+      <div class="audio-buttons">
+        <button type="button" id="recordButton" class="button">Start Recording</button>
+        <button type="button" id="stopButton" class="button">Stop Recording</button>
+      </div>
+
+      <%= form.file_field :audio, accept: "audio/*", direct_upload: true, class: "actions" %>
+    </div>
+
+    <div>
+      <%= form.submit(t('stories.submit'), class: 'button') %>
     </div>
   <% end %>
-
-  <div>
-    <h2>Should Amazon come to Boston?</h2>
-  </div>
-
-  <div class="field">
-    <%= hidden_field_tag(:question, 1) %>
-    <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", class: "actions" %>
-    <%= form.label :video, t('stories.upload_or_take_video') %>
-  </div>
-  <div class="field">
-    <%= form.label :response, t('stories.response') %>
-    <%= form.text_area :response %>
-  </div>
-  <div class="field" id="audio-recording">
-    Audio Recording
-    <button type="button" id="recordButton" class="button">Record</button>
-    <button type="button" id="stopButton" class="button">Stop</button>
-    <%= form.file_field :audio, accept: "audio/*", direct_upload: true, class: "actions" %>
-  </div>
-  <div>
-    <%= form.submit(t('stories.submit'), class: 'button') %>
-  </div>
-<% end %>
+</div>
