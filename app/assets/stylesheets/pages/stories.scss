@@ -6,6 +6,13 @@
     & + .content-column { margin-top: 60px; }
   }
 
+  .no-content-message {
+    margin-top: 2rem;
+
+    color: $color_font-grey;
+    font-style: italic;
+  }
+
   .story {
     padding: 20px 0;
 

@@ -5,13 +5,19 @@
     <div class="content-column">
       <h2>Hear Your Neighbors' Stories</h2>
 
-      <% @stories.each do |story| %>
-        <div class="story">
-          <div class="story-meta">
-            <span class="story-date"><%= story.created_at.to_formatted_s(:simplified) %></span>
-          </div>
+      <% if @stories.any? %>
+        <% @stories.each do |story| %>
+          <div class="story">
+            <div class="story-meta">
+              <span class="story-date"><%= story.created_at.to_formatted_s(:simplified) %></span>
+            </div>
 
-          <%= render partial: 'media', locals: { media: story } %>
+            <%= render partial: 'media', locals: { media: story } %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="no-content-message">
+          There are currently no stories submitted.
         </div>
       <% end %>
     </div>
