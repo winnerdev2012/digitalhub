@@ -1,13 +1,12 @@
 require "google/cloud/speech"
 require 'pry-byebug'
 namespace :google do
-  task transcribe: :environment do
+  task :transcribe, [:story] => :environment do |task, args|
     speech = Google::Cloud::Speech.new(credentials: Rails.application.credentials.gcs)
     config = { encoding:          :LINEAR16,
              sample_rate_hertz: 48000,
              language_code:     "en-US"   }
-    # audio  = { uri: "gs://maps-digital-hub/#{story.audio.key}" }
-    audio  = { uri: "gs://maps-digital-hub/8RVd8ftmY4qd7Fn4DshAu9Bp" }
+    audio  = { uri: "gs://maps-digital-hub/#{args[:story]}" }
 
     operation = speech.long_running_recognize config, audio
     operation.wait_until_done!
