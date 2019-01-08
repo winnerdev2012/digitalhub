@@ -1,5 +1,4 @@
 require "google/cloud/speech"
-require 'pry-byebug'
 namespace :google do
   task :transcribe, [:story] => :environment do |task, args|
     speech = Google::Cloud::Speech.new(credentials: Rails.application.credentials.gcs)

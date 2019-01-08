@@ -1,5 +1,4 @@
 require "google/cloud/speech"
-require "pry-byebug"
 class TranscriptionWorker
   include Sidekiq::Worker
 
