@@ -7,15 +7,17 @@
       <%= image_tag("mapc_logo.svg", class: "logo") %>
     </div>
   </section>
-  <section class="content">
-    <%= raw @page.content_for(:body) %>
-    <div class="phases">
-      <% @page.parts.select { |part| part.slug.match?('phase') }.each do |part| %>
-        <div class="phase">
-          <h2><%= raw part.title %></h2>
-          <%= raw @page.content_for(part.slug.to_sym) %>
-        </div>
-      <% end %>
-    </div>
-  </section>
+  <div class="container">
+    <section class="content">
+      <%= raw @page.content_for(:body) %>
+      <div class="phases">
+        <% @page.parts.select { |part| part.slug.match?('phase') }.each do |part| %>
+          <div class="phase">
+            <h2><%= raw part.title %></h2>
+            <%= raw @page.content_for(part.slug.to_sym) %>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </div>
 </div>
