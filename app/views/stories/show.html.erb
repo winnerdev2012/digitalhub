@@ -4,7 +4,7 @@
   <div class="container">
     <div class="content-column">
       <h2>Your Response</h2>
-      <h4><%= @story.question %></h4>
+      <h4><%= Story.human_enum_name(:question, @story.question.to_sym) %></h4>
 
       <p>
         <%= render partial: 'media', locals: { media: @story } %>

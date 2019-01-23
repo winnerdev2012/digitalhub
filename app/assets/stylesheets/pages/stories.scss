@@ -59,6 +59,24 @@
       font-weight: 400;
     }
 
+    .question input[type="radio"] {
+      display:none;
+    }
+
+    .question label {
+        display:inline-block;
+        background-color:#ddd;
+        padding: 10px 20px;
+        font-size:16px;
+        border: 2px solid #444;
+        border-radius: 4px;
+    }
+
+    .question input[type="radio"]:checked + label {
+        background-color:#bfb;
+        border-color: #4c4;
+    }
+
     .form-break {
       display: flex;
 

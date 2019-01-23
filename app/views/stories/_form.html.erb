@@ -12,8 +12,11 @@
       </div>
     <% end %>
 
-    <div>
-      <h2>Should Amazon come to Boston?</h2>
+    <div class="field question">
+      <h2>Pick a Question Below</h2>
+      <p><%= form.radio_button(:question, 1) %><%= form.label :question, Story.human_enum_name(:question, :question1), value: '1' %></p>
+      <p><%= form.radio_button(:question, 2) %><%= form.label :question, Story.human_enum_name(:question, :question2), value: '2' %></p>
+      <p><%= form.radio_button(:question, 3) %><%= form.label :question, Story.human_enum_name(:question, :question3), value: '3' %></p>
     </div>
 
 
@@ -25,7 +28,6 @@
     <div class="form-break">or</div>
 
     <div class="field video-response">
-      <%= hidden_field_tag(:question, 1) %>
       <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", class: "actions" %>
       <%= form.label :video, t('stories.upload_or_take_video') %>
     </div>
