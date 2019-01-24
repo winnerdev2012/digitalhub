@@ -81,3 +81,13 @@ en:
     upload_or_take_video: "Upload or Take Video"
     response: 'Write your Response'
     submit: 'Submit'
+    question1: 'Question 1'
+    question2: 'Question 2'
+    question3: 'Question 3'
+  activerecord:
+    attributes:
+      story:
+        questions:
+          question1: "Question 1"
+          question2: "Question 2"
+          question3: "Question 3"
