@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_213744) do
+ActiveRecord::Schema.define(version: 2019_01_24_183707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -232,14 +232,6 @@ ActiveRecord::Schema.define(version: 2018_12_14_213744) do
     t.datetime "updated_at", null: false
     t.index ["id"], name: "index_seo_meta_on_id"
     t.index ["seo_meta_id", "seo_meta_type"], name: "id_type_index_on_seo_meta"
-  end
-
-  create_table "stories", force: :cascade do |t|
-    t.string "email"
-    t.integer "question"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "response"
   end
 
 end
