@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      stories:
+        title: Stories
+    stories:
+      admin:
+        stories:
+          actions:
+            create_new: Lag en ny Story
+            reorder: Endre rekkefølgen på Stories
+            reorder_done: Ferdig å endre rekkefølgen Stories
+          records:
+            title: Stories
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Stories enda. Klikk på "Lag en ny Story" for å legge til din første story.
+          story:
+            view_live_html: Vis hvordan denne story ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne story
+            delete: Fjern denne story permanent
+      stories:
+        show:
+          other: Andre Stories
+  activerecord:
+    attributes:
+      'refinery/stories/story':
+        email: Email
+        question: Question
+        response: Response
+        display: Display

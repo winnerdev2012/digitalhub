@@ -66,6 +66,9 @@ PATH
     refinerycms-events (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 4.0.2)
+    refinerycms-stories (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 4.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -587,6 +590,7 @@ DEPENDENCIES
   refinerycms-events!
   refinerycms-i18n
   refinerycms-search!
+  refinerycms-stories!
   refinerycms-wymeditor (~> 2.0, >= 2.0.0)
   rspec-rails
   sassc-rails

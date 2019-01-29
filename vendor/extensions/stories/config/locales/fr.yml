@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      stories:
+        title: Stories
+    stories:
+      admin:
+        stories:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Story
+            reorder: Réordonner les Stories
+            reorder_done: Fin de réordonnancement des Stories
+          records:
+            title: Stories
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Story. Cliquer sur "Créer un(e) nouve(au/l/lle) Story" pour créer votre premi(er/ère) story.'
+          story:
+            view_live_html: Voir ce(t/tte) story <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) story
+            delete: Supprimer définitivement ce(t/tte) story
+      stories:
+        show:
+          other: Autres Stories
+  activerecord:
+    attributes:
+      'refinery/stories/story':
+        email: Email
+        question: Question
+        response: Response
+        display: Display

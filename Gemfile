@@ -78,3 +78,5 @@ gem 'refinerycms-i18n'
 gem 'refinerycms-events', path: 'vendor/extensions'
 
 gem 'aws-sdk-translate'
+
+gem 'refinerycms-stories', path: 'vendor/extensions'

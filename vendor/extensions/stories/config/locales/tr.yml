@@ -1,0 +1,30 @@
+tr:
+  refinery:
+    plugins:
+      stories:
+        title: Stories
+    stories:
+      admin:
+        stories:
+          actions:
+            create_new: Yeni Ekle Story
+            reorder: Tekrar sirala Stories
+            reorder_done: Tekrar siralama tamamlandiStories
+          records:
+            title: Stories
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Stories yok henuz.  Tikla "Yeni Ekle Story" eklemek senin ilk story.
+          story:
+            view_live_html: Bunu canlu story goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle story
+            delete: Bunu Sil story sonsuza dek
+      stories:
+        show:
+          other: Diger Stories
+  activerecord:
+    attributes:
+      'refinery/stories/story':
+        email: Email
+        question: Question
+        response: Response
+        display: Display
