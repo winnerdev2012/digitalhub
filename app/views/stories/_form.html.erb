@@ -14,9 +14,9 @@
 
     <div class="field question">
       <h2>Pick a Question Below</h2>
-      <p><%= form.radio_button(:question, 1) %><%= form.label :question, Story.human_enum_name(:question, :question1), value: '1' %></p>
-      <p><%= form.radio_button(:question, 2) %><%= form.label :question, Story.human_enum_name(:question, :question2), value: '2' %></p>
-      <p><%= form.radio_button(:question, 3) %><%= form.label :question, Story.human_enum_name(:question, :question3), value: '3' %></p>
+      <p><%= form.radio_button(:question, 'question1') %><%= form.label :question, Story.human_enum_name(:question, :question1), value: 'question1' %></p>
+      <p><%= form.radio_button(:question, 'question2') %><%= form.label :question, Story.human_enum_name(:question, :question2), value: 'question2' %></p>
+      <p><%= form.radio_button(:question, 'question3') %><%= form.label :question, Story.human_enum_name(:question, :question3), value: 'question3' %></p>
     </div>
 
 
