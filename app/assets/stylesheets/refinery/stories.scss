@@ -11,7 +11,6 @@
   .audio-response, .video-response {
     display: inline-block;
     vertical-align: top;
-    margin-right: 2rem;
   }
 
   .banner {
@@ -38,6 +37,12 @@
 
     color: $color_font-grey;
     font-style: italic;
+  }
+
+  .or {
+    display: inline-block;
+    vertical-align: center;
+    padding: 1.5em 1em;
   }
 
   .story {
