@@ -1,0 +1,57 @@
+<div class="story-form-wrapper">
+  <%= form_for [refinery, :stories, story] do |form| -%>
+    <% if story.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h2>
+
+        <ul>
+        <% story.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field question">
+      <h2>Pick a Question Below</h2>
+      <p><%= form.radio_button(:question, 'question1') %><%= form.label :question, 'Question1', value: 'question1' %></p>
+      <p><%= form.radio_button(:question, 'question2') %><%= form.label :question, 'Question2', value: 'question2' %></p>
+      <p><%= form.radio_button(:question, 'question3') %><%= form.label :question, 'Question3', value: 'question3' %></p>
+    </div>
+
+    <div class="field name">
+      <h4><%= form.label :name, 'Name (required)' %></h4>
+      <%= form.text_field :name %>
+    </div>
+
+
+    <div class="field text-response">
+      <h4><%= form.label :response, 'Response' %></h4>
+      <%= form.text_area :response %>
+    </div>
+
+    <div class="form-break">or</div>
+
+    <div class="field video-response">
+      <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", class: "actions" %>
+      <%= form.label :video, 'Upload or Take Video' %>
+    </div>
+
+    <div class="form-break">or</div>
+
+    <div class="field audio-response" id="audio-recording">
+      <h4>Audio Recording</h4>
+
+      <div class="audio-buttons">
+        <button type="button" id="recordButton" class="button">Start Recording</button>
+        <button type="button" id="stopButton" class="button">Stop Recording</button>
+      </div>
+
+      <%= form.file_field :audio, accept: "audio/*", 'data-direct-upload-url': main_app.rails_direct_uploads_url, class: "actions" %>
+    </div>
+
+    <div>
+      <%= form.submit('Submit', class: 'button') %>
+    </div>
+  <% end %>
+</div>

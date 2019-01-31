@@ -1,0 +1,32 @@
+<div class="banner">
+  <div class="container">
+    <div class="content-column banner-content">
+      <h1><%= @page.try(:title) %></h1>
+    </div>
+  </div>
+</div>
+<% content_for :body_content_title do %>
+  <%= @story.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section class="StoriesPage">
+    <h2>Your Response</h2>
+    <h4><%= @story.question %></h4>
+
+    <%= render partial: 'media', locals: { media: @story } %>
+
+    <div class="button-wrapper">
+      <div class="left-buttons">
+        <%= link_to 'Submit', refinery.stories_stories_path, class: 'button' %>
+      </div>
+
+      <div class="right-buttons">
+        <%= link_to 'Edit', refinery.edit_stories_story_path(@story), class: 'button neutral' %>
+        <%= link_to 'Delete', refinery.stories_story_path(@story), method: :delete, class: 'button negative' %>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<%= render '/refinery/content_page' %>

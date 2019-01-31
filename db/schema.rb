@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_213744) do
+ActiveRecord::Schema.define(version: 2019_01_29_154725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -223,6 +223,25 @@ ActiveRecord::Schema.define(version: 2018_12_14_213744) do
     t.datetime "updated_at"
   end
 
+  create_table "refinery_stories", force: :cascade do |t|
+    t.string "name"
+    t.integer "question"
+    t.boolean "display"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "refinery_story_translations", force: :cascade do |t|
+    t.text "response"
+    t.string "locale", null: false
+    t.integer "refinery_story_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_refinery_story_translations_on_locale"
+    t.index ["refinery_story_id", "locale"], name: "index_845caebe798a0afcd0ff8f6d31a500cb83b87df7", unique: true
+  end
+
   create_table "seo_meta", id: :serial, force: :cascade do |t|
     t.integer "seo_meta_id"
     t.string "seo_meta_type"
@@ -232,14 +251,6 @@ ActiveRecord::Schema.define(version: 2018_12_14_213744) do
     t.datetime "updated_at", null: false
     t.index ["id"], name: "index_seo_meta_on_id"
     t.index ["seo_meta_id", "seo_meta_type"], name: "id_type_index_on_seo_meta"
-  end
-
-  create_table "stories", force: :cascade do |t|
-    t.string "email"
-    t.integer "question"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "response"
   end
 
 end
