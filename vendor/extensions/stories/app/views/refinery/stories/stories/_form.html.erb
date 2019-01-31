@@ -27,31 +27,29 @@
 
     <div class="field text-response">
       <h4><%= form.label :response, 'Response' %></h4>
-      <%= form.text_area :response %>
-    </div>
-
-    <div class="form-break">or</div>
-
-    <div class="field video-response">
-      <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", class: "actions" %>
-      <%= form.label :video, 'Upload or Take Video' %>
-    </div>
-
-    <div class="form-break">or</div>
-
-    <div class="field audio-response" id="audio-recording">
-      <h4>Audio Recording</h4>
-
-      <div class="audio-buttons">
-        <button type="button" id="recordButton" class="button">Start Recording</button>
-        <button type="button" id="stopButton" class="button">Stop Recording</button>
-      </div>
-
-      <%= form.file_field :audio, accept: "audio/*", 'data-direct-upload-url': main_app.rails_direct_uploads_url, class: "actions" %>
+      <%= form.text_area :response, placeholder: 'In the year 2050, I want people to be able to have healthcare because...' %>
     </div>
 
     <div>
       <%= form.submit('Submit', class: 'button') %>
     </div>
+
+    <div class="media-buttons">
+      <div class="field video-response">
+        <%= form.file_field :video, accept: "video/mp4,video/x-m4v,video/*", capture: "", class: "actions" %>
+        <%= form.label :video, 'Upload or Take Video' %>
+      </div>
+
+      <div class="field audio-response" id="audio-recording">
+        <div class="audio-buttons">
+          <button type="button" id="recordButton" class="button">Record a Voice Memo</button>
+          <button type="button" id="stopButton" class="button">Stop Recording</button>
+        </div>
+      </div>
+
+      <%= form.file_field :audio, accept: "audio/*", 'data-direct-upload-url': main_app.rails_direct_uploads_url, class: "actions" %>
+    </div>
+
+
   <% end %>
 </div>

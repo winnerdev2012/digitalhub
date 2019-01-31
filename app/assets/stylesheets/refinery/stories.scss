@@ -1,6 +1,33 @@
 .StoriesPage {
 
+  input[type="submit"] {
+    background: $color_bg-lightest;
+    color: $color_green-dark;
+    border: 1px solid $color_green-dark;
+  }
+
   a.button { text-decoration: none; }
+
+  .audio-response, .video-response {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2rem;
+  }
+
+  .banner {
+    background: $color_bg-dark image-url('story-tool-banner.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:center;
+    @include media(small) {
+      background-position: bottom 3rem right;
+    }
+  }
+
+  .banner-content {
+    margin-top: 7rem;
+    margin-bottom: 7.5rem;
+  }
 
   .content-column {
     & + .content-column { margin-top: 60px; }
