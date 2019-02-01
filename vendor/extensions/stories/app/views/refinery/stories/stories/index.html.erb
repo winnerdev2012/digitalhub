@@ -1,13 +1,13 @@
-<div class="banner">
-  <div class="container">
-    <div class="content-column banner-content">
-      <h1>Share Your Story</h1>
+<div class="StoriesPage">
+  <div class="banner">
+    <div class="container">
+      <div class="content-column banner-content">
+        <h1>The Commons</h1>
+      </div>
     </div>
   </div>
-</div>
 
-<% content_for :body do %>
-  <div class="StoriesPage">
+  <% content_for :body do %>
     <% if @stories.any? %>
       <% @stories.each do |story| %>
         <div class="story">
@@ -24,7 +24,7 @@
     <% end %>
     <h2>Have Your Own Story to Share?</h2>
     <%= link_to 'Speak Out!', refinery.new_stories_story_path, class: 'button' %>
-  </div>
-<% end %>
+  <% end %>
 
-<%= render '/refinery/content_page' %>
+  <%= render '/refinery/content_page' %>
+</div>
