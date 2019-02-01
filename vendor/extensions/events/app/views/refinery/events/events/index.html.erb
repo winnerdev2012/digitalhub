@@ -16,11 +16,23 @@
       <div class="partial EventsIndex">
         <h2><%= t('refinery.events.events.index.heading') %></h2>
         <h3><%= t('refinery.events.events.index.upcoming') %></h3>
-        <%= render partial: 'refinery/events/events/event_list', locals: { events: @upcoming_events } %>
+        <% if @upcoming_events.present? %>
+          <%= render partial: 'refinery/events/events/event_list', locals: { events: @upcoming_events } %>
+        <% else %>
+          No upcoming events.
+        <% end %>
         <h3><%= t('refinery.events.events.index.next_month') %></h3>
-        <%= render partial: 'refinery/events/events/event_list', locals: { events: @events_next_month } %>
+        <% if @events_next_month.present? %>
+          <%= render partial: 'refinery/events/events/event_list', locals: { events: @events_next_month } %>
+        <% else %>
+          No events this month.
+        <% end %>
         <h3><%= t('refinery.events.events.index.past') %></h3>
-        <%= render partial: 'refinery/events/events/event_list', locals: { events: @past_events } %>
+        <% if @past_events.present? %>
+          <%= render partial: 'refinery/events/events/event_list', locals: { events: @past_events } %>
+        <% else %>
+         No past events.
+       <% end %>
       </div>
     </div>
   </div>
