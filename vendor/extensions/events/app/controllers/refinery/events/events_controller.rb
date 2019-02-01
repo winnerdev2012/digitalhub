@@ -12,6 +12,7 @@ module Refinery
         @upcoming_events = ::Refinery::Events::Event.where(start: DateTime.now..DateTime.now.at_end_of_month)
         @events_next_month = ::Refinery::Events::Event.where(start: DateTime.now.at_beginning_of_month.next_month..DateTime.now.at_end_of_month.next_month)
         present(@page)
+        @past_events = ::Refinery::Events::Event.where('start < ?', DateTime.now)
       end
 
       def show

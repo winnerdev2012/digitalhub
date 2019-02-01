@@ -21,6 +21,7 @@ ru:
       events:
         show:
           other: Другие Events
+          past: Прошедшие события
   activerecord:
     attributes:
       'refinery/events/event':
