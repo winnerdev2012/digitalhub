@@ -19,6 +19,8 @@
         <%= render partial: 'refinery/events/events/event_list', locals: { events: @upcoming_events } %>
         <h3><%= t('refinery.events.events.index.next_month') %></h3>
         <%= render partial: 'refinery/events/events/event_list', locals: { events: @events_next_month } %>
+        <h3><%= t('refinery.events.events.index.past') %></h3>
+        <%= render partial: 'refinery/events/events/event_list', locals: { events: @past_events } %>
       </div>
     </div>
   </div>

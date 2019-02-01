@@ -33,6 +33,7 @@ en:
           heading: "Join us for an event!"
           upcoming: "Upcoming"
           next_month: "Next Month"
+          past: "Past Events"
   activerecord:
     attributes:
       'refinery/events/event':
