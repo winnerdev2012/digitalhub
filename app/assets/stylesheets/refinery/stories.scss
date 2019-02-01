@@ -14,10 +14,11 @@
   }
 
   .banner {
-    background: $color_bg-dark image-url('story-tool-banner.png');
+    background: $color_bg-dark;
     background-repeat: no-repeat;
     background-size:contain;
     background-position:center;
+    @include background-2x('story-tool-banner', 'png', contain, contain, center, no-repeat );
     @include media(small) {
       background-position: bottom 3rem right;
     }
