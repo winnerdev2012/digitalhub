@@ -12,7 +12,7 @@
 <% content_for :body do %>
   <section class="StoriesPage">
     <h2>Your Response</h2>
-    <h4><%= @story.question %></h4>
+    <h4><%= question_text(@story.question) %></h4>
 
     <%= render partial: 'media', locals: { media: @story } %>
 
