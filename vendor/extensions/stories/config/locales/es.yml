@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      stories:
+        title: Stories
+#        article: masculino/femenino
+    stories:
+      admin:
+        stories:
+          actions:
+            create_new: Crear nuevo story
+            reorder: Reordenar stories
+            reorder_done: Reordenación de stories completada
+          records:
+            title: Stories
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay stories todavía. Pulsa en "Crear nuevo Story" para crear tu primer story.
+          story:
+            view_live_html: Ver este story como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este story
+            delete: Borrar este story para siempre
+      stories:
+        show:
+          other: Otros stories
+  activerecord:
+    attributes:
+      'refinery/stories/story':
+        email: Email
+        question: Question
+        response: Response
+        display: Display

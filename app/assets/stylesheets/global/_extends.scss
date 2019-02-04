@@ -1,0 +1,8 @@
+._clear {
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+  }
+}

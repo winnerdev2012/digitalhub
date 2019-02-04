@@ -23,6 +23,7 @@ zh:
       events:
         show:
           other: 其他 Events
+          past: 过去的事
   activerecord:
     attributes:
       'refinery/events/event':

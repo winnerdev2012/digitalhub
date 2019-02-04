@@ -37,7 +37,7 @@ Refinery::Images.configure do |config|
 
   config.dragonfly_name = :refinery_images
   # config.dragonfly_verify_urls = true
-  # config.dragonfly_secret = "90a0f4e12436fcacb77a4922c78c6d868e916316d2acd643"
+  config.dragonfly_secret = Rails.application.credentials.secret_key_base
   # config.dragonfly_url_host = ""
   # config.dragonfly_datastore_root_path = "/Users/ihill/Developer/digitalhub/public/system/refinery/images"
   # config.dragonfly_url_format = "/system/refinery/images/:job/:basename.:ext"

@@ -10,7 +10,9 @@
     <div class="link-section other-links">
       <div class="top-links">
         <span class="link-category-heading"><%= t('footer.receive_updates') %></span>
-        <a class="link-button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('footer.join_our_email_list') %></a>
+        <div>
+          <a class="button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('footer.join_our_email_list') %></a>
+        </div>
       </div>
       <div class="bottom-links">
         <a href="<%= (Mobility.locale != Refinery::I18n.config.default_locale ? "/#{Mobility.locale.to_s}" : "") %>/privacy-policy"><%= t('footer.privacy_policy') %></a>

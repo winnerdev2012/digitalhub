@@ -17,9 +17,9 @@
       <%= raw @page.content_for(:body) %>
       <% if Flipper.enabled?(:action_buttons) %>
         <div class="action-boxes">
-          <a href=""><span class="wrapper"><%= t('refinery.home.actions.learn') %></span></a>
-          <a href=""><span class="wrapper"><%= t('refinery.home.actions.engage') %></span></a>
-          <a href=""><span class="wrapper"><%= t('refinery.home.actions.events') %></span></a>
+          <a href="/find-out"><span class="wrapper"><%= t('refinery.home.actions.learn') %></span></a>
+          <a href="/stories/new"><span class="wrapper"><%= t('refinery.home.actions.engage') %></span></a>
+          <a href="/events"><span class="wrapper"><%= t('refinery.home.actions.events') %></span></a>
         </div>
       <% end %>
     </section>
@@ -39,9 +39,8 @@
           <% end %>
         </div>
         <div class="content-column-two">
-
           <h2><%= t('refinery.home.email_sign_up.sign_up') %></h2>
-          <a class="link-button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('refinery.home.email_sign_up.join') %></a>
+          <a class="button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('refinery.home.email_sign_up.join') %></a>
         </div>
       </div>
     </div>

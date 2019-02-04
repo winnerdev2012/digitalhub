@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
+      "folder_exclude_patterns": ["tmp", "node_modules", "storage", "public/packs", "public/system"]
 		}
 	]
 }

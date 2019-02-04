@@ -1,0 +1,22 @@
+<% content_for :javascript_packs do %>
+  <%= javascript_pack_tag 'stories' %>
+<% end %>
+<div class="StoriesPage">
+  <div class="banner">
+    <div class="container">
+      <div class="content-column banner-content">
+        <h1>The Commons</h1>
+      </div>
+    </div>
+  </div>
+
+  <section class="content">
+    <div class="container">
+      <div class="content-column">
+        <h2>In the year 2050...</h2>
+        <p>Share your vision for the future. Write, talk, or vlog to us and see how others in the region are responding.</p>
+        <%= render 'form', story: @story %>
+      </div>
+    </div>
+  </section>
+</div>

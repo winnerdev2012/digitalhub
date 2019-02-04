@@ -9,12 +9,14 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-5547782-36');
       </script>
     <% end %>
     <%= render "/refinery/head" %>
     <%= render "/refinery/javascripts" %>
+    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'polyfill' %>
+    <%= yield :javascript_packs %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body id="<%= canonical_id @page %>" class="<%= view_template_class @page %>">

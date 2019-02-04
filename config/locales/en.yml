@@ -61,7 +61,7 @@ en:
       actions:
         learn: "Find out"
         engage: "Weigh in"
-        events: "Turn up"
+        events: "Events"
       interruption:
         next_event: "Next event"
         event_at: "at" # date /at/ time
@@ -77,3 +77,10 @@ en:
       search:
         show:
           event_results_for: "Event Results for '%{what}'"
+  activerecord:
+    attributes:
+      story:
+        questions:
+          question1: "Question 1"
+          question2: "Question 2"
+          question3: "Question 3"

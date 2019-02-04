@@ -1,0 +1,30 @@
+cs:
+  refinery:
+    plugins:
+      stories:
+        title: Stories
+    stories:
+      admin:
+        stories:
+          actions:
+            create_new: Přidat Story
+            reorder: Řadit Stories
+            reorder_done: Konec řazení Stories
+          records:
+            title: Stories
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Stories. Zvolte "Přidat Story" pro přidání prvního story.
+          story:
+            view_live_html: Zobrazit náhled story<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit story
+            delete: Smazat story
+      stories:
+        show:
+          other: Další Stories
+  activerecord:
+    attributes:
+      'refinery/stories/story':
+        email: Email
+        question: Question
+        response: Response
+        display: Display

@@ -1,0 +1,152 @@
+.StoriesPage {
+
+  input[type="submit"] {
+    background: $color_bg-lightest;
+    color: $color_green-dark;
+    border: 1px solid $color_green-dark;
+  }
+
+  a.button { text-decoration: none; }
+
+  .audio-response, .video-response {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .audio-buttons {
+    display: inline-block;
+  }
+
+  .banner {
+    background: $color_bg-dark;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:center;
+    @include background-2x('story-tool-banner', 'png', contain, contain, center, no-repeat );
+    @include media(small) {
+      background-position: bottom 3rem right;
+    }
+  }
+
+  .banner-content {
+    margin-top: 7rem;
+    margin-bottom: 7.5rem;
+  }
+
+  .content-column {
+    & + .content-column { margin-top: 60px; }
+  }
+
+  .no-content-message {
+    margin-top: 2rem;
+
+    color: $color_font-grey;
+    font-style: italic;
+  }
+
+  .or {
+    display: inline-block;
+    vertical-align: center;
+    padding: 1.5em 1em;
+  }
+
+  .story {
+    padding: 20px 0;
+
+    & + .story { border-top: 1px solid $color_bg-light; }
+  }
+
+  .story-meta {
+    margin-bottom: $font_size-base;
+
+    color: $color_green-dark;
+    font-style: italic;
+    font-size: $font_size-xsmall;
+  }
+
+  .quote-mark {
+    display: inline-block;
+    top: 8px;
+    height: 0;
+
+    color: $color_green-dark;
+    font-size: $font_size-large;
+    font-style: italic;
+  }
+
+  .video-info {
+    color: $color_font-grey;
+    font-size: $font_size-xsmall;
+  }
+
+  .session-info {
+    margin-left: 3.2rem;
+  }
+
+  .session-info.recording {
+    animation: blinking 1s infinite;
+    color: $color_red-medium;
+  }
+
+  .button-wrapper { @extend ._clear; }
+
+  .left-buttons { float: left; }
+  .right-buttons { float: right; }
+
+
+  .story-form-wrapper {
+    h4 {
+      color: $color_font-grey;
+      font-weight: 400;
+    }
+
+    .question {
+      input[type="radio"] {
+            display:none;
+      }
+
+      label {
+              display:inline-block;
+              background-color: $color_bg-grey;
+              padding: 10px 20px;
+              font-size:16px;
+              cursor: pointer;
+      }
+
+      input[type="radio"]:checked + label {
+              background-color: $color_green-medium;
+      }
+    }
+
+    .form-break {
+      display: flex;
+
+      margin: $font_size-base 0;
+
+      color: $color_font-grey;
+      font-size: $font_size-small;
+
+      &:before, &:after {
+        content: '';
+
+        flex: 1 1;
+        position: relative;
+        display: inline-block;
+
+        height: 1px;
+        width: auto;
+        margin: auto $font_size-base;
+
+        background: $color_bg-dark;
+      }
+    }
+
+    .text-response {
+      textarea {
+        width: 100%;
+        min-height: 200px;
+      }
+    }
+  }
+
+}

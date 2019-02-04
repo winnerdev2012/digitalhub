@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      stories:
+        title: Stories
+    stories:
+      admin:
+        stories:
+          actions:
+            create_new: Nieuwe Story toevoegen
+            reorder: De volgorde van de Stories wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Story-volgorde
+          records:
+            title: Stories
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Stories. Druk op 'Nieuwe Story toevoegen' om de eerste toe te voegen.
+          story:
+            view_live_html: Deze story op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze story
+            delete: Deze story definitief verwijderen
+      stories:
+        show:
+          other: Andere Stories
+  activerecord:
+    attributes:
+      'refinery/stories/story':
+        email: Email
+        question: Question
+        response: Response
+        display: Display

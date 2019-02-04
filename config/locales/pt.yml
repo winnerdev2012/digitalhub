@@ -1,6 +1,12 @@
 ---
 pt:
   activerecord:
+    attributes:
+      story:
+        questions:
+          question1: "Question 1"
+          question2: "Question 2"
+          question3: "Question 3"
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

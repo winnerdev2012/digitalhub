@@ -1,0 +1,30 @@
+it:
+  refinery:
+    plugins:
+      stories:
+        title: Stories
+    stories:
+      admin:
+        stories:
+          actions:
+            create_new: Aggiungi Nuovo Story
+            reorder: Riordina Stories
+            reorder_done: Termina il Riordino di Stories
+          records:
+            title: Stories
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Stories. Clicca "Aggiungi Nuovo Story" per aggiungere il tuo primo story.
+          story:
+            view_live_html: Guarda live questo story <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo story
+            delete: Rimuovi per sempre questo story
+      stories:
+        show:
+          other: Altri Stories
+  activerecord:
+    attributes:
+      'refinery/stories/story':
+        email: Email
+        question: Question
+        response: Response
+        display: Display

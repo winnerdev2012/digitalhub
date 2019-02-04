@@ -1,0 +1,30 @@
+ru:
+  refinery:
+    plugins:
+      stories:
+        title: Stories
+    stories:
+      admin:
+        stories:
+          actions:
+            create_new: Добавить Story
+            reorder: Изменить порядок Stories
+            reorder_done: Закончить изменять порядок Stories
+          records:
+            title: Stories
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Stories" не найдено. Нажмите "Добавить Story" чтобы создать story.
+          story:
+            view_live_html: Просмотреть story вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать story
+            delete: Удалить story навсегда
+      stories:
+        show:
+          other: Другие Stories
+  activerecord:
+    attributes:
+      'refinery/stories/story':
+        email: Email
+        question: Question
+        response: Response
+        display: Display
