@@ -47,9 +47,8 @@
           <button type="button" id="recordButton" class="button">Record a Voice Memo</button>
           <button type="button" id="stopButton" class="button">Stop Recording</button>
         </div>
+        <%= form.file_field :audio, accept: "audio/*", 'data-direct-upload-url': main_app.rails_direct_uploads_url, class: "actions" %>
       </div>
-
-      <%= form.file_field :audio, accept: "audio/*", 'data-direct-upload-url': main_app.rails_direct_uploads_url, class: "actions" %>
     </div>
 
 
