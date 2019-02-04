@@ -13,6 +13,10 @@
     vertical-align: top;
   }
 
+  .audio-buttons {
+    display: inline-block;
+  }
+
   .banner {
     background: $color_bg-dark;
     background-repeat: no-repeat;
@@ -73,6 +77,10 @@
   .video-info {
     color: $color_font-grey;
     font-size: $font_size-xsmall;
+  }
+
+  .session-info {
+    margin-left: 3.2rem;
   }
 
   .session-info.recording {
