@@ -1,0 +1,17 @@
+.FindOut {
+  .banner {
+    background: $color_bg-dark;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:center;
+    @include background-2x('find-out-banner', 'png', contain, contain, center, no-repeat );
+    @include media(small) {
+      background-position: bottom 3rem right;
+    }
+  }
+
+  .banner-content {
+    margin-top: 7rem;
+    margin-bottom: 7.5rem;
+  }
+}
