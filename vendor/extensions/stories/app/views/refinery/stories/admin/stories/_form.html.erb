@@ -11,8 +11,15 @@
   </div>
 
   <div class='field'>
-    <%= f.label :question -%>
-    <%= f.number_field :question -%>
+    <h3>Question</h3>
+    <%= f.label :question, value: 'question1' do %>
+      <%= f.radio_button(:question, 'question1') %>
+      Congratulations! You get to ask someone in the year 2050 about what life is like! What do you want to know?
+    <% end %>
+    <%= f.label :question, value: 'question2' do %>
+      <%= f.radio_button(:question, 'question2') %>
+      In your dream future, what do you want life to be like for children when it comes to housing?
+    <% end %>
   </div>
 
   <div class='field'>
@@ -24,7 +31,7 @@
 
   <div class='field'>
     <%= f.label :display -%>
-    <%= f.check_box :display, :checked => @story[:display] -%>
+    <%= f.check_box :display, :checked => @story[:display] %>
   </div>
 
   <%= render '/refinery/admin/form_actions', f: f,
