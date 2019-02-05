@@ -1,3 +1,4 @@
+require 'pry-byebug'
 module Refinery
   module Stories
     class Story < Refinery::Core::BaseModel
@@ -5,13 +6,14 @@ module Refinery
       has_one_attached :video
       has_one_attached :audio
       validate :has_attached_story
+      before_validation :generate_title
       after_save :create_transcript
-      enum question: [:question1, :question2, :question3]
+      enum question: [:question1, :question2]
 
       extend Mobility
       translates :response
 
-      validates :name, :presence => true, :uniqueness => true
+      validates :title, :presence => true, :uniqueness => true
 
       # To enable admin searching, add acts_as_indexed on searchable fields, for example:
       #
@@ -30,6 +32,10 @@ module Refinery
         elsif response.blank? && audio.attached?
           TranscriptionWorker.perform_async(id)
         end
+      end
+
+      def generate_title
+        self.title = submitter_name + ' | ' + question
       end
     end
   end

@@ -56,7 +56,7 @@ module Refinery
     private
 
       def story_params
-        params.require(:story).permit(:name, :question, :video, :response, :audio)
+        params.require(:story).permit(:title, :question, :video, :response, :audio, :submitter_name)
       end
 
     protected

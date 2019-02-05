@@ -23,12 +23,6 @@ module Refinery
         present(@page)
       end
 
-    private
-
-      def story_params
-        params.require(:story).permit(:name, :question, :response, :display)
-      end
-
     protected
 
       def find_all_events

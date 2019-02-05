@@ -1,6 +1,6 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(story) -%>">
   <span class='title'>
-    <%= story.name %>
+    <%= story.title %>
   </span>
 
   <span class='preview'></span>
@@ -10,6 +10,6 @@
     <%= action_icon(:edit,    refinery.edit_stories_admin_story_path(story), t('.edit') ) %>
     <%= action_icon(:delete,  refinery.stories_admin_story_path(story), t('.delete'),
       { class: "cancel confirm-delete",
-        data: {confirm: t('message',  scope: 'refinery.admin.delete', title: story.name)}}  ) %>
+        data: {confirm: t('message',  scope: 'refinery.admin.delete', title: story.title)}}  ) %>
   </span>
 </li>
