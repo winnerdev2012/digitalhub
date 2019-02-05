@@ -4,13 +4,13 @@ module Refinery
       class StoriesController < ::Refinery::AdminController
 
         crudify :'refinery/stories/story',
-                :title_attribute => 'name'
+                :title_attribute => 'title'
 
         private
 
         # Only allow a trusted parameter "white list" through.
         def story_params
-          params.require(:story).permit(:name, :question, :response, :display)
+          params.require(:story).permit(:title, :question, :response, :display, :submitter_name)
         end
       end
     end
