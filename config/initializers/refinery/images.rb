@@ -36,7 +36,7 @@ Refinery::Images.configure do |config|
   # This includes all dragonfly config for Dragonfly v 1.1.1
 
   config.dragonfly_name = :refinery_images
-  # config.dragonfly_verify_urls = true
+  config.dragonfly_verify_urls = false
   config.dragonfly_secret = Rails.application.credentials.secret_key_base
   # config.dragonfly_url_host = ""
   # config.dragonfly_datastore_root_path = "/Users/ihill/Developer/digitalhub/public/system/refinery/images"
