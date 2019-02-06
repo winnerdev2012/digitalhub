@@ -1,4 +1,3 @@
-require 'pry-byebug'
 module Refinery
   module Stories
     class Story < Refinery::Core::BaseModel
