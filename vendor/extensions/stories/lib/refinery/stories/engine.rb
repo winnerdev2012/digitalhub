@@ -11,8 +11,12 @@ module Refinery
           plugin.name = "stories"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.stories_admin_stories_path }
           plugin.pathname = root
-          
+
         end
+      end
+
+      initializer "refinery_stories.factories", after: "factory_bot.set_factory_paths" do
+        FactoryBot.definition_file_paths << File.expand_path('../../../../spec/support/factories/refinery', __FILE__) if defined?(FactoryBot)
       end
 
       config.after_initialize do
