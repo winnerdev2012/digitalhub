@@ -7,6 +7,8 @@ You will need to procure `master.key` from a trusted user and place it in `confi
 
 When testing the audio upload feature locally you will need to Disable Cross Origin Restrictions in your web browser. In Safari you can do this from the Develop menu.
 
+You should also set CORS for your Google bucket by doing `gsutil cors set google_cloud_storage_cors.json gs://[bucket]`
+
 You will need to setup Sidekiq on your server for running background jobs. To do this on an Ubuntu server you should first install redis with `sudo apt-get install redis-server`.
 
 You will also need to install ffmpeg for the AudioExtraction `sudo apt-get install ffmpeg`

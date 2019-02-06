@@ -1,0 +1,20 @@
+[
+  {
+    "origin": ["http://localhost:3000"],
+    "responseHeader": ["Content-Type", "Content-Md5" ],
+    "method": ["*"],
+    "maxAgeSeconds": 3600
+  },
+  {
+    "origin": ["https://staging.metrocommon.mapc.org"],
+    "responseHeader": ["Content-Type", "Content-Md5" ],
+    "method": ["*"],
+    "maxAgeSeconds": 3600
+  },
+  {
+    "origin": ["https://metrocommon.mapc.org"],
+    "responseHeader": ["Content-Type", "Content-Md5" ],
+    "method": ["*"],
+    "maxAgeSeconds": 3600
+  }
+]
