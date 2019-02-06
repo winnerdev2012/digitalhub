@@ -13,8 +13,8 @@ Refinery::Resources.configure do |config|
   # Refer to config/initializers/refinery/dragonfly.rb for the full list of dragonfly configurations which can be used.
   # This includes all dragonfly config for Dragonfly v 1.1.1
 
-  # config.dragonfly_verify_urls     = true
-  # config.dragonfly_secret          = "90a0f4e12436fcacb77a4922c78c6d868e916316d2acd643"
+  config.dragonfly_verify_urls     = false
+  config.dragonfly_secret          = Rails.application.credentials.secret_key_base
   # config.dragonfly_url_host        = ""
   # config.dragonfly_datastore_root_path = "/Users/ihill/Developer/digitalhub/public/system/refinery/resources"
   # config.dragonfly_url_format       = "/system/refinery/resources/:job/:basename.:ext"
