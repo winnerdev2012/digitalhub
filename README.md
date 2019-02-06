@@ -9,6 +9,8 @@ When testing the audio upload feature locally you will need to Disable Cross Ori
 
 You will need to setup Sidekiq on your server for running background jobs. To do this on an Ubuntu server you should first install redis with `sudo apt-get install redis-server`.
 
+You will also need to install ffmpeg for the AudioExtraction `sudo apt-get install ffmpeg`
+
 When testing locally you will want to run sidekiq in addition to `bundle exec rails s` by running `bundle exec sidekiq` to enable the Audio and Video transcription tasks.
 
 On production you will want to setup a service to run Sidekiq in `/lib/systemd/system/sidekiq-digitalhub.service`

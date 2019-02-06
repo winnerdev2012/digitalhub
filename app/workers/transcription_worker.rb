@@ -3,7 +3,7 @@ class TranscriptionWorker
   include Sidekiq::Worker
 
   def perform(story_id)
-    story = Story.find(story_id)
+    story = Refinery::Stories::Story.find(story_id)
     speech = Google::Cloud::Speech.new(credentials: Rails.application.credentials.gcs)
     config = { encoding:          :LINEAR16,
              language_code:     "en-US"   }
