@@ -1,14 +1,17 @@
 .EventIndex {
-  .splash {
-    background-color: $color_bg-dark;
-    position: relative;
-    p {
-      color: $color_font-light;
-      margin: 0;
+  .banner {
+    background: $color_bg-dark;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position:center;
+    @include background-2x('events-banner', 'png', contain, contain, center, no-repeat );
+    @include media(small) {
+      background-position: bottom 3rem right;
     }
-    .banner-area {
-      margin-top: 8rem;
-      margin-bottom: 8rem;
-    }
+  }
+
+  .banner-content {
+    margin-top: 7rem;
+    margin-bottom: 7.5rem;
   }
 }

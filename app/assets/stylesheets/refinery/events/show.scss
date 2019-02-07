@@ -1,7 +1,18 @@
 .EventShow {
+  .banner {
+    background: $color_bg-dark;
+    @include background-2x('event-show-banner', 'png', auto, auto, center, no-repeat );
+  }
+
+  .banner-content {
+    margin-top: 7rem;
+    margin-bottom: 7.5rem;
+  }
+
   .event-section {
     margin-bottom: 2rem;
   }
+
   .event-time,
   .event-location {
     margin-bottom: 1.5rem;
@@ -9,6 +20,7 @@
       margin: 0;
     }
   }
+
   .event-registration a {
     display: block;
     width: max-content;

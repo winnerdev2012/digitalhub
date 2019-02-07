@@ -12,6 +12,10 @@
   <div class="container">
     <div class="content-column">
 
+      <% if DateTime.now > @event.start %>
+        <h2>Past Event Details</h2>
+      <% end %>
+
       <div class="event-time">
         <h2 class="hidden-text"><%= t('refinery.events.events.show.time') %></h2>
         <% if @event.end.day > @event.start.day %>
@@ -30,13 +34,15 @@
         <p><%= @event.city %>, <%= @event.state %> <%= @event.zipcode %></p>
       </div>
 
-      <div class="event-section event-registration">
-        <h2 class="hidden-text"><%= t('refinery.events.events.show.registration') %></h2>
-        <a href="<%=@event.registration_link%>" target="_blank">
-          <span><%= t('refinery.events.events.show.register') %></span>
-          <span class="hidden-text"><%= t('refinery.events.events.show.for_this_event') %></span>
-        </a>
-      </div>
+      <% if DateTime.now < @event.start %>
+        <div class="event-section event-registration">
+          <h2 class="hidden-text"><%= t('refinery.events.events.show.registration') %></h2>
+          <a href="<%=@event.registration_link%>" target="_blank">
+            <span><%= t('refinery.events.events.show.register') %></span>
+            <span class="hidden-text"><%= t('refinery.events.events.show.for_this_event') %></span>
+          </a>
+        </div>
+      <% end %>
 
       <div class="event-section event-description">
         <h2><%= t('refinery.events.events.show.description') %></h2>
