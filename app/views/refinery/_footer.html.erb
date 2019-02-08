@@ -20,10 +20,10 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-mapc-brand">
+    <%= link_to 'https://www.mapc.org/', class: 'footer-mapc-brand' do %>
       <%= image_tag("mapc_logo.svg", class: "logo", alt: t('logo_alt')) %>
       <div class="mapc"><%= t('mapc') %></div>
-    </div>
+    <% end %>
     <div class="footer-contact-information">
       <span>60 Temple Pl., Boston, MA 02111</span>
       <span><a href="tel:16179330700">617 - 933 - 0700</a></span>
