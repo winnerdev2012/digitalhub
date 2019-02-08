@@ -1,7 +1,7 @@
 .EventShow {
   .banner {
     background: $color_bg-dark;
-    @include background-2x('event-show-banner', 'png', auto, auto, center, no-repeat );
+    @include background-2x('event-show-banner', 'jpg', auto, auto, center, no-repeat );
   }
 
   .banner-content {
