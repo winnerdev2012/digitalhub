@@ -1,4 +1,3 @@
-require 'pry-byebug'
 module Refinery
   module Events
     class EventsController < ::ApplicationController
