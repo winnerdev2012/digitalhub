@@ -34,6 +34,7 @@ module Refinery
       end
 
       def generate_title
+        return nil if question.blank? || submitter_name.blank?
         self.title = submitter_name + ' | ' + question
       end
     end
