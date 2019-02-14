@@ -4,9 +4,15 @@
     h2 {
       margin-top: 0;
     }
+
     p:last-child {
       margin-bottom: 0;
     }
+
+    img {
+      width: 100%;
+    }
+
     .phase {
       border-left: 2px dotted $color_green-medium;
       padding-left: 1.5rem;
@@ -24,6 +30,7 @@
         }
 
       }
+
       &:nth-child(n+2) {
         &:before {
           content: '';
@@ -35,6 +42,7 @@
           background: image-url('empty_downwards_triangle.svg');
         }
       }
+
       &:last-child {
         margin-bottom: 1rem;
       }
