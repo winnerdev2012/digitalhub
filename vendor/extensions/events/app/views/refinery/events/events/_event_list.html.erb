@@ -20,6 +20,11 @@
               <span class="hidden-text"><%= event.start.strftime("%B %-d, %Y at %l:%M%p") %></span>
               <span aria-hidden="true"><%= event.start.strftime("%b %-d - %l:%M%P") %></span>
             </div>
+            <div class="event-end">
+              <span class="hidden-text"><%= t('refinery.events.on_date') %></span>
+              <span class="hidden-text"><%= event.end.strftime("%B %-d, %Y at %l:%M%p") %></span>
+              <span aria-hidden="true"><%= event.end.strftime("%b %-d - %l:%M%P") %></span>
+            </div>
           </div>
         </div>
       <% end %>
