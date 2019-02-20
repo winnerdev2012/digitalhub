@@ -9,4 +9,13 @@
   <% else %>
     Sorry, there was an error displaying the content.
   <% end %>
-</div>
+  <% if (media.video.attached? || media.audio.attached?) && media.response.present? %>
+    <div class="transcript">
+      <p class="accordion-title">Transcript</p>
+      <p class="accordion-content">
+        <span class="quote-mark">“</span>
+        <%= media.response %>
+      </p>
+    </div>
+  <% end %>
+  </div>
