@@ -77,8 +77,8 @@
         width: 40%;
       }
 
-      .event-city, .event-start {
-        width: 50%;
+      .event-city, .event-start, .event-end {
+        margin-right: 0.5rem;
         span {
           font-size: $font_size-small;
         }
@@ -92,14 +92,15 @@
             transform: none;
           }
         }
-        .event-title, .event-city, .event-start {
+        .event-title, .event-city, .event-start, .event-end {
           width: 100%;
         }
         .event-type {
           display: none;
         }
         .event-ordering-flex {
-          flex-direction: column-reverse;
+          flex-direction: column;
+          width: 100%;
           & > * {
             margin-top: 0.5rem;
           }
