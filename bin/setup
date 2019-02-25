@@ -17,6 +17,14 @@ chdir APP_ROOT do
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
 
+if RUBY_PLATFORM =~ /darwin/
+  unless system('brew cask ls --versions chromedriver')
+    system('brew cask install chromedriver')
+  end
+else
+  puts 'You will need to install Chromedriver before using the automated test suite.'
+end
+
   # Install JavaScript dependencies if using Yarn
   # system('bin/yarn')
 
