@@ -1,13 +1,13 @@
 require "rails_helper"
 
 RSpec.describe "Front Page", :type => :system do
-  before do
-    driven_by(:rack_test)
-  end
+  context "changing languages" do
 
-  it "enables me to change languages" do
-    visit "/"
-    binding.pry
-    expect(page).to have_text("MetroNext")
+    it "enables me to view the page in portugese", js: true do
+      create(:page)
+      visit "/"
+      expect(page).to have_text("MetroNext")
+    end
+
   end
 end
