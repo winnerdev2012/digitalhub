@@ -19,11 +19,12 @@
       <div class="event-time">
         <h2 class="hidden-text"><%= t('refinery.events.events.show.time') %></h2>
         <% if @event.end.day > @event.start.day %>
-          <p><%=@event.start.strftime("%A, %B %-d, %Y at %-l:%M%P")%> to</p>
-          <p><%=@event.start.strftime("%A, %B %-d, %Y at %-l:%M%P")%></p>
+          <p><%= local_time(@event.start, '%A, %B %-d, %Y at %-l:%M%P') %> to</p>
+          <p><%= local_time(@event.end, '%A, %B %-d, %Y at %-l:%M%P') %></p>
+
         <% else %>
-          <p><%=@event.start.strftime("%A, %B %-d, %Y")%></p>
-          <p><%=@event.start.strftime("%-l:%M%P")%> - <%=@event.end.strftime("%-l:%M%P")%></p>
+          <p><%= local_time(@event.start, '%A, %B %-d, %Y') %></p>
+          <p><%= local_time(@event.start, '%-l:%M%P') %> - <%= local_time(@event.end, '%-l:%M%P') %></p>
         <% end %>
       </div>
 
