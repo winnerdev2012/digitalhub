@@ -1,8 +1,14 @@
 <%= csrf_meta_tag %>
 <!DOCTYPE html>
+
 <%= render "/refinery/html_tag" %>
   <% site_bar = render('/refinery/site_bar', :head => true) -%>
   <head>
+    <meta property="og:title" content="MetroCommon 2050" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="<%= image_url("mapc-social-sharing-image.png") %>" />
+    <meta property="og:description" content="Greater Boston’s next regional plan. Led by the Metropolitan Area Planning Council (MAPC)." />
+
     <% if Rails.env.production? %>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5547782-36"></script>
       <script>
