@@ -54,6 +54,7 @@ group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
   gem 'capybara-screenshot'
+  gem 'axe-matchers'
 end
 
 # Flipper for feature flags
