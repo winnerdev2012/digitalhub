@@ -21,8 +21,11 @@ if RUBY_PLATFORM =~ /darwin/
   unless system('brew cask ls --versions chromedriver')
     system('brew cask install chromedriver')
   end
+  unless system('brew ls --versions ffmpeg')
+    system('brew install ffmpeg')
+  end
 else
-  puts 'You will need to install Chromedriver before using the automated test suite.'
+  puts 'You will need to install Chromedriver and ffmpeg before using the automated test suite.'
 end
 
   # Install JavaScript dependencies if using Yarn
