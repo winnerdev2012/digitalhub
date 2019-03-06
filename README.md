@@ -68,6 +68,14 @@ SyslogIdentifier=sidekiq-digitalhub
 WantedBy=multi-user.target
 ```
 
+## Testing
+System tests can be run on multiple platforms via BrowserStack by using the BROWSER variable.
+
+`BROWSER='iphone' bundle exec rspec`
+
+Valid options include: internet_explorer, chrome, android. Unfortunately Safari using devices do not seem to be compatible with the localtesting setup.
+
+By default rack-test and headless_chrome will be used to run system tests in local development.
 ## CMS Instructions
 
 ### Home Page
