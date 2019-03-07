@@ -7,9 +7,9 @@ RSpec.describe "Front Page", :type => :system do
     expect(page).to have_text("Welcome to MetroCommon 2050!")
   end
 
-  it "is accessible", js: true do
+  it "footer is accessible", js: true do
     create(:page)
     visit "/"
-    expect(page).to be_accessible
+    expect(page).to be_accessible.within '.footer'
   end
 end
