@@ -1,0 +1,27 @@
+.styled-box {
+    $self: &;
+
+    &__content {
+        &:after {
+
+        }
+    }
+
+
+    &:hover,
+    &--half {
+        #{$self}__content {
+            &:after {
+
+            }
+        }
+    }
+
+    &--extended {
+        #{$self}__content {
+            &:after {
+
+            }
+        }
+    }
+}
