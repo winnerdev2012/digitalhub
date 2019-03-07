@@ -62,6 +62,10 @@ a {
   }
 }
 
+address {
+  font-style: normal;
+}
+
 button {
   &.focus--keyboard {
     outline-style: solid;
@@ -301,11 +305,10 @@ video {
 .button {
   display: inline-block;
   cursor: pointer;
-  margin: 1rem 0;
   width: max-content;
   background-color: $color_green-medium;
   color: $color_font-light;
-  padding: 0.5em 1em;
+  padding: 0.5em 2.5em;
   border: 0;
   &:hover {
       background-color: $color_green-light;

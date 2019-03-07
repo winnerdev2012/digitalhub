@@ -1,4 +1,4 @@
-footer {
+.footer {
   display: flex;
   flex-wrap: wrap;
   background-color: $color_bg-dark;
@@ -16,53 +16,45 @@ footer {
     }
   }
 
+  p {
+    color: $color_font-light;
+  }
 
   ul {
-    margin: 1rem 0 0 0;
-    li:not(:last-child) {
-      margin-bottom: 0.3em;
+    li {
+      margin-bottom: 0.2rem;
     }
   }
 
-  .link-section {
-    margin: 1rem 2rem 1rem 0;
+  .footer__row {
+     display: flex;
+     flex-basis: 100%;
+     justify-content: space-between;
+     padding-bottom: 1rem;
+     @include media(small) {
+       display: block;
+     }
   }
 
-  .link-category-heading {
-    font-size: $font_size-medium;
-  }
-
-  .footer-top {
-    display: flex;
-    flex-basis: 100%;
+  .footer__column {
+    flex-basis: 22%;
+    .button {
+      text-transform: uppercase;
+      font-family: "CalibreWeb-Semibold";
+    }
+    h2 {
+      color: $color_font-light;
+    }
     @include media(small) {
-      display: block;
+      margin-bottom: 1rem;
     }
   }
 
-  .footer-bottom {
-    padding-top: 1rem;
-    display: flex;
-    justify-content: space-between;
-    flex-basis: 100%;
-    border-top: solid white 1px;
-    align-items: center;
-    @include media(medium) {
-      display: block;
-      & > *:not(:last-child) {
-        margin-bottom: 0.5rem;
-      }
+  .footer__column--social {
+    font-size: $font_size-medium;
+    a {
+      padding: 0 1rem 0 0;
     }
-  }
-
-  .footer-about-links, .resource-links {
-    flex-basis: 10em;
-  }
-
-  .other-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
 
   .footer-mapc-brand {
@@ -79,40 +71,5 @@ footer {
         margin-bottom: 0.5rem;
       }
     }
-  }
-
-  .footer-contact-information {
-    & > *:not(:last-child) {
-      border-right: 1px solid white;
-      padding-right: 0.5rem;
-    }
-    & > *:not(:first-child) {
-      padding-left: 0.5rem;
-    }
-    @include media(medium) {
-      & > * {
-        display: block;
-      }
-      & > *:not(:last-child) {
-        border-right: none;
-        margin-bottom: 0.5rem;
-        padding-right: 0;
-      }
-      & > *:not(:first-child) {
-        padding-left: 0;
-      }
-    }
-  }
-
-  .footer-right {
-    a {
-      margin: 0 0.4em;
-      font-size: 16px;
-    }
-  }
-
-  .link-category-heading {
-    font-size: 16px;
-    color: $color_font-light;
   }
 }
