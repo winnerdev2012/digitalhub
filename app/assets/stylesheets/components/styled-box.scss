@@ -8,7 +8,11 @@
     width: 300px;
     height: 300px;
 
-    background: $v3-color_green-lightest;
+    color: $color_font-light;
+
+    background: $v3-color_green-lightest image-url(attr(data-image));
+    background-size: cover;
+    background-position: center center;
     cursor: pointer;
     overflow: hidden;
 
@@ -27,8 +31,8 @@
             width: 150%;
             height: 150%;
 
-            background: $v3-color_green-light;
-            opacity: .5;
+            background: $color_green-light;
+            opacity: .4;
 
             transform: rotate(-18deg);
             transform-origin: 100% 100%;
@@ -36,26 +40,31 @@
         }
     }
 
-    &__block-title {
+    &__title {
         display: inline-block;
         top: 2rem;
         z-index: 2;
 
-        min-width: 50%;
         padding: .25rem .75rem;
-        vertical-align: center;
 
-        color: $color_green-dark;
         font-family: $font_family-secondary;
         letter-spacing: 1px;
         line-height: 1.36rem;
 
-        background: $color_bg-light;
+        background: none;
         border: none;
 
         opacity: 0;
         text-transform: uppercase;
         transition: $title_trans;
+
+        &--block {
+            min-width: 50%;
+
+            color: $color_green-dark;
+
+            background: $color_bg-light;
+        }
     }
 
     &--half,
@@ -67,7 +76,7 @@
             }
         }
 
-        #{$self}__block-title {
+        #{$self}__title {
             top: 0;
 
             opacity: 1;
