@@ -31,8 +31,8 @@
             width: 150%;
             height: 150%;
 
-            background: $color_green-light;
-            opacity: .4;
+            background: $v3-color_green-light;
+            opacity: .5;
 
             transform: rotate(-18deg);
             transform-origin: 100% 100%;
@@ -61,7 +61,7 @@
         &--block {
             min-width: 50%;
 
-            color: $color_green-dark;
+            color: $v3-color_green-dark;
 
             background: $color_bg-light;
         }
