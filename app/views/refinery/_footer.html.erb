@@ -1,39 +1,56 @@
-<div class="container">
-  <div class="footer-top">
-    <div class="link-section footer-about-links">
-      <span class="link-category-heading"><%= t('footer.about_mapc') %></span>
-      <ul>
-        <li><a href="https://www.mapc.org/about-mapc/staff/"><%= t('footer.staff') %></a></li>
-        <li><a href="https://www.mapc.org/get-involved/metrofuture-our-regional-plan/">MetroFuture</a></li>
-      </ul>
-    </div>
-    <div class="link-section other-links">
-      <div class="top-links">
-        <span class="link-category-heading"><%= t('footer.receive_updates') %></span>
-        <div>
-          <a class="button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('footer.join_our_email_list') %></a>
-        </div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__row">
+      <div class="footer__column">
+        <h2><%= t('footer.about_mapc') %></h2>
+        <p>The Metropolitan Area Planning Council (MAPC) is the regional planning agency serving the people who live and work in the 101 cities and towns of Metropolitan Boston.</p>
       </div>
-      <div class="bottom-links">
-        <a href="<%= (Mobility.locale != Refinery::I18n.config.default_locale ? "/#{Mobility.locale.to_s}" : "") %>/privacy-policy"><%= t('footer.privacy_policy') %></a>
+      <div class="footer__column">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/process-details">Process Details</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="<%= (Mobility.locale != Refinery::I18n.config.default_locale ? "/#{Mobility.locale.to_s}" : "") %>/privacy-policy"><%= t('footer.privacy_policy') %></a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h2>Explore</h2>
+        <ul>
+          <li><a rel="noopener noreferrer" target="_blank" href="https://www.mapc.org/about-mapc/staff/">Staff</a></li>
+          <li><a rel="noopener noreferrer" target="_blank" href="https://www.mapc.org/get-involved/metrofuture-our-regional-plan/">MetroFuture</a></li>
+          <li><a rel="noopener noreferrer" target="_blank" href="https://datacommon.mapc.org/">DataCommon</a></li>
+          <li><a rel="noopener noreferrer" target="_blank" href="https://www.massbuilds.com/">MassBuilds</a></li>
+          <li><a rel="noopener noreferrer" target="_blank" href="https://trailmap.mapc.org/">Trailmap</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h2>Contact Us</h2>
+        <address>
+          60 Temple Pl.<br>
+          Boston MA 02111<br>
+          <a href="tel:6179330700">617-933-0700</a>
+        </address>
+        <a href="/">metrocommon.mapc.org</a>
+      </div>
+    </div>
+    <div class="footer__row">
+      <div class="footer__column">
+        <%= link_to 'https://www.mapc.org/', class: 'footer-mapc-brand' do %>
+          <%= image_tag("mapc_logo.svg", class: "logo", alt: t('logo_alt')) %>
+        <% end %>
+      </div>
+      <div class="footer__column">
+        <a class="button" rel="noopener noreferrer" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank">Receive Updates</a>
+      </div>
+      <div class="footer__column">
+      </div>
+      <div class="footer__column footer__column--social">
+        <a aria-label="MAPC Twitter Page" href="https://twitter.com/mapcmetroboston"><%= fa_icon "twitter" %></a>
+        <a aria-label="MAPC Instagram Page" href="https://www.instagram.com/mapcmetroboston"><%= fa_icon "instagram" %></a>
+        <a aria-label="MAPC Facebook Page" href="https://www.facebook.com/mapcmetroboston"><%= fa_icon "facebook" %></a>
+        <a aria-label="MAPC LinkedIn Page" href="https://www.linkedin.com/company/metropolitan-area-planning-council/"><%= fa_icon "linkedin" %></a>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <%= link_to 'https://www.mapc.org/', class: 'footer-mapc-brand' do %>
-      <%= image_tag("mapc_logo.svg", class: "logo", alt: t('logo_alt')) %>
-      <div class="mapc"><%= t('mapc') %></div>
-    <% end %>
-    <div class="footer-contact-information">
-      <span>60 Temple Pl., Boston, MA 02111</span>
-      <span><a href="tel:16179330700">617 - 933 - 0700</a></span>
-      <span><a href="mailto:metrocommon@mapc.org">metrocommon@mapc.org</a></span>
-    </div>
-    <div class="footer-right">
-      <%= t('footer.follow_mapc') %>
-      <a href="https://twitter.com/mapcmetroboston"><%= fa_icon "twitter" %></a>
-      <a href="https://www.instagram.com/mapcmetroboston"><%= fa_icon "instagram" %></a>
-      <a href="https://www.facebook.com/mapcmetroboston"><%= fa_icon "facebook" %></a>
-    </div>
-  </div>
-</div>
+</footer>
