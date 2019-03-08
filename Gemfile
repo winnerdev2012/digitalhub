@@ -56,6 +56,7 @@ group :test do
   gem 'capybara-screenshot'
   gem 'browserstack-local'
   gem 'parallel'
+  gem 'axe-matchers'
 end
 
 # Flipper for feature flags
