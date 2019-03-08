@@ -42,9 +42,15 @@
       text-transform: uppercase;
       font-family: "CalibreWeb-Semibold";
     }
+
     h2 {
       color: $color_font-light;
     }
+
+    address {
+      margin-bottom: 1rem;
+    }
+
     @include media(small) {
       margin-bottom: 1rem;
     }
@@ -65,6 +71,7 @@
       height: 36px;
       margin-right: 1em;
     }
+
     @include media(medium) {
       display: block;
       & > *:not(:last-child) {
