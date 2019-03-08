@@ -18,9 +18,10 @@ RUN set -ex \
       build-base \
       libxml2-dev \
       libxslt-dev \
+      libc6-compat \
       linux-headers \
       postgresql-dev \
     ; \
-    bundle install
+    BUNDLE_FORCE_RUBY_PLATFORM=1 bundle install --jobs $(nproc)
 
 CMD rm -f tmp/pids/server.pid && rails server -b 0.0.0.0
