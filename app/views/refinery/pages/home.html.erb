@@ -1,14 +1,33 @@
 <div class="HomePage">
+
   <section class="banner">
-    <div class="container">
-      <div class="content-column banner-content">
-        <h1><%= @page.title %></h1>
-        <%= raw @page.content_for(:subtitle) %>
-        <% if Flipper.enabled?(:search) %>
-          <%= render "/refinery/shared/search" %>
-        <% end %>
+    <div class="styled-box styled-box--extended">
+      <div class="container">
+        <div class="syled-box__content">
+          <h1>MetroCommon 2050</h1>
+          <p class="sub-header">
+            Greater Boston's next regional plan led by the 
+            Metropolitan Area Planning Council
+          </p>
+          
+          <p>
+            Welcome to the digital hub of MetroCommon 2050, Greater Boston's next regional long-range plan!
+            Here you'll find everythiing MeroCommon. Every month, there will be new research, information,
+            events, and ways to share your thoughts.
+          </p>
+
+          <p>
+            Get involved. With your help and your voice, we'll create the common future we want - together.
+          </p>
+
+          <div class="banner-actions">
+            <a class="button" href="/stories">Weigh In</a>
+            <button class="button--hollow">Watch Video</button>
+          </div>
+        </div>
+
+        <%= image_tag("mapc_logo.svg", class: "logo", alt: t('logo_alt')) %>
       </div>
-      <%= image_tag("mapc_logo.svg", class: "logo", alt: t('logo_alt')) %>
     </div>
   </section>
 

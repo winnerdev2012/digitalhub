@@ -17,6 +17,8 @@ $v3-color_green-medium: #00613F;
 $v3-color_green-light: #4FB965;
 $v3-color_green-lightest: #F0F8F3;
 
+$v3-color_green-light--dark: mix(black, $v3-color_green-light, 15);
+
 
 /*
  * OLD VARS

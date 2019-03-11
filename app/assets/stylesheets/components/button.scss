@@ -1,0 +1,24 @@
+button, .button {
+    $self: &;
+
+    min-width: 189px;
+    padding: .5rem .75rem;
+
+    color: $color_font-light;
+    font-family: $font_family-secondary;
+    text-align: center;
+
+    background: $v3-color_green-light;
+    border: 1px solid $v3-color_green-light;
+
+    text-transform: uppercase;
+
+    &--hollow { background: none; }
+
+    &:hover {
+        color: $color_font-light !important;
+
+        background: $v3-color_green-light--dark;
+        border-color: $v3-color_green-light--dark;
+    }
+}

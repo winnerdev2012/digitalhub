@@ -1,21 +1,12 @@
 .HomePage {
   background-color: $color_bg-light;
+
   .banner {
-
-    color: white;
-    font-size: 20px;
-    font-weight: normal;
-    background: $color_bg-dark image-url('triangle_background.svg');
-    background-size: 25rem 65rem;
-
-    a, a:hover, a:visited {
-      color: white;
-    }
-
-    @include media(small) {
-      font-size: 12px;
+    .styled-box {
+        background-image: image-url('bike-lane.jpg');
     }
   }
+
   .action-boxes {
     display: flex;
     a {
