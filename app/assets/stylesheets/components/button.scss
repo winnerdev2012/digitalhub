@@ -1,5 +1,6 @@
 .button {
     $self: &;
+    $transition: background .1s, border-color .1s;
 
     min-width: 189px;
     padding: .5rem .75rem;
@@ -13,6 +14,7 @@
     border: 1px solid $v3-color_green-light;
 
     text-transform: uppercase;
+    transition: $transition;
 
     &--hollow { background: none; }
 
@@ -33,5 +35,7 @@
 
         background: $v3-color_green-light--dark;
         border-color: $v3-color_green-light--dark;
+
+        transition: $transition;
     }
 }
