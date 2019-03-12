@@ -72,6 +72,9 @@ GIT
 PATH
   remote: vendor/extensions
   specs:
+    refinerycms-announcements (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 4.0.2)
     refinerycms-events (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 4.0.2)
@@ -614,6 +617,7 @@ DEPENDENCIES
   rails (~> 5.2.1)
   refinerycms (~> 4.0)!
   refinerycms-acts-as-indexed (~> 3.0, >= 3.0.0)
+  refinerycms-announcements!
   refinerycms-authentication-devise (~> 2.0.0)!
   refinerycms-events!
   refinerycms-i18n

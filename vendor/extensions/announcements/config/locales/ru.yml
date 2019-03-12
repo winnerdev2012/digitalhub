@@ -1,0 +1,30 @@
+ru:
+  refinery:
+    plugins:
+      announcements:
+        title: Announcements
+    announcements:
+      admin:
+        announcements:
+          actions:
+            create_new: Добавить Announcement
+            reorder: Изменить порядок Announcements
+            reorder_done: Закончить изменять порядок Announcements
+          records:
+            title: Announcements
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Announcements" не найдено. Нажмите "Добавить Announcement" чтобы создать announcement.
+          announcement:
+            view_live_html: Просмотреть announcement вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать announcement
+            delete: Удалить announcement навсегда
+      announcements:
+        show:
+          other: Другие Announcements
+  activerecord:
+    attributes:
+      'refinery/announcements/announcement':
+        title: Title
+        body: Body
+        image: Image
+        link: Link
