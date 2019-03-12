@@ -8,11 +8,10 @@ module Refinery
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @event in the line below:
-
-        @upcoming_events = ::Refinery::Events::Event.where(start: DateTime.now..DateTime.now.at_end_of_month)
+        @upcoming_events = ::Refinery::Events::Event.where(start: DateTime.now..DateTime.now.at_end_of_month).sort {|a,b| a.start <=> b.start }
         @events_next_month = ::Refinery::Events::Event.where(start: DateTime.now.at_beginning_of_month.next_month..DateTime.now.at_end_of_month.next_month)
         present(@page)
-        @past_events = ::Refinery::Events::Event.where('start < ?', DateTime.now)
+        @past_events = ::Refinery::Events::Event.where('start < ?', DateTime.now).sort {|a,b| b.start <=> a.start }
       end
 
       def show
