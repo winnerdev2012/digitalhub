@@ -36,12 +36,6 @@
   </section>
 
   <div class="container">
-    <div class='content-column'>
-      <%= render partial: '/partials/one_box', locals: { title: 'Process Details', image: 'norwood-person.jpg' } %>
-    </div>
-  </div>
-
-  <div class="container">
     <section class="content-column">
       <%= raw @page.content_for(:body) %>
       <% if Flipper.enabled?(:action_buttons) %>
