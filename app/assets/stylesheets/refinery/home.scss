@@ -17,9 +17,7 @@
             text-align: left;
         }
 
-        h1 {
-            margin: 0 0 .5rem 0;
-        }
+        h1 { margin: 0 0 .5rem 0; }
 
         p {
             width: 51%;
@@ -32,7 +30,7 @@
             }
         }
 
-       .banner-actions {
+        .banner-actions {
             margin-top: 4rem;
 
             > * {
@@ -41,7 +39,7 @@
 
                 + * { margin-left: .8rem; }
             }
-       }
+        }
     }
   }
 
