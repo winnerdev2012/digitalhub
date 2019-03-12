@@ -5,8 +5,7 @@
     $content_trans: transform $trans_duration;
     $title_trans: opacity $trans_duration, top ($trans_duration * 1.2);
 
-    width: 300px;
-    height: 300px;
+    padding: 1rem;
 
     color: $color_font-light;
 
@@ -16,27 +15,29 @@
     cursor: pointer;
     overflow: hidden;
 
+    &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 100%;
+        display: block;
+
+        width: 150%;
+        height: 100vw;
+
+        background: $v3-color_green-light;
+        opacity: .5;
+
+        transform: rotate(-18deg);
+        transform-origin: 100% 100%;
+        transition: $content_trans;
+    }
+
     &__content {
-        width: 100%;
-        height: 100%;
-        padding: 1rem;
+        width: 50%;
 
-        &:after {
-            content: '';
-            position: absolute;
-            right: 0;
-            bottom: 100%;
-            display: block;
-
-            width: 150%;
-            height: 150%;
-
-            background: $v3-color_green-light;
-            opacity: .5;
-
-            transform: rotate(-18deg);
-            transform-origin: 100% 100%;
-            transition: $content_trans;
+        p {
+            color: $color_font-light;
         }
     }
 
@@ -69,11 +70,9 @@
 
     &--half,
     &:hover:not(&--extended) {
-        #{$self}__content {
-            &:after {
-                transform: rotate(-45deg);
-                transition: $content_trans;
-            }
+        &:before {
+            transform: rotate(-45deg);
+            transition: $content_trans;
         }
 
         #{$self}__title {
@@ -86,10 +85,14 @@
     }
 
     &--extended {
-        #{$self}__content {
-            &:after {
+        &:before {
+            right: -5%;
+            bottom: 95%;
 
-            }
+            transform: rotate(-45deg);
+        }
+
+        #{$self}__content {
         }
     }
 }

@@ -1,9 +1,9 @@
 <div class="HomePage">
 
-  <section class="banner">
+  <section class="hero-banner">
     <div class="styled-box styled-box--extended">
       <div class="container">
-        <div class="syled-box__content">
+        <div class="styled-box__content">
           <h1>MetroCommon 2050</h1>
           <p class="sub-header">
             Greater Boston's next regional plan led by the 
@@ -30,6 +30,12 @@
       </div>
     </div>
   </section>
+
+  <div class="container">
+    <div class='content-column'>
+      <%= render partial: '/partials/one_box', locals: { title: 'Process Details', image: 'norwood-person.jpg' } %>
+    </div>
+  </div>
 
   <div class="container">
     <section class="content-column">

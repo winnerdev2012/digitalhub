@@ -1,10 +1,16 @@
 .HomePage {
   background-color: $color_bg-light;
 
-  .banner {
+  .hero-banner {
     .styled-box {
+        cursor: default;
         background-image: image-url('bike-lane.jpg');
     }
+  }
+
+  .one-box {
+    width: 300px;
+    height: 300px;
   }
 
   .action-boxes {
