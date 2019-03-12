@@ -1,6 +1,8 @@
 ._pseudo {
     content: '';
     display: block;
+    position: relative;
+
     height: 0;
 }
 

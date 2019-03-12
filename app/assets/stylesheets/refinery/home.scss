@@ -34,27 +34,7 @@
             cursor: default;
             background-image: image-url('bike-lane.jpg');
 
-            &__content {
-                padding: 10% 0 20%;
-
-                width: 85%;
-                margin: 0 auto;
-
-                text-align: left;
-            }
-
             h1 { margin: 0 0 .5rem 0; }
-
-            p {
-                width: 51%;
-
-                &.sub-header {
-                    margin: 0;
-
-                    font-size: $font_size-large;
-                    font-style: italic;
-                }
-            }
 
             .hero-banner-actions {
                 margin-top: 4rem;
@@ -67,7 +47,7 @@
                 }
             }
         }
-  }
+    }
 
   .one-box {
     width: 300px;

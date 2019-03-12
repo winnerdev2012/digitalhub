@@ -16,6 +16,18 @@
 
     &--hollow { background: none; }
 
+    &--with-arrow {
+        &:before {
+            @extend ._pseudo;
+            @include triangle(1rem, 'right', $v3-color_green-light);
+
+            display: inline-block;
+            top: .15rem;
+
+            margin-right: 1rem;
+        }
+    }
+
     &:hover {
         color: $color_font-light !important;
 

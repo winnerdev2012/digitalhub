@@ -84,6 +84,26 @@
     }
 
     &--extended {
+        #{$self}__content {
+            padding: 10% 0 20%;
+
+            width: 85%;
+            margin: 0 auto;
+
+            text-align: left;
+
+            p {
+                width: 51%;
+
+                &.sub-header {
+                    margin: 0;
+
+                    font-size: $font_size-large;
+                    font-style: italic;
+                }
+            }
+        }
+
         &:before {
             bottom: 98%;
             right: -10%;
