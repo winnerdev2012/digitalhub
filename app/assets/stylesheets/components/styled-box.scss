@@ -16,11 +16,11 @@
     overflow: hidden;
 
     &:before {
-        content: '';
+        @extend ._pseudo;
+
         position: absolute;
         right: 0;
         bottom: 100%;
-        display: block;
 
         width: 150%;
         height: 100vw;

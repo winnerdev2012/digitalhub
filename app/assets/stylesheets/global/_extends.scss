@@ -1,8 +1,13 @@
-._clear {
-  &:after {
+._pseudo {
     content: '';
-    clear: both;
     display: block;
     height: 0;
+}
+
+._clear {
+  &:after {
+    @extend ._pseudo;
+
+    clear: both;
   }
 }

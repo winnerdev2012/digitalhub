@@ -1,55 +1,72 @@
 .HomePage {
-  background-color: $color_bg-light;
+    background-color: $color_bg-light;
 
-  .hero-banner {
-      z-index: 1;
+    .hero-banner {
+        z-index: 1;
 
-    .styled-box {
-        padding: 0;
+        &__arrow {
+            $triangle_size: 42px;
+            $image_size: 72px;
 
-        text-align: center;
+            position: absolute;
+            bottom: -($image_size - ($triangle_size / 2));
+            left: 0;
+            right: 0;
 
-        cursor: default;
-        background-image: image-url('bike-lane.jpg');
+            img {
+                width: $image_size;
+                margin-bottom: 12px;
+            }
 
-        &__content {
-            padding: 7% 0 10.5%;
+            &:after {
+                @extend ._pseudo;
+                @include triangle($triangle_size, 'down', $v3-color_green-light);
 
-            width: 85%;
-            margin: 0 auto;
-
-            text-align: left;
-        }
-
-        & > .container {
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-
-        h1 { margin: 0 0 .5rem 0; }
-
-        p {
-            width: 51%;
-
-            &.sub-header {
-                margin: 0;
-
-                font-size: $font_size-large;
-                font-style: italic;
+                margin-left: ($image_size - $triangle_size) / 4;
             }
         }
 
-        .hero-banner-actions {
-            margin-top: 4rem;
+        .styled-box {
+            padding: 0;
 
-            > * {
-                font-size: $font_size-medium;
-                text-decoration: none;
+            text-align: center;
 
-                + * { margin-left: .8rem; }
+            cursor: default;
+            background-image: image-url('bike-lane.jpg');
+
+            &__content {
+                padding: 10% 0 20%;
+
+                width: 85%;
+                margin: 0 auto;
+
+                text-align: left;
+            }
+
+            h1 { margin: 0 0 .5rem 0; }
+
+            p {
+                width: 51%;
+
+                &.sub-header {
+                    margin: 0;
+
+                    font-size: $font_size-large;
+                    font-style: italic;
+                }
+            }
+
+            .hero-banner-actions {
+                margin-top: 4rem;
+
+                > * {
+                    font-size: $font_size-medium;
+                    text-decoration: none;
+
+                    + * { margin-left: .8rem; }
+                }
             }
         }
-    }
   }
 
   .one-box {
