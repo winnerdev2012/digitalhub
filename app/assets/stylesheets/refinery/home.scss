@@ -3,8 +3,45 @@
 
   .hero-banner {
     .styled-box {
+        padding: 7% 0 10.5%;
+
+        text-align: center;
+
         cursor: default;
         background-image: image-url('bike-lane.jpg');
+
+        &__content {
+            width: 85%;
+            margin: 0 auto;
+
+            text-align: left;
+        }
+
+        h1 {
+            margin: 0 0 .5rem 0;
+        }
+
+        p {
+            width: 51%;
+
+            &.sub-header {
+                margin: 0;
+
+                font-size: $font_size-large;
+                font-style: italic;
+            }
+        }
+
+       .banner-actions {
+            margin-top: 4rem;
+
+            > * {
+                font-size: $font_size-medium;
+                text-decoration: none;
+
+                + * { margin-left: .8rem; }
+            }
+       }
     }
   }
 

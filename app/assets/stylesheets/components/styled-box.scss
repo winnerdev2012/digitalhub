@@ -49,6 +49,7 @@
         padding: .25rem .75rem;
 
         font-family: $font_family-secondary;
+        font-size: $font_size-medium;
         letter-spacing: 1px;
         line-height: 1.36rem;
 
@@ -86,13 +87,13 @@
 
     &--extended {
         &:before {
-            right: -5%;
-            bottom: 95%;
+            bottom: 98%;
+            right: -10%;
 
-            transform: rotate(-45deg);
-        }
+            background: $v3-color_green-medium;
+            opacity: .75;
 
-        #{$self}__content {
+            transform: rotate(-28deg);
         }
     }
 }
