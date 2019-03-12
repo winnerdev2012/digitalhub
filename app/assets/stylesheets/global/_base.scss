@@ -117,14 +117,14 @@ ul {
   padding: 2rem;
 }
 
-.content-column {
-  margin-left: calc((((100% - 6rem) / 7) * 3) + 3rem);
-  margin-right: calc((((100% - 6rem) / 7) * 1) + 1rem);
-  @include media(medium) {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
+// .content-column {
+//   margin-left: calc((((100% - 6rem) / 7) * 3) + 3rem);
+//   margin-right: calc((((100% - 6rem) / 7) * 1) + 1rem);
+//   @include media(medium) {
+//     margin-left: 0;
+//     margin-right: 0;
+//   }
+// }
 
 .event-content-column {
   margin-left: calc((((100% - 6rem) / 7) * 3) + 3rem);
@@ -310,6 +310,7 @@ video {
   color: $color_font-light;
   padding: 0.5em 2.5em;
   border: 0;
+  text-decoration: none;
   &:hover {
       background-color: $color_green-light;
       color: $color_font-grey;

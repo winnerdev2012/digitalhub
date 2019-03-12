@@ -1,0 +1,55 @@
+<% helpers = ActionController::Base.helpers %>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const carouselContainer = getCarousel();
+
+  if(carouselContainer) {
+    const numbers = carouselContainer.querySelectorAll('.announcements__number');
+
+    numbers.forEach(function(number) {
+      number.addEventListener("click", genDisplay(getData(), carouselContainer));
+    });
+  }
+});
+
+//utility functions
+
+function getCarousel() {
+  return document.querySelector('.announcements');
+}
+
+function getData() {
+  return [{
+    "header": "Join our Community Engagement Advisory Committee",
+    "body": "We’re looking for people enthusiastic about regional planning and community engagement to join a Community Engagement Advisory Committee! Members will share best practices, plan innovative engagement techniques, test messaging, connect MAPC to key partners, and help us reach diverse populations throughout the region. Apply by March 15, 2019.",
+    "image_path": "<%= helpers.image_path('announcements') %>",
+    "image2x_path": "<%= helpers.image_path('announcements@2x') %>",
+    "link": "https://www.mapc.org/planning101/apply-today-metrocommon-2050-community-engagement-advisory-committee/"
+  },
+  {
+    "header": "Establishment of the External Advisory Committee (EAC)",
+    "body": "The External Advisory Committee will advise the Core Team on the process, content and community engagement of MetroCommon 2050. Members will act as a sounding board for the regional plan update by providing diverse perspectives, feedback, and advice to the core team on topic areas. The Committee will make sure that MetroCommon 2050 is not in an echo chamber by testing ideas and supporting outreach efforts.",
+    "image_path": "<%= helpers.image_path('announcements2') %>",
+    "image2x_path": "<%= helpers.image_path('announcements2@2x') %>",
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLSd23t0rUyrwqsTG7sbjF8T7hDSSw3nujQlkHwfKk9qmflXrtA/viewform"
+  }]
+}
+
+function genDisplay(data, carouselContainer) {
+  function displayAnnouncement(event) {
+    const selection = parseInt(event.target.textContent) - 1;
+    const numbers = event.target.parentElement.children
+
+    carouselContainer.querySelector('.announcements__title').innerText = data[selection].header;
+    carouselContainer.querySelector('.announcements__paragraph').innerText = data[selection].body;
+    carouselContainer.querySelector('.announcements__image').setAttribute('src', data[selection].image_path);
+    carouselContainer.querySelector('.announcements__image').setAttribute('srcset', `${data[selection].image2x_path} 2x`);
+    for (var i = 0; i < numbers.length; i++) {
+        numbers[i].setAttribute('class', 'announcements__number')
+    }
+    event.target.setAttribute('class', 'announcements__number announcements__number--selected');
+
+    carouselContainer.querySelector('.button').setAttribute('href', data[selection].link)
+  };
+  return displayAnnouncement;
+}

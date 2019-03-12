@@ -1,3 +1,6 @@
+<% content_for :javascript_packs do %>
+  <%= javascript_pack_tag 'carousel' %>
+<% end %>
 <div class="HomePage">
 
   <section class="hero-banner">
@@ -37,6 +40,7 @@
   <div class="container">
     <section class="content-column">
       <%= raw @page.content_for(:body) %>
+      <%= render "partials/announcements" %>
       <% if Flipper.enabled?(:action_buttons) %>
         <div class="action-boxes">
           <a href="/find-out"><span class="wrapper"><%= t('refinery.home.actions.learn') %></span></a>
