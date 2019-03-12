@@ -2,8 +2,10 @@
   background-color: $color_bg-light;
 
   .hero-banner {
+      z-index: 1;
+
     .styled-box {
-        padding: 7% 0 10.5%;
+        padding: 0;
 
         text-align: center;
 
@@ -11,10 +13,17 @@
         background-image: image-url('bike-lane.jpg');
 
         &__content {
+            padding: 7% 0 10.5%;
+
             width: 85%;
             margin: 0 auto;
 
             text-align: left;
+        }
+
+        & > .container {
+            padding-bottom: 0;
+            margin-bottom: 0;
         }
 
         h1 { margin: 0 0 .5rem 0; }
@@ -30,7 +39,7 @@
             }
         }
 
-        .banner-actions {
+        .hero-banner-actions {
             margin-top: 4rem;
 
             > * {
