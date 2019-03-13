@@ -242,6 +242,8 @@ GEM
       railties (>= 3.0.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.9.25)
     flipper (0.16.0)
     flipper-active_record (0.16.0)
@@ -599,6 +601,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker!
+  fast_jsonapi
   flipper
   flipper-active_record
   font-awesome-rails
