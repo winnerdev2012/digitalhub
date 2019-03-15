@@ -69,6 +69,11 @@ function populateAnnouncement(announcement, carouselContainer) {
   imageNode.setAttribute('class', 'announcements__image')
   carouselContainer.appendChild(imageNode)
 
+  let buttonNode = document.createElement("a")
+  buttonNode.setAttribute('class', 'button')
+  buttonNode.setAttribute('href', link)
+  buttonNode.innerText = "Learn More"
+  carouselContainer.firstElementChild.appendChild(buttonNode)
 }
 
 function makeNumbersClickable(numberParent, announcements, carouselContainer) {
@@ -105,7 +110,7 @@ function genDisplay(data, carouselContainer) {
     }
     event.target.setAttribute('class', 'announcements__number announcements__number--selected');
 
-    // carouselContainer.querySelector('.button').setAttribute('href', link)
+    carouselContainer.querySelector('.button').setAttribute('href', link)
   };
   return displayAnnouncement;
 }
