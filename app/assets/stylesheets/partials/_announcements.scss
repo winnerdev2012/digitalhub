@@ -31,12 +31,12 @@
     &__image {
         color: $color_font-light;
         flex-shrink: 2;
-        width: 66%;
+        max-width: 66%;
         margin-bottom: 2rem;
         object-fit: cover;
 
         @include media(small) {
-            width: 100%;
+            max-width: 100%;
         }
     }
 
