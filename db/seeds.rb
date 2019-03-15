@@ -16,8 +16,9 @@ Refinery::Search::Engine.load_seed
 Refinery::Events::Engine.load_seed
 
 Flipper.disable(:search)
-Flipper.enable(:action_buttons)
+Flipper.disable(:action_buttons)
 Flipper.enable(:next_event)
+Flipper.disable(:annoucnements)
 
 # Added by Refinery CMS Stories extension
 Refinery::Stories::Engine.load_seed
