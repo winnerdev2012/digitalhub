@@ -1,8 +1,15 @@
+._pseudo {
+    content: '';
+    display: block;
+    position: relative;
+
+    height: 0;
+}
+
 ._clear {
   &:after {
-    content: '';
+    @extend ._pseudo;
+
     clear: both;
-    display: block;
-    height: 0;
   }
 }

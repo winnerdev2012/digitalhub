@@ -4,7 +4,7 @@ header {
   left: 0;
   right: 0;
   margin: 0;
-  z-index: 1;
+  z-index: 100;
 
   h1 {
     margin: 0;
@@ -28,23 +28,9 @@ header {
     padding: 1rem 2rem;
   }
 
-  .header-content-right {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    width: fit-content;
-    transition-duration: 1.5s;
-    @include media(x-small) {
-      display: block;
-      nav {
-        position: absolute;
-        padding-right: 0;
-        width: max-content;
-        top: 100%;
-        right: 0;
-      }
-    }
-  }
+    .header-content-right > * { display: inline-block; }
+
+    nav { top: 4px; }
 
   .site-name {
     color: $color_font-light;

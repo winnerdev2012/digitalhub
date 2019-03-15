@@ -1,21 +1,54 @@
 .HomePage {
-  background-color: $color_bg-light;
-  .banner {
+    background-color: $color_bg-light;
 
-    color: white;
-    font-size: 20px;
-    font-weight: normal;
-    background: $color_bg-dark image-url('triangle_background.svg');
-    background-size: 25rem 65rem;
+    .hero-banner {
+        z-index: 1;
 
-    a, a:hover, a:visited {
-      color: white;
+        &__arrow {
+            $triangle_size: 42px;
+            $image_size: 72px;
+
+            position: absolute;
+            bottom: -($image_size - ($triangle_size / 2));
+            left: 0;
+            right: 0;
+
+            img {
+                width: $image_size;
+                margin-bottom: 12px;
+            }
+
+            &:after {
+                @extend ._pseudo;
+                @include triangle($triangle_size, 'down', $v3-color_green-light);
+
+                margin-left: ($image_size - $triangle_size) / 4;
+            }
+        }
+
+        .styled-box {
+            padding: 0;
+
+            text-align: center;
+
+            cursor: default;
+            background-image: image-url('bike-lane.jpg');
+
+            h1 { margin: 0 0 .5rem 0; }
+
+            .hero-banner-actions {
+                margin-top: 4rem;
+
+                > * {
+                    font-size: $font_size-medium;
+                    text-decoration: none;
+
+                    + * { margin-left: .8rem; }
+                }
+            }
+        }
     }
 
-    @include media(small) {
-      font-size: 12px;
-    }
-  }
   .action-boxes {
     display: flex;
     a {
