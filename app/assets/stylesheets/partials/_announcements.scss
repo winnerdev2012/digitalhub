@@ -5,6 +5,8 @@
 
     display: flex;
 
+    margin-top: 5rem;
+
     &__numbers {
         font-family: $font_family-secondary;
         border-bottom: solid 0.1rem $v3-color_gray-dark;
