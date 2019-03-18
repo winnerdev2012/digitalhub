@@ -51,7 +51,7 @@ function populateAnnouncement(announcement, carouselContainer) {
                   image_name: imageName = "default.jpg",
                   image_width: imageWidth = "0",
                   image_height: imageHeight= "0",
-                  url: imageUrl= "" }
+                  carousel_thumbnail_url: imageUrl= "" }
   } = included[0]
 
   let titleNode = document.createElement("h2");
@@ -99,7 +99,7 @@ function genDisplay(data, carouselContainer) {
                     image_name: imageName = "default.jpg",
                     image_width: imageWidth = "0",
                     image_height: imageHeight= "0",
-                    url: imageUrl= "" }
+                    carousel_thumbnail_url: imageUrl= "" }
     } = included[0]
 
     carouselContainer.querySelector('.announcements__title').innerText = title;
