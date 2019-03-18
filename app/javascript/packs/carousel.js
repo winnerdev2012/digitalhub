@@ -51,7 +51,8 @@ function populateAnnouncement(announcement, carouselContainer) {
                   image_name: imageName = "default.jpg",
                   image_width: imageWidth = "0",
                   image_height: imageHeight= "0",
-                  carousel_thumbnail_url: imageUrl= "" }
+                  carousel_thumbnail_url: imageUrl= "",
+                  carousel_thumbnail_2x_url: image2xUrl= "" }
   } = included[0]
 
   let titleNode = document.createElement("h2");
@@ -66,6 +67,7 @@ function populateAnnouncement(announcement, carouselContainer) {
 
   let imageNode = document.createElement("img")
   imageNode.setAttribute('src', imageUrl)
+  imageNode.setAttribute('srcset', `${image2xUrl} 2x`)
   imageNode.setAttribute('class', 'announcements__image')
   carouselContainer.appendChild(imageNode)
 
@@ -99,12 +101,14 @@ function genDisplay(data, carouselContainer) {
                     image_name: imageName = "default.jpg",
                     image_width: imageWidth = "0",
                     image_height: imageHeight= "0",
-                    carousel_thumbnail_url: imageUrl= "" }
+                    carousel_thumbnail_url: imageUrl= "",
+                    carousel_thumbnail_2x_url: image2xUrl= "" }
     } = included[0]
 
     carouselContainer.querySelector('.announcements__title').innerText = title;
     carouselContainer.querySelector('.announcements__paragraph').innerText = body;
     carouselContainer.querySelector('.announcements__image').setAttribute('src', imageUrl);
+    carouselContainer.querySelector('.announcements__image').setAttribute('srcset', `${image2xUrl} 2x`);
     for (var i = 0; i < numbers.length; i++) {
         numbers[i].setAttribute('class', 'announcements__number')
     }

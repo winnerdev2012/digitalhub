@@ -17,7 +17,7 @@ Refinery::Images.configure do |config|
   # config.pages_per_admin_index = 20
 
   # Configure image sizes
-  config.user_image_sizes = {:small=>"110x110>", :medium=>"225x255>", :large=>"450x450>", :carousel=>"564x750>"}
+  config.user_image_sizes = {:small=>"110x110>", :medium=>"225x255>", :large=>"450x450>", :carousel=>"564x750>", :carousel2x=>"1128x1500>"}
 
   # Configure image ratios
   # config.user_image_ratios = {:"16/9"=>"1.778", :"4/3"=>"1.333", :"1:1"=>1}
