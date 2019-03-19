@@ -18,6 +18,7 @@ require 'axe/rspec'
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 Sidekiq::Testing.fake!
+Capybara.server_port = "5790"
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   # rspec-expectations config goes here. You can use an alternate

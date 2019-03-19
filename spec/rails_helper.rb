@@ -6,6 +6,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'support/chromedriver'
+require 'support/browserstack'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -45,12 +46,18 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-  config.before(:each, type: :system) do
-    driven_by(:rack_test)
-  end
+  if ENV['BROWSER']
+    config.before(:each, type: :system) do
+      driven_by(:browserstack)
+    end
+  else
+    config.before(:each, type: :system) do
+      driven_by(:rack_test)
+    end
 
-  config.before(:each, type: :system, js: true) do
-    driven_by(:selenium_chrome_headless)
+    config.before(:each, type: :system, js: true) do
+      driven_by(:selenium_chrome_headless)
+    end
   end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
