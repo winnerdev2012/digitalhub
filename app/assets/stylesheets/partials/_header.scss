@@ -28,9 +28,14 @@ header {
     padding: 1rem 2rem;
   }
 
-    .header-content-right > * { display: inline-block; }
+  .header-content-right { 
+    display: flex;
+    &--language, button {
+      padding-top: 0;
+    }
+  }
 
-    nav { top: 4px; }
+  nav { top: 4px; }
 
   .site-name {
     color: $color_font-light;
