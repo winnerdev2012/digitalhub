@@ -24,7 +24,7 @@ function populateCarousel(announcements, carouselContainer) {
   const numberParent = carouselContainer.querySelector('.announcements__numbers');
 
   for (i = 0; i < announcements.length; i++) {
-    let node = document.createElement("div");
+    let node = document.createElement("button");
     if(i == 0) {
       node.setAttribute('class', 'announcements__number announcements__number--selected');
     } else {

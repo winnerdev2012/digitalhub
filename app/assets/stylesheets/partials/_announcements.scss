@@ -17,7 +17,8 @@
         display: inline-block;
         margin: 0 1rem 0 0;
         opacity: 0.3;
-        cursor: pointer;
+        background-color: $v3-color_green-dark;
+        border: none;
 
         &--selected {
             opacity: 1;
