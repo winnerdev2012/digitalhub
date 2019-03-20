@@ -30,12 +30,7 @@ header {
 
   .header-content-right { 
     display: flex;
-    &--language, button {
-      padding-top: 0;
-    }
   }
-
-  nav { top: 4px; }
 
   .site-name {
     color: $color_font-light;
