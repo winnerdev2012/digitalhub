@@ -1,0 +1,29 @@
+.HomePage { background-color: $v3-color_green-dark !important; }
+
+.event-box {
+    width: 300px;
+    height: 300px;
+    padding: 2.1rem 1.5rem;
+
+    border: 1px solid $v3-color_green-light;
+
+    * { color: $color_font-light !important; }
+
+    &__header {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            margin: 0;
+
+            font-size: $font_size-xlarge;
+        }
+
+        &:after {
+            @extend ._pseudo;
+            @include triangle(50px, 'right', $v3-color_green-light);
+
+            margin-left: 1rem;
+        }
+    }
+}

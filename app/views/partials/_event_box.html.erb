@@ -1,4 +1,4 @@
-<% events = events[0...2] if events.size > 3 %>
+<% events = events[0..2] if events.size > 3 %>
 
 <div class="event-box">
   <div class="event-box__header">
@@ -9,9 +9,9 @@
     <ul>
       <% events.each do |event| %>
         <li>
-          <h4></h4>
+        <h4><%= event.title %></h4>
           <div class="event-box__event-info">
-            <span><%= event.start %> - <%= event.end %></span>
+            <span><%= local_time(event.start, '%b %-d, %l:%M%P') %> - <%= local_time(event.end, '%l:%M%P') %></span>
             <span><%= event.city %></span>
           </div>
         </li>
