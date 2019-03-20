@@ -29,7 +29,7 @@ RSpec.describe "Front Page", :type => :system do
     expect(page).to be_accessible.within '.announcements'
   end
 
-  it "displays new content when I click an announcemnt button", js: true do
+  it "displays new content when I click an announcement button", js: true do
     create(:page)
     create(:announcement)
     announcement = create(:announcement)
