@@ -1,5 +1,5 @@
 .HomePage {
-    background-color: $color_bg-light;
+  background-color: $v3-color_green-lightest;
 
     .hero-banner {
         z-index: 1;
@@ -112,16 +112,41 @@
       flex-wrap: wrap;
     }
   }
+ 
   .interruption {
-    background-color: $color_bg-light;
+    background-color: $v3-color_green-lightest;
+    font-family: $font_family-primary;
     padding: 0;
     .content-column-row {
       display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 3rem;
+
       @include media(small) {
         display: block;
       }
 
       .content-column-one {
+        flex: 1;
+        margin-right: calc((((100% - 6rem) / 7) * 1) + 1rem);
+        margin-left: 1rem;
+        @include media(small) {
+          width: 100%;
+          margin-left: 0;
+        }
+
+        &__image--mc-arrow {
+          margin: 1rem 8.5rem 0 5.5rem;
+          width: auto;
+          height: 28rem;
+          @include media($break_xsmall){
+            display: none;
+          }
+        }
+      }
+
+      .content-column-two {
         width: calc((((100% - 6rem) / 7) * 3) + 2rem);
         @include media(small) {
           margin-bottom: 1rem;
@@ -130,16 +155,50 @@
             margin-bottom: 0.5rem;
           }
         }
-      }
-      .content-column-two {
-        flex: 1;
-        margin-right: calc((((100% - 6rem) / 7) * 1) + 1rem);
-        margin-left: 1rem;
-        @include media(small) {
-          width: 100%;
-          margin-left: 0;
+
+        &--regional-plan {
+          margin-right: 11rem;
+        }
+        
+        &--regional-plan-title {
+          font-family: $font_family-secondary-light;
+          color: $v3-color_green-dark;
+
+          @include media(small) {
+            font-size: 1.5rem;
+          }
+        }
+
+        &--regional-plan-text, h1, p{
+          align-content: center;
+          color: $v3-color_green-dark;
+          margin-bottom: 1rem;
+          font-family: $font_family-secondary-light;
+        }
+
+        &__button {
+          width: 14rem;
+          margin-top: 2rem;
+          padding: .5rem 3.5rem .5rem 2.5rem;
+          border: 1px solid $v3-color_green-dark;
+
+          text-align: center;
+          text-transform: uppercase;
+          font-family: $font_family-secondary-light;
+          letter-spacing: .1rem;
+
+          color: $v3-color_green-medium;
+          background-color: $v3-color_green-lightest;
+          
+          &:hover { 
+            background-color: $color_green-medium; 
+            a {
+              color: $v3-color_green-lightest;
+            } 
+          } 
         }
       }
+      
       .next-event-time {
         font-size: $font_size-medium;
       }

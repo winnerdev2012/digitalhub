@@ -58,19 +58,20 @@
   <div class="interruption">
     <div class="container">
       <div class="content-column-row">
-        <div class="content-column-one next-event-floater">
-          <% if @next_event && Flipper.enabled?(:next_event) %>
-            <h2><%= t('refinery.home.interruption.next_event') %></h2>
-            <%= link_to(refinery.events_event_path(@next_event)) do %>
-              <div class="next-event-time hidden-text"><%= @next_event.start.strftime("%B %-d, %Y " + t('refinery.home.interruption.event_at') + " %-l:%M%p") %></div>
-              <div class="next-event-time" aria-hidden="true"><%= @next_event.start.strftime("%b %-d %-l:%M%P") %></div>
-              <div class="next-event-title"><%= @next_event.title %></div>
-            <% end %>
-          <% end %>
+        <div>
+          <%= image_tag("mc-arrow.png", class: "content-column-one__image--mc-arrow", alt: t('logo_alt')) %>
         </div>
-        <div class="content-column-two">
-          <h2><%= t('refinery.home.email_sign_up.sign_up') %></h2>
-          <a class="button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('refinery.home.email_sign_up.join') %></a>
+        <div class="content-column-two--regional-plan">
+          <h1 class="content-column-two--regional-plan-title">What is a Regional Plan?</h1>
+          <p class="content-column-two--regional-plan-text">It’s a set of actions that local and state government can take to improve the region over time. Plans
+            like MetroCommon can include thinking about many different aspects of our lives. That’s because policies and laws can affect jobs, transportation, health, and more.</p>
+            <p class="content-column-two--regional-plan-text">MetroCommon will focus on challenges and opportunities that
+            are bigger than any one place. And it will look at how those issues are connected. Topics like traffic
+            congestion, the rising cost of housing, our changing climate, equity of wealth and health, and efficient government – all will be part of the mix.    
+            </p>
+          <div class="content-column-two__button">
+            <a href="https://youtu.be/bApghSqlbYc" target="_blank">learn more</a>
+          </div>
         </div>
       </div>
     </div>
