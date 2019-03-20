@@ -11,6 +11,13 @@ RSpec.describe "Front Page", :type => :system do
     pending 'Need updated image contrast color from designer'
     create(:page)
     visit "/"
+    expect(page).to have_text("Welcome to MetroCommon")
+  end
+
+  it "footer is accessible", js: true do
+    pending 'waiting for button update'
+    create(:page)
+    visit "/"
     expect(page).to be_accessible.within '.footer'
   end
 
