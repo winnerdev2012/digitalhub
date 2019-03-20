@@ -3,9 +3,17 @@
     $content_trans: transform $trans_duration;
     $title_trans: opacity $trans_duration, top ($trans_duration * 1.2);
 
-    display: flex;
+    background-color: $v3-color_green-dark;
+    font-size: 1.25rem;
 
-    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+
+    padding: 5rem 10rem;
+
+    h2 {
+        font-size: 1.8rem;
+    }
 
     &__numbers {
         font-family: $font_family-secondary;
@@ -32,11 +40,13 @@
     &__image {
         color: $color_font-light;
         flex-shrink: 2;
-        max-width: 66%;
+        width: 66%;
+        max-width: 992px;
         margin-bottom: 2rem;
         object-fit: cover;
 
         @include media(small) {
+            width: 100%;
             max-width: 100%;
         }
     }
@@ -47,9 +57,12 @@
         margin-right: 3rem;
         margin-bottom: 2rem;
         width: 33%;
+        max-width: 471px;
 
         @include media(small) {
             width: 100%;
+            max-width: 100%;
+            margin-right: 0;
         }
     }
 
@@ -59,5 +72,6 @@
 
     @include media(small) {
         flex-wrap: wrap;
+        padding: 3rem 1rem;
     }
 }
