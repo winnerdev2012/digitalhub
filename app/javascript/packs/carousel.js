@@ -69,6 +69,7 @@ function populateAnnouncement(announcement, carouselContainer) {
   imageNode.setAttribute('src', imageUrl)
   imageNode.setAttribute('srcset', `${image2xUrl} 2x`)
   imageNode.setAttribute('class', 'announcements__image')
+  imageNode.setAttribute('alt', imageAlt)
   carouselContainer.appendChild(imageNode)
 
   let buttonNode = document.createElement("a")
@@ -108,6 +109,7 @@ function genDisplay(data, carouselContainer) {
     carouselContainer.querySelector('.announcements__title').innerText = title;
     carouselContainer.querySelector('.announcements__paragraph').innerText = body;
     carouselContainer.querySelector('.announcements__image').setAttribute('src', imageUrl);
+    carouselContainer.querySelector('.announcements__image').setAttribute('alt', imageAlt);
     carouselContainer.querySelector('.announcements__image').setAttribute('srcset', `${image2xUrl} 2x`);
     for (var i = 0; i < numbers.length; i++) {
         numbers[i].setAttribute('class', 'announcements__number')
