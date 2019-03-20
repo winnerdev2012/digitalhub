@@ -1,53 +1,53 @@
 .HomePage {
   background-color: $v3-color_green-lightest;
 
-    .hero-banner {
-        z-index: 1;
+  .hero-banner {
+      z-index: 1;
 
-        &__arrow {
-            $triangle_size: 42px;
-            $image_size: 72px;
+      &__arrow {
+          $triangle_size: 42px;
+          $image_size: 72px;
 
-            position: absolute;
-            bottom: -($image_size - ($triangle_size / 2));
-            left: 0;
-            right: 0;
+          position: absolute;
+          bottom: -($image_size - ($triangle_size / 2));
+          left: 0;
+          right: 0;
 
-            img {
-                width: $image_size;
-                margin-bottom: 12px;
-            }
+          img {
+              width: $image_size;
+              margin-bottom: 12px;
+          }
 
-            &:after {
-                @extend ._pseudo;
-                @include triangle($triangle_size, 'down', $v3-color_green-light);
+          &:after {
+              @extend ._pseudo;
+              @include triangle($triangle_size, 'down', $v3-color_green-light);
 
-                margin-left: ($image_size - $triangle_size) / 4;
-            }
-        }
+              margin-left: ($image_size - $triangle_size) / 4;
+          }
+      }
 
-        .styled-box {
-            padding: 0;
+      .styled-box {
+          padding: 0;
 
-            text-align: center;
+          text-align: center;
 
-            cursor: default;
-            background-image: image-url('bike-lane.jpg');
+          cursor: default;
+          background-image: image-url('bike-lane.jpg');
 
-            h1 { margin: 0 0 .5rem 0; }
+          h1 { margin: 0 0 .5rem 0; }
 
-            .hero-banner-actions {
-                margin-top: 4rem;
+          .hero-banner-actions {
+              margin-top: 4rem;
 
-                > * {
-                    font-size: $font_size-medium;
-                    text-decoration: none;
+              > * {
+                  font-size: $font_size-medium;
+                  text-decoration: none;
 
-                    + * { margin-left: .8rem; }
-                }
-            }
-        }
-    }
+                  + * { margin-left: .8rem; }
+              }
+          }
+      }
+  }
 
   .action-boxes {
     display: flex;
@@ -113,101 +113,99 @@
     }
   }
  
-  .interruption {
-    background-color: $v3-color_green-lightest;
+  .regional-plan {
+    display: flex;
+    padding: 0 0 5rem 0;
+    align-items: center;
+    justify-content: center;
+
     font-family: $font_family-primary;
-    padding: 0;
-    .content-column-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 3rem;
+    background-color: $v3-color_green-lightest;
 
+    @include media(small) {
+      display: block;
+    }
+
+    &--triangle {
+      flex: 1;
+      max-width: 622px;
+
+      
+      margin: 2rem 8.5rem 8rem 6rem;
+      width: auto;
+      height: 28rem;
+      
       @include media(small) {
-        display: block;
+        width: 100%;
+        margin-left: 0;
       }
-
-      .content-column-one {
-        flex: 1;
-        margin-right: calc((((100% - 6rem) / 7) * 1) + 1rem);
-        margin-left: 1rem;
-        @include media(small) {
-          width: 100%;
-          margin-left: 0;
-        }
-
-        &__image--mc-arrow {
-          margin: 1rem 8.5rem 0 5.5rem;
-          width: auto;
-          height: 28rem;
-          @include media($break_xsmall){
-            display: none;
-          }
-        }
+      @include media(small){
+        display: none;
       }
+    }
 
-      .content-column-two {
-        width: calc((((100% - 6rem) / 7) * 3) + 2rem);
-        @include media(small) {
-          margin-bottom: 1rem;
-          width: 100%;
-          h2 {
-            margin-bottom: 0.5rem;
-          }
-        }
+    &--description {
+      max-width: 622px;
 
-        &--regional-plan {
-          margin-right: 11rem;
-        }
-        
-        &--regional-plan-title {
-          font-family: $font_family-secondary-light;
-          color: $v3-color_green-dark;
-
-          @include media(small) {
-            font-size: 1.5rem;
-          }
-        }
-
-        &--regional-plan-text, h1, p{
-          align-content: center;
-          color: $v3-color_green-dark;
-          margin-bottom: 1rem;
-          font-family: $font_family-secondary-light;
-        }
-
-        &__button {
-          width: 14rem;
-          margin-top: 2rem;
-          padding: .5rem 3.5rem .5rem 2.5rem;
-          border: 1px solid $v3-color_green-dark;
-
-          text-align: center;
-          text-transform: uppercase;
-          font-family: $font_family-secondary-light;
-          letter-spacing: .1rem;
-
-          color: $v3-color_green-medium;
-          background-color: $v3-color_green-lightest;
-          
-          &:hover { 
-            background-color: $color_green-medium; 
-            a {
-              color: $v3-color_green-lightest;
-            } 
-          } 
+      @include media($break_xsmall) {
+        margin-bottom: 1rem;
+        width: 100%;
+        h2 {
+          margin-bottom: 0.5rem;
         }
       }
       
-      .next-event-time {
-        font-size: $font_size-medium;
+
+      &--description-title {
+        font-family: $font_family-primary;
+        color: $v3-color_green-dark;
+        font-size: 2.625rem;
+
+        @include media(small) {
+          font-size: 1.5rem;
+        }
       }
-      .next-event-title {
-        font-size: $font_size-large;
+
+      &--description-text, h1, p{
+        align-content: center;
+        color: $v3-color_green-dark;
+        margin-bottom: 1rem;
+        font-family: $font_family-primary;
+        font-size: 1.25rem;
       }
-      h2 {
-        margin-top: 0;
+
+      &__button {
+        width: 14rem;
+        margin-top: 2rem;
+        padding: .5rem 3.5rem .5rem 2.5rem;
+        border: 1px solid $v3-color_green-dark;
+
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $font_family-primary;
+        letter-spacing: .1rem;
+
+        color: $v3-color_green-medium;
+        background-color: $v3-color_green-lightest;
+        
+        &:hover { 
+          background-color: $color_green-medium; 
+          a {
+            color: $v3-color_green-lightest;
+          } 
+        } 
       }
+    }
+  
+      
+    .next-event-time {
+      font-size: $font_size-medium;
+    }
+    .next-event-title {
+      font-size: $font_size-large;
+    }
+    h2 {
+      margin-top: 0;
     }
     a {
       text-decoration: none;
