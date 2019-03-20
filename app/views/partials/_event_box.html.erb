@@ -1,0 +1,25 @@
+<% events = events[0...2] if events.size > 3 %>
+
+<div class="event-box">
+  <div class="event-box__header">
+    <h2>Join us for an event!</h2>
+  </div>
+
+  <% if events.size > 0 %>
+    <ul>
+      <% events.each do |event| %>
+        <li>
+          <h4></h4>
+          <div class="event-box__event-info">
+            <span><%= event.start %> - <%= event.end %></span>
+            <span><%= event.city %></span>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>
+      No upcoming events.
+    </p>
+  <% end %>
+</div>
