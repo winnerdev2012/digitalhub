@@ -130,8 +130,7 @@
       flex: 1;
       max-width: 622px;
 
-      
-      margin: 2rem 8.5rem 8rem 6rem;
+      margin: 1rem 8.5rem 8rem 0;
       width: auto;
       height: 28rem;
       
@@ -146,6 +145,7 @@
 
     &--description {
       max-width: 622px;
+      margin-top: 1rem;
 
       @include media($break_xsmall) {
         margin-bottom: 1rem;
@@ -156,17 +156,16 @@
       }
       
 
-      &--description-title {
+      &-title {
         font-family: $font_family-primary;
         color: $v3-color_green-dark;
-        font-size: 2.625rem;
 
         @include media(small) {
           font-size: 1.5rem;
         }
       }
 
-      &--description-text, h1, p{
+      &-text, h1, p{
         align-content: center;
         color: $v3-color_green-dark;
         margin-bottom: 1rem;
@@ -176,15 +175,15 @@
 
       &__button {
         width: 14rem;
-        margin-top: 2rem;
-        padding: .5rem 3.5rem .5rem 2.5rem;
+        margin-top: 2.5rem;
+        padding: .7rem 3.5rem .7rem 2.5rem;
         border: 1px solid $v3-color_green-dark;
-
+        
         text-align: center;
         text-transform: uppercase;
-        font-family: $font_family-primary;
+        font-family: $font_family-secondary;
         letter-spacing: .1rem;
-
+        
         color: $v3-color_green-medium;
         background-color: $v3-color_green-lightest;
         
@@ -196,8 +195,7 @@
         } 
       }
     }
-  
-      
+
     .next-event-time {
       font-size: $font_size-medium;
     }
@@ -206,6 +204,7 @@
     }
     h2 {
       margin-top: 0;
+      font-size: 2.625rem;
     }
     a {
       text-decoration: none;
