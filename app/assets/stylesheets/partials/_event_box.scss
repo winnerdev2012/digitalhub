@@ -4,8 +4,6 @@
 
     border: 1px solid $v3-color_green-light;
 
-    * { color: $color_font-light !important; }
-
     &__header {
         display: flex;
         align-items: center;
@@ -13,6 +11,7 @@
         h2 {
             margin: 0;
 
+            color: $color_font-light;
             font-size: $font_size-xlarge;
         }
 
@@ -27,11 +26,14 @@
     ul { margin-top: 1.5rem; }
 
     li {
+        color: $color_font-light;
+
         &:not(:last-of-type) { margin-bottom: 1rem; }
 
         h4 {
             margin: 0;
 
+            font-size: $font_size-medium;
             font-weight: $font_weight-normal;
         }
     }
