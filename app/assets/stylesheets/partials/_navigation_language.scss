@@ -46,10 +46,11 @@
       border-width: 0 1px 1px 1px;
     }
     button, a {
-      color: $color_green-dark;
+      color: $v3-color_green-dark;
     }
     button {
-      border-color: $color_green-dark;
+      border-color: $v3-color_green-dark;
+      color: $v3-color_green-dark;
     }
   }
 }
