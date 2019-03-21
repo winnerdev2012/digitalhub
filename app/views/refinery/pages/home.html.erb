@@ -57,22 +57,10 @@
 
   <div class="interruption">
     <div class="container">
-      <div class="content-column-row">
-        <div class="content-column-one next-event-floater">
-          <% if @next_event && Flipper.enabled?(:next_event) %>
-            <h2><%= t('refinery.home.interruption.next_event') %></h2>
-            <%= link_to(refinery.events_event_path(@next_event)) do %>
-              <div class="next-event-time hidden-text"><%= @next_event.start.strftime("%B %-d, %Y " + t('refinery.home.interruption.event_at') + " %-l:%M%p") %></div>
-              <div class="next-event-time" aria-hidden="true"><%= @next_event.start.strftime("%b %-d %-l:%M%P") %></div>
-              <div class="next-event-title"><%= @next_event.title %></div>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="content-column-two">
-          <h2><%= t('refinery.home.email_sign_up.sign_up') %></h2>
-          <a class="button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('refinery.home.email_sign_up.join') %></a>
-        </div>
-      </div>
+      <section class="content-column">
+        <h2><%= t('refinery.home.email_sign_up.sign_up') %></h2>
+        <a class="button" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank"><%= t('refinery.home.email_sign_up.join') %></a>
+      </section>
     </div>
   </div>
 </div>
