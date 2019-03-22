@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      announcements:
+        title: Announcements
+    announcements:
+      admin:
+        announcements:
+          actions:
+            create_new: 建立新的 Announcement
+            reorder: 对 Announcements 重新排序
+            reorder_done: 对 Announcements 的重新排序结束
+          records:
+            title: Announcements
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Announcements yet. Click "Add New Announcement" to add your first announcement.
+            no_items_yet: 目前没有 Announcements . 点击 "Add New Announcement" 创建一个announcement.
+          announcement:
+            view_live_html: 查看 announcement 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 announcement
+            delete: 永久删除 announcement
+      announcements:
+        show:
+          other: 其他 Announcements
+  activerecord:
+    attributes:
+      'refinery/announcements/announcement':
+        title: Title
+        body: Body
+        image: Image
+        link: Link

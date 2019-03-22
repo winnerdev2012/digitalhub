@@ -1,6 +1,5 @@
 .styled-box {
     $self: &;
-
     $trans_duration: .25s;
     $content_trans: transform $trans_duration;
     $title_trans: opacity $trans_duration, top ($trans_duration * 1.2);

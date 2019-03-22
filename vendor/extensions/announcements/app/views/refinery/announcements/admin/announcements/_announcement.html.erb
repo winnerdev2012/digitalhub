@@ -1,0 +1,31 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(announcement) -%>">
+  <span class='title'>
+    <%= translated_field(announcement, :title) %>
+  </span>
+
+  <% if Refinery::I18n.frontend_locales.many? %>
+    <span class='locales'>
+      <% announcement.translations.sort_by{ |t| Refinery::I18n.frontend_locales.index(t.locale)}.each do |translation| %>
+        <% if translation.title.present? %>
+          <%= link_to refinery.edit_announcements_admin_announcement_path(announcement, :switch_locale => translation.locale),
+                      class: 'locale', title: translation.locale.upcase do %>
+
+            <div class="<%=translation.locale %> locale_marker">
+              <%= locale_text_icon(translation.locale.upcase) %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </span>
+  <% end %>
+
+  <span class='preview'></span>
+
+  <span class='actions'>
+    
+    <%= action_icon(:edit,    refinery.edit_announcements_admin_announcement_path(announcement), t('.edit') ) %>
+    <%= action_icon(:delete,  refinery.announcements_admin_announcement_path(announcement), t('.delete'),
+      { class: "cancel confirm-delete",
+        data: {confirm: t('message',  scope: 'refinery.admin.delete', title: announcement.title)}}  ) %>
+  </span>
+</li>

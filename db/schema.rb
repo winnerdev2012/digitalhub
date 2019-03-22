@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_155416) do
+ActiveRecord::Schema.define(version: 2019_03_15_202124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,25 @@ ActiveRecord::Schema.define(version: 2019_03_01_155416) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["feature_key", "key", "value"], name: "index_flipper_gates_on_feature_key_and_key_and_value", unique: true
+  end
+
+  create_table "refinery_announcement_translations", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "locale", null: false
+    t.integer "refinery_announcement_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_refinery_announcement_translations_on_locale"
+    t.index ["refinery_announcement_id", "locale"], name: "index_1e4a4b96bfcc2c70b6dced31b103aba9ca46fd70", unique: true
+  end
+
+  create_table "refinery_announcements", force: :cascade do |t|
+    t.integer "image_id"
+    t.string "link"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "refinery_authentication_devise_roles", id: :serial, force: :cascade do |t|

@@ -310,6 +310,7 @@ video {
   color: $color_font-light;
   padding: 0.5em 2.5em;
   border: 0;
+  text-decoration: none;
   &:hover {
       background-color: $color_green-light;
       color: $color_font-grey;

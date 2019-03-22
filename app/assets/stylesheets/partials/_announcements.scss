@@ -1,0 +1,90 @@
+.announcements {
+  $trans_duration: .25s;
+  $content_trans: transform $trans_duration;
+  $title_trans: opacity $trans_duration, top ($trans_duration * 1.2);
+
+  background-color: $v3-color_green-dark;
+  font-size: 1.25rem;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 5rem 10rem;
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  &__numbers {
+    font-family: $font_family-secondary;
+    border-bottom: solid 0.1rem $v3-color_gray-dark;
+    color: $color_font-light;
+  }
+
+  &__number {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+    opacity: 0.3;
+    background-color: $v3-color_green-dark;
+    border: none;
+
+    &--selected {
+      opacity: 1;
+    }
+  }
+
+  &__title {
+    color: $color_font-light;
+  }
+
+  &__image {
+    color: $color_font-light;
+    flex-shrink: 2;
+    width: 66%;
+    max-width: 62rem;
+    margin-bottom: 2rem;
+    object-fit: cover;
+
+    img {
+      position: absolute;
+      top: -9999px;
+      right: -9999px;
+      bottom: -9999px;
+      left: -9999px;
+      margin: auto;
+      min-width: 100%;
+      min-height: 100%;
+    }
+
+    @include media(small) {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__text {
+    color: $color_font-light;
+    flex-shrink: 1;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+    width: 33%;
+    max-width: 30rem;
+
+    @include media(small) {
+      width: 100%;
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__paragraph {
+    color: $color_font-light;
+    overflow: scroll;
+    max-height: 32.5rem;
+  }
+
+  @include media(small) {
+    flex-wrap: wrap;
+    padding: 3rem 1rem;
+  }
+}

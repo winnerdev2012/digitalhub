@@ -1,3 +1,6 @@
+<% content_for :javascript_packs do %>
+  <%= javascript_pack_tag 'carousel' %>
+<% end %>
 <div class="HomePage">
 
   <section class="hero-banner">
@@ -10,7 +13,7 @@
             Greater Boston's next regional plan <br>
             Led by the Metropolitan Area Planning Council
           </p>
-          
+
           <p>
             Welcome to the digital hub of MetroCommon 2050, Greater Boston's next regional long-range plan!
             Here you'll find everything MetroCommon. Every month, there will be new research, information,
@@ -33,6 +36,10 @@
       <%= image_tag("mapc-logo.svg", class: "logo", alt: t('logo_alt')) %>
     </div>
   </section>
+
+  <% if Flipper.enabled?(:announcements) %>
+    <%= render "partials/announcements" %>
+  <% end %>
 
   <div class="one-box-grid">
     <div class="container">
@@ -75,14 +82,6 @@
       </section>
     </div>
   </div>
-
-  <% if @page.content_for(:bottom) %>
-    <div class="container">
-      <section class="content-column">
-        <%= raw @page.content_for(:bottom) %>
-      </section>
-    </div>
-  <% end %>
 
   <section class="regional-plan">
     <div class="regional-plan--triangle">

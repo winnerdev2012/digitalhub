@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      announcements:
+        title: Announcements
+    announcements:
+      admin:
+        announcements:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Announcement
+            reorder: Réordonner les Announcements
+            reorder_done: Fin de réordonnancement des Announcements
+          records:
+            title: Announcements
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Announcement. Cliquer sur "Créer un(e) nouve(au/l/lle) Announcement" pour créer votre premi(er/ère) announcement.'
+          announcement:
+            view_live_html: Voir ce(t/tte) announcement <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) announcement
+            delete: Supprimer définitivement ce(t/tte) announcement
+      announcements:
+        show:
+          other: Autres Announcements
+  activerecord:
+    attributes:
+      'refinery/announcements/announcement':
+        title: Title
+        body: Body
+        image: Image
+        link: Link
