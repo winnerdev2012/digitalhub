@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      announcements:
+        title: Announcements
+    announcements:
+      admin:
+        announcements:
+          actions:
+            create_new: Nieuwe Announcement toevoegen
+            reorder: De volgorde van de Announcements wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Announcement-volgorde
+          records:
+            title: Announcements
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Announcements. Druk op 'Nieuwe Announcement toevoegen' om de eerste toe te voegen.
+          announcement:
+            view_live_html: Deze announcement op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze announcement
+            delete: Deze announcement definitief verwijderen
+      announcements:
+        show:
+          other: Andere Announcements
+  activerecord:
+    attributes:
+      'refinery/announcements/announcement':
+        title: Title
+        body: Body
+        image: Image
+        link: Link

@@ -15,6 +15,7 @@ gem 'google-cloud-speech'
 gem 'sidekiq'
 gem 'google-cloud-storage'
 gem 'local_time'
+gem 'fast_jsonapi'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -84,3 +85,5 @@ gem 'refinerycms-events', path: 'vendor/extensions'
 gem 'aws-sdk-translate'
 
 gem 'refinerycms-stories', path: 'vendor/extensions'
+
+gem 'refinerycms-announcements', path: 'vendor/extensions'
