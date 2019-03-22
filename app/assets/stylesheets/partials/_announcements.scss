@@ -79,6 +79,8 @@
 
   &__paragraph {
     color: $color_font-light;
+    overflow: scroll;
+    max-height: 32.5rem;
   }
 
   @include media(small) {
