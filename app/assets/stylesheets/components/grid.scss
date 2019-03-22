@@ -12,7 +12,7 @@
   }
 
   &__cell {
-    margin: 1.875rem;
+    margin: 0 3.175rem 3.175rem 0;
 
     @include media(small) { margin: .75rem; }
 

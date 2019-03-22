@@ -7,12 +7,12 @@
   font-size: 1.25rem;
 
   display: flex;
-  justify-content: center;
+  justify-content: left;
 
-  padding: 5rem 10rem;
+  padding: 8.25rem 0 3.125rem 13.875rem;
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 2.25rem;
   }
 
   &__numbers {
@@ -33,6 +33,12 @@
     }
   }
 
+  &__button {
+    font-size: 1.375rem;
+    padding: 1.25rem 3.75rem;
+    line-height: 15px;
+  }
+
   &__title {
     color: $color_font-light;
   }
@@ -41,8 +47,7 @@
     color: $color_font-light;
     flex-shrink: 2;
     width: 66%;
-    max-width: 62rem;
-    margin-bottom: 2rem;
+    max-width: 61rem;
     object-fit: cover;
 
     img {
@@ -65,7 +70,7 @@
   &__text {
     color: $color_font-light;
     flex-shrink: 1;
-    margin-right: 3rem;
+    margin-right: 2rem;
     margin-bottom: 2rem;
     width: 33%;
     max-width: 30rem;
