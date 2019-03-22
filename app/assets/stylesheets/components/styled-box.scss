@@ -58,6 +58,8 @@
         text-transform: uppercase;
         transition: $title_trans;
 
+        @include media(small) { font-size: $font_size-small; }
+
         &--block {
             min-width: 50%;
 

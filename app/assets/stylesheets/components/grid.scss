@@ -14,6 +14,8 @@
   &__cell {
     margin: 1.875rem;
 
+    @include media(small) { margin: .75rem; }
+
     & > * {
       position: absolute;
       left: 0;
