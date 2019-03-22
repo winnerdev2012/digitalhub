@@ -1,8 +1,13 @@
 .event-box {
-    width: 350px;
-    padding: 2.1rem 1.5rem;
+  $_medium: 1220px;
+  $_small: 1100px;
 
-    border: 1px solid $v3-color_green-light;
+  padding: 2.1rem 1.5rem;
+
+  border: 1px solid $v3-color_green-light;
+  overflow: hidden;
+
+  @include media(small) { padding: 1.5rem 1rem; }
 
     &__header {
         display: flex;
@@ -13,6 +18,8 @@
 
             color: $color_font-light;
             font-size: $font_size-xlarge;
+
+            @include media($_medium) { font-size: $font_size-large; }
         }
 
         &:after {
@@ -20,25 +27,43 @@
             @include triangle(50px, 'right', $v3-color_green-light);
 
             margin-left: 1rem;
+
+            @include media($_medium) {
+              @include triangle(40px, 'right', $v3-color_green-light);
+            }
+
+            @include media(small) { display: none; }
         }
     }
 
-    ul { margin-top: 1.5rem; }
+    ul {
+      margin-top: 1.5rem;
+
+      @include media(x-small) { display: none; }
+    }
 
     li {
         color: $color_font-light;
 
         &:not(:last-of-type) { margin-bottom: 1rem; }
 
+        &:nth-of-type(3) {
+          @include media($_small) { display: none; }
+        }
+
         h4 {
             margin: 0;
 
             font-size: $font_size-medium;
             font-weight: $font_weight-normal;
+
+            @include media($_medium) { font-size: $font_size-small; }
         }
     }
 
     &__event-info {
+        @include media($_medium) { font-size: $font_size-xsmall; }
+
         span:last-of-type {
             $spacing: 3px;
 

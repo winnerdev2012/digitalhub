@@ -25,6 +25,12 @@
         margin-left: ($image_size - $triangle_size) / 4;
       }
     }
+    
+  .one-box-grid {
+    padding-bottom: 5rem;
+
+    background: $v3-color_green-dark;
+  }
 
     .styled-box {
       padding: 0;
@@ -48,7 +54,7 @@
       }
     }
   }
- 
+
   .regional-plan {
     display: flex;
     padding: 0 0 5rem 0;
@@ -69,7 +75,7 @@
       margin: 1rem 8.5rem 8rem 0;
       width: auto;
       height: 28rem;
-      
+
       @include media(small) {
         width: 100%;
         margin-left: 0;
@@ -90,7 +96,7 @@
           margin-bottom: 0.5rem;
         }
       }
-      
+
 
       &-title {
         font-family: $font_family-primary;
@@ -114,21 +120,21 @@
         margin-top: 2.5rem;
         padding: .7rem 3.5rem .7rem 2.5rem;
         border: 1px solid $v3-color_green-dark;
-        
+
         text-align: center;
         text-transform: uppercase;
         font-family: $font_family-secondary;
         letter-spacing: .1rem;
-        
+
         color: $v3-color_green-medium;
         background-color: $v3-color_green-lightest;
-        
-        &:hover { 
-          background-color: $color_green-medium; 
+
+        &:hover {
+          background-color: $color_green-medium;
           a {
             color: $v3-color_green-lightest;
-          } 
-        } 
+          }
+        }
       }
     }
   }

@@ -1,0 +1,43 @@
+.grid {
+  display: grid;
+
+  &--3-2 {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    @include media(medium) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+  }
+
+  &__cell {
+    margin: 1.875rem;
+
+    @include media(small) { margin: .75rem; }
+
+    &:before {
+      @extend ._pseudo;
+
+      // Keep 1:1 aspect ratio
+      padding-bottom: 100%;
+    }
+
+    & > * {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+
+      & > * { height: 100%; }
+    }
+  }
+}

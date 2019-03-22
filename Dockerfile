@@ -1,4 +1,4 @@
-FROM ruby:2.5.3-alpine
+FROM ruby:2.5.3
 MAINTAINER Eric Youngberg <eyoungberg@mapc.org>
 
 WORKDIR /usr/src/app
@@ -10,17 +10,17 @@ COPY vendor/extensions vendor/extensions
 
 RUN set -ex \
     ; \
-    apk update \
-    && apk add --no-cache \
+    apt-get update -qq \
+    && apt-get install -y \
       git \
       tzdata \
       nodejs \
-      build-base \
+      build-essential \
       libxml2-dev \
       libxslt-dev \
-      libc6-compat \
-      linux-headers \
-      postgresql-dev \
+      libc6 \
+      postgresql \
+      libpq-dev \
     ; \
     BUNDLE_FORCE_RUBY_PLATFORM=1 bundle install --jobs $(nproc)
 

@@ -9,7 +9,7 @@
     color: $color_font-light;
 
     background: $v3-color_green-lightest;
-    background-size: cover;
+    background-size: 101%;
     background-position: center center;
     cursor: pointer;
     overflow: hidden;
@@ -33,7 +33,7 @@
     }
 
     &__content {
-        width: 50%;
+        width: 75%;
 
         p { color: $color_font-light; }
     }
@@ -56,6 +56,8 @@
         opacity: 0;
         text-transform: uppercase;
         transition: $title_trans;
+
+        @include media(small) { font-size: $font_size-small; }
 
         &--block {
             min-width: 50%;
@@ -83,8 +85,9 @@
     }
 
     &--extended {
+      background-size: cover;
+
         #{$self}__content {
-            width: 85%;
             margin: 0 auto;
             padding: 10% 0 20%;
 
