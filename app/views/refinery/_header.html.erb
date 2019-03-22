@@ -11,7 +11,9 @@
       <%= image_tag("branding/MAPC-MetroCommon-White-RGB.png", class: "wordmark", alt: "MetroCommon by 2050") %>
     <% end %>
     <div class="header-content-right">
-      <%= render "/refinery/shared/navigation_language" %>
+      <div class="header-content-right--language">
+        <%= render "/refinery/shared/navigation_language" %>
+      </div>
       <button id="drawer-toggle" onclick="toggleDrawer()" aria-haspopup="true" aria-controls="drawer" aria-label="<%= t('header.toggle_site_navigation') %>">
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
       </button>
