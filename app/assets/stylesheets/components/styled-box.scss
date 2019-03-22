@@ -10,7 +10,7 @@
     color: $color_font-light;
 
     background: $v3-color_green-lightest;
-    background-size: cover;
+    background-size: 101%;
     background-position: center center;
     cursor: pointer;
     overflow: hidden;
@@ -34,7 +34,7 @@
     }
 
     &__content {
-        width: 50%;
+        width: 75%;
 
         p { color: $color_font-light; }
     }
@@ -84,8 +84,9 @@
     }
 
     &--extended {
+      background-size: cover;
+
         #{$self}__content {
-            width: 85%;
             margin: 0 auto;
             padding: 10% 0 20%;
 

@@ -36,11 +36,26 @@
 
   <div class="container">
     <section class="grid grid--3-2">
-      <% 5.times do %>
-        <div class="grid__cell">
-          <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'FIND OUT', image: 'norwood-person.jpg' } %>
-        </div>
-      <% end %>
+      <div class="grid__cell">
+        <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'FIND OUT', image: 'find-out.jpg' } %>
+      </div>
+
+      <div class="grid__cell">
+        <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'WEIGH IN', image: 'weigh-in.jpg' } %>
+      </div>
+
+      <div class="grid__cell">
+        <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'PROCESS TIMELINE', image: 'process-timeline.jpg' } %>
+      </div>
+
+      <div class="grid__cell">
+        <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'VOICES FROM THE REGION', image: 'voices.jpg' } %>
+      </div>
+
+      <div class="grid__cell">
+        <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'PROCESS DETAILS', image: 'process-details.jpg' } %>
+      </div>
+
       <div class="grid__cell">
         <%= render partial: '/partials/event_box', locals: { events: @next_events } %>
       </div>
