@@ -25,12 +25,6 @@
         margin-left: ($image_size - $triangle_size) / 4;
       }
     }
-    
-  .one-box-grid {
-    padding-bottom: 5rem;
-
-    background: $v3-color_green-dark;
-  }
 
     .styled-box {
       padding: 0;
@@ -53,6 +47,12 @@
         }
       }
     }
+  }
+
+  .one-box-grid {
+    padding-bottom: 5rem;
+
+    background: $v3-color_green-dark;
   }
 
   .regional-plan {
