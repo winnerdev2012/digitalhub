@@ -49,6 +49,12 @@
       }
   }
 
+  .one-box-grid {
+    padding-bottom: 5rem;
+
+    background: $v3-color_green-dark;
+  }
+
   .action-boxes {
     display: flex;
     a {
@@ -196,12 +202,6 @@
       }
     }
 
-    .next-event-time {
-      font-size: $font_size-medium;
-    }
-    .next-event-title {
-      font-size: $font_size-large;
-    }
     h2 {
       margin-top: 0;
       font-size: 2.625rem;
