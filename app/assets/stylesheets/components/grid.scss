@@ -16,6 +16,13 @@
 
     @include media(small) { margin: .75rem; }
 
+    &:before {
+      @extend ._pseudo;
+
+      // Keep 1:1 aspect ratio
+      padding-bottom: 100%;
+    }
+
     & > * {
       position: absolute;
       left: 0;
@@ -27,11 +34,10 @@
       height: 100%;
     }
 
-    &:before {
-      @extend ._pseudo;
+    a {
+      text-decoration: none;
 
-      // Keep 1:1 aspect ratio
-      padding-bottom: 100%;
+      & > * { height: 100%; }
     }
   }
 }
