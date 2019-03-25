@@ -1,9 +1,9 @@
 <% type = nil if local_assigns[:type].nil? %>
 <% image = '' if local_assigns[:image].nil? %>
 
-<div 
+<div
   class="styled-box one-box <%= 'styled-box--half' if type == 'half' %>"
-  style="background-image: url('/assets/<%= image %>')"
+  style="background-image: url('<%= image_path(image) %>')"
 >
   <div class="styled-box__content">
     <div class="styled-box__title styled-box__title--block"><%= title %></div>
