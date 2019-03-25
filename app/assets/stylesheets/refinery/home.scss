@@ -50,9 +50,13 @@
   }
 
   .one-box-grid {
-    padding: 0 0 10.625rem 13.875rem;
+    padding: 0 8.3rem 10.625rem 13.875rem;
 
     background: $v3-color_green-dark;
+
+    @include media(small) {
+      padding: 0 1rem;
+    }
   }
 
   .regional-plan {
