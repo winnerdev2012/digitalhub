@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_15_202124) do
+ActiveRecord::Schema.define(version: 2019_03_26_203306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,6 +139,15 @@ ActiveRecord::Schema.define(version: 2019_03_15_202124) do
     t.string "location_name"
   end
 
+  create_table "refinery_hero_images", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "image_id"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "refinery_image_translations", id: :serial, force: :cascade do |t|
     t.string "image_alt"
     t.string "image_title"
@@ -213,8 +222,6 @@ ActiveRecord::Schema.define(version: 2019_03_15_202124) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "children_count", default: 0, null: false
-    t.string "headline"
-    t.string "subheadline"
     t.index ["depth"], name: "index_refinery_pages_on_depth"
     t.index ["id"], name: "index_refinery_pages_on_id"
     t.index ["lft"], name: "index_refinery_pages_on_lft"

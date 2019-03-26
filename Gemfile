@@ -87,3 +87,5 @@ gem 'aws-sdk-translate'
 gem 'refinerycms-stories', path: 'vendor/extensions'
 
 gem 'refinerycms-announcements', path: 'vendor/extensions'
+
+gem 'refinerycms-hero_images', path: 'vendor/extensions'

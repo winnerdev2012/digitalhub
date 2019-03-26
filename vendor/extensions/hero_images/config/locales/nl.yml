@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      hero_images:
+        title: Hero Images
+    hero_images:
+      admin:
+        hero_images:
+          actions:
+            create_new: Nieuwe Hero Image toevoegen
+            reorder: De volgorde van de Hero Images wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Hero Image-volgorde
+          records:
+            title: Hero Images
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Hero Images. Druk op 'Nieuwe Hero Image toevoegen' om de eerste toe te voegen.
+          hero_image:
+            view_live_html: Deze hero image op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze hero image
+            delete: Deze hero image definitief verwijderen
+      hero_images:
+        show:
+          other: Andere Hero Images
+  activerecord:
+    attributes:
+      'refinery/hero_images/hero_image':
+        title: Title
+        description: Description
+        image: Image

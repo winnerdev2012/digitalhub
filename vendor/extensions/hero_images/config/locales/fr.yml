@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      hero_images:
+        title: Hero Images
+    hero_images:
+      admin:
+        hero_images:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Hero Image
+            reorder: Réordonner les Hero Images
+            reorder_done: Fin de réordonnancement des Hero Images
+          records:
+            title: Hero Images
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Hero Image. Cliquer sur "Créer un(e) nouve(au/l/lle) Hero Image" pour créer votre premi(er/ère) hero image.'
+          hero_image:
+            view_live_html: Voir ce(t/tte) hero image <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) hero image
+            delete: Supprimer définitivement ce(t/tte) hero image
+      hero_images:
+        show:
+          other: Autres Hero Images
+  activerecord:
+    attributes:
+      'refinery/hero_images/hero_image':
+        title: Title
+        description: Description
+        image: Image

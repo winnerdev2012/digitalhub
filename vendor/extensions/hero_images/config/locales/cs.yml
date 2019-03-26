@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      hero_images:
+        title: Hero Images
+    hero_images:
+      admin:
+        hero_images:
+          actions:
+            create_new: Přidat Hero Image
+            reorder: Řadit Hero Images
+            reorder_done: Konec řazení Hero Images
+          records:
+            title: Hero Images
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Hero Images. Zvolte "Přidat Hero Image" pro přidání prvního hero image.
+          hero_image:
+            view_live_html: Zobrazit náhled hero image<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit hero image
+            delete: Smazat hero image
+      hero_images:
+        show:
+          other: Další Hero Images
+  activerecord:
+    attributes:
+      'refinery/hero_images/hero_image':
+        title: Title
+        description: Description
+        image: Image

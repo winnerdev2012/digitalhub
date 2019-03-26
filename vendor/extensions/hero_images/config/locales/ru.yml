@@ -1,0 +1,29 @@
+ru:
+  refinery:
+    plugins:
+      hero_images:
+        title: Hero Images
+    hero_images:
+      admin:
+        hero_images:
+          actions:
+            create_new: Добавить Hero Image
+            reorder: Изменить порядок Hero Images
+            reorder_done: Закончить изменять порядок Hero Images
+          records:
+            title: Hero Images
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Hero Images" не найдено. Нажмите "Добавить Hero Image" чтобы создать hero image.
+          hero_image:
+            view_live_html: Просмотреть hero image вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать hero image
+            delete: Удалить hero image навсегда
+      hero_images:
+        show:
+          other: Другие Hero Images
+  activerecord:
+    attributes:
+      'refinery/hero_images/hero_image':
+        title: Title
+        description: Description
+        image: Image
