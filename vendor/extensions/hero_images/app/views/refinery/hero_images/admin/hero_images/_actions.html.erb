@@ -1,0 +1,20 @@
+<ul>
+  <% if ::Refinery::HeroImages::Admin::HeroImagesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.hero_images_admin_hero_images_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= action_label :add, refinery.new_hero_images_admin_hero_image_path, t('.create_new') %>
+  </li>
+<% if !searching? && ::Refinery::HeroImages::Admin::HeroImagesController.sortable? && ::Refinery::HeroImages::HeroImage.many? %>
+  <li>
+    <%= action_label :reorder,
+                     refinery.hero_images_admin_hero_images_path,
+                     t('.reorder', what:  "Hero Images"), id: 'reorder_action'%>
+    <%= action_label :reorder_done,
+                     refinery.hero_images_admin_hero_images_path,
+                      t('.reorder_done', what: "Hero Images"), id: 'reorder_action_done', class: 'hidden'%>
+  </li>
+<% end %>
+</ul>
