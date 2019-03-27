@@ -55,6 +55,10 @@
 
     background: $v3-color_green-dark;
 
+    p {
+      color: #ffffff;
+    }
+
     @include media(small) {
       padding: 0 1rem;
     }
