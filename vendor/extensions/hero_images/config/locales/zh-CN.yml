@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      hero_images:
+        title: Hero Images
+    hero_images:
+      admin:
+        hero_images:
+          actions:
+            create_new: 建立新的 Hero Image
+            reorder: 对 Hero Images 重新排序
+            reorder_done: 对 Hero Images 的重新排序结束
+          records:
+            title: Hero Images
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Hero Images yet. Click "Add New Hero Image" to add your first hero image.
+            no_items_yet: 目前没有 Hero Images . 点击 "Add New Hero Image" 创建一个hero image.
+          hero_image:
+            view_live_html: 查看 hero image 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 hero image
+            delete: 永久删除 hero image
+      hero_images:
+        show:
+          other: 其他 Hero Images
+  activerecord:
+    attributes:
+      'refinery/hero_images/hero_image':
+        title: Title
+        description: Description
+        image: Image

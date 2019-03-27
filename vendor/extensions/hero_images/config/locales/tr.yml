@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      hero_images:
+        title: Hero Images
+    hero_images:
+      admin:
+        hero_images:
+          actions:
+            create_new: Yeni Ekle Hero Image
+            reorder: Tekrar sirala Hero Images
+            reorder_done: Tekrar siralama tamamlandiHero Images
+          records:
+            title: Hero Images
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Hero Images yok henuz.  Tikla "Yeni Ekle Hero Image" eklemek senin ilk hero image.
+          hero_image:
+            view_live_html: Bunu canlu hero image goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle hero image
+            delete: Bunu Sil hero image sonsuza dek
+      hero_images:
+        show:
+          other: Diger Hero Images
+  activerecord:
+    attributes:
+      'refinery/hero_images/hero_image':
+        title: Title
+        description: Description
+        image: Image

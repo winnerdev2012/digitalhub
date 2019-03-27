@@ -1,0 +1,29 @@
+it:
+  refinery:
+    plugins:
+      hero_images:
+        title: Hero Images
+    hero_images:
+      admin:
+        hero_images:
+          actions:
+            create_new: Aggiungi Nuovo Hero Image
+            reorder: Riordina Hero Images
+            reorder_done: Termina il Riordino di Hero Images
+          records:
+            title: Hero Images
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Hero Images. Clicca "Aggiungi Nuovo Hero Image" per aggiungere il tuo primo hero image.
+          hero_image:
+            view_live_html: Guarda live questo hero image <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo hero image
+            delete: Rimuovi per sempre questo hero image
+      hero_images:
+        show:
+          other: Altri Hero Images
+  activerecord:
+    attributes:
+      'refinery/hero_images/hero_image':
+        title: Title
+        description: Description
+        image: Image

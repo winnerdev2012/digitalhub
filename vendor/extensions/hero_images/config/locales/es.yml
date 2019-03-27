@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      hero_images:
+        title: Hero Images
+#        article: masculino/femenino
+    hero_images:
+      admin:
+        hero_images:
+          actions:
+            create_new: Crear nuevo hero image
+            reorder: Reordenar hero images
+            reorder_done: Reordenación de hero images completada
+          records:
+            title: Hero Images
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay hero images todavía. Pulsa en "Crear nuevo Hero Image" para crear tu primer hero image.
+          hero_image:
+            view_live_html: Ver este hero image como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este hero image
+            delete: Borrar este hero image para siempre
+      hero_images:
+        show:
+          other: Otros hero images
+  activerecord:
+    attributes:
+      'refinery/hero_images/hero_image':
+        title: Title
+        description: Description
+        image: Image

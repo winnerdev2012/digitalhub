@@ -8,7 +8,13 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="<%= image_url("mapc-social-sharing-image.png") %>" />
     <meta property="og:description" content="Greater Boston’s next regional plan. Led by the Metropolitan Area Planning Council (MAPC)." />
-
+    
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+    
     <% if Rails.env.production? %>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5547782-36"></script>
       <script>
@@ -22,6 +28,7 @@
     <%= render "/refinery/javascripts" %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'polyfill' %>
+    <%= javascript_pack_tag 'hero-rotation' %>
     <%= yield :javascript_packs %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>

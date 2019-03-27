@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      hero_images:
+        title: Hero Images
+    hero_images:
+      admin:
+        hero_images:
+          actions:
+            create_new: Lag en ny Hero Image
+            reorder: Endre rekkefølgen på Hero Images
+            reorder_done: Ferdig å endre rekkefølgen Hero Images
+          records:
+            title: Hero Images
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Hero Images enda. Klikk på "Lag en ny Hero Image" for å legge til din første hero image.
+          hero_image:
+            view_live_html: Vis hvordan denne hero image ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne hero image
+            delete: Fjern denne hero image permanent
+      hero_images:
+        show:
+          other: Andre Hero Images
+  activerecord:
+    attributes:
+      'refinery/hero_images/hero_image':
+        title: Title
+        description: Description
+        image: Image
