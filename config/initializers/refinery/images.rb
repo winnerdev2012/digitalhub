@@ -19,7 +19,7 @@ Refinery::Images.configure do |config|
   # Configure image sizes
   config.user_image_sizes = {:small=>"110x110>", :medium=>"225x255>", :large=>"450x450>", :carousel=>"992x600>", :carousel2x=>"1984x1200>", :hero_image=>"1920x1010>", :hero_image2x=>"3840x2020>"}
 
-  # Configure image ratios 
+  # Configure image ratios
   # config.user_image_ratios = {:"16/9"=>"1.778", :"4/3"=>"1.333", :"1:1"=>1}
 
   # Configure white-listed mime types for validation
