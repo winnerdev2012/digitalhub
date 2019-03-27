@@ -6,13 +6,14 @@
   background-color: $v3-color_green-dark;
   font-size: 1.25rem;
 
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: left;
 
-  padding: 5rem 10rem;
+  padding: 8.25rem 8.3rem 3.125rem 13.875rem;
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 2.25rem;
   }
 
   &__numbers {
@@ -33,17 +34,21 @@
     }
   }
 
+  &__button {
+    font-size: 1.375rem;
+    padding: 1.25rem 3.75rem;
+    line-height: 15px;
+  }
+
   &__title {
     color: $color_font-light;
   }
 
   &__image {
     color: $color_font-light;
-    flex-shrink: 2;
-    width: 66%;
-    max-width: 62rem;
-    margin-bottom: 2rem;
+    width: 100%;
     object-fit: cover;
+    padding-right: 3.175rem;
 
     img {
       position: absolute;
@@ -59,16 +64,14 @@
     @include media(small) {
       width: 100%;
       max-width: 100%;
+      padding-right: 0;
     }
   }
 
   &__text {
     color: $color_font-light;
-    flex-shrink: 1;
-    margin-right: 3rem;
+    margin-right: 3.175rem;
     margin-bottom: 2rem;
-    width: 33%;
-    max-width: 30rem;
 
     @include media(small) {
       width: 100%;
@@ -84,7 +87,7 @@
   }
 
   @include media(small) {
-    flex-wrap: wrap;
-    padding: 3rem 1rem;
+    padding: 2rem 1.5rem;
+    grid-template-columns: 1fr;
   }
 }

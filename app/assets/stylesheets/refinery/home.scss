@@ -51,9 +51,13 @@
   }
 
   .one-box-grid {
-    padding-bottom: 5rem;
+    padding: 0 8.3rem 10.625rem 13.875rem;
 
     background: $v3-color_green-dark;
+
+    @include media(small) {
+      padding: 0 1rem;
+    }
   }
 
   .regional-plan {
@@ -65,8 +69,13 @@
     font-family: $font_family-primary;
     background-color: $v3-color_green-lightest;
 
+    @include media(x-large) {
+      padding: 0 1rem 5rem 1rem;
+    }
+
     @include media(small) {
       display: block;
+      padding: 0 1rem 5rem 1rem;
     }
 
     &--triangle {
@@ -81,7 +90,7 @@
         width: 100%;
         margin-left: 0;
       }
-      @include media(small){
+      @include media(medium){
         display: none;
       }
     }
@@ -102,6 +111,7 @@
       &-title {
         font-family: $font_family-primary;
         color: $v3-color_green-dark;
+        font-size: 2.75rem;
 
         @include media(small) {
           font-size: 1.5rem;
@@ -117,7 +127,7 @@
       }
 
       &__button {
-        width: 14rem;
+        width: 16.3125rem;
         margin-top: 2.5rem;
         padding: .7rem 3.5rem .7rem 2.5rem;
         border: 1px solid $v3-color_green-dark;
@@ -129,6 +139,11 @@
 
         color: $v3-color_green-medium;
         background-color: $v3-color_green-lightest;
+
+        a {
+          text-decoration: none;
+          font-size: 1.375rem;
+        }
 
         &:hover {
           background-color: $color_green-medium;

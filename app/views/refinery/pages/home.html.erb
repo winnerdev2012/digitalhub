@@ -39,47 +39,43 @@
 
   <%= render "partials/announcements" %>
 
-  <div class="one-box-grid">
-    <div class="container">
-      <section class="grid grid--3-2">
-        <div class="grid__cell">
-          <a href="">
-            <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'FIND OUT', image: 'find-out.jpg' } %>
-          </a>
-        </div>
-
-        <div class="grid__cell">
-          <a href="">
-            <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'WEIGH IN', image: 'weigh-in.jpg' } %>
-          </a>
-        </div>
-
-        <div class="grid__cell">
-          <a href="">
-            <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'PROCESS TIMELINE', image: 'process-timeline.jpg' } %>
-          </a>
-        </div>
-
-        <div class="grid__cell">
-          <a href="">
-            <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'VOICES FROM THE REGION', image: 'voices.jpg' } %>
-          </a>
-        </div>
-
-        <div class="grid__cell">
-          <a href="">
-            <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'PROCESS DETAILS', image: 'process-details.jpg' } %>
-          </a>
-        </div>
-
-        <div class="grid__cell">
-          <a href="">
-            <%= render partial: '/partials/event_box', locals: { events: @next_events } %>
-          </a>
-        </div>
-      </section>
+  <section class="one-box-grid grid grid--3-2">
+    <div class="grid__cell">
+      <a href="">
+        <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'FIND OUT', image: 'find-out.jpg' } %>
+      </a>
     </div>
-  </div>
+
+    <div class="grid__cell">
+      <a href="">
+        <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'WEIGH IN', image: 'weigh-in.jpg' } %>
+      </a>
+    </div>
+
+    <div class="grid__cell">
+      <a href="">
+        <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'PROCESS DETAILS', image: 'process-timeline.jpg' } %>
+      </a>
+    </div>
+
+    <div class="grid__cell">
+      <a href="">
+        <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'VOICES FROM THE REGION', image: 'voices.jpg' } %>
+      </a>
+    </div>
+
+    <div class="grid__cell">
+      <a href="">
+        <%= render partial: '/partials/one_box', locals: { type: 'half', title: 'PROCESS DETAILS', image: 'process-details.jpg' } %>
+      </a>
+    </div>
+
+    <div class="grid__cell">
+      <a href="">
+        <%= render partial: '/partials/event_box', locals: { events: @next_events } %>
+      </a>
+    </div>
+  </section>
 
   <section class="regional-plan">
     <div class="regional-plan--triangle">
