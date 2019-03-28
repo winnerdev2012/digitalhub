@@ -1,13 +1,18 @@
 example_id                                          | status  | run_time        |
 --------------------------------------------------- | ------- | --------------- |
-./spec/system/front_page_spec.rb[1:1]               | passed  | 16.45 seconds   |
-./spec/system/front_page_spec.rb[1:2]               | unknown |                 |
-./spec/system/front_page_spec.rb[1:3]               | unknown |                 |
-./spec/system/front_page_spec.rb[1:4]               | unknown |                 |
-./spec/system/front_page_spec.rb[1:5]               | unknown |                 |
-./spec/system/front_page_spec.rb[1:6]               | unknown |                 |
-./spec/system/front_page_spec.rb[1:7]               | passed  | 10.28 seconds   |
-./spec/views/one_box_spec.rb[1:1]                   | passed  | 0.02718 seconds |
-./spec/views/one_box_spec.rb[1:2]                   | passed  | 0.01973 seconds |
-./spec/workers/audio_extraction_worker_spec.rb[1:1] | passed  | 0.88985 seconds |
-./spec/workers/transcription_worker_spec.rb[1:1]    | passed  | 0.07551 seconds |
+./spec/system/front_page_spec.rb[1:1]               | passed  | 0.47598 seconds |
+./spec/system/front_page_spec.rb[1:2]               | pending | 2.7 seconds     |
+./spec/system/front_page_spec.rb[1:3]               | pending | 2.79 seconds    |
+./spec/system/front_page_spec.rb[1:4]               | pending | 3.16 seconds    |
+./spec/system/front_page_spec.rb[1:5]               | passed  | 1.66 seconds    |
+./spec/system/front_page_spec.rb[1:6]               | passed  | 0.60705 seconds |
+./spec/system/hero_rotation_spec.rb[1:1]            | passed  | 3.66 seconds    |
+./spec/system/hero_rotation_spec.rb[1:2]            | passed  | 3.8 seconds     |
+./spec/system/hero_rotation_spec.rb[1:3]            | passed  | 3.9 seconds     |
+./spec/system/hero_rotation_spec.rb[1:4]            | passed  | 4.77 seconds    |
+./spec/system/hero_rotation_spec.rb[1:5]            | passed  | 3.96 seconds    |
+./spec/system/hero_rotation_spec.rb[1:6]            | passed  | 5.66 seconds    |
+./spec/views/one_box_spec.rb[1:1]                   | passed  | 0.0208 seconds  |
+./spec/views/one_box_spec.rb[1:2]                   | passed  | 0.03735 seconds |
+./spec/workers/audio_extraction_worker_spec.rb[1:1] | passed  | 0.3234 seconds  |
+./spec/workers/transcription_worker_spec.rb[1:1]    | passed  | 0.15505 seconds |

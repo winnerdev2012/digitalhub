@@ -46,12 +46,4 @@ RSpec.describe "Front Page", :type => :system do
     visit "/"
     expect(page).to have_link(href: announcement.link)
   end
-
-  it "has a different hero section background image, 5 seconds after pageload, if 1 hero image is created", js: true do
-    create(:page)
-    hero_image = create(:hero_image)
-    visit "/"
-    sleep 5
-    expect(page.find('div.rotation-test')[:style].split('/').last == ("beach.jpeg\");")).to be(true)
-  end
 end
