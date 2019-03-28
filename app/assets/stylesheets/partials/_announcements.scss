@@ -61,10 +61,8 @@
       min-height: 100%;
     }
 
-    @include media(small) {
-      width: 100%;
-      max-width: 100%;
-      padding-right: 0;
+    @include media(medium) {
+      display: none;
     }
   }
 
@@ -86,8 +84,11 @@
     max-height: 32.5rem;
   }
 
+  @include media(medium) {
+    grid-template-columns: 1fr;
+  }
+
   @include media(small) {
     padding: 2rem 1.5rem;
-    grid-template-columns: 1fr;
   }
 }

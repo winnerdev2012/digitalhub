@@ -55,6 +55,10 @@
 
     background: $v3-color_green-dark;
 
+    p {
+      color: #ffffff;
+    }
+
     @include media(small) {
       padding: 0 1rem;
     }
@@ -67,7 +71,7 @@
     justify-content: center;
 
     font-family: $font_family-primary;
-    background-color: $v3-color_green-lightest;
+    background-color: #ffffff;
 
     @include media(x-large) {
       padding: 0 1rem 5rem 1rem;
