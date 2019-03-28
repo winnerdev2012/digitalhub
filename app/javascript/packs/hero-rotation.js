@@ -45,6 +45,7 @@ const loadImage = (img) => {
   if (img) {
     let imgUrl = `${baseUrl}${img.included[0].attributes.hero_image_thumbnail_url}`
     hero.style.backgroundImage = `url(${imgUrl})`
+    hero.classList.add('rotation-test')
   }
 
   if (counter == 0) {
