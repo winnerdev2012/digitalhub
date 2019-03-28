@@ -15,6 +15,10 @@ module Refinery
         end
       end
 
+      initializer "refinery_hero_images.factories", after: "factory_bot.set_factory_paths" do
+        FactoryBot.definition_file_paths << File.expand_path('../../../../spec/support/factories/refinery', __FILE__) if defined?(FactoryBot)
+      end
+
       config.after_initialize do
         Refinery.register_extension(Refinery::HeroImages)
       end
