@@ -34,6 +34,18 @@
     <%= f.check_box :display, :checked => @story[:display] %>
   </div>
 
+  <div class="media-buttons">
+    <div class="field video-response">
+      <%= f.label :video, 'Upload Video' %>
+      <%= f.file_field :video, accept: "video/mp4,video/x-m4v,video/*", class: "actions" %>
+    </div>
+
+    <div class="field audio-response" id="audio-recording">
+      <%= f.label :video, 'Upload Audio' %>
+      <%= f.file_field :audio, accept: "audio/*", class: "actions" %>
+    </div>
+  </div>
+
   <%= render '/refinery/admin/form_actions', f: f,
              continue_editing: false,
              delete_title: t('delete', scope: 'refinery.stories.admin.stories.story'),

@@ -21,7 +21,7 @@ RSpec.describe TranscriptionWorker, type: :worker do
     end
 
     speech = double('Google::Cloud::Speech')
-    allow(speech).to receive(:long_running_recognize).with(hash_including(:encoding, :language_code), hash_including(:uri)) do
+    allow(speech).to receive(:long_running_recognize).with(hash_including(:encoding, :language_code, :sample_rate_hertz), hash_including(:uri)) do
       operation
     end
 
