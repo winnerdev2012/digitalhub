@@ -1,5 +1,7 @@
 $(() => {
-  getImages()
+  if (checkWidth()) {
+    getImages()
+  }
 });
 
 let counter = 0
@@ -10,6 +12,10 @@ if (baseUrl.match(/\/$/)) {
   baseUrl = baseUrl.replace(/\/$/i, "")
 } if (baseUrl.match(/\/..?$/i)) {
   baseUrl = baseUrl.replace(/\/..?$/i, "")
+}
+
+const checkWidth = () => {
+  return document.documentElement.clientWidth > 1300
 }
 
 const getImages = () => {
@@ -42,7 +48,7 @@ const loadImage = (img) => {
   counter -= 1
   let hero = $('.styled-box')[0];
 
-  if (img) {
+  if (img && checkWidth()) {
     let imgUrl = `${baseUrl}${img.included[0].attributes.hero_image_thumbnail_url}`
     hero.style.backgroundImage = `url(${imgUrl})`
     hero.classList.add('rotation-test')
@@ -57,5 +63,7 @@ const loadImage = (img) => {
 
 const replay = () => {
   counter = imagesList.length
-  loadImages(imagesList)
+  if (checkWidth()) {
+    loadImages(imagesList)
+  }
 };
