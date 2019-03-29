@@ -86,7 +86,7 @@
       height: auto;
       padding-top: 8.94rem;
       
-      @include media($break_small){
+      @include media($break_xlarge){
         display: none;
       }
     }
@@ -95,9 +95,10 @@
       grid-column-start: 4;
       padding-top: 12rem;
 
-      @include media($break_small) {
+      @include media($break_xlarge) {
         grid-column-start: 2;
-        padding-top: 3.25rem;
+        // padding-top: 3.25rem;
+        padding: 0;
       }
 
       &-title {
@@ -105,7 +106,7 @@
         color: $v3-color_green-dark;
         font-size: 2.125rem;
         
-        @include media($break_small) {
+        @include media($break_xlarge) {
           font-size: 2.125rem;
           padding: 0 12rem 0 0;
         }
@@ -116,7 +117,7 @@
         font-size: 1.25rem;
         color: $v3-color_green-dark;
         
-        @include media($break_small) {
+        @include media($break_xlarge) {
           padding: 0 1.85rem 1rem 0;
           font-size: .9375rem;
         }
@@ -136,7 +137,7 @@
         color: $v3-color_green-medium;
         background-color: $v3-color_green-lightest;
         
-        @include media($break_small) {
+        @include media($break_xlarge) {
           margin: 0;
           padding: .7rem 3.5rem .7rem 2.5rem;
         }
