@@ -52,7 +52,7 @@
 
   .one-box-grid {
     padding: 0 8.3rem 10.625rem 13.875rem;
-
+    
     background: $v3-color_green-dark;
 
     p {
@@ -63,71 +63,63 @@
       padding: 0 1rem;
     }
   }
-
+  
   .regional-plan {
-    display: flex;
-    padding: 0 0 5rem 0;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 13.875rem 38.875rem 11.06rem 39.375rem 16.875rem;
+    grid-template-rows: 54.88rem;
+    padding: 0;
 
     font-family: $font_family-primary;
     background-color: #ffffff;
 
-    @include media(x-large) {
-      padding: 0 1rem 5rem 1rem;
-    }
-
-    @include media(small) {
-      display: block;
-      padding: 0 1rem 5rem 1rem;
+    @include media($break_xsmall) {
+      display: grid;
+      grid-template-columns: 1.56rem 26.25rem 2.31rem;
+      grid-template-rows: 39.68rem;
+      padding: 0;
     }
 
     &--triangle {
-      flex: 1;
-      max-width: 622px;
-
-      margin: 1rem 8.5rem 8rem 0;
+      grid-column-start: 2;
       width: auto;
-      height: 28rem;
-
-      @include media(small) {
-        width: 100%;
-        margin-left: 0;
-      }
-      @include media(medium){
+      height: auto;
+      padding-top: 8.94rem;
+      
+      @include media($break_small){
         display: none;
       }
     }
-
+    
     &--description {
-      max-width: 622px;
-      margin-top: 1rem;
+      grid-column-start: 4;
+      padding-top: 12rem;
 
-      @include media($break_xsmall) {
-        margin-bottom: 1rem;
-        width: 100%;
-        h2 {
-          margin-bottom: 0.5rem;
-        }
+      @include media($break_small) {
+        grid-column-start: 2;
+        padding-top: 3.25rem;
       }
-
 
       &-title {
         font-family: $font_family-primary;
         color: $v3-color_green-dark;
-        font-size: 2.75rem;
-
-        @include media(small) {
-          font-size: 1.5rem;
+        font-size: 2.125rem;
+        
+        @include media($break_small) {
+          font-size: 2.125rem;
+          padding: 0 12rem 0 0;
         }
       }
-
-      &-text, h1, p{
-        align-content: center;
-        color: $v3-color_green-dark;
-        margin-bottom: 1rem;
+      
+      &-text, p{
         font-family: $font_family-primary;
         font-size: 1.25rem;
+        color: $v3-color_green-dark;
+        
+        @include media($break_small) {
+          padding: 0 1.85rem 1rem 0;
+          font-size: .9375rem;
+        }
       }
 
       &__button {
@@ -135,14 +127,19 @@
         margin-top: 2.5rem;
         padding: .7rem 3.5rem .7rem 2.5rem;
         border: 1px solid $v3-color_green-dark;
-
+        
         text-align: center;
         text-transform: uppercase;
         font-family: $font_family-secondary;
         letter-spacing: .1rem;
-
+        
         color: $v3-color_green-medium;
         background-color: $v3-color_green-lightest;
+        
+        @include media($break_small) {
+          margin: 0;
+          padding: .7rem 3.5rem .7rem 2.5rem;
+        }
 
         a {
           text-decoration: none;
