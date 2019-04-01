@@ -69,14 +69,19 @@
     grid-template-columns: 13.875rem 38.875rem 11.06rem 39.375rem 16.875rem;
     grid-template-rows: 54.88rem;
     padding: 0;
-
+    
     font-family: $font_family-primary;
     background-color: #ffffff;
-
-    @include media($break_xsmall) {
+    
+    @include media($break_xlarge) {
+      grid-template-columns: 10.875rem 38.875rem 11.06rem 39.375rem 16.875rem;
+      grid-template-rows: 26.88rem;
+    }
+    
+    @include media($break_small) {
       display: grid;
       grid-template-columns: 1.56rem 26.25rem 2.31rem;
-      grid-template-rows: 39.68rem;
+      grid-template-rows: 35.2rem;
       padding: 0;
     }
 
