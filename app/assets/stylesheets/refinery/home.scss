@@ -47,7 +47,7 @@
           + * { margin-left: .8rem; }
         }
       }
-          
+      
       @media (max-width: 1300px){
         &__content {
           display: grid;
@@ -93,23 +93,6 @@
             padding: 0;
             margin: 0 0 1rem 0;
             width: 100%;
-          }
-
-          .styled-box {
-            $self: &;
-            $trans_duration: .25s;
-            $content_trans: transform $trans_duration;
-            $title_trans: opacity $trans_duration, top ($trans_duration * 1.2);
-        
-            padding: 1rem;
-        
-            color: $color_font-light;
-        
-            background: $v3-color_green-lightest;
-            background-size: 101%;
-            background-position: center center;
-            cursor: pointer;
-            overflow: hidden;
           }
         }
       }

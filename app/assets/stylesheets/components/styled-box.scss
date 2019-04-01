@@ -13,7 +13,7 @@
     background-position: center center;
     cursor: pointer;
     overflow: hidden;
-
+ 
     &:before {
         @extend ._pseudo;
 
@@ -93,33 +93,38 @@
 
     &--extended {
       background-size: cover;
-
-        #{$self}__content {
-            margin: 0 auto;
-            padding: 10% 0 20%;
-
-            text-align: left;
-
-            p {
-                width: 51%;
-
-                &.sub-header {
-                    margin: 0;
-
-                    font-size: $font_size-large;
-                    font-style: italic;
+      
+      #{$self}__content {
+          margin: 0 auto;
+          padding: 10% 0 20%;
+          
+          text-align: left;
+          
+          p {
+              width: 51%;
+              
+              &.sub-header {
+                  margin: 0;
+                  
+                  font-size: $font_size-large;
+                  font-style: italic;
                 }
             }
         }
-
+        
         &:before {
             bottom: 98%;
             right: -10%;
-
+            
             background: $v3-color_green-medium;
             opacity: .75;
-
             transform: rotate(-28deg);
+            
+            @include media($break_large){
+                transform: rotate(-90deg);
+                bottom: 100%;
+                right: 0;
+            }
         }
     }
 }
