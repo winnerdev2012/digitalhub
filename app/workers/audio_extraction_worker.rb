@@ -3,10 +3,9 @@ class AudioExtractionWorker
 
   def perform(story_id)
     story = Refinery::Stories::Story.find(story_id)
-    binary = story.video.download
-    path = "#{Dir.tmpdir}/#{story.video.filename.to_s}"
+    path = "#{Dir.tmpdir}/#{story.video.filename}"
     File.open(path, 'wb') do |file|
-       file.write(story.video.download)
+      file.write(story.video.download)
     end
     system "ffmpeg -i #{path} #{Dir.tmpdir}/#{story.video.key}.wav > log/#{Rails.env}.log 2>&1"
     story.audio.attach(io: File.open("#{Dir.tmpdir}/#{story.video.key}.wav"),

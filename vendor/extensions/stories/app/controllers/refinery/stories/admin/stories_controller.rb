@@ -10,7 +10,7 @@ module Refinery
 
         # Only allow a trusted parameter "white list" through.
         def story_params
-          params.require(:story).permit(:title, :question, :response, :display, :submitter_name)
+          params.require(:story).permit(:title, :question, :response, :display, :submitter_name, :audio, :video)
         end
       end
     end
