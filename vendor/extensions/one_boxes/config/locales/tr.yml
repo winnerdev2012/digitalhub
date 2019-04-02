@@ -1,0 +1,31 @@
+tr:
+  refinery:
+    plugins:
+      one_boxes:
+        title: One Boxes
+    one_boxes:
+      admin:
+        one_boxes:
+          actions:
+            create_new: Yeni Ekle One Box
+            reorder: Tekrar sirala One Boxes
+            reorder_done: Tekrar siralama tamamlandiOne Boxes
+          records:
+            title: One Boxes
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir One Boxes yok henuz.  Tikla "Yeni Ekle One Box" eklemek senin ilk one box.
+          one_box:
+            view_live_html: Bunu canlu one box goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle one box
+            delete: Bunu Sil one box sonsuza dek
+      one_boxes:
+        show:
+          other: Diger One Boxes
+  activerecord:
+    attributes:
+      'refinery/one_boxes/one_box':
+        title: Title
+        visible: Visible
+        triangle_overlay: Triangle Overlay
+        image: Image
+        link: Link

@@ -1,0 +1,31 @@
+fr:
+  refinery:
+    plugins:
+      one_boxes:
+        title: One Boxes
+    one_boxes:
+      admin:
+        one_boxes:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) One Box
+            reorder: Réordonner les One Boxes
+            reorder_done: Fin de réordonnancement des One Boxes
+          records:
+            title: One Boxes
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) One Box. Cliquer sur "Créer un(e) nouve(au/l/lle) One Box" pour créer votre premi(er/ère) one box.'
+          one_box:
+            view_live_html: Voir ce(t/tte) one box <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) one box
+            delete: Supprimer définitivement ce(t/tte) one box
+      one_boxes:
+        show:
+          other: Autres One Boxes
+  activerecord:
+    attributes:
+      'refinery/one_boxes/one_box':
+        title: Title
+        visible: Visible
+        triangle_overlay: Triangle Overlay
+        image: Image
+        link: Link

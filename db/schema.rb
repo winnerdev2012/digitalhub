@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_26_203306) do
+ActiveRecord::Schema.define(version: 2019_04_02_144017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,6 +169,26 @@ ActiveRecord::Schema.define(version: 2019_03_26_203306) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "parent_id"
+  end
+
+  create_table "refinery_one_box_translations", force: :cascade do |t|
+    t.string "title"
+    t.string "locale", null: false
+    t.integer "refinery_one_box_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_refinery_one_box_translations_on_locale"
+    t.index ["refinery_one_box_id", "locale"], name: "index_95394ba315aed2cb69dea96439990984a765aa44", unique: true
+  end
+
+  create_table "refinery_one_boxes", force: :cascade do |t|
+    t.boolean "visible"
+    t.boolean "triangle_overlay"
+    t.integer "image_id"
+    t.string "link"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "refinery_page_part_translations", id: :serial, force: :cascade do |t|

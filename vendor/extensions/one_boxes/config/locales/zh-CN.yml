@@ -1,0 +1,33 @@
+zh-CN:
+  refinery:
+    plugins:
+      one_boxes:
+        title: One Boxes
+    one_boxes:
+      admin:
+        one_boxes:
+          actions:
+            create_new: 建立新的 One Box
+            reorder: 对 One Boxes 重新排序
+            reorder_done: 对 One Boxes 的重新排序结束
+          records:
+            title: One Boxes
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no One Boxes yet. Click "Add New One Box" to add your first one box.
+            no_items_yet: 目前没有 One Boxes . 点击 "Add New One Box" 创建一个one box.
+          one_box:
+            view_live_html: 查看 one box 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 one box
+            delete: 永久删除 one box
+      one_boxes:
+        show:
+          other: 其他 One Boxes
+  activerecord:
+    attributes:
+      'refinery/one_boxes/one_box':
+        title: Title
+        visible: Visible
+        triangle_overlay: Triangle Overlay
+        image: Image
+        link: Link

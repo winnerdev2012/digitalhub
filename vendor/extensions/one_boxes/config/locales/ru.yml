@@ -1,0 +1,31 @@
+ru:
+  refinery:
+    plugins:
+      one_boxes:
+        title: One Boxes
+    one_boxes:
+      admin:
+        one_boxes:
+          actions:
+            create_new: Добавить One Box
+            reorder: Изменить порядок One Boxes
+            reorder_done: Закончить изменять порядок One Boxes
+          records:
+            title: One Boxes
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "One Boxes" не найдено. Нажмите "Добавить One Box" чтобы создать one box.
+          one_box:
+            view_live_html: Просмотреть one box вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать one box
+            delete: Удалить one box навсегда
+      one_boxes:
+        show:
+          other: Другие One Boxes
+  activerecord:
+    attributes:
+      'refinery/one_boxes/one_box':
+        title: Title
+        visible: Visible
+        triangle_overlay: Triangle Overlay
+        image: Image
+        link: Link

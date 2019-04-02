@@ -1,0 +1,32 @@
+es:
+  refinery:
+    plugins:
+      one_boxes:
+        title: One Boxes
+#        article: masculino/femenino
+    one_boxes:
+      admin:
+        one_boxes:
+          actions:
+            create_new: Crear nuevo one box
+            reorder: Reordenar one boxes
+            reorder_done: Reordenación de one boxes completada
+          records:
+            title: One Boxes
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay one boxes todavía. Pulsa en "Crear nuevo One Box" para crear tu primer one box.
+          one_box:
+            view_live_html: Ver este one box como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este one box
+            delete: Borrar este one box para siempre
+      one_boxes:
+        show:
+          other: Otros one boxes
+  activerecord:
+    attributes:
+      'refinery/one_boxes/one_box':
+        title: Title
+        visible: Visible
+        triangle_overlay: Triangle Overlay
+        image: Image
+        link: Link

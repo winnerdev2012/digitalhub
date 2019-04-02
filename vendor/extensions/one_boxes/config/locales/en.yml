@@ -1,0 +1,31 @@
+en:
+  refinery:
+    plugins:
+      one_boxes:
+        title: One Boxes
+    one_boxes:
+      admin:
+        one_boxes:
+          actions:
+            create_new: Add New One Box
+            reorder: Reorder One Boxes
+            reorder_done: Done Reordering One Boxes
+          records:
+            title: One Boxes
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no One Boxes yet. Click "Add New One Box" to add your first one box.
+          one_box:
+            view_live_html: View this one box live <br/><em>(opens in a new window)</em>
+            edit: Edit this one box
+            delete: Remove this one box forever
+      one_boxes:
+        show:
+          other: Other One Boxes
+  activerecord:
+    attributes:
+      'refinery/one_boxes/one_box':
+        title: Title
+        visible: Visible
+        triangle_overlay: Triangle Overlay
+        image: Image
+        link: Link

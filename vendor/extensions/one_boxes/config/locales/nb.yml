@@ -1,0 +1,31 @@
+nb:
+  refinery:
+    plugins:
+      one_boxes:
+        title: One Boxes
+    one_boxes:
+      admin:
+        one_boxes:
+          actions:
+            create_new: Lag en ny One Box
+            reorder: Endre rekkefølgen på One Boxes
+            reorder_done: Ferdig å endre rekkefølgen One Boxes
+          records:
+            title: One Boxes
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen One Boxes enda. Klikk på "Lag en ny One Box" for å legge til din første one box.
+          one_box:
+            view_live_html: Vis hvordan denne one box ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne one box
+            delete: Fjern denne one box permanent
+      one_boxes:
+        show:
+          other: Andre One Boxes
+  activerecord:
+    attributes:
+      'refinery/one_boxes/one_box':
+        title: Title
+        visible: Visible
+        triangle_overlay: Triangle Overlay
+        image: Image
+        link: Link
