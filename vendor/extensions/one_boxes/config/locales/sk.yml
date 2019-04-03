@@ -1,0 +1,31 @@
+sk:
+  refinery:
+    plugins:
+      one_boxes:
+        title: One Boxes
+    one_boxes:
+      admin:
+        one_boxes:
+          actions:
+            create_new: Pridať One Box
+            reorder: Preusporiadať One Boxes
+            reorder_done: Koniec radenia One Boxes
+          records:
+            title: One Boxes
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne One Boxes. Kliknite na "Pridať One Box" pre pridanie prvého one box.
+          one_box:
+            view_live_html: Zobraziť náhľad one box<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť one box
+            delete: Zmazať one box
+      one_boxes:
+        show:
+          other: Daľšie One Boxes
+  activerecord:
+    attributes:
+      'refinery/one_boxes/one_box':
+        title: Title
+        visible: Visible
+        triangle_overlay: Triangle Overlay
+        image: Image
+        link: Link

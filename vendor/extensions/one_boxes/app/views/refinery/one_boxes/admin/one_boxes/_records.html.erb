@@ -1,0 +1,16 @@
+<%= render 'refinery/admin/search_header', :url => refinery.one_boxes_admin_one_boxes_path %>
+<div class='pagination_container'>
+  <% if @one_boxes.any? %>
+    <%= render 'one_boxes' %>
+  <% else %>
+    <p>
+      <% if searching? %>
+        <%= t('no_results', :scope => 'refinery.admin.search') %>
+      <% else %>
+        <strong>
+          <%= t('.no_items_yet') %>
+        </strong>
+      <% end %>
+    </p>
+  <% end %>
+</div>

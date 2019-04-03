@@ -1,0 +1,31 @@
+nl:
+  refinery:
+    plugins:
+      one_boxes:
+        title: One Boxes
+    one_boxes:
+      admin:
+        one_boxes:
+          actions:
+            create_new: Nieuwe One Box toevoegen
+            reorder: De volgorde van de One Boxes wijzigen
+            reorder_done: Klaar met het wijzingen van de van de One Box-volgorde
+          records:
+            title: One Boxes
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen One Boxes. Druk op 'Nieuwe One Box toevoegen' om de eerste toe te voegen.
+          one_box:
+            view_live_html: Deze one box op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze one box
+            delete: Deze one box definitief verwijderen
+      one_boxes:
+        show:
+          other: Andere One Boxes
+  activerecord:
+    attributes:
+      'refinery/one_boxes/one_box':
+        title: Title
+        visible: Visible
+        triangle_overlay: Triangle Overlay
+        image: Image
+        link: Link

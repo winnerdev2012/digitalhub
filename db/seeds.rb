@@ -27,3 +27,6 @@ Refinery::Announcements::Engine.load_seed
 
 # Added by Refinery CMS HeroImages extension
 Refinery::HeroImages::Engine.load_seed
+
+# Added by Refinery CMS OneBoxes extension
+Refinery::OneBoxes::Engine.load_seed

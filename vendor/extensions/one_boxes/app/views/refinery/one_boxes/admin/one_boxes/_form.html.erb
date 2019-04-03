@@ -1,0 +1,42 @@
+<%= form_for [refinery, :one_boxes_admin, @one_box] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @one_box,
+              :include_object_name => true %>
+
+  <%= render '/refinery/admin/locale_picker',
+              :current_locale => Mobility.locale %>
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :visible -%>
+    <%= f.check_box :visible, :checked => @one_box[:visible] -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :triangle_overlay -%>
+    <%= f.check_box :triangle_overlay, :checked => @one_box[:triangle_overlay] -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :image -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :image_id,
+               :image => @one_box.image,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :link -%>
+    <%= f.text_field :link -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', f: f,
+             continue_editing: false,
+             delete_title: t('delete', scope: 'refinery.one_boxes.admin.one_boxes.one_box'),
+             delete_confirmation: t('message', scope: 'refinery.admin.delete', title: @one_box.title),
+             cancel_url: refinery.one_boxes_admin_one_boxes_path -%>
+<% end -%>
