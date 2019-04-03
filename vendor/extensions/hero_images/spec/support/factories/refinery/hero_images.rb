@@ -3,5 +3,6 @@ FactoryBot.define do
     sequence(:title) { |n| "HeroImage#{n}" }
     description { "This describes the hero image." }
     image
+    # association :image, factory: :alternate_image
   end
 end
