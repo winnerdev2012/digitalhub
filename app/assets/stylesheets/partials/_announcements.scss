@@ -4,16 +4,16 @@
   $title_trans: opacity $trans_duration, top ($trans_duration * 1.2);
 
   background-color: $v3-color_green-dark;
-  font-size: 1.25rem;
 
   display: grid;
   grid-template-columns: 1fr 2fr;
   justify-content: left;
 
-  padding: 8.25rem 8.3rem 3.125rem 13.875rem;
+  margin: 10.25rem auto;
+  width: 69.45rem;
 
   h2 {
-    font-size: 2.25rem;
+    font-size: $v3_font_size-title;
   }
 
   &__numbers {
@@ -28,6 +28,7 @@
     opacity: 0.3;
     background-color: $v3-color_green-dark;
     border: none;
+    font-size: $v3_font_size-number;
 
     &--selected {
       opacity: 1;
@@ -35,9 +36,8 @@
   }
 
   &__button {
-    font-size: 1.375rem;
-    padding: 1.25rem 3.75rem;
-    line-height: 15px;
+    font-size: $v3_font_size-button;
+    padding: 1rem 3.1rem;
   }
 
   &__title {
@@ -46,9 +46,9 @@
 
   &__image {
     color: $color_font-light;
-    width: 100%;
+    width: 42.3rem;
+    height: 25.8rem;
     object-fit: cover;
-    padding-right: 3.175rem;
 
     img {
       position: absolute;
@@ -68,8 +68,7 @@
 
   &__text {
     color: $color_font-light;
-    margin-right: 3.175rem;
-    margin-bottom: 2rem;
+    margin-right: 4.925rem;
 
     @include media(small) {
       width: 100%;
@@ -81,7 +80,7 @@
   &__paragraph {
     color: $color_font-light;
     overflow: scroll;
-    max-height: 32.5rem;
+    max-height: 10.95rem;
   }
 
   @include media(medium) {
