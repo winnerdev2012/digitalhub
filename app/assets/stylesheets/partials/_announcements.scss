@@ -7,7 +7,6 @@
 
   display: grid;
   grid-template-columns: 1fr 2fr;
-  justify-content: left;
 
   margin: 10.25rem auto;
   width: 69.45rem;
@@ -24,11 +23,12 @@
 
   &__number {
     display: inline-block;
-    margin: 0 1rem 0 0;
+    margin: 0 1.1rem 0 0;
     opacity: 0.3;
     background-color: $v3-color_green-dark;
     border: none;
     font-size: $v3_font_size-number;
+    padding: 0;
 
     &--selected {
       opacity: 1;
@@ -36,8 +36,19 @@
   }
 
   &__button {
+    border: 1px solid $v3-color_green-light;
+    color: $color_font-light;
+    font-family: $font_family-secondary;
     font-size: $v3_font_size-button;
+    letter-spacing: 0.0035rem;
+    margin-top: 1.4rem;
     padding: 1rem 3.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include media(large) {
+      padding: 0.59rem 1.75rem;
+    }
   }
 
   &__title {
@@ -46,9 +57,9 @@
 
   &__image {
     color: $color_font-light;
-    width: 42.3rem;
     height: 25.8rem;
     object-fit: cover;
+    width: 42.3rem;
 
     img {
       position: absolute;
@@ -61,7 +72,7 @@
       min-height: 100%;
     }
 
-    @include media(medium) {
+    @include media(large) {
       display: none;
     }
   }
@@ -69,25 +80,27 @@
   &__text {
     color: $color_font-light;
     margin-right: 4.925rem;
+    width: 22.25rem;
 
-    @include media(small) {
-      width: 100%;
-      max-width: 100%;
-      margin-right: 0;
+    @include media(large) {
+      margin-right: initial;
+      width: initial;
     }
   }
 
   &__paragraph {
     color: $color_font-light;
-    overflow: scroll;
     max-height: 10.95rem;
+    overflow: scroll;
+    padding-bottom: 1.4rem;
   }
 
-  @include media(medium) {
-    grid-template-columns: 1fr;
-  }
-
-  @include media(small) {
-    padding: 2rem 1.5rem;
+  @include media(large) {
+    grid-template-columns: 100%;
+    margin: 1.75rem 1.25rem .6rem;
+    // Fix below counteracts refinery putting an :after elemnt after sections with a height of 0.
+    // line 43, .rvm/gems/ruby-2.5.3/bundler/gems/refinerycms-67f117f937c5/core/app/assets/stylesheets/refinery/formatting.scss
+    padding-bottom: .62rem;
+    width: initial;
   }
 }

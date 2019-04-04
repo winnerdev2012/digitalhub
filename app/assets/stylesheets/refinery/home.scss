@@ -1,5 +1,5 @@
 .HomePage {
-  background-color: $v3-color_green-lightest;
+  background-color: $v3-color_green-dark;
 
   .hero-banner {
     z-index: 1;
@@ -47,7 +47,7 @@
           + * { margin-left: .8rem; }
         }
       }
-      
+
       @media (max-width: 1300px){
         &__content {
           display: grid;
@@ -55,7 +55,7 @@
           grid-template-rows: 65px auto auto auto auto;
           margin: 0;
           background-image: none;
-    
+
           h1 {
             grid-column-start: 1;
             margin: 0;
@@ -73,7 +73,7 @@
             font-size: 16px;
             width: 345px;
           }
-     
+
           .hero-banner-actions {
             grid-column-start: 1;
             margin: 0;
@@ -85,7 +85,7 @@
             width: 100%;
             padding-top: .7rem;
           }
-          
+
           button.button {
             height: 45px;
             border: 3px solid $v3-color_green-light;
@@ -101,7 +101,7 @@
 
   .one-box-grid {
     padding: 0 8.3rem 10.625rem 13.875rem;
-    
+
     background: $v3-color_green-dark;
 
     p {
@@ -112,21 +112,21 @@
       padding: 0 1rem;
     }
   }
-  
+
   .regional-plan {
     display: grid;
     grid-template-columns: 16.31rem 39.25rem 8.75rem 39.375rem;
     grid-template-rows: 54.88rem;
-    
+
     font-family: $font_family-primary;
     background-color: #ffffff;
-    
+
     @include media($break_xlarge) {
       grid-template-columns: 16.31rem 30.25rem 1fr;
       grid-template-rows: 35rem;
       margin-bottom: 4.56rem;
     }
-    
+
     @include media($break_small) {
       display: grid;
       grid-template-columns: 1.56rem 26.25rem 2.31rem;
@@ -141,12 +141,12 @@
       width: auto;
       height: auto;
       padding-top: 8.75rem;
-      
+
       @include media($break_xlarge){
         display: none;
       }
     }
-    
+
     &--description {
       grid-column-start: 4;
       grid-column-end: 5;
@@ -164,19 +164,19 @@
         font-family: $font_family-primary;
         color: $v3-color_green-dark;
         font-size: 2.125rem;
-        
+
         @include media($break_xlarge) {
           font-size: 2.125rem;
           padding-right: 6rem;
           width: 20rem;
         }
       }
-      
+
       &-text, p{
         font-family: $font_family-primary;
         font-size: 1.25rem;
         color: $v3-color_green-dark;
-        
+
         @include media($break_xlarge) {
           font-size: .9375rem;
         }
@@ -187,15 +187,15 @@
         margin-top: 2.5rem;
         padding: .7rem 3.5rem .7rem 2.5rem;
         border: 1px solid $v3-color_green-dark;
-        
+
         text-align: center;
         text-transform: uppercase;
         font-family: $font_family-secondary;
         letter-spacing: .1rem;
-        
+
         color: $v3-color_green-medium;
         background-color: $v3-color_green-lightest;
-        
+
         @include media($break_xlarge) {
           margin-top: 1.87rem;
           padding: .7rem 3.5rem .7rem 2.5rem;
