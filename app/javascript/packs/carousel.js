@@ -17,7 +17,7 @@ function getData() {
 }
 
 function getCarousel() {
-  return document.querySelector('.announcements');
+  return document.querySelector('.announcements__content');
 }
 
 function populateCarousel(announcements, carouselContainer) {

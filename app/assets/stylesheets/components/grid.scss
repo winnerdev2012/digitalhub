@@ -5,14 +5,17 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 
-    @include media(medium) {
+    @include media(large) {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
     }
   }
 
   &__cell {
-    margin: 0 3.175rem 3.175rem 0;
+    margin-bottom: 3.15rem;
+    margin-right: 3.15rem;
+    width: 21.05rem;
+    height: 21.05rem;
 
     @include media(small) { margin: .75rem; }
 

@@ -100,47 +100,59 @@
   }
 
   .one-box-grid {
-    padding: 0 8.3rem 10.625rem 13.875rem;
-
+    // padding: 0 8.3rem 10.625rem 13.875rem;
+    margin: 0 auto;
     background: $v3-color_green-dark;
 
     p {
       color: #ffffff;
     }
 
-    @include media(small) {
-      padding: 0 1rem;
+    &__content {
+      width: 75%;
+      margin: 0 auto;
+
+      @include media(large) {
+        margin: 0;
+        // grid-template-columns: 100%;
+        width: initial;
+      }
     }
   }
 
   .regional-plan {
-    display: grid;
-    grid-template-columns: 16.31rem 39.25rem 8.75rem 39.375rem;
-    grid-template-rows: 54.88rem;
-
     font-family: $font_family-primary;
     background-color: #ffffff;
 
     @include media($break_xlarge) {
-      grid-template-columns: 16.31rem 30.25rem 1fr;
-      grid-template-rows: 35rem;
       margin-bottom: 4.56rem;
     }
 
     @include media($break_small) {
-      display: grid;
-      grid-template-columns: 1.56rem 26.25rem 2.31rem;
-      grid-template-rows: 35.2rem;
       padding: 0;
       margin-bottom: 4.56rem;
     }
 
+    &__content {
+      width: 75%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      @include media(large) {
+        margin: 0;
+        // grid-template-columns: 100%;
+        width: initial;
+      }
+    }
+
     &--triangle {
-      grid-column-start: 2;
-      grid-column-end: 3;
-      width: auto;
-      height: auto;
-      padding-top: 8.75rem;
+      margin-right: 6.5rem;
+
+      img {
+        width: 31.4rem;
+        height: 29.85rem;
+      }
 
       @include media($break_xlarge){
         display: none;
@@ -148,18 +160,6 @@
     }
 
     &--description {
-      grid-column-start: 4;
-      grid-column-end: 5;
-      padding-top: 12rem;
-
-      @include media($break_xlarge) {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        font-size: .9375rem;
-        padding: 4.06rem 2.31rem 4.56rem .9375rem;
-        margin-bottom: 2rem;
-      }
-
       &-title {
         font-family: $font_family-primary;
         color: $v3-color_green-dark;
