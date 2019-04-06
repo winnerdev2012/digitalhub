@@ -1,6 +1,10 @@
 .HomePage {
   background-color: $v3-color_green-lightest;
 
+  .image-cache {
+    background-image: image-url('');
+  }
+
   .hero-banner {
     z-index: 1;
 
@@ -33,7 +37,7 @@
 
       cursor: default;
       background-image: image-url('bike-lane.jpg');
-      transition: .5s ease-in-out;
+      transition: 2s ease-in-out;
 
       h1 { margin: 0 0 .5rem 0; }
 
