@@ -1,6 +1,8 @@
 $(() => {
   if (checkWidth()) {
-    getImages()
+    setTimeout(() => {
+      getImages()
+    }, 4000);
   }
 });
 
@@ -15,7 +17,7 @@ if (baseUrl.match(/\/$/)) {
 }
 
 const checkWidth = () => {
-  return document.documentElement.clientWidth > 1300
+  return document.documentElement.clientWidth > 965
 }
 
 const getImages = () => {
@@ -23,7 +25,10 @@ const getImages = () => {
     .done(response => {
       counter = response.length
       imagesList = response
-      loadImages(response)
+
+      setTimeout(() => {
+        loadImages(response)
+      }, 4000);
     })
 };
 
@@ -31,7 +36,8 @@ const loadImages = (images) => {
   let index = 0
   for (let i = 0; i < images.length; i++) {
     setTimeout(() => {
-    }, i * 1000);
+      cacheImage(images[i])
+    }, i * 2000);
 
     setTimeout(() => {
       loadImage(images[i])
@@ -44,12 +50,20 @@ const loadImages = (images) => {
   }
 };
 
+const cacheImage = (img) => {
+  let imgUrl = `${baseUrl}${img.included[0].attributes.hero_image_thumbnail_url}`
+  let newImage = new Image()
+  newImage.src = imgUrl
+  $('div.image-cache')[0].style.backgroundImage = `url(${imgUrl})`
+}
+
 const loadImage = (img) => {
   counter -= 1
   let hero = $('.styled-box')[0];
 
   if (img && checkWidth()) {
     let imgUrl = `${baseUrl}${img.included[0].attributes.hero_image_thumbnail_url}`
+
     hero.style.backgroundImage = `url(${imgUrl})`
     hero.classList.add('rotation-test')
   }
