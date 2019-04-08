@@ -41,6 +41,19 @@
 
       h1 { margin: 0 0 .5rem 0; }
 
+      &__background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+         height: 100%;
+        width: 100%;
+
+         &:first-of-type {
+          background-image: image-url('bike-lane.jpg');
+        }
+      }
+      
       .hero-banner-actions {
         margin-top: 4rem;
 
