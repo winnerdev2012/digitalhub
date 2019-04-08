@@ -1,10 +1,6 @@
 .HomePage {
   background-color: $v3-color_green-lightest;
 
-  .image-cache {
-    background-image: image-url('');
-  }
-
   .hero-banner {
     z-index: 1;
 
@@ -37,17 +33,12 @@
 
       cursor: default;
       background-image: image-url('bike-lane.jpg');
-      transition: 2s ease-in-out;
-
+  
       h1 { margin: 0 0 .5rem 0; }
 
       &__background-image {
         position: absolute;
         top: 0;
-        left: 0;
-
-         height: 100%;
-        width: 100%;
 
          &:first-of-type {
           background-image: image-url('bike-lane.jpg');
@@ -106,7 +97,6 @@
           button.button {
             height: 45px;
             border: 3px solid $v3-color_green-light;
-            // padding: 1rem 0;
             padding: 0;
             margin: 0 0 1rem 0;
             width: 100%;
