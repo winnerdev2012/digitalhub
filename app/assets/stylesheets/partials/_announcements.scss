@@ -53,8 +53,7 @@
 
   &__content {
     display: grid;
-    grid-template-columns: 1fr 2.2fr;
-    grid-gap: 3.15rem;
+    grid-template-columns: 1fr 3.15rem 2.2fr;
     width: 75%;
     margin: 0 auto;
 
@@ -74,6 +73,8 @@
     object-fit: cover;
     justify-self: end;
     max-width: 100%;
+    grid-row: 1;
+    grid-column: 3;
 
     img {
       position: absolute;
@@ -93,6 +94,8 @@
 
   &__text {
     color: $color_font-light;
+    grid-column: 1;
+    grid-row: 1;
 
     @include media(medium) {
       margin-right: initial;
