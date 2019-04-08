@@ -3,22 +3,17 @@
 
   &--3-2 {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 3.15rem;
 
-    @include media(large) {
+
+    @include media(medium) {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: auto;
     }
   }
 
   &__cell {
-    margin-bottom: 3.15rem;
-    margin-right: 3.15rem;
-    width: 21.05rem;
-    height: 21.05rem;
-
-    @include media(small) { margin: .75rem; }
-
     &:before {
       @extend ._pseudo;
 

@@ -15,6 +15,10 @@
     font-family: $font_family-secondary;
     border-bottom: solid 0.1rem $v3-color_gray-dark;
     color: $color_font-light;
+    width: 90%;
+    @include media(medium) {
+      width: initial;
+    }
   }
 
   &__number {
@@ -43,7 +47,7 @@
     text-transform: uppercase;
     white-space: nowrap;
 
-    @include media(large) {
+    @include media(medium) {
       padding: 0.59rem 1.75rem;
     }
   }
@@ -54,7 +58,7 @@
     width: 75%;
     margin: 0 auto;
 
-    @include media(large) {
+    @include media(medium) {
       margin: 0;
       grid-template-columns: 100%;
       width: initial;
@@ -68,6 +72,8 @@
   &__image {
     color: $color_font-light;
     object-fit: cover;
+    justify-self: end;
+    max-width: 100%;
 
     img {
       position: absolute;
@@ -80,16 +86,15 @@
       min-height: 100%;
     }
 
-    @include media(large) {
+    @include media(medium) {
       display: none;
     }
   }
 
   &__text {
     color: $color_font-light;
-    margin-right: 4.925rem;
 
-    @include media(large) {
+    @include media(medium) {
       margin-right: initial;
     }
   }
@@ -101,7 +106,7 @@
     padding-bottom: 1.4rem;
   }
 
-  @include media(large) {
+  @include media(medium) {
     margin: 1.75rem auto .6rem auto;
     // Fix below counteracts refinery putting an :after elemnt after sections with a height of 0.
     // line 43, .rvm/gems/ruby-2.5.3/bundler/gems/refinerycms-67f117f937c5/core/app/assets/stylesheets/refinery/formatting.scss
