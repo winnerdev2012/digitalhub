@@ -15,7 +15,6 @@
     font-family: $font_family-secondary;
     border-bottom: solid 0.1rem $v3-color_gray-dark;
     color: $color_font-light;
-    width: 90%;
     @include media(medium) {
       width: initial;
     }
@@ -54,7 +53,8 @@
 
   &__content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2.2fr;
+    grid-gap: 3.15rem;
     width: 75%;
     margin: 0 auto;
 
@@ -102,7 +102,8 @@
   &__paragraph {
     color: $color_font-light;
     max-height: 10.95rem;
-    overflow: scroll;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     padding-bottom: 1.4rem;
   }
 
