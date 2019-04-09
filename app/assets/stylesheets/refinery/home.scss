@@ -33,7 +33,7 @@
 
       cursor: default;
       background-image: image-url('bike-lane.jpg');
-  
+
       h1 { margin: 0 0 .5rem 0; }
 
       &__background-image {
@@ -44,7 +44,7 @@
           background-image: image-url('bike-lane.jpg');
         }
       }
-      
+
       .hero-banner-actions {
         margin-top: 4rem;
 
@@ -107,7 +107,6 @@
   }
 
   .one-box-grid {
-    // padding: 0 8.3rem 10.625rem 13.875rem;
     margin: 0 auto;
     background: $v3-color_green-dark;
     padding-bottom: 10.25rem;
@@ -124,6 +123,11 @@
         margin: 0;
         width: initial;
       }
+    }
+
+    @include media(small) {
+      padding-top: 0;
+      padding-bottom: 3.05rem;
     }
   }
 
@@ -150,6 +154,7 @@
       @include media(medium) {
         margin: 0;
         width: initial;
+        display: initial;
       }
     }
 

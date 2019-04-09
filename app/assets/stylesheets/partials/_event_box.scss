@@ -3,7 +3,7 @@
   border: 1px solid $v3-color_green-light;
   overflow: hidden;
 
-  @include media(small) { padding: 1.5rem 1rem; }
+  @include media(medium) { padding: 1rem 1.3rem; }
 
   &__header {
     display: flex;
@@ -18,15 +18,21 @@
       @include media(x-large) {
         font-size: $font_size-large;
       }
+
+      @include media(small) {
+        font-size: $v3_font_size-event-title-mobile;
+      }
     }
 
     &:after {
       @extend ._pseudo;
       @include triangle(50px, 'right', $v3-color_green-light);
 
-      margin-left: 3rem;
+      margin-left: 1rem;
 
-      @include media(large) { display: none; }
+      @include media(medium) {
+        @include triangle(25px, 'right', $v3-color_green-light);
+      }
     }
   }
 

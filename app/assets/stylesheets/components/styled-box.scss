@@ -38,10 +38,10 @@
         left: 0;
         z-index: 0;
 
-         width: 100%;
+        width: 100%;
         height: 100%;
 
-         background-size: 101%;
+        background-size: 101%;
         background-position: center center;
     }
 
@@ -60,6 +60,10 @@
         width: 75%;
 
         p { color: $color_font-light; }
+
+        @include media(small) {
+            width: initial;
+        }
     }
 
     &__title {
@@ -87,15 +91,19 @@
 
         @include media(small) {
             font-size: $font_size-small;
-            padding: .9375rem 0.5rem;
+            padding: initial;
+            text-align: center;
         }
 
         &--block {
             min-width: 50%;
-
             color: $v3-color_green-dark;
-
             background: $color_bg-light;
+
+            @include media(small) {
+                background: initial;
+                color: white;
+            }
         }
     }
 
@@ -104,51 +112,71 @@
         &:before {
             transform: rotate(-45deg);
             transition: $content_trans;
+
+            @include media(small) {
+                transform: rotate(-90deg);
+            }
         }
 
         #{$self}__title {
             top: 0;
-
             opacity: 1;
-
             transition: $title_trans;
         }
     }
 
     &--extended {
       background-size: cover;
-      
+
       #{$self}__content {
           margin: 0 auto;
           padding: 10% 0 20%;
-          
+
           text-align: left;
-          
+
           p {
               width: 51%;
-              
+
               &.sub-header {
                   margin: 0;
-                  
+
                   font-size: $font_size-large;
                   font-style: italic;
                 }
             }
         }
-        
+
         &:before {
             bottom: 98%;
             right: -10%;
-            
+
             background: $v3-color_green-medium;
             opacity: .75;
             transform: rotate(-28deg);
-            
+
             @include media($break_large){
                 transform: rotate(-90deg);
                 bottom: 100%;
                 right: 0;
             }
+        }
+    }
+
+    @include media(small) {
+        padding: 1.5rem 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &:before {
+            transform: rotate(-90deg);
+            transition: $content_trans;
+            opacity: .75;
+        }
+
+        #{$self}__title {
+            top: 0;
+            opacity: 1;
+            transition: $title_trans;
         }
     }
 }

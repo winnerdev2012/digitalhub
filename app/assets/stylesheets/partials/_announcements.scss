@@ -108,6 +108,11 @@
     overflow-y: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     padding-bottom: 1.4rem;
+
+    @include media(medium) {
+     overflow-y: initial;
+     max-height: initial;
+    }
   }
 
   @include media(medium) {
