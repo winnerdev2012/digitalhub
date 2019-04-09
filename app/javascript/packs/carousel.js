@@ -17,7 +17,7 @@ function getData() {
 }
 
 function getCarousel() {
-  return document.querySelector('.announcements');
+  return document.querySelector('.announcements__content');
 }
 
 function populateCarousel(announcements, carouselContainer) {
@@ -73,7 +73,7 @@ function populateAnnouncement(announcement, carouselContainer) {
   carouselContainer.appendChild(imageNode)
 
   let buttonNode = document.createElement("a")
-  buttonNode.setAttribute('class', 'button announcements__button')
+  buttonNode.setAttribute('class', 'announcements__button')
   buttonNode.setAttribute('href', link)
   buttonNode.innerText = "Learn More"
   carouselContainer.firstElementChild.appendChild(buttonNode)

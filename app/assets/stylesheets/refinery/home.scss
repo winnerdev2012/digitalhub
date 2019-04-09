@@ -1,5 +1,5 @@
 .HomePage {
-  background-color: $v3-color_green-lightest;
+  background-color: $v3-color_green-dark;
 
   .hero-banner {
     z-index: 1;
@@ -55,7 +55,7 @@
           + * { margin-left: .8rem; }
         }
       }
-      
+
       @media (max-width: 1300px){
         &__content {
           display: grid;
@@ -63,7 +63,7 @@
           grid-template-rows: 65px auto auto auto auto;
           margin: 0;
           background-image: none;
-    
+
           h1 {
             grid-column-start: 1;
             margin: 0;
@@ -81,7 +81,7 @@
             font-size: 16px;
             width: 345px;
           }
-     
+
           .hero-banner-actions {
             grid-column-start: 1;
             margin: 0;
@@ -93,7 +93,7 @@
             width: 100%;
             padding-top: .7rem;
           }
-          
+
           button.button {
             height: 45px;
             border: 3px solid $v3-color_green-light;
@@ -107,117 +107,111 @@
   }
 
   .one-box-grid {
-    padding: 0 8.3rem 10.625rem 13.875rem;
-    
+    // padding: 0 8.3rem 10.625rem 13.875rem;
+    margin: 0 auto;
     background: $v3-color_green-dark;
+    padding-bottom: 10.25rem;
 
     p {
       color: #ffffff;
     }
 
-    @include media(small) {
-      padding: 0 1rem;
+    &__content {
+      width: 75%;
+      margin: 0 auto;
+
+      @include media(medium) {
+        margin: 0;
+        width: initial;
+      }
     }
   }
-  
+
   .regional-plan {
-    display: grid;
-    grid-template-columns: 16.31rem 39.25rem 8.75rem 39.375rem;
-    grid-template-rows: 54.88rem;
-    
     font-family: $font_family-primary;
     background-color: #ffffff;
-    
-    @include media($break_xlarge) {
-      grid-template-columns: 16.31rem 30.25rem 1fr;
-      grid-template-rows: 35rem;
+
+    @include media(medium) {
       margin-bottom: 4.56rem;
     }
-    
-    @include media($break_small) {
-      display: grid;
-      grid-template-columns: 1.56rem 26.25rem 2.31rem;
-      grid-template-rows: 35.2rem;
+
+    @include media(small) {
       padding: 0;
       margin-bottom: 4.56rem;
     }
 
+    &__content {
+      width: 75%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 6.5rem 1fr;
+      padding: 7rem 0;
+
+      @include media(medium) {
+        margin: 0;
+        width: initial;
+      }
+    }
+
     &--triangle {
-      grid-column-start: 2;
-      grid-column-end: 3;
-      width: auto;
-      height: auto;
-      padding-top: 8.75rem;
-      
-      @include media($break_xlarge){
+      grid-row: 1;
+      grid-column: 1;
+
+      img {
+        width: 100%;
+        max-height: 100%;
+      }
+
+      @include media(medium) {
         display: none;
       }
     }
-    
-    &--description {
-      grid-column-start: 4;
-      grid-column-end: 5;
-      padding-top: 12rem;
 
-      @include media($break_xlarge) {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        font-size: .9375rem;
-        padding: 4.06rem 2.31rem 4.56rem .9375rem;
-        margin-bottom: 2rem;
-      }
+    &--description {
+      grid-row: 1;
+      grid-column: 3;
 
       &-title {
         font-family: $font_family-primary;
         color: $v3-color_green-dark;
-        font-size: 2.125rem;
-        
-        @include media($break_xlarge) {
+        font-size: 2.2rem;
+
+        @include media(medium) {
           font-size: 2.125rem;
           padding-right: 6rem;
           width: 20rem;
         }
       }
-      
+
       &-text, p{
         font-family: $font_family-primary;
-        font-size: 1.25rem;
         color: $v3-color_green-dark;
-        
-        @include media($break_xlarge) {
+
+        @include media(medium) {
           font-size: .9375rem;
         }
       }
 
       &__button {
-        width: 16.3125rem;
-        margin-top: 2.5rem;
-        padding: .7rem 3.5rem .7rem 2.5rem;
         border: 1px solid $v3-color_green-dark;
-        
-        text-align: center;
-        text-transform: uppercase;
+        color: $color_font-light;
         font-family: $font_family-secondary;
-        letter-spacing: .1rem;
-        
-        color: $v3-color_green-medium;
-        background-color: $v3-color_green-lightest;
-        
-        @include media($break_xlarge) {
-          margin-top: 1.87rem;
-          padding: .7rem 3.5rem .7rem 2.5rem;
-        }
+        font-size: $v3_font_size-button;
+        letter-spacing: 0.0035rem;
+        margin-top: 1.4rem;
+        padding: 1rem 3.1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+        width: 12.625rem;
 
         a {
           text-decoration: none;
-          font-size: 1.375rem;
         }
 
-        &:hover {
-          background-color: $color_green-medium;
-          a {
-            color: $v3-color_green-lightest;
-          }
+        @include media(medium) {
+          width: 9.9375rem;
+          padding: 0.59rem 1.75rem;
         }
       }
     }

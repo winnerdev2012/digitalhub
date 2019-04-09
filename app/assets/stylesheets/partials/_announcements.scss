@@ -4,30 +4,30 @@
   $title_trans: opacity $trans_duration, top ($trans_duration * 1.2);
 
   background-color: $v3-color_green-dark;
-  font-size: 1.25rem;
 
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  justify-content: left;
-
-  padding: 8.25rem 8.3rem 3.125rem 13.875rem;
+  margin: 10.25rem auto 0;
 
   h2 {
-    font-size: 2.25rem;
+    font-size: $v3_font_size-title;
   }
 
   &__numbers {
     font-family: $font_family-secondary;
     border-bottom: solid 0.1rem $v3-color_gray-dark;
     color: $color_font-light;
+    @include media(medium) {
+      width: initial;
+    }
   }
 
   &__number {
     display: inline-block;
-    margin: 0 1rem 0 0;
+    margin: 0 1.1rem 0 0;
     opacity: 0.3;
     background-color: $v3-color_green-dark;
     border: none;
+    font-size: $v3_font_size-number;
+    padding: 0;
 
     &--selected {
       opacity: 1;
@@ -35,9 +35,33 @@
   }
 
   &__button {
-    font-size: 1.375rem;
-    padding: 1.25rem 3.75rem;
-    line-height: 15px;
+    border: 1px solid $v3-color_green-light;
+    color: $color_font-light;
+    font-family: $font_family-secondary;
+    font-size: $v3_font_size-button;
+    letter-spacing: 0.0035rem;
+    margin-top: 1.4rem;
+    padding: 1rem 3.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    @include media(medium) {
+      padding: 0.59rem 1.75rem;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 3.15rem 2.2fr;
+    width: 75%;
+    margin: 0 auto;
+
+    @include media(medium) {
+      margin: 0;
+      grid-template-columns: 100%;
+      width: initial;
+    }
   }
 
   &__title {
@@ -46,9 +70,11 @@
 
   &__image {
     color: $color_font-light;
-    width: 100%;
     object-fit: cover;
-    padding-right: 3.175rem;
+    justify-self: end;
+    max-width: 100%;
+    grid-row: 1;
+    grid-column: 3;
 
     img {
       position: absolute;
@@ -68,27 +94,26 @@
 
   &__text {
     color: $color_font-light;
-    margin-right: 3.175rem;
-    margin-bottom: 2rem;
+    grid-column: 1;
+    grid-row: 1;
 
-    @include media(small) {
-      width: 100%;
-      max-width: 100%;
-      margin-right: 0;
+    @include media(medium) {
+      margin-right: initial;
     }
   }
 
   &__paragraph {
     color: $color_font-light;
-    overflow: scroll;
-    max-height: 32.5rem;
+    max-height: 10.95rem;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    padding-bottom: 1.4rem;
   }
 
   @include media(medium) {
-    grid-template-columns: 1fr;
-  }
-
-  @include media(small) {
-    padding: 2rem 1.5rem;
+    margin: 1.75rem auto .6rem auto;
+    // Fix below counteracts refinery putting an :after elemnt after sections with a height of 0.
+    // line 43, .rvm/gems/ruby-2.5.3/bundler/gems/refinerycms-67f117f937c5/core/app/assets/stylesheets/refinery/formatting.scss
+    padding-bottom: .62rem;
   }
 }
