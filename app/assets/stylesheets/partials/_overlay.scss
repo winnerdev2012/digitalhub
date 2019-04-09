@@ -1,0 +1,65 @@
+.overlay {
+  display: grid;
+  grid-template-columns: 16.3125rem 1fr 5rem 11.3125rem;
+  grid-template-rows: .9rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(63, 60, 60, 0.705);
+  overflow: hidden;
+
+  @include media(small){
+    display: grid;
+    grid-template-columns: .5rem 1fr 2.5rem .5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.705);
+    overflow: hidden;
+  }
+}
+
+#goals-survey {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  top: 0;
+  height: 99vh;
+  width: 100%;
+  z-index: 3;
+
+  @include media(small){
+    grid-column-start: 2;
+    grid-column-end: 4;
+    top: 0;
+    height: 98vh;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+.close-survey {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  top: 2rem;
+  font-size: 5rem;
+  color: $v3-color_green-medium;
+  background: none;
+  border: 0;
+  z-index: 4;
+  cursor: pointer;
+
+  @include media(small){
+    grid-column-start: 3;
+    grid-column-end: 4;
+    top: 1.5rem;
+    font-size: 3rem;
+    z-index: 4;
+  }
+}

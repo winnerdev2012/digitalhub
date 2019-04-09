@@ -1,32 +1,51 @@
 $(() => {
-  // $('button#survey-button').on('click', function (event) {
-  // $oneBox = $('div.styled-box__title.styled-box__title--block')
-  $oneBox = $('div.styled-box.one-box.styled-box--half')
-  $oneBox.on('click', function (event) {
-    event.preventDefault();
-    $('#survey-modal.modal').html('')
-
-    $('#survey-modal.modal').append('<button id="close-survey" class="close">&times;</button>')
-    $('#survey-modal.modal').append(`
-      <iframe src="https://mapc.az1.qualtrics.com/jfe/form/SV_0wiHeWbuN9GJ81f" 
-      frameborder="0" 
-      width=100%;
-      height=100%;
-      ></iframe> 
-    `)
-
-    $('#survey-modal.modal')[0].style.display = "block";
-
-    $('button.close').on('click', function (event) {
-      event.preventDefault();
-      $('#survey-modal.modal')[0].style.display = "none";
-    })
-
-    $('window').on('click', function (event) {
-      event.preventDefault();
-      if (event.target == modal) {
-        $('#survey-modal.modal')[0].style.display = "none";
-      }
-    })
-  })
+  getSurveyOneBox();
+  getSurveyAnnouncement();
 })
+
+  const getSurveyOneBox = () => {
+    $('a').on('click', function(event){
+      if(this.href.split('/')[this.href.split('/').length - 1] == "#"){
+        $('body').append('<div class="overlay"></div>')
+        $('div.overlay').html("")
+        $('div.overlay').append(`
+          <iframe src="https://mapc.az1.qualtrics.com/jfe/form/SV_0wiHeWbuN9GJ81f" 
+          frameborder="0" 
+          width=100%;
+          height=100%;
+          id="goals-survey";
+          ></iframe> 
+        `)
+        $('div.overlay').append(`<button id="close-survey" class="close-survey">&times;</button>`)
+        event.preventDefault();
+      }
+      closeSurvey();
+    })
+  }
+    
+    const getSurveyAnnouncement = () => {
+      $('a.button.announcements__button').on('click', function(event){
+        if(this.href.split('/')[this.href.split('/').length - 1] == "#"){
+          $('body').append('<div class="overlay"></div>')
+          $('div.overlay').html("")
+          $('div.overlay').append(`
+            <iframe src="https://mapc.az1.qualtrics.com/jfe/form/SV_0wiHeWbuN9GJ81f" 
+            frameborder="0" 
+            width=100%;
+            height=100%;
+            id="goals-survey";
+            ></iframe> 
+          `)
+          $('div.overlay').append(`<button id="close-survey" class="close-survey">&times;</button>`)
+          event.preventDefault();
+        }
+      closeSurvey();
+    })
+  }
+
+const closeSurvey = () => {
+  $('div.overlay button#close-survey.close-survey').on('click', function (event) {
+    event.preventDefault()
+    $('div.overlay').html("").removeClass('overlay')
+  })
+}
