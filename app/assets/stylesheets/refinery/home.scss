@@ -16,6 +16,7 @@
       img {
         width: $image_size;
         margin-bottom: 12px;
+        z-index: 1;
       }
 
       &:after {
@@ -23,6 +24,7 @@
         @include triangle($triangle_size, 'down', $v3-color_green-light);
 
         margin-left: ($image_size - $triangle_size) / 4;
+        z-index: 1;
       }
     }
 
