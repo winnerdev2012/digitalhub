@@ -1,182 +1,180 @@
 .styled-box {
-    $self: &;
-    $trans_duration: .25s;
-    $content_trans: transform $trans_duration;
-    $title_trans: opacity $trans_duration, top ($trans_duration * 1.2);
+  $self: &;
+  $trans_duration: .25s;
+  $content_trans: transform $trans_duration;
+  $title_trans: opacity $trans_duration, top ($trans_duration * 1.2);
 
-    padding: 1rem;
+  padding: 1rem;
 
-    color: $color_font-light;
+  color: $color_font-light;
 
-    background: $v3-color_green-lightest;
+  background: $v3-color_green-lightest;
+  background-size: 101%;
+  background-position: center center;
+  cursor: pointer;
+  overflow: hidden;
+
+  &::before {
+    @extend ._pseudo;
+
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    z-index: 1;
+
+    width: 150%;
+    height: 100vw;
+
+    background: $v3-color_green-light;
+    opacity: .5;
+
+    transform: rotate(-18deg);
+    transform-origin: 100% 100%;
+    transition: $content_trans;
+  }
+
+  &__background, &__background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
     background-size: 101%;
     background-position: center center;
-    cursor: pointer;
-    overflow: hidden;
-    &:before {
-        @extend ._pseudo;
+  }
 
-        position: absolute;
-        right: 0;
-        bottom: 100%;
-        z-index: 1;
+  &__background-image {
+    opacity: 0;
+    transition: opacity 2s;
 
-        width: 150%;
-        height: 100vw;
-
-        background: $v3-color_green-light;
-        opacity: .5;
-
-        transform: rotate(-18deg);
-        transform-origin: 100% 100%;
-        transition: $content_trans;
+    &.active {
+      opacity: 1;
+      transition: opacity 1.5s;
     }
+  }
 
-    &__background, &__background-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
+  &__content {
+    z-index: 2;
+    width: 75%;
 
-        width: 100%;
-        height: 100%;
-
-        background-size: 101%;
-        background-position: center center;
-    }
-
-     &__background-image {
-        opacity: 0;
-        transition: opacity 2s;
-
-         &.active {
-            opacity: 1;
-            transition: opacity 1.5s;
-        }
-    }
-
-    &__content {
-        z-index: 2;
-        width: 75%;
-
-        p { color: $color_font-light; }
-
-        @include media(small) {
-            width: initial;
-        }
-    }
-
-    &__title {
-        display: inline-block;
-        top: 2rem;
-        z-index: 2;
-
-        padding: .9375rem 1.25rem;
-
-        font-family: $font_family-secondary;
-        font-size: 1.375rem;
-        letter-spacing: 1px;
-
-        background: none;
-        border: none;
-
-        opacity: 0;
-        text-transform: uppercase;
-        transition: $title_trans;
-
-        width: 14.8125rem;
-        max-width: 100%;
-
-        @include media(medium) { font-size: $font_size-small; }
-
-        @include media(small) {
-            font-size: $font_size-small;
-            padding: initial;
-            text-align: center;
-        }
-
-        &--block {
-            min-width: 50%;
-            color: $v3-color_green-dark;
-            background: $color_bg-light;
-
-            @include media(small) {
-                background: initial;
-                color: white;
-            }
-        }
-    }
-
-    &--half,
-    &:hover:not(&--extended) {
-        &:before {
-            transform: rotate(-45deg);
-            transition: $content_trans;
-
-            @include media(small) {
-                transform: rotate(-90deg);
-            }
-        }
-
-        #{$self}__title {
-            top: 0;
-            opacity: 1;
-            transition: $title_trans;
-        }
-    }
-
-    &--extended {
-      background-size: cover;
-
-      #{$self}__content {
-          margin: 0 auto;
-          padding: 10% 0 20%;
-
-          text-align: left;
-
-          p {
-              width: 51%;
-
-              &.sub-header {
-                  margin: 0;
-
-                  font-size: $font_size-large;
-                  font-style: italic;
-                }
-            }
-        }
-
-        &:before {
-            bottom: 98%;
-            right: -10%;
-
-            background: $v3-color_green-medium;
-            opacity: .75;
-            transform: rotate(-28deg);
-
-            @include media($break_large){
-                transform: rotate(-90deg);
-                bottom: 100%;
-                right: 0;
-            }
-        }
-    }
+    p { color: $color_font-light; }
 
     @include media(small) {
-        padding: 1.5rem 0;
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        &:before {
-            transform: scaleY(2) rotate(-90deg);
-            transition: $content_trans;
-            opacity: .75;
-        }
-
-        #{$self}__title {
-            top: 0;
-            opacity: 1;
-            transition: $title_trans;
-        }
+      width: initial;
     }
+  }
+
+  &__title {
+    display: inline-block;
+    top: 2rem;
+    z-index: 2;
+
+    padding: .9375rem 1.25rem;
+
+    font-family: $font_family-secondary;
+    font-size: 1.375rem;
+    letter-spacing: 1px;
+
+    background: none;
+    border: none;
+
+    opacity: 0;
+    text-transform: uppercase;
+    transition: $title_trans;
+
+    width: 14.8125rem;
+    max-width: 100%;
+
+    @include media(medium) { font-size: $font_size-small; }
+
+    @include media(small) {
+      font-size: $font_size-small;
+      padding: initial;
+      text-align: center;
+    }
+
+    &--block {
+      min-width: 50%;
+      color: $v3-color_green-dark;
+      background: $color_bg-light;
+
+      @include media(small) {
+        background: initial;
+        color: white;
+      }
+    }
+  }
+
+  &--half,
+  &:hover:not(&--extended) {
+    &:before {
+      transform: rotate(-45deg);
+      transition: $content_trans;
+
+      @include media(small) {
+        transform: rotate(-90deg);
+      }
+    }
+
+    #{$self}__title {
+      top: 0;
+      opacity: 1;
+      transition: $title_trans;
+    }
+  }
+
+  &--extended {
+    background-size: cover;
+
+    #{$self}__content {
+      margin: 0 auto;
+      padding: 10% 0 20%;
+      text-align: left;
+
+      p {
+        width: 51%;
+
+        &.sub-header {
+          margin: 0;
+          font-size: $font_size-large;
+          font-style: italic;
+        }
+      }
+    }
+
+    &::before {
+      bottom: 98%;
+      right: -10%;
+      background: $v3-color_green-medium;
+      opacity: .75;
+      transform: rotate(-28deg);
+
+      @include media(medium){
+        transform: rotate(-90deg);
+        bottom: 100%;
+        right: 0;
+      }
+    }
+  }
+
+  @include media(small) {
+    padding: 1.5rem 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+      transform: scaleY(2) rotate(-90deg);
+      transition: $content_trans;
+      opacity: .75;
+    }
+
+    #{$self}__title {
+      top: 0;
+      opacity: 1;
+      transition: $title_trans;
+    }
+  }
 }

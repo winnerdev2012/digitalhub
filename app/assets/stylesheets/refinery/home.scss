@@ -30,9 +30,7 @@
 
     .styled-box {
       padding: 0;
-
       text-align: center;
-
       cursor: default;
       background-image: image-url('bike-lane.jpg');
 
@@ -58,7 +56,7 @@
         }
       }
 
-      @media (max-width: 1300px){
+      @include media(medium) {
         &__content {
           display: grid;
           grid-template-columns: 348px;
@@ -128,7 +126,6 @@
     }
 
     @include media(small) {
-      padding-top: 0;
       padding-bottom: 3.05rem;
     }
   }
