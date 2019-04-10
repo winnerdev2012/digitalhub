@@ -54,6 +54,9 @@
           <% end %>
         </div>
       <% end %>
+      <div class="grid__cell">
+        <%= render partial: '/partials/event_box', locals: { events: @next_events } %>
+      </div>
     </div>
   </section>
 

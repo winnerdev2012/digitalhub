@@ -26,9 +26,13 @@ header {
     flex-wrap: nowrap;
     justify-content: space-between;
     padding: 1rem 2rem;
+
+    @include media(medium) {
+      padding: 1rem 1.35rem;
+    }
   }
 
-  .header-content-right { 
+  .header-content-right {
     display: flex;
   }
 

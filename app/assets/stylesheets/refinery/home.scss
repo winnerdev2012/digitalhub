@@ -16,6 +16,7 @@
       img {
         width: $image_size;
         margin-bottom: 12px;
+        z-index: 1;
       }
 
       &:after {
@@ -23,17 +24,16 @@
         @include triangle($triangle_size, 'down', $v3-color_green-light);
 
         margin-left: ($image_size - $triangle_size) / 4;
+        z-index: 1;
       }
     }
 
     .styled-box {
       padding: 0;
-
       text-align: center;
-
       cursor: default;
       background-image: image-url('bike-lane.jpg');
-  
+
       h1 { margin: 0 0 .5rem 0; }
 
       &__background-image {
@@ -44,7 +44,7 @@
           background-image: image-url('bike-lane.jpg');
         }
       }
-      
+
       .hero-banner-actions {
         margin-top: 4rem;
 
@@ -56,7 +56,7 @@
         }
       }
 
-      @media (max-width: 1300px){
+      @include media(medium) {
         &__content {
           display: grid;
           grid-template-columns: 348px;
@@ -107,7 +107,6 @@
   }
 
   .one-box-grid {
-    // padding: 0 8.3rem 10.625rem 13.875rem;
     margin: 0 auto;
     background: $v3-color_green-dark;
     padding-bottom: 10.25rem;
@@ -124,6 +123,10 @@
         margin: 0;
         width: initial;
       }
+    }
+
+    @include media(small) {
+      padding-bottom: 3.05rem;
     }
   }
 
@@ -150,6 +153,7 @@
       @include media(medium) {
         margin: 0;
         width: initial;
+        display: initial;
       }
     }
 

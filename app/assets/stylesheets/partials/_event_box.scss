@@ -1,86 +1,74 @@
 .event-box {
-  $_medium: 1220px;
-  $_small: 1100px;
-
-  padding: 2.1rem 2.3125rem;
-
+  padding: 2.1rem 1.8rem;
   border: 1px solid $v3-color_green-light;
   overflow: hidden;
 
-  @include media(small) { padding: 1.5rem 1rem; }
+  @include media(medium) { padding: 1rem 1.3rem; }
 
-    &__header {
-        display: flex;
-        align-items: center;
+  &__header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 
-        width: 100%;
+    h2 {
+      margin: 0;
+      color: $color_font-light;
+      font-size: $v3_font_size-title;
 
-
-        h2 {
-            margin: 0;
-
-            color: $color_font-light;
-            font-size: $font_size-xlarge;
-
-            width: 11.0625rem;
-
-            @include media(x-large) {
-                font-size: $font_size-large;
-                width: initial;
-            }
-        }
-
-        &:after {
-            @extend ._pseudo;
-            @include triangle(50px, 'right', $v3-color_green-light);
-
-            margin-left: 10rem;
-
-            // @include media($_medium) {
-            //   @include triangle(40px, 'right', $v3-color_green-light);
-            // }
-
-            @include media(x-large) { display: none; }
-        }
+      @include media(medium) {
+        padding-top: 0rem;
+        font-size: $font_size-small;
+      }
     }
 
-    ul {
-      margin-top: 1.5rem;
+    &:after {
+      @extend ._pseudo;
+      @include triangle(50px, 'right', $v3-color_green-light);
 
-      @include media(x-large) { display: none; }
+      margin-left: 1rem;
+
+      @include media(medium) {
+        @include triangle(25px, 'right', $v3-color_green-light);
+      }
+    }
+  }
+
+  ul {
+    margin-top: 1.5rem;
+
+    @include media(small) { display: none; }
+  }
+
+  li {
+    color: $color_font-light;
+    font-size: $v3_font_size-event;
+
+    &:not(:last-of-type) { margin-bottom: 1rem; }
+
+    &:nth-of-type(3) {
+      @include media(small) { display: none; }
     }
 
-    li {
-        color: $color_font-light;
+    h4 {
+      margin: 0;
+      font-weight: $font_weight-normal;
 
-        &:not(:last-of-type) { margin-bottom: 1rem; }
-
-        &:nth-of-type(3) {
-          @include media($_medium) { display: none; }
-        }
-
-        h4 {
-            margin: 0;
-
-            font-size: $font_size-medium;
-            font-weight: $font_weight-normal;
-
-            @include media($_medium) { font-size: $font_size-small; }
-        }
+      @include media(small) { font-size: $font_size-small; }
     }
+  }
 
-    &__event-info {
-        @include media($_medium) { font-size: $font_size-xsmall; }
+  &__event-info {
+    @include media(small) { font-size: $font_size-xsmall; }
 
-        span:last-of-type {
-            $spacing: 3px;
+    span:last-of-type {
+      $spacing: 3px;
 
-            display: inline-block;
+      display: inline-block;
 
-            padding-left: $spacing * 2;
-            margin-left: $spacing;
+      padding-left: $spacing * 2;
+      margin-left: $spacing;
 
-            border-left: 1px solid $color_font-light;
-        }
+      border-left: 1px solid $color_font-light;
     }
+  }
 }
