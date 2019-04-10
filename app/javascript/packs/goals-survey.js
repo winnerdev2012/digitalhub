@@ -1,49 +1,46 @@
 $(() => {
-  getSurveyOneBox();
-  getSurveyAnnouncement();
+  announcementGoalsLink();
+  oneBoxGoalsLink();
 })
 
-  const getSurveyOneBox = () => {
-    $('a').on('click', function(event){
-      if(this.href.split('/')[this.href.split('/').length - 1] == "#"){
-        $('body').append('<div class="overlay"></div>')
-        $('div.overlay').html("")
-        $('div.overlay').append(`
-          <iframe src="https://mapc.az1.qualtrics.com/jfe/form/SV_0wiHeWbuN9GJ81f" 
-          frameborder="0" 
-          width=100%;
-          height=100%;
-          id="goals-survey";
-          ></iframe> 
-        `)
-        $('div.overlay').append(`<button id="close-survey" class="close-survey">&times;</button>`)
-        event.preventDefault();
-      }
-      closeSurvey();
-    })
-  }
-    
-    const getSurveyAnnouncement = () => {
-      $('a.button.announcements__button').on('click', function(event){
-        if(this.href.split('/')[this.href.split('/').length - 1] == "#"){
-          $('body').append('<div class="overlay"></div>')
-          $('div.overlay').html("")
-          $('div.overlay').append(`
-            <iframe src="https://mapc.az1.qualtrics.com/jfe/form/SV_0wiHeWbuN9GJ81f" 
-            frameborder="0" 
-            width=100%;
-            height=100%;
-            id="goals-survey";
-            ></iframe> 
-          `)
-          $('div.overlay').append(`<button id="close-survey" class="close-survey">&times;</button>`)
-          event.preventDefault();
-        }
-      closeSurvey();
-    })
-  }
+const announcementGoalsLink = () => {
+  $("body").on('click', 'a.button.announcements__button', function (event) {
+    event.preventDefault();
+    if (document.documentElement.clientWidth > 770 && event.currentTarget.href == "https://mapc.az1.qualtrics.com/jfe/form/SV_0wiHeWbuN9GJ81f") {
+      openGoals()
+    } else {
+      openGoalsInNewTab(event.currentTarget.href);
+    }
+  })
+}
 
-const closeSurvey = () => {
+const oneBoxGoalsLink = () => {
+  $('a').on('click', (event) => {
+    event.preventDefault();
+    if (document.documentElement.clientWidth > 770 && event.currentTarget.href == "https://mapc.az1.qualtrics.com/jfe/form/SV_0wiHeWbuN9GJ81f") {
+      openGoals()
+    } else {
+      openGoalsInNewTab(event.currentTarget.href);
+    }
+  })
+}
+
+const openGoals = () => {
+  $('div.overlay').html("")
+  $('body').append(`
+    <div class="overlay">
+      <button id="close-survey" class="close-survey">&times;</button>
+      <iframe src="https://mapc.az1.qualtrics.com/jfe/form/SV_0wiHeWbuN9GJ81f" frameborder="0"; width=100%; height=auto; id="goals-survey";></iframe>
+    </div>`)
+  closeGoals();
+}
+
+const openGoalsInNewTab = (url) => {
+  var win = window.open(url, '_blank');
+  win.focus();
+}
+
+const closeGoals = () => {
   $('div.overlay button#close-survey.close-survey').on('click', function (event) {
     event.preventDefault()
     $('div.overlay').html("").removeClass('overlay')
