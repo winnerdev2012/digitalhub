@@ -3,11 +3,11 @@
   border: 1px solid $v3-color_green-light;
   overflow: hidden;
 
-  @include media(medium) { padding: 1.4rem 1.3rem; }
+  @include media(medium) { padding: 1rem 1.3rem; }
 
   &__header {
     display: flex;
-    align-items: center;
+    justify-content: center;
     width: 100%;
 
     h2 {
@@ -15,11 +15,8 @@
       color: $color_font-light;
       font-size: $v3_font_size-title;
 
-      @include media(x-large) {
-        font-size: $font_size-large;
-      }
-
-      @include media(small) {
+      @include media(medium) {
+        padding-top: 0rem;
         font-size: $font_size-small;
       }
     }

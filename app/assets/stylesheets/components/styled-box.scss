@@ -151,6 +151,10 @@
       opacity: .75;
       transform: rotate(-28deg);
 
+      @include media(x-large) {
+        transform: rotate(-50deg);
+      }
+
       @include media(medium){
         transform: rotate(-90deg);
         bottom: 100%;
