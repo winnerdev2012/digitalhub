@@ -1,5 +1,44 @@
 .StoriesPage {
 
+  .weigh-in__header {
+    display: flex;
+    background-color: $color_bg-lightest;
+    background-image: url('group-2111.png');
+    padding: 14.18rem 19.5rem 14.18rem 37.43rem;
+    
+    @media (max-width: 1600px){
+      padding: 14.18rem 19.5rem 14.18rem 14.43rem;
+    }
+
+    @media (max-width: 1125px){
+      padding: 14.18rem 19.5rem 14.18rem 10.43rem;
+    }
+
+    @media (max-width: 933px){
+      background-image: none;
+      padding: 6.25rem 3rem 3rem 1.56rem;
+    }
+    
+    &--content {
+      display: 1;
+    }
+    
+    &--title {
+      color: #111436;
+      font-size: 2.125rem;
+    }
+    
+    &--text {
+      color: #111436;
+      font-size: 1.375rem;
+      font-family: $font_family-primary;
+
+      @include media(small) {
+        font-size: .9375rem;
+      }
+    }
+  }
+
   input[type="submit"] {
     background: $color_bg-lightest;
     color: $color_green-dark;
@@ -19,13 +58,6 @@
 
   .banner {
     background: $color_bg-dark;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-    @include background-2x('story-tool-banner', 'png', contain, contain, center, no-repeat );
-    @include media(small) {
-      background-position: bottom 3rem right;
-    }
   }
 
   .banner-content {
