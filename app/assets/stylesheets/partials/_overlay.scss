@@ -45,7 +45,7 @@
   z-index: 7;
   cursor: pointer;
   
-  @include media(small){
+  @include media(small) {
     position: fixed;
     grid-column-start: 4;
     top: 1.5rem;
