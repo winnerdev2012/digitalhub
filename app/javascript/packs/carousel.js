@@ -116,7 +116,7 @@ function genDisplay(data, carouselContainer) {
     }
     event.target.setAttribute('class', 'announcements__number announcements__number--selected');
 
-    carouselContainer.querySelector('.button').setAttribute('href', link)
+    carouselContainer.querySelector('.announcements__button').setAttribute('href', link)
   };
   return displayAnnouncement;
 }
