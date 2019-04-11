@@ -45,28 +45,37 @@
 
   <%= render "partials/announcements" %>
 
-  <section class="one-box-grid grid grid--3-2">
-    <% @one_boxes.each do |box| %>
-      <% next unless box.visible %>
+  <section class="one-box-grid container">
+    <div class="one-box-grid__content grid grid--3-2">
+      <% @one_boxes.each do |box| %>
+        <% next unless box.visible %>
+        <div class="grid__cell">
+          <%= link_to box.link do %>
+            <%= render partial: '/partials/one_box', locals: { type: box.triangle_overlay ? 'half' : nil, title: box.title, image: box.image.thumbnail(geometry: :one_box).url } %>
+          <% end %>
+        </div>
+      <% end %>
       <div class="grid__cell">
-        <%= link_to box.link do %>
-          <%= render partial: '/partials/one_box', locals: { type: box.triangle_overlay ? 'half' : nil, title: box.title, image: box.image.thumbnail(geometry: :one_box).url } %>
-        <% end %>
+        <%= render partial: '/partials/event_box', locals: { events: @next_events } %>
       </div>
-    <% end %>
+    </div>
   </section>
 
   <section class="regional-plan">
-    <div class="regional-plan--triangle">
-      <%= image_tag("mc-arrow.png", alt: t('logo_alt')) %>
-    </div>
-    <div class="regional-plan--description">
-      <h2 class="regional-plan--description-title">What is a Regional Plan?</h2>
-      <p class="regional-plan--description-text">It’s a set of actions that local and state government can take to improve the region over time. Plans
-        like MetroCommon can include thinking about many different aspects of our lives. That’s because policies and laws can affect jobs, transportation, health, and more.</p>
-      <p class="regional-plan--description-text">MetroCommon will focus on challenges and opportunities that are bigger than any one place. And it will look at how those issues are connected. Topics like traffic congestion, the rising cost of housing, our changing climate, equity of wealth and health, and efficient government – all will be part of the mix.</p>
-      <div class="regional-plan--description__button">
-        <a href="https://youtu.be/bApghSqlbYc" target="_blank">learn more</a>
+    <div class="container">
+      <div class="regional-plan__content">
+        <div class="regional-plan--triangle">
+          <%= image_tag("mc-arrow.png", alt: t('logo_alt')) %>
+        </div>
+        <div class="regional-plan--description">
+          <h2 class="regional-plan--description-title">What is a Regional Plan?</h2>
+          <p class="regional-plan--description-text">It’s a set of actions that local and state government can take to improve the region over time. Plans
+            like MetroCommon can include thinking about many different aspects of our lives. That’s because policies and laws can affect jobs, transportation, health, and more.</p>
+          <p class="regional-plan--description-text">MetroCommon will focus on challenges and opportunities that are bigger than any one place. And it will look at how those issues are connected. Topics like traffic congestion, the rising cost of housing, our changing climate, equity of wealth and health, and efficient government – all will be part of the mix.</p>
+          <div class="regional-plan--description__button">
+            <a href="https://youtu.be/bApghSqlbYc" target="_blank">Learn more</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
