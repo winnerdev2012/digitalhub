@@ -1,41 +1,69 @@
 .StoriesPage {
+  
+  .banner {
+    background: $color_bg-dark;
+    width: 100%;
+    height: 80px;
+  }
 
-  .weigh-in__header {
-    display: flex;
+  #page_container {
+    margin: 0;
+    padding: 0;
+  }
+
+  div.container {
+    margin: 0;
+    padding: 50px 0 0 0;
     background-color: $color_bg-lightest;
     background-image: url('group-2111.png');
-    padding: 14.18rem 19.5rem 14.18rem 37.43rem;
+    width: 100%;
+  }
+
+  .weigh-in__header {
+    // display: grid;
+    // grid-template-columns: 479px 807px 312px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    // margin: 50px 312px 0 479px;
+    padding: 50px 0 166px 479px;
+ 
+
+    // width: auto;
+    // padding: 14.18rem 19.5rem 14.18rem 37.43rem;
     
-    @media (max-width: 1600px){
-      padding: 14.18rem 19.5rem 14.18rem 14.43rem;
-    }
+    // @media (max-width: 1600px){
+    //   padding: 14.18rem 19.5rem 14.18rem 14.43rem;
+    // }
 
-    @media (max-width: 1125px){
-      padding: 14.18rem 19.5rem 14.18rem 10.43rem;
-    }
+    // @media (max-width: 1125px){
+    //   padding: 14.18rem 19.5rem 14.18rem 10.43rem;
+    // }
 
-    @media (max-width: 933px){
-      background-image: none;
-      padding: 6.25rem 3rem 3rem 1.56rem;
-    }
+    // @media (max-width: 933px){
+    //   // background-image: none;
+    //   // padding: 6.25rem 3rem 3rem 1.56rem;
+    // }
     
     &--content {
-      display: 1;
+      // grid-column-start: 2;
+      // grid-column-end: 3;
+      flex: 2;
     }
     
     &--title {
-      color: #111436;
-      font-size: 2.125rem;
+      color: $v3-color_black-dark;
+      font-size: $v3_font_size-h1;
     }
     
     &--text {
-      color: #111436;
-      font-size: 1.375rem;
+      color: $v3-color_black-dark;
+      font-size: $font_size_small;
       font-family: $font_family-primary;
 
-      @include media(small) {
-        font-size: .9375rem;
-      }
+      // @include media(small) {
+      //   font-size: .9375rem;
+      // }
     }
   }
 
@@ -56,18 +84,14 @@
     display: inline-block;
   }
 
-  .banner {
-    background: $color_bg-dark;
-  }
+  // .banner-content {
+  //   margin-top: 7rem;
+  //   margin-bottom: 7.5rem;
+  // }
 
-  .banner-content {
-    margin-top: 7rem;
-    margin-bottom: 7.5rem;
-  }
-
-  .content-column {
-    & + .content-column { margin-top: 60px; }
-  }
+  // .content-column {
+  //   & + .content-column { margin-top: 60px; }
+  // }
 
   .no-content-message {
     margin-top: 2rem;
