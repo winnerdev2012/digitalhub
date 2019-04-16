@@ -1,5 +1,5 @@
 .StoriesPage {
-  
+
   .banner {
     background: $color_bg-dark;
     width: 100%;
@@ -13,57 +13,56 @@
 
   div.container {
     margin: 0;
-    padding: 50px 0 0 0;
+    padding: 0;
+    max-width: 100%;
     background-color: $color_bg-lightest;
     background-image: url('group-2111.png');
-    width: 100%;
   }
 
   .weigh-in__header {
-    // display: grid;
-    // grid-template-columns: 479px 807px 312px;
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    // margin: 50px 312px 0 479px;
-    padding: 50px 0 166px 479px;
- 
+    display: grid;
+    grid-template-columns: 29.95rem 1fr 15.6rem;
+    grid-template-rows: 10.25rem 1fr 8.3rem;
 
-    // width: auto;
-    // padding: 14.18rem 19.5rem 14.18rem 37.43rem;
-    
-    // @media (max-width: 1600px){
-    //   padding: 14.18rem 19.5rem 14.18rem 14.43rem;
-    // }
-
-    // @media (max-width: 1125px){
-    //   padding: 14.18rem 19.5rem 14.18rem 10.43rem;
-    // }
-
-    // @media (max-width: 933px){
-    //   // background-image: none;
-    //   // padding: 6.25rem 3rem 3rem 1.56rem;
-    // }
-    
-    &--content {
-      // grid-column-start: 2;
-      // grid-column-end: 3;
-      flex: 2;
+    @include media(large) {
+      grid-template-columns: 15rem 1fr 7rem;
+      grid-template-rows: 10.25rem 1fr 8.3rem;
     }
-    
+
+    @include media(medium) {
+      grid-template-columns: 1.25rem 1fr 2.4rem;
+      grid-template-rows: 10.25rem 1fr 8.3rem;
+    }
+
+    @include media(small) {
+      grid-template-columns: 1.25rem 1fr 2.4rem;
+      grid-template-rows: 3rem 1fr 1.5rem;
+    }
+
+    &--content {
+      grid-column-start: 2;
+      grid-row-start: 2;
+    }
+
     &--title {
       color: $v3-color_black-dark;
       font-size: $v3_font_size-h1;
+
+      @include media(small) {
+        font-size: $v3_font_size-title;
+        ;
+      }
     }
-    
+
     &--text {
       color: $v3-color_black-dark;
-      font-size: $font_size_small;
+      font-size: $font_size_medium;
       font-family: $font_family-primary;
 
-      // @include media(small) {
-      //   font-size: .9375rem;
-      // }
+      @include media(small) {
+        font-size: $font_size-xsmall;
+        ;
+      }
     }
   }
 
@@ -73,9 +72,12 @@
     border: 1px solid $color_green-dark;
   }
 
-  a.button { text-decoration: none; }
+  a.button {
+    text-decoration: none;
+  }
 
-  .audio-response, .video-response {
+  .audio-response,
+  .video-response {
     display: inline-block;
     vertical-align: top;
   }
@@ -84,14 +86,16 @@
     display: inline-block;
   }
 
-  // .banner-content {
-  //   margin-top: 7rem;
-  //   margin-bottom: 7.5rem;
-  // }
+  .banner-content {
+    margin-top: 7rem;
+    margin-bottom: 7.5rem;
+  }
 
-  // .content-column {
-  //   & + .content-column { margin-top: 60px; }
-  // }
+  .content-column {
+    &+.content-column {
+      margin-top: 60px;
+    }
+  }
 
   .no-content-message {
     margin-top: 2rem;
@@ -109,7 +113,9 @@
   .story {
     padding: 20px 0;
 
-    & + .story { border-top: 1px solid $color_bg-light; }
+    &+.story {
+      border-top: 1px solid $color_bg-light;
+    }
   }
 
   .story-meta {
@@ -148,10 +154,17 @@
     color: $color_red-medium;
   }
 
-  .button-wrapper { @extend ._clear; }
+  .button-wrapper {
+    @extend ._clear;
+  }
 
-  .left-buttons { float: left; }
-  .right-buttons { float: right; }
+  .left-buttons {
+    float: left;
+  }
+
+  .right-buttons {
+    float: right;
+  }
 
 
   .story-form-wrapper {
@@ -162,19 +175,19 @@
 
     .question {
       input[type="radio"] {
-            display:none;
+        display: none;
       }
 
       label {
-              display:inline-block;
-              background-color: $color_bg-grey;
-              padding: 10px 20px;
-              font-size:16px;
-              cursor: pointer;
+        display: inline-block;
+        background-color: $color_bg-grey;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
       }
 
-      input[type="radio"]:checked + label {
-              background-color: $color_green-medium;
+      input[type="radio"]:checked+label {
+        background-color: $color_green-medium;
       }
     }
 
@@ -186,7 +199,8 @@
       color: $color_font-grey;
       font-size: $font_size-small;
 
-      &:before, &:after {
+      &:before,
+      &:after {
         content: '';
 
         flex: 1 1;
