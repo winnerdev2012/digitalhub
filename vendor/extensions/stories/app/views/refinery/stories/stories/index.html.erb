@@ -1,14 +1,26 @@
 <div class="StoriesPage">
-  <div class="banner">
-    <div class="container">
-      <div class="content-column banner-content">
-        <h1>Weigh In</h1>
+  <div class="banner"></div> <!-- top green bar -->
+  <div class="weigh-in__header-container">
+    <section class="weigh-in__header container">
+      <div class="weigh-in__header--content">
+        <div class="weigh-in__header--title">Weigh in...</div>
+        <p class="weigh-in__header--text">
+          Opinions, ideas, and priorities that spring from the lived experience of the people of the region are an
+          important part of MetroCommon. We’re collecting public input at every stage of the planning process.
+        </p>
+        <p class="weigh-in__header--text">
+          The first step in creating MetroCommon is for those of us who live, work, and play in the region to
+          figure out what we want for our future. We’re using both direct and indirect ways to prompt people’s
+          thoughts. Some questions are playful, some serious. We’re asking in person and on line, and urging
+          responses in video, audio, and written forms. We are cataloging and analyzing responses, and looking
+          for trends across all the answers. We’ll keep those trends in mind as we draft regional goals.
+        </p>
       </div>
-    </div>
+    </section>
   </div>
 
-  <% content_for :body do %>
-    <% if @stories.any? %>
+  <% if @stories.any? %>
+    <section class="stories container">
       <% @stories.each do |story| %>
         <div class="story">
           <div class="story-meta">
@@ -17,14 +29,16 @@
           <%= render partial: 'media', locals: { media: story } %>
         </div>
       <% end %>
-    <% else %>
-      <div class="no-content-message">
-        There are currently no stories visible. Your story may appear here after being approved by an administrator. Thank you for sharing your story.
-      </div>
-    <% end %>
-    <h2>Have Your Own Story to Share?</h2>
-    <%= link_to 'Speak Out!', refinery.new_stories_story_path, class: 'button' %>
+    </section>
+  <% else %>
+    <section class="stories container no-content-message">
+      There are currently no stories visible. Your story may appear here after being approved by an administrator. Thank
+      you for sharing your story.
+    </section>
   <% end %>
 
-  <%= render '/refinery/content_page' %>
+  <section class="weigh-in__submit container">
+    <h2>Have Your Own Story to Share?</h2>
+    <%= link_to 'Speak Out!', refinery.new_stories_story_path, class: 'button' %>
+  </section>
 </div>
