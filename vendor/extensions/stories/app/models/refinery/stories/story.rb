@@ -7,6 +7,7 @@ module Refinery
       validate :has_attached_story
       before_validation :generate_title
       after_save :create_transcript
+      after_initialize :set_position
       enum question: [:question1, :question2]
 
       extend Mobility
@@ -36,6 +37,10 @@ module Refinery
       def generate_title
         return nil if question.blank? || submitter_name.blank?
         self.title = submitter_name + ' | ' + question
+      end
+
+      def set_position
+        self.position ||= Story.maximum('position') + 1
       end
     end
   end

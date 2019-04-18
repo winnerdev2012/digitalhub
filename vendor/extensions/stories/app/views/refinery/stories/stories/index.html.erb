@@ -21,7 +21,7 @@
 
   <% if @stories.any? %>
     <section class="stories container">
-      <% @stories.each do |story| %>
+      <% @stories.order(:position).each do |story| %>
         <div class="story">
           <div class="story-meta">
             <span class="story-date"><%= story.created_at.to_formatted_s(:simplified) %></span>
