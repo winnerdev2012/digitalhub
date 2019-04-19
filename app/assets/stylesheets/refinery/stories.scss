@@ -2,8 +2,8 @@
 
   .banner {
     background: $color_bg-dark;
-    width: 100%;
     height: 80px;
+    width: 100%;
   }
 
   #page_container {
@@ -11,68 +11,66 @@
     padding: 0;
   }
 
-  .weigh-in__header-container {
+  .weigh-in__header-background {
+    @include media(small) {
+      background: none;
+    }
+
     background-color: $color_bg-lightest;
     background-image: url('group-2111.png');
-    margin: 0;
-
   }
 
   .weigh-in__header {
-    display: grid;
-    grid-template-columns: 29.95rem 1fr 15.6rem;
-    grid-template-rows: 10.25rem 1fr 8.3rem;
-
-    @include media(large) {
-      grid-template-columns: 15rem 1fr 7rem;
-      grid-template-rows: 10.25rem 1fr 8.3rem;
-    }
-
     @include media(medium) {
-      grid-template-columns: 1.25rem 1fr 2.4rem;
-      grid-template-rows: 10.25rem 1fr 8.3rem;
+      grid-template-columns: 2fr 40rem 1fr;
     }
 
     @include media(small) {
-      grid-template-columns: 1.25rem 1fr 2.4rem;
-      grid-template-rows: 3rem 1fr 1.5rem;
+      grid-template-columns: auto;
+      margin: initial;
+      padding: 3.75rem 1rem 0;
     }
+
+    display: grid;
+    grid-template-columns: 2fr 54rem 1fr;
+    padding-top: 8.3rem;
+    padding-bottom: 8.3rem;
+
 
     &--content {
       grid-column-start: 2;
-      grid-row-start: 2;
     }
 
     &--title {
-      color: $v3-color_black-dark;
-      font-size: $v3_font_size-h1;
-
       @include media(small) {
         font-size: $v3_font_size-title;
-        ;
       }
+
+      color: $v3-color_black-dark;
+      font-size: $v3_font_size-h1;
     }
 
     &--text {
-      color: $v3-color_black-dark;
-      font-size: $font_size_medium;
-      font-family: $font_family-primary;
-
       @include media(small) {
-        font-size: $font_size-xsmall;
-        ;
+        font-size: $font_size-small;
       }
+
+      color: $v3-color_black-dark;
+      font-family: $font_family-primary;
+      font-size: $font_size_medium;
     }
   }
 
-  input[type="submit"] {
+  input[type='submit'] {
     background: $color_bg-lightest;
-    color: $color_green-dark;
     border: 1px solid $color_green-dark;
+    color: $color_green-dark;
   }
 
-  a.button {
-    text-decoration: none;
+  a {
+    .button {
+      text-decoration: none;
+    }
   }
 
   .audio-response,
@@ -86,8 +84,8 @@
   }
 
   .banner-content {
-    margin-top: 7rem;
     margin-bottom: 7.5rem;
+    margin-top: 7rem;
   }
 
   .content-column {
@@ -97,16 +95,15 @@
   }
 
   .no-content-message {
-    margin-top: 2rem;
-
     color: $color_font-grey;
     font-style: italic;
+    margin-top: 2rem;
   }
 
   .or {
     display: inline-block;
-    vertical-align: center;
     padding: 1.5em 1em;
+    vertical-align: center;
   }
 
   .story {
@@ -118,11 +115,10 @@
   }
 
   .story-meta {
-    margin-bottom: $font_size-base;
-
     color: $color_green-dark;
-    font-style: italic;
     font-size: $font_size-xsmall;
+    font-style: italic;
+    margin-bottom: $font_size-base;
   }
 
   .transcript {
@@ -130,13 +126,12 @@
   }
 
   .quote-mark {
-    display: inline-block;
-    top: 8px;
-    height: 0;
-
     color: $color_green-dark;
+    display: inline-block;
     font-size: $font_size-large;
     font-style: italic;
+    height: 0;
+    top: 8px;
   }
 
   .video-info {
@@ -165,7 +160,6 @@
     float: right;
   }
 
-
   .story-form-wrapper {
     h4 {
       color: $color_font-grey;
@@ -178,11 +172,11 @@
       }
 
       label {
-        display: inline-block;
         background-color: $color_bg-grey;
-        padding: 10px 20px;
-        font-size: 16px;
         cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px 20px;
       }
 
       input[type="radio"]:checked+label {
@@ -191,35 +185,29 @@
     }
 
     .form-break {
+      color: $color_font-grey;
       display: flex;
-
+      font-size: $font_size-small;
       margin: $font_size-base 0;
 
-      color: $color_font-grey;
-      font-size: $font_size-small;
-
-      &:before,
-      &:after {
-        content: '';
-
-        flex: 1 1;
-        position: relative;
-        display: inline-block;
-
-        height: 1px;
-        width: auto;
-        margin: auto $font_size-base;
-
+      &::before,
+      &::after {
         background: $color_bg-dark;
+        content: '';
+        display: inline-block;
+        flex: 1 1;
+        height: 1px;
+        margin: auto $font_size-base;
+        position: relative;
+        width: auto;
       }
     }
 
     .text-response {
       textarea {
-        width: 100%;
         min-height: 200px;
+        width: 100%;
       }
     }
   }
-
 }
