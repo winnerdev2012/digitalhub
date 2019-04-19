@@ -2,8 +2,8 @@
 
   .banner {
     background: $color_bg-dark;
-    width: 100%;
     height: 80px;
+    width: 100%;
   }
 
   #page_container {
@@ -11,31 +11,32 @@
     padding: 0;
   }
 
-  .weigh-in__header-container {
-    background-color: $color_bg-lightest;
-    background-image: url('group-2111.png');
-    
+  .weigh-in__header-background {
     @include media(small) {
       background: none;
     }
 
+    background-color: $color_bg-lightest;
+    background-image: url('group-2111.png');
+  }
+
   .weigh-in__header {
-    display: grid;
-    height: 29.3rem;
-    grid-template-columns: 1fr 54rem 1fr;
-    grid-template-rows: 1fr 15.5rem 1fr;
-    
     @include media(medium) {
       grid-template-columns: 1fr 40rem 1fr;
       grid-template-rows: 1fr 24rem 1fr;
     }
-    
+
     @include media(small) {
-      height: 25.05rem;
       grid-template-columns: 1fr 22rem 1fr;
       grid-template-rows: 3rem 1fr 1.5rem;
+      height: 25.05rem;
       margin-bottom: 6rem;
     }
+
+    display: grid;
+    grid-template-columns: 1fr 54rem 1fr;
+    grid-template-rows: 1fr 15.5rem 1fr;
+    height: 29.3rem;
 
     &--content {
       grid-column-start: 2;
@@ -43,35 +44,35 @@
     }
 
     &--title {
-      color: $v3-color_black-dark;
-      font-size: $v3_font_size-h1;
-
       @include media(small) {
         font-size: $v3_font_size-title;
-        ;
       }
+
+      color: $v3-color_black-dark;
+      font-size: $v3_font_size-h1;
     }
 
     &--text {
-      color: $v3-color_black-dark;
-      font-size: $font_size_medium;
-      font-family: $font_family-primary;
-
       @include media(small) {
         font-size: $font_size-small;
-        ;
       }
+
+      color: $v3-color_black-dark;
+      font-family: $font_family-primary;
+      font-size: $font_size_medium;
     }
   }
 
-  input[type="submit"] {
+  input[type='submit'] {
     background: $color_bg-lightest;
-    color: $color_green-dark;
     border: 1px solid $color_green-dark;
+    color: $color_green-dark;
   }
 
-  a.button {
-    text-decoration: none;
+  a {
+    .button {
+      text-decoration: none;
+    }
   }
 
   .audio-response,
@@ -85,8 +86,8 @@
   }
 
   .banner-content {
-    margin-top: 7rem;
     margin-bottom: 7.5rem;
+    margin-top: 7rem;
   }
 
   .content-column {
@@ -96,16 +97,15 @@
   }
 
   .no-content-message {
-    margin-top: 2rem;
-
     color: $color_font-grey;
     font-style: italic;
+    margin-top: 2rem;
   }
 
   .or {
     display: inline-block;
-    vertical-align: center;
     padding: 1.5em 1em;
+    vertical-align: center;
   }
 
   .story {
@@ -117,11 +117,10 @@
   }
 
   .story-meta {
-    margin-bottom: $font_size-base;
-
     color: $color_green-dark;
-    font-style: italic;
     font-size: $font_size-xsmall;
+    font-style: italic;
+    margin-bottom: $font_size-base;
   }
 
   .transcript {
@@ -129,13 +128,12 @@
   }
 
   .quote-mark {
-    display: inline-block;
-    top: 8px;
-    height: 0;
-
     color: $color_green-dark;
+    display: inline-block;
     font-size: $font_size-large;
     font-style: italic;
+    height: 0;
+    top: 8px;
   }
 
   .video-info {
@@ -176,11 +174,11 @@
       }
 
       label {
-        display: inline-block;
         background-color: $color_bg-grey;
-        padding: 10px 20px;
-        font-size: 16px;
         cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px 20px;
       }
 
       input[type="radio"]:checked+label {
@@ -189,35 +187,29 @@
     }
 
     .form-break {
+      color: $color_font-grey;
       display: flex;
-
+      font-size: $font_size-small;
       margin: $font_size-base 0;
 
-      color: $color_font-grey;
-      font-size: $font_size-small;
-
-      &:before,
-      &:after {
-        content: '';
-
-        flex: 1 1;
-        position: relative;
-        display: inline-block;
-
-        height: 1px;
-        width: auto;
-        margin: auto $font_size-base;
-
+      &::before,
+      &::after {
         background: $color_bg-dark;
+        content: '';
+        display: inline-block;
+        flex: 1 1;
+        height: 1px;
+        margin: auto $font_size-base;
+        position: relative;
+        width: auto;
       }
     }
 
     .text-response {
       textarea {
-        width: 100%;
         min-height: 200px;
+        width: 100%;
       }
     }
   }
-
 }
