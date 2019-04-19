@@ -22,25 +22,23 @@
 
   .weigh-in__header {
     @include media(medium) {
-      grid-template-columns: 1fr 40rem 1fr;
-      grid-template-rows: 1fr 24rem 1fr;
+      grid-template-columns: 2fr 40rem 1fr;
     }
 
     @include media(small) {
-      grid-template-columns: 1fr 22rem 1fr;
-      grid-template-rows: 3rem 1fr 1.5rem;
-      height: 25.05rem;
-      margin-bottom: 6rem;
+      grid-template-columns: auto;
+      margin: initial;
+      padding: 3.75rem 1rem 0;
     }
 
     display: grid;
-    grid-template-columns: 1fr 54rem 1fr;
-    grid-template-rows: 1fr 15.5rem 1fr;
-    height: 29.3rem;
+    grid-template-columns: 2fr 54rem 1fr;
+    padding-top: 8.3rem;
+    padding-bottom: 8.3rem;
+
 
     &--content {
       grid-column-start: 2;
-      grid-row-start: 2;
     }
 
     &--title {
