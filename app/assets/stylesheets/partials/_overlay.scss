@@ -1,0 +1,55 @@
+.overlay {
+  display: grid;
+  grid-template-columns: 16.3125rem 1fr 5rem 11.3125rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(63, 60, 60, 0.705);
+  overflow: hidden;
+
+  @include media(small){
+    grid-template-columns: .5rem 1fr 2.5rem .5rem;
+  }
+}
+
+#goals-survey {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  top: 0;
+  height: 99vh;
+  width: 100%;
+  z-index: 3;
+}
+
+#close-survey {
+  padding: 0;
+  margin: 0;
+}
+
+.close-survey {
+  position: absolute;
+  top: 1rem;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  border: 2px solid black;
+  padding: 0;
+  margin: 0;
+  font-size: 5rem;
+  color: $v3-color_green-medium;
+  background: none;
+  border: 0;
+  z-index: 7;
+  cursor: pointer;
+  
+  @include media(small) {
+    position: fixed;
+    grid-column-start: 4;
+    top: 1.5rem;
+    left: 70%;
+    font-size: 3rem;
+  }
+}

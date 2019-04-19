@@ -11,17 +11,13 @@
     padding: 0;
   }
 
-  div.container {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
+  .weigh-in__header-container {
     background-color: $color_bg-lightest;
     background-image: url('group-2111.png');
-
+    
     @include media(small) {
       background: none;
     }
-  }
 
   .weigh-in__header {
     display: grid;

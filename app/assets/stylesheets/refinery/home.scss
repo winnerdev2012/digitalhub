@@ -53,6 +53,8 @@
           text-decoration: none;
 
           + * { margin-left: .8rem; }
+
+          @include media(medium) { margin-left: 0; }
         }
       }
 

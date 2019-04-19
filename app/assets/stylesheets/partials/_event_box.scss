@@ -7,7 +7,6 @@
 
   &__header {
     display: flex;
-    justify-content: center;
     width: 100%;
 
     h2 {
@@ -21,7 +20,7 @@
       }
     }
 
-    &:after {
+    &::after {
       @extend ._pseudo;
       @include triangle(50px, 'right', $v3-color_green-light);
 
@@ -30,6 +29,10 @@
       @include media(medium) {
         @include triangle(25px, 'right', $v3-color_green-light);
       }
+    }
+
+    @include media(medium) {
+      justify-content: center;
     }
   }
 
