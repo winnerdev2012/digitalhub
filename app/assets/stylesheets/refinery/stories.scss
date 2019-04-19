@@ -17,21 +17,28 @@
     max-width: 100%;
     background-color: $color_bg-lightest;
     background-image: url('group-2111.png');
+
+    @include media(small) {
+      background: none;
+    }
   }
 
   .weigh-in__header {
     display: grid;
+    height: 29.3rem;
     grid-template-columns: 1fr 54rem 1fr;
-    grid-template-rows: 11.35rem 1fr 8.3rem;
-
+    grid-template-rows: 1fr 15.5rem 1fr;
+    
     @include media(medium) {
       grid-template-columns: 1fr 40rem 1fr;
-      grid-template-rows: 11.35rem 1fr 8.3rem;
+      grid-template-rows: 1fr 24rem 1fr;
     }
-
+    
     @include media(small) {
+      height: 25.05rem;
       grid-template-columns: 1fr 22rem 1fr;
       grid-template-rows: 3rem 1fr 1.5rem;
+      margin-bottom: 6rem;
     }
 
     &--content {
