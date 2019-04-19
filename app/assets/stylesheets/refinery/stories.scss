@@ -210,4 +210,63 @@
       }
     }
   }
+
+  .media-player {
+    &__audio {
+      background-color: $v3-color_slate;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      padding: 2rem;
+      width: 23.95rem;
+    }
+
+    &__pause-play {
+      background: no-repeat image-url('play-icon.svg');
+      grid-column: 1;
+      height: 28px;
+      width: 28px;
+      background-size: contain;
+    }
+
+    &__pause-play--playing {
+      background: no-repeat image-url('pause-icon.svg');
+      background-size: contain;
+    }
+
+    &__speaker {
+      color: $color_font-grey;
+      font-style: italic;
+      grid-column: 2;
+    }
+
+    &__question-text {
+      color: $v3-color_light-blue;
+      font-size: 1.4rem;
+      grid-column: 2;
+      padding-bottom: 0.5rem;
+      width: 14rem;
+    }
+
+    &__progress {
+      background-color: $v3-color_green-lightest;
+      grid-column: 2;
+      height: 0.2rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    &__progress-value {
+      background-color: $v3-color_light-blue;
+      grid-column: 2;
+      height: 0.25rem;
+      width: 0%;
+    }
+
+    &__time {
+      grid-column: 2;
+      justify-self: end;
+      margin-top: 0.5rem;
+      color: $color_font-grey;
+    }
+  }
 }
