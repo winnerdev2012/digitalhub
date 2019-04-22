@@ -40,7 +40,7 @@ module Refinery
       end
 
       def set_position
-        self.position ||= Story.maximum('position') + 1
+        self.position ||= Story.maximum('position') ? Story.maximum('position') + 1 : 0
       end
     end
   end
