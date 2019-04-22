@@ -1,5 +1,5 @@
 import { DirectUpload } from "activestorage";
-import HyperElement from './classes/HyperElement';
+import HyperElement from 'classes/HyperElement';
 
 (() => {
 
