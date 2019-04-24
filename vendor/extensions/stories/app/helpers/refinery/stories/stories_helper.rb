@@ -10,6 +10,16 @@ module Refinery
           'No question was selected.'
         end
       end
+
+      def audio_question_text(enum)
+        if enum === 'question1'
+          'In 2050...'
+        elsif enum === 'question2'
+          'Ask the Future'
+        else
+          'No question was selected.'
+        end
+      end
     end
   end
 end

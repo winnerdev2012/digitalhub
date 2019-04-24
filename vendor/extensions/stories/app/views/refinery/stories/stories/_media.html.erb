@@ -1,8 +1,17 @@
-<div class="media-display">
+<div class="media-player">
   <% if media.video.attached? %>
     <%= video_tag main_app.rails_blob_path(media.video), autoplay: 'autoplay', muted: 'true', controls: 'true' %>
   <% elsif media.audio.attached? %>
-    <%= audio_tag main_app.rails_blob_path(media.audio), controls: 'true' %>
+    <div class="media-player__audio">
+      <%= audio_tag main_app.rails_blob_path(media.audio), preload: 'metadata' %>
+      <div class="media-player__pause-play"></div>
+      <div class="media-player__question-text"><%= audio_question_text(media.question) %></div>
+      <div class="media-player__speaker"><%= media.submitter_name %></div>
+      <div class="media-player__progress">
+        <div class="media-player__progress-value"></div>
+      </div>
+      <div class="media-player__time">0:00</div>
+    </div>
   <% elsif media.response.present? %>
     <span class="quote-mark">“</span>
     <%= media.response %>
@@ -18,4 +27,4 @@
       </p>
     </div>
   <% end %>
-  </div>
+</div>
