@@ -1,5 +1,7 @@
 <% content_for :javascript_packs do %>
   <%= javascript_pack_tag 'stories/index' %>
+  <%= javascript_pack_tag 'weigh-in-grid' %>
+  <%= javascript_pack_tag 'goals-survey' %>
 <% end %>
 
 <div class="StoriesPage">
@@ -23,23 +25,25 @@
     </section>
   </div>
 
-  <% if @stories.any? %>
-    <section class="stories container">
-      <% @stories.order(:position).each do |story| %>
-        <div class="story">
-          <div class="story-meta">
-            <span class="story-date"><%= story.created_at.to_formatted_s(:simplified) %></span>
+  <section id="stories" class="stories container">
+    <% if @stories.any? %>
+      <% insert_prompts(@stories).each do |story| %>
+        <% if story[:prompt] %>
+          <div>
+            <%= render partial: 'prompt', locals: { prompt: story[:prompt] } %>
           </div>
-          <%= render partial: 'media', locals: { media: story } %>
-        </div>
+        <% else %>
+          <div class="story">
+            <%= render partial: 'media', locals: { media: story } %>  
+          </div>
+        <% end %>
       <% end %>
-    </section>
-  <% else %>
-    <section class="stories container no-content-message">
-      There are currently no stories visible. Your story may appear here after being approved by an administrator. Thank
-      you for sharing your story.
-    </section>
-  <% end %>
+    <% else %>
+      <div class="no-content-message">
+        There are currently no stories visible. Your story may appear here after being approved by an administrator. Thank you for sharing your story.
+      </div>
+    <% end %>
+  </section>
 
   <section class="weigh-in__submit container">
     <h2>Have Your Own Story to Share?</h2>

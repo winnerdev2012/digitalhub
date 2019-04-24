@@ -106,21 +106,98 @@
     vertical-align: center;
   }
 
-  .story {
-    padding: 20px 0;
-
-    &+.story {
-      border-top: 1px solid $color_bg-light;
+  .stories.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-content: center;
+    
+    @include media(medium){
+      flex-wrap: nowrap;
     }
   }
 
-  .story-meta {
-    color: $color_green-dark;
-    font-size: $font_size-xsmall;
-    font-style: italic;
-    margin-bottom: $font_size-base;
+  .story {
+    margin: 0 2.5rem 2.5rem 0;
+
+    &+.story-meta {
+        margin-bottom: $font_size-base;
+        color: $color_green-dark;
+        font-style: italic;
+        font-size: $font_size-xsmall;
+      }
+
+    &--prompt-small {
+      width: 24rem;
+      height: 7.5rem;
+      padding: 1.75rem 2.8rem;
+      background: $v3-color_green-dark;
+      font-size: $font_size-large;
+      margin-bottom: 2.5rem;
+      
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+    &--prompt-large {
+      width: 24rem;
+      height: 20rem;
+      padding-top: 6rem;
+      text-align: center;
+      vertical-align: middle;
+      background-image: image-url('middlesex-fells-credit-paul-w.jpg');
+      font-size: $font_size-xlarge;
+      margin-bottom: 2.5rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &--response {
+      width: 24rem;
+      height: 20rem;
+      padding: 2.5rem;
+      color: $v3_color_bg-lightest;
+      font-size: $font_size-small;
+      background: $v3_color_weigh-in-response-bg;
+      text-overflow: ellipsis;  
+      overflow: hidden;
+      white-space: wrap; 
+      
+      &:hover {
+          overflow: visible;
+          color: red;
+        }
+      }
+
+      &--response-submitter_name {
+        color: $v3_color_bg-lightest;
+        text-align: right;
+    }
+
+    &--video {
+      overflow: hidden;
+      width: 24rem;
+      height: 20rem;
+
+      video {
+        object-fit: cover;
+        width: 24rem;
+        height: 20rem;
+        max-width: initial;
+        position:absolute;
+        top: 0;
+        left: 0;
+      }
+    }
   }
 
+   
   .transcript {
     margin-top: 1rem;
   }

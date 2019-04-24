@@ -1,0 +1,9 @@
+<% if prompt == "large" %>
+  <div class="story--prompt-large">
+    <h1>MetroCommon Goals: What do you think?</h1>
+  </div>
+<% else %>
+  <div class="story--prompt-small">
+    <%= link_to 'Share what you want the region to be like in 2050!', refinery.new_stories_story_path %>
+  </div>
+<% end %>
