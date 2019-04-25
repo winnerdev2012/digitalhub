@@ -6,7 +6,7 @@
     height: 0;
 }
 
-._clear {
+%clear {
   &:after {
     @extend ._pseudo;
 

@@ -13,7 +13,7 @@ $v3_font_size-title: 1.8rem; // announcements title
 $v3_font_size-number: 1.25rem; // announcemnets number
 $v3_font_size-event: .9rem; // event text
 $v3_font_size-rptitle: 2.1875rem; // regional plan title
-$v3_font_size-event-title-mobile: 0.85rem;
+$v3_font_size-event-title-mobile: .85rem;
 
 
 $font_family-primary: 'SwiftNeueLTPro', Georgia, serif;
@@ -23,47 +23,41 @@ $font_family-secondary-light: 'CalibreWeb', Helvetica, sans-serif;
 $font_weight-normal: 400;
 $font_weight-bold: 700;
 
-$v3_color_bg-lightest: #FFFFFF;
-$v3_color_weigh-in-response-bg: #4CC1B9;
+$v3_color_bg-lightest: #fff;
+$v3_color_weigh-in-response-bg: #4cc1b9;
 $v3-color_black-dark: #111436;
-$v3-color_green-dark: #03332D;
-$v3-color_green-medium: #00613F;
-$v3-color_green-light: #4FB965;
-$v3-color_green-lightest: #F0F8F3;
+$v3-color_green-dark: #03332d;
+$v3-color_green-medium: #00613f;
+$v3-color_green-light: #4fb965;
+$v3-color_green-lightest: #f0f8f3;
 
-$v3-color_green-light--dark: mix(black, $v3-color_green-light, 15);
+$v3-color_green-light--dark: mix($v3-color_black-dark, $v3-color_green-light, 15);
 $v3-color_gray-dark: #707070;
 
-$v3-color_light-blue: #4CC1B9;
-$v3-color_slate: #F0EFE7;
+$v3-color_light-blue: #4cc1b9;
+$v3-color_slate: #f0efe7;
 
 
-/*
- * OLD VARS
- *
- * Try not to touch until we have removed
- * all old interfaces.
- */
-
-$color_bg-lightest: #FFFFFF;
-$color_bg-light: #EFEFE7;
+// OLD VARS: Try not to touch until we have removed all old interfaces.
+$color_bg-lightest: #fff;
+$color_bg-light: #efefe7;
 $color_bg-dark: #006e47;
 $color_bg-grey: #aaa;
 $color_bg-darkgrey: #888;
-$color_bg-black: #000000;
+$color_bg-black: #000;
 
-$color_green-dark: #006E47;
-$color_green-medium: #00BF64;
-$color_green-light: #00F099;
-$color_green-bg: #ECFFFA;
+$color_green-dark: #006e47;
+$color_green-medium: #00bf64;
+$color_green-light: #00f099;
+$color_green-bg: #ecfffa;
 
-$color_yellow-light: #FCF8ED;
-$color_blue-medium: #0063E6;
+$color_yellow-light: #fcf8ed;
+$color_blue-medium: #0063e6;
 
-$color_red-medium: #E23131;
+$color_red-medium: #e23131;
 
-$color_font-light: #FFFFFF;
-$color_font-grey: #4A4A4A;
+$color_font-light: #fff;
+$color_font-grey: #4a4a4a;
 
 $break_xsmall: 500px;
 $break_small: 670px;

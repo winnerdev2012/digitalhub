@@ -21,29 +21,24 @@ module Refinery
         end
       end
 
-      def next_prompt
-        if @current_prompt.nil?
-          @current_prompt = @small_prompt
-        elsif @current_prompt == @small_prompt
-          @current_prompt = @large_prompt
-        elsif @current_prompt == @large_prompt
-          @current_prompt = @small_prompt
+      def next_prompt(current_prompt)
+        if current_prompt[:prompt] == 'small'
+          {"prompt": "large"}
+        else
+          {"prompt": "small"}
         end
       end
-      
+
       def insert_prompts(stories)
-        @current_prompt = nil
-        @large_prompt = {"prompt": "large"}
-        @small_prompt = {"prompt": "small"}
-        
         stories_array = stories.to_a
-        stories_array.insert(1, @large_prompt)
+        current_prompt = {"prompt": "large"}
+        stories_array.insert(1, current_prompt)
         stories_index_array = (0..stories.length-1).to_a
 
-        stories_index_array.each.with_index do |index|
+        stories_array.each_with_index do |story, index|
           if index % 5 == 0 && index != 0
-            next_prompt
-            stories_array.insert(index, @current_prompt)
+            current_prompt = next_prompt(current_prompt)
+            stories_array.insert(index, current_prompt)
           end
         end
         stories_array

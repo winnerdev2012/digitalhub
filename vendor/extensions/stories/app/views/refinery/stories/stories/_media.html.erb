@@ -16,8 +16,8 @@
     </div>
   <% elsif media.response.present? %>
     <div class="story--response">
-      &ldquo;<%= media.response.gsub(/<p>|<\/p>/, '') %> &rdquo;
-      <p class="story--response-submitter_name">- <%= media.submitter_name %></p>
+      &ldquo;<%= media.response %>&rdquo;
+      <p class="story__response--submitter-name">- <%= media.submitter_name %></p>
     </div>
   <% else %>
     Sorry, there was an error displaying the content.

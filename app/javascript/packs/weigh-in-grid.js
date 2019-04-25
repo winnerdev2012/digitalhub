@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-  window.addEventListener('resize', checkContainerWidth);
+  window.addEventListener('resize', setContainerHeight);
 
   let totalHeight = 0;
   const container = document.getElementById('stories');
@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
     }
   }
 
-  function checkContainerWidth() {
+  function setContainerHeight() {
     if (document.documentElement.clientWidth < 1350) {
       totalHeight += 10;
       container.style.height = (Math.round(totalHeight / 3) + 25) + 'rem';

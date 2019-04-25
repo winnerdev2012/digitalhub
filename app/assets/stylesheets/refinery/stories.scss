@@ -6,11 +6,6 @@
     width: 100%;
   }
 
-  #page_container {
-    margin: 0;
-    padding: 0;
-  }
-
   .weigh-in__header-background {
     @include media(small) {
       background: none;
@@ -33,9 +28,8 @@
 
     display: grid;
     grid-template-columns: 2fr 54rem 1fr;
-    padding-top: 8.3rem;
     padding-bottom: 8.3rem;
-
+    padding-top: 8.3rem;
 
     &--content {
       grid-column-start: 2;
@@ -106,16 +100,17 @@
     vertical-align: center;
   }
 
-  .stories.container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: flex-start;
-    align-content: center;
-    
-    @include media(medium){
-      flex-wrap: nowrap;
+  .stories {
+    &.container {
+      @include media(medium) {
+        flex-wrap: nowrap;
+      }
+
+      align-content: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
     }
   }
 
@@ -123,35 +118,35 @@
     margin: 0 2.5rem 2.5rem 0;
 
     &+.story-meta {
-        margin-bottom: $font_size-base;
-        color: $color_green-dark;
-        font-style: italic;
-        font-size: $font_size-xsmall;
-      }
+      color: $color_green-dark;
+      font-size: $font_size-xsmall;
+      font-style: italic;
+      margin-bottom: $font_size-base;
+    }
 
     &--prompt-small {
-      width: 24rem;
-      height: 7.5rem;
-      padding: 1.75rem 2.8rem;
       background: $v3-color_green-dark;
       font-size: $font_size-large;
+      height: 7.5rem;
       margin-bottom: 2.5rem;
-      
+      padding: 1.75rem 2.8rem;
+      width: 24rem;
+
       a {
+        color: $v3_color_bg-lightest;
         text-decoration: none;
-        color: white;
       }
     }
 
     &--prompt-large {
-      width: 24rem;
+      background-image: image-url('middlesex-fells-credit-paul-w.jpg');
+      font-size: $font_size-xlarge;
       height: 20rem;
+      margin-bottom: 2.5rem;
       padding-top: 6rem;
       text-align: center;
       vertical-align: middle;
-      background-image: image-url('middlesex-fells-credit-paul-w.jpg');
-      font-size: $font_size-xlarge;
-      margin-bottom: 2.5rem;
+      width: 24rem;
 
       &:hover {
         cursor: pointer;
@@ -159,45 +154,39 @@
     }
 
     &--response {
-      width: 24rem;
-      height: 20rem;
-      padding: 2.5rem;
+      background: $v3_color_weigh-in-response-bg;
       color: $v3_color_bg-lightest;
       font-size: $font_size-small;
-      background: $v3_color_weigh-in-response-bg;
-      text-overflow: ellipsis;  
+      height: 20rem;
       overflow: hidden;
-      white-space: wrap; 
-      
-      &:hover {
-          overflow: visible;
-          color: red;
-        }
-      }
-
-      &--response-submitter_name {
-        color: $v3_color_bg-lightest;
-        text-align: right;
+      padding: 2.5rem;
+      text-overflow: ellipsis;
+      white-space: wrap;
+      width: 24rem;
     }
 
+    &__response--submitter-name {
+      color: $v3_color_bg-lightest;
+      text-align: right;
+  }
+
     &--video {
+      height: 20rem;
       overflow: hidden;
       width: 24rem;
-      height: 20rem;
 
       video {
-        object-fit: cover;
-        width: 24rem;
         height: 20rem;
-        max-width: initial;
-        position:absolute;
-        top: 0;
         left: 0;
+        max-width: initial;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 24rem;
       }
     }
   }
 
-   
   .transcript {
     margin-top: 1rem;
   }
@@ -218,15 +207,15 @@
 
   .session-info {
     margin-left: 3.2rem;
-  }
 
-  .session-info.recording {
-    animation: blinking 1s infinite;
-    color: $color_red-medium;
+    &recording {
+      animation: blinking 1s infinite;
+      color: $color_red-medium;
+    }
   }
 
   .button-wrapper {
-    @extend ._clear;
+    @extend %clear;
   }
 
   .left-buttons {
@@ -244,7 +233,7 @@
     }
 
     .question {
-      input[type="radio"] {
+      input[type='radio'] {
         display: none;
       }
 
@@ -256,7 +245,7 @@
         padding: 10px 20px;
       }
 
-      input[type="radio"]:checked+label {
+      input[type='radio']:checked+label {
         background-color: $color_green-medium;
       }
     }
@@ -299,10 +288,10 @@
 
     &__pause-play {
       background: no-repeat image-url('play-icon.svg');
+      background-size: contain;
       grid-column: 1;
       height: 28px;
       width: 28px;
-      background-size: contain;
     }
 
     &__pause-play--playing {
@@ -320,14 +309,14 @@
       color: $v3-color_light-blue;
       font-size: 1.4rem;
       grid-column: 2;
-      padding-bottom: 0.5rem;
+      padding-bottom: .5rem;
       width: 14rem;
     }
 
     &__progress {
       background-color: $v3-color_green-lightest;
       grid-column: 2;
-      height: 0.2rem;
+      height: .2rem;
       margin-top: 1rem;
       width: 100%;
     }
@@ -335,15 +324,15 @@
     &__progress-value {
       background-color: $v3-color_light-blue;
       grid-column: 2;
-      height: 0.25rem;
+      height: .25rem;
       width: 0%;
     }
 
     &__time {
+      color: $color_font-grey;
       grid-column: 2;
       justify-self: end;
-      margin-top: 0.5rem;
-      color: $color_font-grey;
+      margin-top: .5rem;
     }
   }
 }
