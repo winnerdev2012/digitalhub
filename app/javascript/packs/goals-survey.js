@@ -1,5 +1,6 @@
 $(() => {
   announcementGoalsLink();
+  weighInGoalsLink();
   oneBoxGoalsLink();
 })
 
@@ -9,6 +10,18 @@ const announcementGoalsLink = () => {
   $("body").on('click', 'a.button.announcements__button', function (event) {
     event.preventDefault();
     if (document.documentElement.clientWidth > 770 && event.currentTarget.href == goalsSurveyLink) {
+      openGoals()
+    } else {
+      openGoalsInNewTab(event.currentTarget.href);
+    }
+  })
+}
+
+const weighInGoalsLink = () => {
+  $("div.story--prompt-large").on('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (document.documentElement.clientWidth > 770) {
       openGoals()
     } else {
       openGoalsInNewTab(event.currentTarget.href);
@@ -34,7 +47,8 @@ const openGoals = () => {
       <button id="close-survey" class="close-survey">&times;</button>
       <iframe src="${goalsSurveyLink}" frameborder="0"; width=100%; height=auto; id="goals-survey";></iframe>
     </div>`)
-  closeGoals();
+  buttonCloseGoals();
+  overlayCloseGoals();
 }
 
 const openGoalsInNewTab = (url) => {
@@ -42,9 +56,20 @@ const openGoalsInNewTab = (url) => {
   win.focus();
 }
 
-const closeGoals = () => {
-  $('div.overlay button#close-survey.close-survey').on('click', function (event) {
+const buttonCloseGoals = () => {
+  $('button#close-survey.close-survey').on('click', function (event) {
     event.preventDefault()
-    $('div.overlay').html("").removeClass('overlay')
+    closeGoals()
   })
+}
+
+const overlayCloseGoals = () => {
+  $('div.overlay').on('click', function (event) {
+    event.preventDefault()
+    closeGoals()
+  })
+}
+
+const closeGoals = () => {
+  $('div.overlay').html("").removeClass('overlay')
 }
