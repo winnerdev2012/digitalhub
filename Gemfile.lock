@@ -87,6 +87,9 @@ PATH
     refinerycms-stories (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 4.0.2)
+    refinerycms-weigh_in_prompts (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 4.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -665,6 +668,7 @@ DEPENDENCIES
   refinerycms-one_boxes!
   refinerycms-search!
   refinerycms-stories!
+  refinerycms-weigh_in_prompts!
   refinerycms-wymeditor (~> 2.0, >= 2.0.0)
   rspec-rails
   sassc-rails

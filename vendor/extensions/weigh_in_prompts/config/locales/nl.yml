@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      weigh_in_prompts:
+        title: Weigh In Prompts
+    weigh_in_prompts:
+      admin:
+        weigh_in_prompts:
+          actions:
+            create_new: Nieuwe Weigh In Prompt toevoegen
+            reorder: De volgorde van de Weigh In Prompts wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Weigh In Prompt-volgorde
+          records:
+            title: Weigh In Prompts
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Weigh In Prompts. Druk op 'Nieuwe Weigh In Prompt toevoegen' om de eerste toe te voegen.
+          weigh_in_prompt:
+            view_live_html: Deze weigh in prompt op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze weigh in prompt
+            delete: Deze weigh in prompt definitief verwijderen
+      weigh_in_prompts:
+        show:
+          other: Andere Weigh In Prompts
+  activerecord:
+    attributes:
+      'refinery/weigh_in_prompts/weigh_in_prompt':
+        title: Title
+        image: Image
+        body: Body
+        style: Style

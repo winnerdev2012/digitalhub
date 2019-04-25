@@ -1,0 +1,30 @@
+cs:
+  refinery:
+    plugins:
+      weigh_in_prompts:
+        title: Weigh In Prompts
+    weigh_in_prompts:
+      admin:
+        weigh_in_prompts:
+          actions:
+            create_new: Přidat Weigh In Prompt
+            reorder: Řadit Weigh In Prompts
+            reorder_done: Konec řazení Weigh In Prompts
+          records:
+            title: Weigh In Prompts
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Weigh In Prompts. Zvolte "Přidat Weigh In Prompt" pro přidání prvního weigh in prompt.
+          weigh_in_prompt:
+            view_live_html: Zobrazit náhled weigh in prompt<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit weigh in prompt
+            delete: Smazat weigh in prompt
+      weigh_in_prompts:
+        show:
+          other: Další Weigh In Prompts
+  activerecord:
+    attributes:
+      'refinery/weigh_in_prompts/weigh_in_prompt':
+        title: Title
+        image: Image
+        body: Body
+        style: Style

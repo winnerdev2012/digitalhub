@@ -1,0 +1,15 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(weigh_in_prompt) -%>">
+  <span class='title'>
+    <%= weigh_in_prompt.title %>
+  </span>
+
+  <span class='preview'></span>
+
+  <span class='actions'>
+    
+    <%= action_icon(:edit,    refinery.edit_weigh_in_prompts_admin_weigh_in_prompt_path(weigh_in_prompt), t('.edit') ) %>
+    <%= action_icon(:delete,  refinery.weigh_in_prompts_admin_weigh_in_prompt_path(weigh_in_prompt), t('.delete'),
+      { class: "cancel confirm-delete",
+        data: {confirm: t('message',  scope: 'refinery.admin.delete', title: weigh_in_prompt.title)}}  ) %>
+  </span>
+</li>

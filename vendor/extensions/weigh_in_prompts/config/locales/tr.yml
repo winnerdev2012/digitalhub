@@ -1,0 +1,30 @@
+tr:
+  refinery:
+    plugins:
+      weigh_in_prompts:
+        title: Weigh In Prompts
+    weigh_in_prompts:
+      admin:
+        weigh_in_prompts:
+          actions:
+            create_new: Yeni Ekle Weigh In Prompt
+            reorder: Tekrar sirala Weigh In Prompts
+            reorder_done: Tekrar siralama tamamlandiWeigh In Prompts
+          records:
+            title: Weigh In Prompts
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Weigh In Prompts yok henuz.  Tikla "Yeni Ekle Weigh In Prompt" eklemek senin ilk weigh in prompt.
+          weigh_in_prompt:
+            view_live_html: Bunu canlu weigh in prompt goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle weigh in prompt
+            delete: Bunu Sil weigh in prompt sonsuza dek
+      weigh_in_prompts:
+        show:
+          other: Diger Weigh In Prompts
+  activerecord:
+    attributes:
+      'refinery/weigh_in_prompts/weigh_in_prompt':
+        title: Title
+        image: Image
+        body: Body
+        style: Style
