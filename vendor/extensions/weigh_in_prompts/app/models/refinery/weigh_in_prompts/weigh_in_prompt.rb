@@ -17,7 +17,7 @@ module Refinery
       private
 
       def set_position
-        self.position ||= Story.maximum('position') ? Story.maximum('position') + 1 : 0
+        self.position ||= WeighInPrompt.maximum('position') ? WeighInPrompt.maximum('position') + 1 : 0
       end
 
     end

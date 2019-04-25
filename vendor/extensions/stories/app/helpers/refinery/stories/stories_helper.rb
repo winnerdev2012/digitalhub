@@ -21,23 +21,24 @@ module Refinery
         end
       end
 
-      def next_prompt(current_prompt)
-        if current_prompt[:prompt] == 'small'
-          {"prompt": "large"}
+      def next_prompt(current_prompt, count)
+        if current_prompt.id == count
+          next_prompt_id = 1
         else
-          {"prompt": "small"}
+          next_prompt_id = current_prompt.id + 1
         end
+        prompt.find(next_prompt_id)
       end
 
-      def insert_prompts(stories)
+      def insert_prompts(stories, prompts)
         stories_array = stories.to_a
-        current_prompt = {"prompt": "large"}
+        current_prompt = prompts.first
         stories_array.insert(1, current_prompt)
         stories_index_array = (0..stories.length-1).to_a
 
         stories_array.each_with_index do |story, index|
           if index % 5 == 0 && index != 0
-            current_prompt = next_prompt(current_prompt)
+            current_prompt = next_prompt(current_prompt, prompts.count)
             stories_array.insert(index, current_prompt)
           end
         end
