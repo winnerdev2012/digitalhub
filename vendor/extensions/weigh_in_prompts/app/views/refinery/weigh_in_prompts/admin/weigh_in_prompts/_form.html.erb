@@ -25,8 +25,15 @@
   </div>
 
   <div class='field'>
-    <%= f.label :style -%>
-    <%= f.number_field :style -%>
+    <h3>Box Style</h3>
+    <%= f.label :style, value: 'large' do %>
+      <%= f.radio_button(:style, 'large') %>
+      Large
+    <% end %>
+    <%= f.label :style, value: 'small' do %>
+      <%= f.radio_button(:style, 'small') %>
+      Small
+    <% end %>
   </div>
 
   <%= render '/refinery/admin/form_actions', f: f,

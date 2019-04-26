@@ -16,11 +16,4 @@ Refinery::I18n.frontend_locales.each do |lang|
       page.parts.build title: part[:title], slug: part[:slug], body: nil, position: index
     end
   end if defined?(Refinery::Page)
-
-  Refinery::Stories::Story.first_or_create!(title: 'Matt Zagaja | question1') do |story|
-    story.submitter_name = 'Matt Zagaja'
-    story.question = 'question1'
-    story.response = 'Hyperloop!'
-    story.display = true
-  end if defined?(Refinery::Stories)
 end
