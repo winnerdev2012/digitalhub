@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      weigh_in_prompts:
+        title: Weigh In Prompts
+    weigh_in_prompts:
+      admin:
+        weigh_in_prompts:
+          actions:
+            create_new: 建立新的 Weigh In Prompt
+            reorder: 对 Weigh In Prompts 重新排序
+            reorder_done: 对 Weigh In Prompts 的重新排序结束
+          records:
+            title: Weigh In Prompts
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Weigh In Prompts yet. Click "Add New Weigh In Prompt" to add your first weigh in prompt.
+            no_items_yet: 目前没有 Weigh In Prompts . 点击 "Add New Weigh In Prompt" 创建一个weigh in prompt.
+          weigh_in_prompt:
+            view_live_html: 查看 weigh in prompt 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 weigh in prompt
+            delete: 永久删除 weigh in prompt
+      weigh_in_prompts:
+        show:
+          other: 其他 Weigh In Prompts
+  activerecord:
+    attributes:
+      'refinery/weigh_in_prompts/weigh_in_prompt':
+        title: Title
+        image: Image
+        body: Body
+        style: Style

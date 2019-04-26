@@ -1,0 +1,52 @@
+<%= form_for [refinery, :weigh_in_prompts_admin, @weigh_in_prompt] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @weigh_in_prompt,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :image -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :image_id,
+               :image => @weigh_in_prompt.image,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:body],
+                :object => "weigh_in_prompts/weigh_in_prompt" -%>
+  </div>
+
+  <div class='field'>
+    <h3>Box Style</h3>
+    <%= f.label :style, value: 'large' do %>
+      <%= f.radio_button(:style, 'large') %>
+      Large
+    <% end %>
+    <%= f.label :style, value: 'small' do %>
+      <%= f.radio_button(:style, 'small') %>
+      Small
+    <% end %>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', f: f,
+             continue_editing: false,
+             delete_title: t('delete', scope: 'refinery.weigh_in_prompts.admin.weigh_in_prompts.weigh_in_prompt'),
+             delete_confirmation: t('message', scope: 'refinery.admin.delete', title: @weigh_in_prompt.title),
+             cancel_url: refinery.weigh_in_prompts_admin_weigh_in_prompts_path -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

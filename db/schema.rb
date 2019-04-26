@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_11_195508) do
+ActiveRecord::Schema.define(version: 2019_04_25_185809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -287,6 +287,16 @@ ActiveRecord::Schema.define(version: 2019_04_11_195508) do
     t.datetime "updated_at", null: false
     t.index ["locale"], name: "index_refinery_story_translations_on_locale"
     t.index ["refinery_story_id", "locale"], name: "index_845caebe798a0afcd0ff8f6d31a500cb83b87df7", unique: true
+  end
+
+  create_table "refinery_weigh_in_prompts", force: :cascade do |t|
+    t.string "title"
+    t.integer "image_id"
+    t.text "body"
+    t.integer "style"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "seo_meta", id: :serial, force: :cascade do |t|

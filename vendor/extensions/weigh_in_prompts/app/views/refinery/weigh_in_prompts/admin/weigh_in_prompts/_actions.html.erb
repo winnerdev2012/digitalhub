@@ -1,0 +1,20 @@
+<ul>
+  <% if ::Refinery::WeighInPrompts::Admin::WeighInPromptsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.weigh_in_prompts_admin_weigh_in_prompts_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= action_label :add, refinery.new_weigh_in_prompts_admin_weigh_in_prompt_path, t('.create_new') %>
+  </li>
+<% if !searching? && ::Refinery::WeighInPrompts::Admin::WeighInPromptsController.sortable? && ::Refinery::WeighInPrompts::WeighInPrompt.many? %>
+  <li>
+    <%= action_label :reorder,
+                     refinery.weigh_in_prompts_admin_weigh_in_prompts_path,
+                     t('.reorder', what:  "Weigh In Prompts"), id: 'reorder_action'%>
+    <%= action_label :reorder_done,
+                     refinery.weigh_in_prompts_admin_weigh_in_prompts_path,
+                      t('.reorder_done', what: "Weigh In Prompts"), id: 'reorder_action_done', class: 'hidden'%>
+  </li>
+<% end %>
+</ul>

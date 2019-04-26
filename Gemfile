@@ -49,6 +49,8 @@ group :development do
   gem "capistrano-bundler"
   gem "capistrano-passenger"
   gem "capistrano-rvm"
+  gem "pry-rescue"
+  gem "pry-stack_explorer"
 end
 
 group :test do
@@ -91,3 +93,5 @@ gem 'refinerycms-announcements', path: 'vendor/extensions'
 
 gem 'refinerycms-hero_images', path: 'vendor/extensions'
 gem 'refinerycms-one_boxes', path: 'vendor/extensions'
+
+gem 'refinerycms-weigh_in_prompts', path: 'vendor/extensions'

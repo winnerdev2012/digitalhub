@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      weigh_in_prompts:
+        title: Weigh In Prompts
+#        article: masculino/femenino
+    weigh_in_prompts:
+      admin:
+        weigh_in_prompts:
+          actions:
+            create_new: Crear nuevo weigh in prompt
+            reorder: Reordenar weigh in prompts
+            reorder_done: Reordenación de weigh in prompts completada
+          records:
+            title: Weigh In Prompts
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay weigh in prompts todavía. Pulsa en "Crear nuevo Weigh In Prompt" para crear tu primer weigh in prompt.
+          weigh_in_prompt:
+            view_live_html: Ver este weigh in prompt como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este weigh in prompt
+            delete: Borrar este weigh in prompt para siempre
+      weigh_in_prompts:
+        show:
+          other: Otros weigh in prompts
+  activerecord:
+    attributes:
+      'refinery/weigh_in_prompts/weigh_in_prompt':
+        title: Title
+        image: Image
+        body: Body
+        style: Style

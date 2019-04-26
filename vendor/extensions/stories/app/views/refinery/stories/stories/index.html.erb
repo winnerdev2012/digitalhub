@@ -27,14 +27,14 @@
 
   <section id="stories" class="stories container">
     <% if @stories.any? %>
-      <% insert_prompts(@stories).each do |story| %>
-        <% if story[:prompt] %>
-          <div>
-            <%= render partial: 'prompt', locals: { prompt: story[:prompt] } %>
+      <% insert_prompts(@stories, @weigh_in_prompts).each do |content| %>
+        <% if content.class.name == 'Refinery::WeighInPrompts::WeighInPrompt' %>
+          <div class="story">
+            <%= render partial: 'prompt', locals: { prompt: content } %>
           </div>
         <% else %>
           <div class="story">
-            <%= render partial: 'media', locals: { media: story } %>  
+            <%= render partial: 'media', locals: { media: content } %>
           </div>
         <% end %>
       <% end %>
