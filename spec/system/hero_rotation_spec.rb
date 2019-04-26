@@ -6,8 +6,8 @@ RSpec.describe "Hero image rotation", :type => :system do
     create(:hero_image, image: build(:alternate_image))
     Capybara.current_session.driver.browser.manage.window.resize_to(1440, 1000)
     visit "/"
-    sleep 3
-    expect(page.find('div.rotation-test')[:style].split('/').last == ("beach-alternate.jpeg\");")).to be(true)
+    sleep 5
+    expect(page).to have_xpath('//div[contains(@style,"beach-alternate.jpeg")]')
   end
 
   it "works with English language selected", js: true do
@@ -15,8 +15,8 @@ RSpec.describe "Hero image rotation", :type => :system do
     create(:hero_image, image: build(:alternate_image))
     Capybara.current_session.driver.browser.manage.window.resize_to(1440, 1000)
     visit "/en/"
-    sleep 3
-    expect(page.find('div.rotation-test')[:style].split('/').last == ("beach-alternate.jpeg\");")).to be(true)
+    sleep 5
+    expect(page).to have_xpath('//div[contains(@style,"beach-alternate.jpeg")]')
   end
 
   it "works with Portugese language selected", js: true do
@@ -24,8 +24,8 @@ RSpec.describe "Hero image rotation", :type => :system do
     create(:hero_image, image: build(:alternate_image))
     Capybara.current_session.driver.browser.manage.window.resize_to(1440, 1000)
     visit "/pt/"
-    sleep 3
-    expect(page.find('div.rotation-test')[:style].split('/').last == ("beach-alternate.jpeg\");")).to be(true)
+    sleep 5
+    expect(page).to have_xpath('//div[contains(@style,"beach-alternate.jpeg")]')
   end
 
   it "works with Spanish language selected", js: true do
@@ -33,8 +33,8 @@ RSpec.describe "Hero image rotation", :type => :system do
     create(:hero_image, image: build(:alternate_image))
     Capybara.current_session.driver.browser.manage.window.resize_to(1440, 1000)
     visit "/es/"
-    sleep 3
-    expect(page.find('div.rotation-test')[:style].split('/').last == ("beach-alternate.jpeg\");")).to be(true)
+    sleep 5
+    expect(page).to have_xpath('//div[contains(@style,"beach-alternate.jpeg")]')
   end
 
   it "works with Chinese language selected", js: true do
@@ -42,8 +42,8 @@ RSpec.describe "Hero image rotation", :type => :system do
     create(:hero_image, image: build(:alternate_image))
     Capybara.current_session.driver.browser.manage.window.resize_to(1440, 1000)
     visit "/zh/"
-    sleep 3
-    expect(page.find('div.rotation-test')[:style].split('/').last == ("beach-alternate.jpeg\");")).to be(true)
+    sleep 5
+    expect(page).to have_xpath('//div[contains(@style,"beach-alternate.jpeg")]')
   end
 
   it "works with French language selected", js: true do
@@ -51,6 +51,7 @@ RSpec.describe "Hero image rotation", :type => :system do
     create(:hero_image, image: build(:alternate_image))
     Capybara.current_session.driver.browser.manage.window.resize_to(1440, 1000)
     visit "/fr/"
-    expect(page.find('div.rotation-test')[:style].split('/').last == ("beach-alternate.jpeg\");")).to be(true)
+    sleep 5
+    expect(page).to have_xpath('//div[contains(@style,"beach-alternate.jpeg")]')
   end
 end
