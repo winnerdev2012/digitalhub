@@ -49,6 +49,8 @@ group :development do
   gem "capistrano-bundler"
   gem "capistrano-passenger"
   gem "capistrano-rvm"
+  gem "pry-rescue"
+  gem "pry-stack_explorer"
 end
 
 group :test do

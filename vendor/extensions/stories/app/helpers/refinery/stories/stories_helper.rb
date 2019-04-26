@@ -22,12 +22,12 @@ module Refinery
       end
 
       def next_prompt(current_prompt, count)
-        if current_prompt.id == count
-          next_prompt_id = 1
+        if current_prompt.id >= ::Refinery::WeighInPrompts::WeighInPrompt.maximum(:id)
+          next_prompt_id = ::Refinery::WeighInPrompts::WeighInPrompt.minimum(:id)
         else
           next_prompt_id = current_prompt.id + 1
         end
-        prompt.find(next_prompt_id)
+        ::Refinery::WeighInPrompts::WeighInPrompt.find(next_prompt_id)
       end
 
       def insert_prompts(stories, prompts)
