@@ -7,7 +7,7 @@
  * Licensed under the MIT License
  */
 
-/*global jQuery*/
+/* global jQuery */
 (function ($) {
   'use strict';
 
