@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
   }
 
   function reloadStoryTexts() {
-    if (document.documentElement.clientWidth > 770) {
+    if (document.documentElement.clientWidth > 670) {
       Array.from($('.story--response')).forEach((div) => {
         if (div.children[0].children[0]) {
           const modifiedDiv = div.children[0].children[0];
@@ -24,14 +24,14 @@ window.addEventListener('load', () => {
   }
 
   function lineClampResponseTexts() {
-    if (document.documentElement.clientWidth > 770) {
+    if (document.documentElement.clientWidth > 670) {
       reloadStoryTexts();
       $('div.story--response-text').succinct({
         size: 400,
         omission: '...',
         ignore: false,
       });
-    } else if (document.documentElement.clientWidth < 770) {
+    } else if (document.documentElement.clientWidth < 670) {
       $('div.story--response-text').succinct({
         size: 45,
         omission: '...',
