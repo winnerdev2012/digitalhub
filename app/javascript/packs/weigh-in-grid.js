@@ -28,7 +28,8 @@ window.addEventListener('load', () => {
   function responseLinks() {
     $('.story--response-text').on('click', (event) => {
       event.preventDefault();
-      window.location.href = this.firstElementChild.attributes.href.value;
+      window.location.href = event.currentTarget.firstElementChild.attributes.href.value;
+      window.history.pushState({}, '/stories.html');
     });
   }
   window.addEventListener('resize', setContainerHeight);
