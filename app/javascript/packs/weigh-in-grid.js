@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
   let totalHeight = 0;
   const container = document.getElementById('stories');
   setContainerWidth()
+  responseLinks()
 
   function setContainerWidth() {
     totalHeight = 0;
@@ -26,5 +27,12 @@ window.addEventListener('load', () => {
     } else if (document.documentElement.clientWidth > 600) {
       setContainerWidth()
     }
+  }
+
+  function responseLinks() {
+    $('.story--response-text').on('click', function (event) {
+      event.preventDefault()
+      window.location.href = this.firstElementChild.attributes.href.value
+    })
   }
 });
