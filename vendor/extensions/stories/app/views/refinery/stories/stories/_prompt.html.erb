@@ -1,9 +1,9 @@
-<% if prompt == "large" %>
-  <div class="story--prompt-large">
-    <a href="https://mapc.az1.qualtrics.com/jfe/form/SV_832YVvNk2Yabzox" class="story--prompt-large-text">MetroCommon Goals: What do you think?</a>
+<% if prompt.style == "large" %>
+  <div class="story--prompt-large" style="background-image: url(<%= prompt.image.url %>)">
+    <h1><%= strip_tags(prompt.body) %></h1>
   </div>
 <% else %>
   <div class="story--prompt-small">
-    <%= link_to 'Share what you want the region to be like in 2050!', refinery.new_stories_story_path %>
+    <%= link_to strip_tags(prompt.body), refinery.new_stories_story_path %>
   </div>
 <% end %>

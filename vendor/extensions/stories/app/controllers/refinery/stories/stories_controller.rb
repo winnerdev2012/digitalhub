@@ -7,6 +7,7 @@ module Refinery
 
       def index
         stories = Refinery::Stories::Story.all.map {|story| StorySerializer.new(story).serializable_hash}
+        @weigh_in_prompts = ::Refinery::WeighInPrompts::WeighInPrompt.all
         respond_to do |format|
           format.html { present(@page) }
           format.json { render json: stories }
