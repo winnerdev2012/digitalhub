@@ -199,12 +199,16 @@
       padding: 2.7rem;
       width: 24rem;
 
-      &-text a q{
+      &-text {
         color: $v3_color_bg-lightest;
         height: 11rem;
         margin: 0;
         text-decoration: none;
         width: 18.95rem;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       @include media(small) {
