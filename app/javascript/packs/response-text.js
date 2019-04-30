@@ -19,7 +19,6 @@ window.addEventListener('load', () => {
   function lineClampResponseTexts() {
     if (document.documentElement.clientWidth > 770) {
       reloadStoryTexts()
-      console.log("over 770")
       $('div.story--response-text').succinct({
         size: 400,
         omission: '...',
