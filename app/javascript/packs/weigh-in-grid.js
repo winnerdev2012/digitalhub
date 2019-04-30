@@ -29,7 +29,7 @@ window.addEventListener('load', () => {
     $('.story--response-text').on('click', (event) => {
       event.preventDefault();
       window.location.href = event.currentTarget.firstElementChild.attributes.href.value;
-      window.history.pushState({}, '/stories.html');
+      window.history.pushState({}, '/stories', '/stories.html');
     });
   }
   window.addEventListener('resize', setContainerHeight);
