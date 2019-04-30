@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
 
   function lineClampResponseTexts() {
     if (document.documentElement.clientWidth > 770) {
-      reloadStoryTexts()
+      reloadStoryTexts();
       $('div.story--response-text').succinct({
         size: 400,
         omission: '...',
