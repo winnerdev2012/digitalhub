@@ -10,7 +10,6 @@
 /*global jQuery*/
 (function ($) {
   'use strict';
-  console.log("succint loaded ...")
 
   $.fn.succinct = function (options) {
 
