@@ -6,18 +6,21 @@ module Refinery
       before_action :find_page
 
       def index
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @story in the line below:
+        stories = Refinery::Stories::Story.all.map {|story| StorySerializer.new(story).serializable_hash}
         @weigh_in_prompts = ::Refinery::WeighInPrompts::WeighInPrompt.all
-        present(@page)
+        respond_to do |format|
+          format.html { present(@page) }
+          format.json { render json: stories }
+        end
       end
 
       def show
         @story = Story.find(params[:id])
-
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @story in the line below:
-        present(@page)
+        story = StorySerializer.new(@story).serializable_hash
+        respond_to do |format|
+          format.html { present(@page) }
+          format.json { render json: story }
+        end
       end
 
       def edit

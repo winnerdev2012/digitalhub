@@ -22,8 +22,8 @@
 
     @include media(small) {
       grid-template-columns: auto;
-      margin: initial;
-      padding: 3.75rem 1rem 0;
+      margin: 0 2.6rem 1.5rem .95rem;
+      padding: 3.75rem 0 0;
     }
 
     display: grid;
@@ -104,6 +104,9 @@
     &.container {
       @include media(medium) {
         flex-wrap: nowrap;
+        height: auto;
+        padding: 0;
+        width: 11.9rem;
       }
 
       align-content: center;
@@ -115,7 +118,12 @@
   }
 
   .story {
-    margin: 0 2.5rem 2.5rem 0;
+    @include media(small) {
+      margin-bottom: 1rem;
+    }
+
+    margin-bottom: 2.5rem;
+    margin-right: 2.5rem;
 
     &+.story-meta {
       color: $color_green-dark;
@@ -125,6 +133,14 @@
     }
 
     &--prompt-small {
+      @include media(small) {
+        font-size: $v3_font_size-event-title-mobile;
+        height: 3.75rem;
+        margin-bottom: 0;
+        padding: 1rem;
+        width: 11.9rem;
+      }
+
       background: $v3-color_green-dark;
       font-size: $font_size-large;
       height: 7.5rem;
@@ -139,6 +155,15 @@
     }
 
     &--prompt-large {
+      @include media(small) {
+        color: $v3-color_green-dark;
+        font-size: $v3_font_size-event-title-mobile;
+        height: 3.75rem;
+        margin-bottom: 0;
+        padding: 1rem;
+        width: 11.9rem;
+      }
+
       font-size: $font_size-xlarge;
       height: 20rem;
       margin-bottom: 2.5rem;
@@ -147,6 +172,20 @@
       vertical-align: middle;
       width: 24rem;
 
+      &-text {
+        @include media(small) {
+          color: $v3_color_bg-lightest;
+          font-size: $font_size-small;
+          line-height: 1rem;
+          margin: 0;
+          padding: 0;
+          text-decoration: none;
+        }
+
+        color: $v3_color_bg-lightest;
+        font-size: $font_size-xlarge;
+      }
+
       &:hover {
         cursor: pointer;
       }
@@ -154,22 +193,65 @@
 
     &--response {
       background: $v3_color_weigh-in-response-bg;
-      color: $v3_color_bg-lightest;
       font-size: $font_size-small;
       height: 20rem;
-      overflow: hidden;
-      padding: 2.5rem;
-      text-overflow: ellipsis;
-      white-space: wrap;
+      padding: 2.7rem;
       width: 24rem;
+
+      &-text {
+        color: $v3_color_bg-lightest;
+        height: 11rem;
+        margin: 0;
+        text-decoration: none;
+        width: 18.95rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      @include media(small) {
+        direction: ltr;
+        display: inline-block;
+        font-size: 12px;
+        height: 3.75rem;
+        padding: .6rem;
+        width: 11.9rem;
+
+        &-text {
+          height: auto;
+          width: 9rem;
+        }
+      }
     }
 
     &__response--submitter-name {
+      @include media(small) {
+        margin: 0 .3rem .01rem 0;
+        padding: 0;
+      }
+
       color: $v3_color_bg-lightest;
       text-align: right;
-  }
+    }
 
     &--video {
+      @include media(small) {
+        height: 10rem;
+        padding: 17px 23px 17px 28px;
+        width: 11.9rem;
+
+        video {
+          height: 10rem;
+          left: 0;
+          max-width: initial;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          width: 24rem;
+        }
+      }
+
       height: 20rem;
       overflow: hidden;
       width: 24rem;
@@ -278,6 +360,13 @@
 
   .media-player {
     &__audio {
+      @include media(small) {
+        height: 3.75rem;
+        margin: 0;
+        padding: 0;
+        width: 11.9rem;
+      }
+
       background-color: $v3-color_slate;
       display: grid;
       grid-template-columns: 60px 1fr;
@@ -286,11 +375,17 @@
     }
 
     &__pause-play {
+      @include media(small) {
+        height: 1rem;
+        margin: 1rem 0 0 2rem;
+        width: 1rem;
+      }
+
       background: no-repeat image-url('play-icon.svg');
       background-size: contain;
       grid-column: 1;
-      height: 28px;
-      width: 28px;
+      height: 1.4rem;
+      width: 1.4rem;
     }
 
     &__pause-play--playing {
@@ -299,12 +394,22 @@
     }
 
     &__speaker {
+      @include media(small) {
+        display: none;
+      }
+
       color: $color_font-grey;
       font-style: italic;
       grid-column: 2;
     }
 
     &__question-text {
+      @include media(small) {
+        font-size: 1rem;
+        margin-top: 1rem;
+        padding: 0;
+      }
+
       color: $v3-color_light-blue;
       font-size: 1.4rem;
       grid-column: 2;
@@ -313,6 +418,12 @@
     }
 
     &__progress {
+      @include media(small) {
+        height: .1rem;
+        margin-top: 0;
+        width: 50%;
+      }
+
       background-color: $v3-color_green-lightest;
       grid-column: 2;
       height: .2rem;
@@ -321,6 +432,10 @@
     }
 
     &__progress-value {
+      @include media(small) {
+        height: .1rem;
+      }
+
       background-color: $v3-color_light-blue;
       grid-column: 2;
       height: .25rem;
@@ -328,6 +443,13 @@
     }
 
     &__time {
+      @include media(small) {
+        color: $v3-color_gray-dark;
+        font-size: $font_size-xsmall;
+        margin-top: 0;
+        padding-right: 7rem;
+      }
+
       color: $color_font-grey;
       grid-column: 2;
       justify-self: end;

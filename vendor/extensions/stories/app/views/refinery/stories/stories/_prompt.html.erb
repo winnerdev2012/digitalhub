@@ -1,9 +1,9 @@
 <% if prompt.style == "large" %>
   <div class="story--prompt-large" style="background-image: url(<%= prompt.image.url %>)">
-    <h1><%= strip_tags(prompt.body) %></h1>
+    <p class="story--prompt-large-text"><%= strip_tags(prompt.body) %></p>
   </div>
 <% else %>
-  <div class="story--prompt-small">
+  <div class="story--prompt-small" style="background-image: url(<%= prompt.image.url %>)">
     <%= link_to strip_tags(prompt.body), refinery.new_stories_story_path %>
   </div>
 <% end %>
