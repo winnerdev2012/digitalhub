@@ -1,9 +1,9 @@
 <div class="media-player">
-  <% if media&.video&.attached? %>
+  <% if media.video.attached? %>
     <div class="story--video">
       <%= video_tag main_app.rails_blob_path(media.video), autoplay: 'autoplay', muted: 'true', controls: 'true' %>
     </div>
-  <% elsif media&.audio&.attached? %>
+  <% elsif media.audio.attached? %>
     <div class="media-player__audio">
       <%= audio_tag main_app.rails_blob_path(media.audio), preload: 'metadata' %>
       <div class="media-player__pause-play"></div>
@@ -14,9 +14,11 @@
       </div>
       <div class="media-player__time">0:00</div>
     </div>
-  <% elsif media&.response.present? %>
-    <div class="story--response">
-      &ldquo;<%= media.response %>&rdquo;
+  <% elsif media.response.present? %>
+    <div id="story<%= media.id %>" class="story--response">
+      <div class="story--response-text">
+        <a href="/stories/<%= media.id %>">&ldquo;<%= strip_tags(media.response) %>&rdquo;</a>
+      </div>
       <p class="story__response--submitter-name">- <%= media.submitter_name %></p>
     </div>
   <% else %>
