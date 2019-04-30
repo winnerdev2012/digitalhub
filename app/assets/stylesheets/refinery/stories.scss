@@ -136,7 +136,7 @@
       @include media(small) {
         font-size: $v3_font_size-event-title-mobile;
         height: 3.75rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
         padding: 1rem;
         width: 11.9rem;
       }
@@ -159,12 +159,11 @@
         color: $v3-color_green-dark;
         font-size: $v3_font_size-event-title-mobile;
         height: 3.75rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
         padding: 1rem;
         width: 11.9rem;
       }
 
-      background-image: image-url('middlesex-fells-credit-paul-w.jpg');
       font-size: $font_size-xlarge;
       height: 20rem;
       margin-bottom: 2.5rem;
@@ -177,7 +176,7 @@
         @include media(small) {
           color: $v3_color_bg-lightest;
           font-size: $font_size-small;
-          line-height: 1em;
+          line-height: 1rem;
           margin: 0;
           padding: 0;
           text-decoration: none;
