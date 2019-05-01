@@ -3,11 +3,13 @@
 
   &--3-2 {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 3.15rem;
 
 
     @include media(medium) {
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
       grid-auto-rows: 4.25rem;
       grid-gap: .9rem;
     }
