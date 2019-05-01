@@ -8,7 +8,7 @@
       <%= audio_tag main_app.rails_blob_path(media.audio), preload: 'metadata' %>
       <div class="media-player__pause-play"></div>
       <div class="media-player__question-text"><%= audio_question_text(media.question) %></div>
-      <div class="media-player__speaker"><%= media.submitter_name %></div>
+      <div class="media-player__speaker"><%= media.submitter_name %> (Edited)</div>
       <div class="media-player__progress">
         <div class="media-player__progress-value"></div>
       </div>
@@ -19,7 +19,7 @@
       <div class="story--response-text">
         <q href="/stories/<%= media.id %>"><%= strip_tags(media.response) %><q/>
       </div>
-      <p class="story__response--submitter-name">- <%= media.submitter_name %> (Edited)</p>
+      <p class="story__response--submitter-name">- <%= media.submitter_name %></p>
     </div>
   <% else %>
     Sorry, there was an error displaying the content.
