@@ -1,38 +1,42 @@
-window.addEventListener('load', () => {
-  let totalHeight = 0;
+function calculateHeight(container) {
+  const children = Array.from(container.children);
+  const clientWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  const storyStyles = window.getComputedStyle(document.querySelector('.story'));
+  const containerStyles = window.getComputedStyle(container);
+  const storyMarginBottom = parseInt(storyStyles.getPropertyValue('margin-bottom'), 10);
+  const paddingTopAndBottom = parseInt(containerStyles.getPropertyValue('padding-top'), 10) + parseInt(containerStyles.getPropertyValue('padding-bottom'), 10);
+  const totalHeight = children.reduce((height, child) => height + child.clientHeight + storyMarginBottom, 0);
+
+  let columns = 3;
+  if (clientWidth < 960) {
+    columns = 1;
+  } else if (clientWidth < 1280) {
+    columns = 2;
+  }
+  // if totalHeight doesn't evenly divide into boxes, round up to next box of height
+  const bonusHeight = Math.round(360 - ((totalHeight / columns) % 360)) + paddingTopAndBottom;
+
+  if (columns === 1) {
+    return Math.round(totalHeight / columns);
+  }
+  return Math.round(totalHeight / columns) + bonusHeight;
+}
+
+function updateContainerHeight() {
   const container = document.getElementById('stories');
+  container.style.height = `${calculateHeight(container)}px`;
+}
 
-  function setContainerWidth() {
-    totalHeight = 0;
-    for (let i = 0; i < container.children.length; i += 1) {
-      if (container.children[i].children[0].classList.contains('story--audio')) {
-        totalHeight += 10;
-      } else if (container.children[i].classList.contains('story--prompt-small')) {
-        totalHeight += 10;
-      } else {
-        totalHeight += 22.5;
-      }
-      container.style.height = `${(Math.round(totalHeight / 3))}rem`;
-    }
-  }
+function responseLinks() {
+  $('.story--response-text').on('click', (event) => {
+    event.preventDefault();
+    window.location.href = event.currentTarget.firstElementChild.attributes.href.value;
+    window.history.pushState({}, '/stories', '/stories.html');
+  });
+}
 
-  function setContainerHeight() {
-    if (document.documentElement.clientWidth < 1350) {
-      totalHeight += 10;
-      container.style.height = `${(Math.round(totalHeight / 3) + 25)}rem`;
-    } else if (document.documentElement.clientWidth > 600) {
-      setContainerWidth();
-    }
-  }
-
-  function responseLinks() {
-    $('.story--response-text').on('click', (event) => {
-      event.preventDefault();
-      window.location.href = event.currentTarget.firstElementChild.attributes.href.value;
-      window.history.pushState({}, '/stories', '/stories.html');
-    });
-  }
-  window.addEventListener('resize', setContainerHeight);
-  setContainerWidth();
+window.addEventListener('load', () => {
+  window.addEventListener('resize', updateContainerHeight);
+  updateContainerHeight();
   responseLinks();
 });
