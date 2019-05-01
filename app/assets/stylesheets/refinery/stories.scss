@@ -162,11 +162,11 @@
         width: 11.9rem;
       }
 
+      display: flex;
       font-size: $font_size-xlarge;
       height: 20rem;
-      margin-bottom: 2.5rem;
-      padding-top: 6rem;
-      text-align: center;
+      padding: 2.7rem;
+      text-align: left;
       vertical-align: middle;
       width: 24rem;
 
@@ -175,13 +175,12 @@
           color: $v3_color_bg-lightest;
           font-size: $font_size-small;
           line-height: 1rem;
-          margin: 0;
           padding: 0;
           text-decoration: none;
         }
-
         color: $v3_color_bg-lightest;
         font-size: $font_size-xlarge;
+        margin: auto;
       }
 
       &:hover {
