@@ -25,6 +25,10 @@ module Refinery
         end
       end
 
+      def text_response
+        !audio.attached? && !video.attached?
+      end
+
       private
       def create_transcript
         if response.blank? && !audio.attached? && video.attached?

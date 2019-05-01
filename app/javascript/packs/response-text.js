@@ -5,22 +5,20 @@ window.addEventListener('load', () => {
       dataType: 'json',
     }).done((res) => {
       res.forEach((story) => {
-        if (story.data.attributes.response.length > 0) {
-          window.localStorage.setItem(`story${story.data.id}`, story.data.attributes.response.replace(/<p>|<\/p>/, ''));
+        if (story.data.attributes.text_response) {
+          window.localStorage.setItem(`story${story.data.id}`, story.data.attributes.sanitized_response);
         }
       });
     });
   }
 
   function reloadStoryTexts() {
-    if (document.documentElement.clientWidth > 670) {
-      Array.from($('.story--response')).forEach((div) => {
-        if (div.children[0].children[0]) {
-          const modifiedDiv = div.children[0].children[0];
-          modifiedDiv.innerText = window.localStorage.getItem(`${div.id}`);
-        }
-      });
-    }
+    Array.from($('.story--response')).forEach((div) => {
+      if (div.children[0].children[0]) {
+        const modifiedDiv = div.children[0].children[0];
+        modifiedDiv.innerText = window.localStorage.getItem(`${div.id}`);
+      }
+    });
   }
 
   function lineClampResponseTexts() {
@@ -33,7 +31,7 @@ window.addEventListener('load', () => {
       });
     } else if (document.documentElement.clientWidth < 670) {
       $('div.story--response-text').succinct({
-        size: 45,
+        size: 55,
         omission: '...',
         ignore: false,
       });
@@ -41,6 +39,8 @@ window.addEventListener('load', () => {
   }
 
   storeAllStoryTexts();
-  lineClampResponseTexts();
+  setTimeout(function () {
+    lineClampResponseTexts();
+  }, 500);
   window.addEventListener('resize', lineClampResponseTexts);
 });
