@@ -106,7 +106,7 @@
         flex-wrap: nowrap;
         height: auto;
         padding: 0;
-        width: 11.9rem;
+        width: 15rem;
       }
 
       align-content: center;
@@ -120,10 +120,11 @@
   .story {
     @include media(small) {
       margin-bottom: 1rem;
+      width: 15rem;
     }
-
     margin-bottom: 2.5rem;
     margin-right: 2.5rem;
+    width: 24rem;
 
     &+.story-meta {
       color: $color_green-dark;
@@ -137,14 +138,12 @@
         font-size: $v3_font_size-event-title-mobile;
         height: 3.75rem;
         padding: 1rem;
-        width: 11.9rem;
       }
 
       background: $v3-color_green-dark;
       font-size: $font_size-large;
       height: 7.5rem;
       padding: 1.75rem 2.8rem;
-      width: 24rem;
 
       a {
         color: $v3_color_bg-lightest;
@@ -159,7 +158,6 @@
         height: 3.75rem;
         margin-bottom: 0;
         padding: 1rem;
-        width: 11.9rem;
       }
 
       display: flex;
@@ -168,7 +166,6 @@
       padding: 2.7rem;
       text-align: left;
       vertical-align: middle;
-      width: 24rem;
 
       &-text {
         @include media(small) {
@@ -193,14 +190,13 @@
       font-size: $font_size-small;
       height: 20rem;
       padding: 2.7rem;
-      width: 24rem;
+      width: 100%;
 
       &-text {
         color: $v3_color_bg-lightest;
         height: 11rem;
         margin: 0;
         text-decoration: none;
-        width: 18.95rem;
 
         &:hover {
           cursor: pointer;
@@ -213,11 +209,9 @@
         font-size: 12px;
         height: 3.75rem;
         padding: .6rem;
-        width: 11.9rem;
 
         &-text {
           height: auto;
-          width: 9rem;
         }
       }
     }
@@ -236,7 +230,7 @@
       @include media(small) {
         height: 10rem;
         padding: 17px 23px 17px 28px;
-        width: 11.9rem;
+        width: 15rem;
 
         video {
           height: 10rem;
@@ -361,14 +355,12 @@
         height: 3.75rem;
         margin: 0;
         padding: 0;
-        width: 11.9rem;
       }
 
       background-color: $v3-color_slate;
       display: grid;
       grid-template-columns: 60px 1fr;
       padding: 2rem;
-      width: 23.95rem;
     }
 
     &__pause-play {
