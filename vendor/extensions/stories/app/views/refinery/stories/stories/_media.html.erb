@@ -20,6 +20,7 @@
     </div>
   <% elsif media&.response.present? %>
     <div id="story<%= media.id %>" class="story--response">
+      <div class="story--question-text"><%= audio_question_text(media.question) %></div>
       <div class="story--response-text">
         <q href="/stories/<%= media.id %>"><%= strip_tags(media.response) %></q>
       </div>
