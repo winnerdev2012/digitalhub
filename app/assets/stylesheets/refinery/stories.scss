@@ -185,6 +185,16 @@
       }
     }
 
+    &--question-text {
+      @include media(small) {
+        display: none;
+      }
+
+      color: $v3_color_bg-lightest;
+      font-size: $font_size-large;
+      margin-bottom: 1rem;
+    }
+
     &--response {
       background: $v3_color_weigh-in-response-bg;
       font-size: $font_size-small;
