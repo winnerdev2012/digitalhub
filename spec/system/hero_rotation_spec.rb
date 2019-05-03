@@ -6,7 +6,9 @@ RSpec.describe "Hero image rotation", :type => :system do
     create(:hero_image, image: build(:alternate_image))
     Capybara.current_session.driver.browser.manage.window.resize_to(1440, 1000)
     visit "/"
+    # puts page.find(:xpath, '//*[@id="page"]/div/section[1]/div[1]/div[1]')['innerHTML']
     sleep 5
+    puts page.find(:xpath, '//*[@id="page"]/div/section[1]/div[1]/div[1]')['innerHTML']
     expect(page).to have_xpath('//div[contains(@style,"beach-alternate.jpeg")]')
   end
 
