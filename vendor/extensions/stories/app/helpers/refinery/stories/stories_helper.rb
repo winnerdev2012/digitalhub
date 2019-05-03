@@ -12,9 +12,9 @@ module Refinery
       end
 
       def audio_question_text(enum)
-        if enum === 'question1'
+        if enum === 'question2'
           'In 2050...'
-        elsif enum === 'question2'
+        elsif enum === 'question1'
           'Ask the Future'
         else
           'No question was selected.'
