@@ -6,6 +6,10 @@
   <% elsif media&.audio&.attached? %>
     <div class="media-player__audio">
       <%= audio_tag main_app.rails_blob_path(media.audio), preload: 'metadata' %>
+      <link
+        rel="preload"
+        as="image"
+        href=<%= image_path('pause-icon.svg') %>>
       <div class="media-player__pause-play"></div>
       <div class="media-player__question-text"><%= audio_question_text(media.question) %></div>
       <div class="media-player__speaker"><%= media.submitter_name %> (Edited)</div>
