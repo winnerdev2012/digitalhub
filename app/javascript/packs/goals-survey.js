@@ -4,7 +4,7 @@ $(() => {
   oneBoxGoalsLink();
 })
 
-const goalsSurveyLink = "https://mapc.az1.qualtrics.com/jfe/form/SV_832YVvNk2Yabzox"
+const goalsSurveyLink = "https://mapc.az1.qualtrics.com/jfe/form/SV_b2t2u5mm1CkeFV3"
 
 const announcementGoalsLink = () => {
   $("body").on('click', 'a.button.announcements__button', function (event) {

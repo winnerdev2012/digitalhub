@@ -6,6 +6,7 @@ function calculateHeight(container) {
   const storyMarginBottom = parseInt(storyStyles.getPropertyValue('margin-bottom'), 10);
   const paddingTopAndBottom = parseInt(containerStyles.getPropertyValue('padding-top'), 10) + parseInt(containerStyles.getPropertyValue('padding-bottom'), 10);
   const totalHeight = children.reduce((height, child) => height + child.clientHeight + storyMarginBottom, 0);
+  let bonusHeight = 0;
 
   let columns = 3;
   if (clientWidth < 960) {
@@ -13,8 +14,10 @@ function calculateHeight(container) {
   } else if (clientWidth < 1280) {
     columns = 2;
   }
-  // if totalHeight doesn't evenly divide into boxes, round up to next box of height
-  const bonusHeight = Math.round(360 - ((totalHeight / columns) % 360)) + paddingTopAndBottom;
+  // if totalHeight doesn't evenly divide into boxes, add 360 to bonusHeight;
+  if (Math.round(360 - ((totalHeight / columns) % 360 !== 0))) {
+    bonusHeight = 360 + paddingTopAndBottom;
+  }
 
   if (columns === 1) {
     return Math.round(totalHeight / columns);
