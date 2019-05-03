@@ -373,6 +373,7 @@
       background: no-repeat image-url('play-icon.svg');
       background-size: contain;
       grid-column: 1;
+      grid-row: 1;
       height: 1.4rem;
       width: 1.4rem;
     }
@@ -390,6 +391,7 @@
       color: $color_font-grey;
       font-style: italic;
       grid-column: 2;
+      grid-row: 2;
     }
 
     &__question-text {
@@ -402,6 +404,7 @@
       color: $v3-color_light-blue;
       font-size: 1.4rem;
       grid-column: 2;
+      grid-row: 1;
       padding-bottom: .5rem;
       width: 14rem;
     }
@@ -415,6 +418,7 @@
 
       background-color: $v3-color_green-lightest;
       grid-column: 2;
+      grid-row: 3;
       height: .2rem;
       margin-top: 1rem;
       width: 100%;
@@ -427,6 +431,7 @@
 
       background-color: $v3-color_light-blue;
       grid-column: 2;
+      grid-row: 3;
       height: .25rem;
       width: 0%;
     }
@@ -441,6 +446,7 @@
 
       color: $color_font-grey;
       grid-column: 2;
+      grid-row: 4;
       justify-self: end;
       margin-top: .5rem;
     }
