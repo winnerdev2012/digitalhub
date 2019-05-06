@@ -12,7 +12,7 @@ $(() => {
     reloadStoryTexts();
     if (document.documentElement.clientWidth > 670) {
       $('div.story--response-text').succinct({
-        size: 400,
+        size: 350,
         omission: '...',
         ignore: false,
       });
