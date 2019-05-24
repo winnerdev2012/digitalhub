@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      reports:
+        title: Reports
+    reports:
+      admin:
+        reports:
+          actions:
+            create_new: Pridať Report
+            reorder: Preusporiadať Reports
+            reorder_done: Koniec radenia Reports
+          records:
+            title: Reports
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Reports. Kliknite na "Pridať Report" pre pridanie prvého report.
+          report:
+            view_live_html: Zobraziť náhľad report<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť report
+            delete: Zmazať report
+      reports:
+        show:
+          other: Daľšie Reports
+  activerecord:
+    attributes:
+      'refinery/reports/report':
+        title: Title
+        body: Body
+        date: Date
+        image: Image

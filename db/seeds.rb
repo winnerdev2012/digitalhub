@@ -33,3 +33,6 @@ Refinery::OneBoxes::Engine.load_seed
 
 # Added by Refinery CMS WeighInPrompts extension
 Refinery::WeighInPrompts::Engine.load_seed
+
+# Added by Refinery CMS Reports extension
+Refinery::Reports::Engine.load_seed

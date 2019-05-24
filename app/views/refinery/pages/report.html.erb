@@ -1,0 +1,12 @@
+<div class="ReportTemplate">
+  <div class="report">
+    <div class="v2-banner"></div><!-- top green bar -->   
+      <div class="report__content">
+        <div class="report__content-date"><%= Time.now.strftime('%b %d, %Y') %></div>
+        <div class="report__content-title"><%= @page.title %></div>
+        <div class="report__content-body">
+          <%= render '/refinery/report_page' %>
+      </div>
+    </div>
+  </div>
+</div>

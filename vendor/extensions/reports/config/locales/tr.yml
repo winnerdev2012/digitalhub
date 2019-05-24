@@ -1,0 +1,30 @@
+tr:
+  refinery:
+    plugins:
+      reports:
+        title: Reports
+    reports:
+      admin:
+        reports:
+          actions:
+            create_new: Yeni Ekle Report
+            reorder: Tekrar sirala Reports
+            reorder_done: Tekrar siralama tamamlandiReports
+          records:
+            title: Reports
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Reports yok henuz.  Tikla "Yeni Ekle Report" eklemek senin ilk report.
+          report:
+            view_live_html: Bunu canlu report goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle report
+            delete: Bunu Sil report sonsuza dek
+      reports:
+        show:
+          other: Diger Reports
+  activerecord:
+    attributes:
+      'refinery/reports/report':
+        title: Title
+        body: Body
+        date: Date
+        image: Image
