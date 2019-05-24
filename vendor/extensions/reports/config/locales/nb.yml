@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      reports:
+        title: Reports
+    reports:
+      admin:
+        reports:
+          actions:
+            create_new: Lag en ny Report
+            reorder: Endre rekkefølgen på Reports
+            reorder_done: Ferdig å endre rekkefølgen Reports
+          records:
+            title: Reports
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Reports enda. Klikk på "Lag en ny Report" for å legge til din første report.
+          report:
+            view_live_html: Vis hvordan denne report ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne report
+            delete: Fjern denne report permanent
+      reports:
+        show:
+          other: Andre Reports
+  activerecord:
+    attributes:
+      'refinery/reports/report':
+        title: Title
+        body: Body
+        date: Date
+        image: Image

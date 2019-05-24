@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      reports:
+        title: Reports
+    reports:
+      admin:
+        reports:
+          actions:
+            create_new: 建立新的 Report
+            reorder: 对 Reports 重新排序
+            reorder_done: 对 Reports 的重新排序结束
+          records:
+            title: Reports
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Reports yet. Click "Add New Report" to add your first report.
+            no_items_yet: 目前没有 Reports . 点击 "Add New Report" 创建一个report.
+          report:
+            view_live_html: 查看 report 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 report
+            delete: 永久删除 report
+      reports:
+        show:
+          other: 其他 Reports
+  activerecord:
+    attributes:
+      'refinery/reports/report':
+        title: Title
+        body: Body
+        date: Date
+        image: Image
