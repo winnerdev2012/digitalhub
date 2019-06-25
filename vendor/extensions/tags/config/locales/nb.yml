@@ -1,0 +1,28 @@
+nb:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: Lag en ny Tag
+            reorder: Endre rekkefølgen på Tags
+            reorder_done: Ferdig å endre rekkefølgen Tags
+          records:
+            title: Tags
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Tags enda. Klikk på "Lag en ny Tag" for å legge til din første tag.
+          tag:
+            view_live_html: Vis hvordan denne tag ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne tag
+            delete: Fjern denne tag permanent
+      tags:
+        show:
+          other: Andre Tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type

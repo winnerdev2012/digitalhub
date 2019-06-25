@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      taggings:
+        title: Taggings
+#        article: masculino/femenino
+    taggings:
+      admin:
+        taggings:
+          actions:
+            create_new: Crear nuevo tagging
+            reorder: Reordenar taggings
+            reorder_done: Reordenación de taggings completada
+          records:
+            title: Taggings
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay taggings todavía. Pulsa en "Crear nuevo Tagging" para crear tu primer tagging.
+          tagging:
+            view_live_html: Ver este tagging como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este tagging
+            delete: Borrar este tagging para siempre
+      taggings:
+        show:
+          other: Otros taggings
+  activerecord:
+    attributes:
+      'refinery/taggings/tagging':
+        tag_id: Tag
+        event_id: Event
+        story_id: Story
+        announcement_id: Announcement
