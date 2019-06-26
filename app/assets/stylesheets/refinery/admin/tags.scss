@@ -1,0 +1,30 @@
+  .tags {
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .tags__header {
+    color: black;
+    font-weight: bold;
+  }
+
+  span {
+    background-color: none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-bottom: 2px;
+    padding-right: 1rem;
+    text-align: center;
+    width: 7rem;
+  }
+
+  .tags__selector {
+    background-color: none;
+  }
+
+  .tags__selector:hover {
+    background-color: #66a3f9;
+    color: white;
+  }
