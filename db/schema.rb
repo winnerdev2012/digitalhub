@@ -299,6 +299,23 @@ ActiveRecord::Schema.define(version: 2019_06_18_145500) do
     t.index ["refinery_story_id", "locale"], name: "index_845caebe798a0afcd0ff8f6d31a500cb83b87df7", unique: true
   end
 
+  create_table "refinery_taggings", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "event_id"
+    t.integer "announcement_id"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "refinery_tags", force: :cascade do |t|
+    t.string "title"
+    t.string "tag_type"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "refinery_weigh_in_prompts", force: :cascade do |t|
     t.string "title"
     t.integer "image_id"
