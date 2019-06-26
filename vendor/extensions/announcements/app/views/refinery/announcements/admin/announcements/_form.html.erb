@@ -31,7 +31,7 @@
     <div class='tags__header'>Choose Content_Type(s)</div>
     <div>
       <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "content_type" }.each do |tag| %>
-         <span class="tags__selector"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>" 
+         <span class="tags__selector"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>"
         <%= 'checked' if @announcement.tags.include?(tag) %>><%= tag.title %></input></span>
       <% end %>
     </div>
@@ -40,11 +40,11 @@
     <div class='tags__header'>Choose Topic_Area(s)</div>
     <div>
       <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "topic_area" }.each do |tag| %>
-        <span class="tags__selector"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>" 
+        <span class="tags__selector"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>"
         <%= 'checked' if @announcement.tags.include?(tag) %> class="tags__selector-selected"><%= tag.title %></input></span>
       <% end %>
     </div>
-  </div>  
+  </div>
 
   <div class='field'>
     <%= f.label :link -%>
