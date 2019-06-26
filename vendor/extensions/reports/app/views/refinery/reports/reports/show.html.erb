@@ -1,0 +1,16 @@
+<div class="Report">
+  <div class="report">
+    <div class="v2-banner"></div><!-- top green bar -->   
+      <div class="report__content container">
+        <div class="report__content-date"><%= @report.date.strftime("%B %d, %Y") %></div>
+        <div class="report__content-title">
+          <%= @report.title %>
+        </div>
+        <div class="report__content-body">
+          <%= image_fu @report.image, nil, class: "report__content-image" %>
+           <%= raw @report.body %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

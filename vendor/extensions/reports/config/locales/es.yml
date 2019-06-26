@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      reports:
+        title: Reports
+#        article: masculino/femenino
+    reports:
+      admin:
+        reports:
+          actions:
+            create_new: Crear nuevo report
+            reorder: Reordenar reports
+            reorder_done: Reordenación de reports completada
+          records:
+            title: Reports
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay reports todavía. Pulsa en "Crear nuevo Report" para crear tu primer report.
+          report:
+            view_live_html: Ver este report como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este report
+            delete: Borrar este report para siempre
+      reports:
+        show:
+          other: Otros reports
+  activerecord:
+    attributes:
+      'refinery/reports/report':
+        title: Title
+        body: Body
+        date: Date
+        image: Image

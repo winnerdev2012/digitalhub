@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_01_202628) do
+ActiveRecord::Schema.define(version: 2019_06_18_145500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -249,6 +249,16 @@ ActiveRecord::Schema.define(version: 2019_05_01_202628) do
     t.index ["rgt"], name: "index_refinery_pages_on_rgt"
   end
 
+  create_table "refinery_reports", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "date"
+    t.integer "image_id"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "refinery_resource_translations", id: :serial, force: :cascade do |t|
     t.string "resource_title"
     t.string "locale", null: false
@@ -287,6 +297,23 @@ ActiveRecord::Schema.define(version: 2019_05_01_202628) do
     t.datetime "updated_at", null: false
     t.index ["locale"], name: "index_refinery_story_translations_on_locale"
     t.index ["refinery_story_id", "locale"], name: "index_845caebe798a0afcd0ff8f6d31a500cb83b87df7", unique: true
+  end
+
+  create_table "refinery_taggings", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "event_id"
+    t.integer "announcement_id"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "refinery_tags", force: :cascade do |t|
+    t.string "title"
+    t.string "tag_type"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "refinery_weigh_in_prompts", force: :cascade do |t|

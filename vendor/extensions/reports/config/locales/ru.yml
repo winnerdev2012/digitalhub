@@ -1,0 +1,30 @@
+ru:
+  refinery:
+    plugins:
+      reports:
+        title: Reports
+    reports:
+      admin:
+        reports:
+          actions:
+            create_new: Добавить Report
+            reorder: Изменить порядок Reports
+            reorder_done: Закончить изменять порядок Reports
+          records:
+            title: Reports
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Reports" не найдено. Нажмите "Добавить Report" чтобы создать report.
+          report:
+            view_live_html: Просмотреть report вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать report
+            delete: Удалить report навсегда
+      reports:
+        show:
+          other: Другие Reports
+  activerecord:
+    attributes:
+      'refinery/reports/report':
+        title: Title
+        body: Body
+        date: Date
+        image: Image
