@@ -8,6 +8,6 @@ RSpec.describe 'Weigh In Stories', :type => :system do
     visit '/stories'
     Capybara.current_session.driver.browser.manage.window.resize_to(1281, 1000)
 
-    expect(page).to have_xpath('//section[@id="stories"][@style="height: 837px;"]')
+    expect(page).to have_xpath('//section[@id="stories"][@style="height: 784px;"]')
   end
 end

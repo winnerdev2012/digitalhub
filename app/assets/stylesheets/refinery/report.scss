@@ -41,29 +41,17 @@
       }
 
       &-image {
-        @include media(large) {
-          width: 37rem;
-        }
-
-        @include media(medium) {
-          width: 27rem;
-        }
-
         @include media(small) {
-          width: 17rem;
-        }
-
-        @include media(xsmall) {
-          width: 7rem;
+          float: none;
         }
 
         display: block;
         float: right;
         grid-column-start: 3;
         height: auto;
-        margin-right: 0;
-        padding: 0 0 2rem 2rem;
-        width: 55%;
+        margin: 0;
+        padding: 0 0 1rem 1rem;
+        width: 40vw;
       }
     }
   }
