@@ -7,6 +7,7 @@ module Refinery
       belongs_to :tag, :class_name => '::Refinery::Tags::Tag'
       belongs_to :event, :class_name => '::Refinery::Events::Event', optional: true
       belongs_to :announcement, :class_name => '::Refinery::Announcements::Announcement', optional: true
+      belongs_to :report, :class_name => '::Refinery::Reports::Report', optional: true
 
       def self.total_pages
         self.count / 12
@@ -29,6 +30,8 @@ module Refinery
           "event"
         elsif announcement
           "announcement"
+        elsif report
+          "report"
         else
         end
       end
@@ -42,6 +45,8 @@ module Refinery
           event.title.downcase.lstrip
         elsif announcement
           announcement.title.downcase.lstrip
+        elsif report
+          report.title.downcase.lstrip
         else
         end
       end

@@ -303,6 +303,7 @@ ActiveRecord::Schema.define(version: 2019_06_18_145500) do
     t.integer "tag_id"
     t.integer "event_id"
     t.integer "announcement_id"
+    t.integer "report_id"
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
