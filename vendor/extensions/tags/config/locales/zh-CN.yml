@@ -1,0 +1,30 @@
+zh-CN:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: 建立新的 Tag
+            reorder: 对 Tags 重新排序
+            reorder_done: 对 Tags 的重新排序结束
+          records:
+            title: Tags
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Tags yet. Click "Add New Tag" to add your first tag.
+            no_items_yet: 目前没有 Tags . 点击 "Add New Tag" 创建一个tag.
+          tag:
+            view_live_html: 查看 tag 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 tag
+            delete: 永久删除 tag
+      tags:
+        show:
+          other: 其他 Tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type

@@ -1,0 +1,20 @@
+<ul>
+  <% if ::Refinery::Taggings::Admin::TaggingsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.taggings_admin_taggings_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= action_label :add, refinery.new_taggings_admin_tagging_path, t('.create_new') %>
+  </li>
+<% if !searching? && ::Refinery::Taggings::Admin::TaggingsController.sortable? && ::Refinery::Taggings::Tagging.many? %>
+  <li>
+    <%= action_label :reorder,
+                     refinery.taggings_admin_taggings_path,
+                     t('.reorder', what:  "Taggings"), id: 'reorder_action'%>
+    <%= action_label :reorder_done,
+                     refinery.taggings_admin_taggings_path,
+                      t('.reorder_done', what: "Taggings"), id: 'reorder_action_done', class: 'hidden'%>
+  </li>
+<% end %>
+</ul>

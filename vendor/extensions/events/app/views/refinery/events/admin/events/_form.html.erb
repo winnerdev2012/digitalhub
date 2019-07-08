@@ -36,6 +36,26 @@
                :toggle_image_display => false -%>
   </div>
 
+  <%= f.label :tags -%>
+  <div class="tags">
+    <div class='tags__header'>Choose Content_Type(s)</div>
+    <div>
+      <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "content_type" }.each do |tag| %>
+         <span class="tags__selector"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>" 
+        <%= 'checked' if @event.tags.include?(tag) %>><%= tag.title %></input></span>
+      <% end %>
+    </div>
+    <br />
+
+    <div class='tags__header'>Choose Topic_Area(s)</div>
+    <div>
+      <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "topic_area" }.each do |tag| %>
+        <span class="tags__selector"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>" 
+        <%= 'checked' if @event.tags.include?(tag) %> class="tags__selector-selected"><%= tag.title %></input></span>
+      <% end %>
+    </div>
+  </div>  
+
   <div class="field">
     <%= f.label :location_name %>
     <%= f.text_field :location_name %>

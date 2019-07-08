@@ -1,0 +1,40 @@
+<table style="width:100%">
+  <tr>
+    <th>title</th>
+    <th>extension</th>
+    <th>tag</th>
+    <th>tag_type</th> 
+    <th>delete | edit | preview </th>
+  </tr>
+  <% @taggings.each do |t| %>
+    <tr>
+      <% if t.event %>
+        <td><%= t.event.title %></td>
+        <td><%= t.extension_class_name %></td>
+        <td><%= t.tag.title %></td>
+        <td><%= t.tag.tag_type %></td>
+        <td><span class='actions'>
+          <%= action_icon(:preview, "/events/#{t.event_id}", t('.view_live_html')) %>
+          <%= action_icon(:edit, "/hubadmin/events/#{t.event_id}/edit", t('.edit')) %>
+          <%= action_icon(:delete,  refinery.taggings_admin_tagging_path(t), t('.delete'), 
+            { class: "cancel confirm-delete",
+            data: {confirm: t('message',  scope: 'refinery.admin.delete', title: t.tag_title)}}  ) %></span>
+        </td>
+      <% elsif t.announcement %>
+        <td><%= t.announcement.title %></td>
+        <td><%= t.extension_class_name %></td>
+        <td><%= t.tag.title %></td>
+        <td><%= t.tag.tag_type %></td>
+        <td><span class='actions'>
+          <%= action_icon(:preview, "/announcements/#{t.announcement_id}", t('.view_live_html')) %>
+          <%= action_icon(:edit, "/hubadmin/announcements/#{t.announcement_id}/edit", t('.edit')) %>
+          <%= action_icon(:delete,  refinery.taggings_admin_tagging_path(t), t('.delete'),
+            { class: "cancel confirm-delete",
+            data: {confirm: t('message',  scope: 'refinery.admin.delete', title: t.tag_title)}}  ) %></span>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<%= render '/refinery/admin/make_sortable', options: {tree: false} if !searching? and ::Refinery::Taggings::Admin::TaggingsController.sortable? and ::Refinery::Taggings::Tagging.many? %>

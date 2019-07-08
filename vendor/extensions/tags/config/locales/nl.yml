@@ -1,0 +1,28 @@
+nl:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: Nieuwe Tag toevoegen
+            reorder: De volgorde van de Tags wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Tag-volgorde
+          records:
+            title: Tags
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Tags. Druk op 'Nieuwe Tag toevoegen' om de eerste toe te voegen.
+          tag:
+            view_live_html: Deze tag op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze tag
+            delete: Deze tag definitief verwijderen
+      tags:
+        show:
+          other: Andere Tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type

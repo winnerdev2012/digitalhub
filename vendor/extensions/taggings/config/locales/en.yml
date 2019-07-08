@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      taggings:
+        title: Taggings
+    taggings:
+      admin:
+        taggings:
+          actions:
+            create_new: Add New Tagging
+            reorder: Reorder Taggings
+            reorder_done: Done Reordering Taggings
+          records:
+            title: Taggings
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Taggings yet. Click "Add New Tagging" to add your first tagging.
+          tagging:
+            view_live_html: View this tagging live <br/><em>(opens in a new window)</em>
+            edit: Edit this tagging
+            delete: Remove this tagging forever
+      taggings:
+        show:
+          other: Other Taggings
+  activerecord:
+    attributes:
+      'refinery/taggings/tagging':
+        tag_id: Tag
+        event_id: Event
+        story_id: Story
+        announcement_id: Announcement

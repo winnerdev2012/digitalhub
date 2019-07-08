@@ -1,0 +1,26 @@
+.tags {
+  border: 1px solid #707070;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.tags__header {
+  color: #111436;
+  font-weight: bold;
+}
+
+.tags__selector {
+  background-color: none;
+  border: 1px solid #f0efe7;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-bottom: 2px;
+  padding-right: 1rem;
+  text-align: center;
+  width: 7rem;
+}
+
+.tags__selector:hover {
+  background-color: #4e79d8;
+  color: #fff;
+}

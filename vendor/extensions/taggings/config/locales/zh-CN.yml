@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      taggings:
+        title: Taggings
+    taggings:
+      admin:
+        taggings:
+          actions:
+            create_new: 建立新的 Tagging
+            reorder: 对 Taggings 重新排序
+            reorder_done: 对 Taggings 的重新排序结束
+          records:
+            title: Taggings
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Taggings yet. Click "Add New Tagging" to add your first tagging.
+            no_items_yet: 目前没有 Taggings . 点击 "Add New Tagging" 创建一个tagging.
+          tagging:
+            view_live_html: 查看 tagging 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 tagging
+            delete: 永久删除 tagging
+      taggings:
+        show:
+          other: 其他 Taggings
+  activerecord:
+    attributes:
+      'refinery/taggings/tagging':
+        tag_id: Tag
+        event_id: Event
+        story_id: Story
+        announcement_id: Announcement

@@ -1,0 +1,28 @@
+ru:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: Добавить Tag
+            reorder: Изменить порядок Tags
+            reorder_done: Закончить изменять порядок Tags
+          records:
+            title: Tags
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Tags" не найдено. Нажмите "Добавить Tag" чтобы создать tag.
+          tag:
+            view_live_html: Просмотреть tag вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать tag
+            delete: Удалить tag навсегда
+      tags:
+        show:
+          other: Другие Tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type
