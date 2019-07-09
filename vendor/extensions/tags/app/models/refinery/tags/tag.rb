@@ -9,6 +9,7 @@ module Refinery
       has_many :taggings, :class_name => '::Refinery::Taggings::Tagging', dependent: :destroy
       has_many :events, :class_name => '::Refinery::Events::Event', through: :taggings
       has_many :announcements, :class_name => '::Refinery::Announcements::Announcement', through: :taggings
+      has_many :reports, :class_name => '::Refinery::Reports::Report', through: :taggings
 
       enum tag_type: {
         content_type: "content_type",

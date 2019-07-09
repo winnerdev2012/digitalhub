@@ -17,9 +17,12 @@ RSpec.describe Refinery::Tags::Tag, :type => :model do
     new_tag = FactoryBot.create(:tag, title: 'Waste Management Video', tag_type: "content_type")
     new_event = FactoryBot.create(:event, title: "What I did last summer")
     new_announcement = FactoryBot.create(:announcement, title: "What I ate last night")
-    new_tagging1 = Refinery::Taggings::Tagging.create(tag_id: new_tag.id, event_id: new_event.id)
-    new_tagging2 = Refinery::Taggings::Tagging.create(tag_id: new_tag.id, announcement_id: new_announcement.id)
-    
-    expect(new_tag.taggings.count).to eq(2)
+    new_report = Refinery::Reports::Report.create(title: "When the dogs come back.", image: FactoryBot.create(:image))
+ 
+    Refinery::Taggings::Tagging.create(tag_id: new_tag.id, event_id: new_event.id)
+    Refinery::Taggings::Tagging.create(tag_id: new_tag.id, announcement_id: new_announcement.id)
+    Refinery::Taggings::Tagging.create(tag_id: new_tag.id, report_id: new_report.id)
+  
+    expect(new_tag.taggings.count).to eq(3)
   end
 end

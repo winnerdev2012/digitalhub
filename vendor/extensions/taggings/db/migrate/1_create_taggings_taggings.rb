@@ -5,6 +5,7 @@ class CreateTaggingsTaggings < ActiveRecord::Migration[5.2]
       t.integer :tag_id
       t.integer :event_id
       t.integer :announcement_id
+      t.integer :report_id
       t.integer :position
 
       t.timestamps

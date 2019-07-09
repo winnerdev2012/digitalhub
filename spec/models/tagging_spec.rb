@@ -20,6 +20,7 @@ RSpec.describe Refinery::Taggings::Tagging, :type => :model do
   it "it MUST have an associated model instance" do
     new_tag = FactoryBot.create(:tag, title: 'animals', tag_type: "topic_area")
     new_tagging = Refinery::Taggings::Tagging.create(tag_id: new_tag.id)
-    expect(new_tagging.errors.messages.count).to eq(1)
+ 
+    expect(new_tagging.errors.messages[:tagged_item_title][0]).to eq("can't be blank")
   end
 end
