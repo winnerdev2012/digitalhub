@@ -1,0 +1,11 @@
+.Goals {
+  height: 110rem;
+
+  .container:after {
+   z-index: 9;
+  }
+
+  iframe {
+    padding-top: .5rem;
+  }
+}
