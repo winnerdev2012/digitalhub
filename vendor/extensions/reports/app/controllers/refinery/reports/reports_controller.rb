@@ -6,17 +6,22 @@ module Refinery
       before_action :find_page
 
       def index
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @report in the line below:
-        present(@page)
+        reports_json = @reports.map { |report| ReportSerializer.new(report, { :include => [:image] }).serializable_hash }
+
+        respond_to do |f|
+          f.html { present(@page) }
+          f.json { render json: reports_json }
+        end
       end
 
       def show
-        @report = Report.find(params[:id])
+        @report = ::Refinery::Reports::Report.find(params[:id])
+        report_json = ReportSerializer.new(@report, { :include => [:image] }).serializable_hash
 
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @report in the line below:
-        present(@page)
+        respond_to do |f|
+          f.html { present(@page) }
+          f.json { render json: report_json }
+        end
       end
 
     protected

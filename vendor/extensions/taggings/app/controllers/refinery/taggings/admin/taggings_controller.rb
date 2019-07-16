@@ -5,9 +5,10 @@ module Refinery
         crudify :'refinery/taggings/tagging'
 
         def index
-          @taggings = Refinery::Taggings::Tagging.sort_by_item_title
+          @taggings = Refinery::Taggings::Tagging.all.sort {|a,b| a.tagged_item_title <=> b.tagged_item_title}
+          @taggings.select! {|t| t.content_type != t.tag_title}
         end
- 
+
         def destroy
           @tagging = Refinery::Taggings::Tagging.find(params[:id])
           @tagging.delete

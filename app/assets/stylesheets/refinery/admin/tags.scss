@@ -1,15 +1,26 @@
 .tags {
+  background-color: #fcdedee7;
   border: 1px solid #707070;
   border-radius: 5px;
   padding: 1rem;
 }
 
-.tags__header {
+.tags__header-content {
+  color: #111436;
+  display: none;
+  font-weight: bold;
+}
+
+.tags__selector-content {
+  display: none;
+}
+
+.tags__header-topic {
   color: #111436;
   font-weight: bold;
 }
 
-.tags__selector {
+.tags__selector-topic {
   background-color: none;
   border: 1px solid #f0efe7;
   border-radius: 5px;
@@ -20,7 +31,7 @@
   width: 7rem;
 }
 
-.tags__selector:hover {
-  background-color: #4e79d8;
+.tags__selector-topic:hover {
+  background-color: #a4bbeb;
   color: #fff;
 }

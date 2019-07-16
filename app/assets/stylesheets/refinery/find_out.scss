@@ -1,17 +1,124 @@
 .FindOut {
   .banner {
-    background: $color_bg-dark;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
     @include background-2x('find-out-banner', 'png', contain, contain, center, no-repeat );
     @include media(small) {
       background-position: bottom 3rem right;
     }
+    background: $color_bg-dark;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   .banner-content {
-    margin-top: 7rem;
     margin-bottom: 7.5rem;
+    margin-top: 7rem;
+  }
+
+  .find-out__header {
+    @include media(small) {
+      background: none;
+    }
+
+    background-image: image-url('group-2111.png');
+  }
+
+  .find-out__filter {
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+    grid-template-rows: 50% 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .find-out__header-title-content-type {
+    align-content: center;
+    color: $v3_color_bg-lightest;
+    font-family: $font_family-primary;
+    font-size: $v3_font_size-h1;
+    grid-column-end: 3;
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+
+  .find-out__header-title-topic-area {
+    align-content: center;
+    color: $v3_color_bg-lightest;
+    font-family: $font_family-primary;
+    font-size: $v3_font_size-h1;
+    grid-column-start: 2;
+    grid-row-start: 3;
+  }
+
+  #find-out__dropdown-content-type {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    text-decoration: underline;
+  }
+
+  #find-out__dropdown-topic-area {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: 0;
+    text-decoration: underline;
+  }
+
+  .find-out__tag-title {
+    background: none;
+    color: $v3_color_bg-lightest;
+    font-family: $font_family-primary;
+    font-size: $v3_font_size-h1;
+  }
+
+  .find-out__overlay {
+    grid-column-start: 2;
+    grid-row-start: 4;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: 0;
+    text-decoration: underline;
+  }
+
+/* topic area narrative display area ****************************/
+  #find-out__topic-area-narrative {
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+    grid-template-rows: 1fr;
+    z-index: 99;
+  }
+
+  .find-out__topic-area-narrative-title {
+    color: $v3_color_bg-lightest;
+    font-size: $font_size-medium;
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+
+  .find-out__topic-area-narrative-body {
+    color: $v3_color_bg-lightest;
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+
+  /* tagged items display area ****************************/
+  .find-out__results {
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+  }
+
+  .find-out__tagged-item {
+    border: 2px solid $color_bg-dark;
+    border-radius: 15px;
+    color: $color_bg-dark;
+    grid-column-start: 2;
+    padding: 10px;
   }
 }

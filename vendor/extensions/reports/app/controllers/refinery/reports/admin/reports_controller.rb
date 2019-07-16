@@ -18,11 +18,13 @@ module Refinery
 
         def update
           @report = Refinery::Reports::Report.find(params[:id])
+          @report.update(report_params)
           @report.taggings.each {|t| t.delete}
           tags = params[:tag][:tag_ids].each do |tid|
             new_tagging = Refinery::Taggings::Tagging.create(report_id: @report.id, tag_id: tid.to_i)
           end
-          redirect_to taggings_admin_taggings_path and return
+          @report.save
+          redirect_to reports_admin_reports_path and return
         end
 
         private

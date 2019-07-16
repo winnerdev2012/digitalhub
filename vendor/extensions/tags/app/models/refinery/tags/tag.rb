@@ -2,7 +2,7 @@ module Refinery
   module Tags
     class Tag < Refinery::Core::BaseModel
       self.table_name = 'refinery_tags'
-      
+
       acts_as_indexed :fields => [:title]
       validates :title, :presence => true, :uniqueness => true
       validates :tag_type, :presence => true
@@ -19,7 +19,7 @@ module Refinery
       def self.topic_areas
         self.all.select {|t| t.tag_type == 'topic_area'}
       end
-      
+
       def self.content_types
         self.all.select {|t| t.tag_type == 'content_type'}
       end

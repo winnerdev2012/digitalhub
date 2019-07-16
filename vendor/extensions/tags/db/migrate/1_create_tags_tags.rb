@@ -5,6 +5,7 @@ class CreateTagsTags < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :tag_type
       t.integer :position
+      t.text :narrative
 
       t.timestamps
     end

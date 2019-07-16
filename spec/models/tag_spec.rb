@@ -12,17 +12,27 @@ RSpec.describe Refinery::Tags::Tag, :type => :model do
 
     expect(new_tag.tag_type).to eq("topic_area")
   end
-  
-  it "can have many taggings" do 
-    new_tag = FactoryBot.create(:tag, title: 'Waste Management Video', tag_type: "content_type")
-    new_event = FactoryBot.create(:event, title: "What I did last summer")
-    new_announcement = FactoryBot.create(:announcement, title: "What I ate last night")
-    new_report = Refinery::Reports::Report.create(title: "When the dogs come back.", image: FactoryBot.create(:image))
- 
-    Refinery::Taggings::Tagging.create(tag_id: new_tag.id, event_id: new_event.id)
-    Refinery::Taggings::Tagging.create(tag_id: new_tag.id, announcement_id: new_announcement.id)
-    Refinery::Taggings::Tagging.create(tag_id: new_tag.id, report_id: new_report.id)
-  
-    expect(new_tag.taggings.count).to eq(3)
+
+  it "can have many taggings" do
+    tag1 = FactoryBot.create(:tag, title: 'publications', tag_type: "content_type")
+    tag2 = FactoryBot.create(:tag, title: 'housing', tag_type: "topic_area")
+
+    report1 = FactoryBot.create(:report, title: "When the dogs come back.")
+    report2 = FactoryBot.create(:report, title: "When the cats leave.")
+    report3 = FactoryBot.create(:report, title: "When the horses run.")
+
+    report1.tags.push(tag1)
+    report1.tags.push(tag2)
+    report1.save
+
+    report2.tags.push(tag1)
+    report2.tags.push(tag2)
+    report2.save
+
+    report3.tags.push(tag1)
+    report3.tags.push(tag2)
+    report3.save
+
+    expect(tag2.taggings.count).to eq(3)
   end
 end

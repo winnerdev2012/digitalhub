@@ -1,22 +1,25 @@
+<% content_for :javascript_packs do %>
+<%= javascript_pack_tag 'find-out' %>
+<% end %>
+
 <div class="FindOut">
   <section class="v2-banner">
-    <div class="container">
-      <div class="content-column banner-content">
-        <h1><%= raw @page.try(:title) %></h1>
-      </div>
-    </div>
-  </section>
-  <div class="container">
-    <section class="content-column">
-      <%= raw @page.content_for(:body) %>
-      <div class="phases">
-        <% @page.parts.select { |part| part.slug.match?('phase') }.each do |part| %>
-          <div class="phase">
-            <h2><%= raw part.title %></h2>
-            <%= raw @page.content_for(part.slug.to_sym) %>
+    <div class="find-out__header">
+      <div class="container">
+        <form>
+          <div class="find-out__filter">
+            <div class='find-out__header-title-content-type'>You're looking for <span
+                id="find-out__dropdown-content-type"></span></div>
+            <div class='find-out__header-title-topic-area'>in <span id="find-out__dropdown-topic-area"></span></div>
           </div>
-        <% end %>
+        </form>
+        <div id="find-out__topic-area-narrative">
+          <div class="find-out__topic-area-narrative-title">Default Topic Area title</div>
+          <div class="find-out__topic-area-narrative-body">Default Topic Area narrative</div>
+        </div>
       </div>
-    </section>
+  </section>
+  <div class="find-out__results">
+    <p class="find-out__tagged-item">Filters showing all items.</p>
   </div>
 </div>
