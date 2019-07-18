@@ -1,0 +1,5 @@
+title,description,start,end,event_type,address,city,state,zipcode,registration_link,location_name,image_file_name,tag1,tag2
+Opening Day,Open Day description,7/1/19,7/11/19,Town Hall,12 Main St,Boston,MA,12345,www.mapc.org,Dewey Square,1.png,events,dynamic government
+MBTA Festival,MBTA Festival description,7/22/19,7/23/19,Discussion Group,44 Cedar St,Everett,MA,23456,www.mapc.org,Kendall Sq,2.png,events,transportation
+Mayor's Block Party,Mayor's Block Party description,8/3/19,8/4/19,Listening Session, 222 Elm,Malden,MA,34567,www.mapc.org,Harvard Sq,3.png,events,housing
+Ride the East Boston Greenway extensions to Winthrop and Revere,"The East Boston Greenway was recently extend to Constitution Beach.  From this current terminus, there are opportunities to extend the greenway further into Winthrop as well as toward Suffolk Downs and Revere.  This ride will explore these opportunities and some spectacular beach views.",7/24/19,,,,,,,www.mapc.org,East Boston Greenway,,events,transportation

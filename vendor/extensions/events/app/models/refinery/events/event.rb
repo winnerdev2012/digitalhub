@@ -16,12 +16,12 @@ module Refinery
       def self.tagged_with(title)
         Refinery::Tags::Tag.find_by_title!(title).events
       end
-      
+
       def self.tag_counts
         Refinery::Tags::Tag.select("tags.*, count(taggings.tag_id) as count").
           joins(:taggings).group("taggings.tag_id")
       end
-        
+
       def tag_list
         tags.map(&:title).join(", ")
       end
@@ -31,7 +31,11 @@ module Refinery
           Refinery::Tags::Tag.where(title: t.strip).first_or_create!
         end
       end
-      
+
+      def tag_content_type
+        self.tags.where(tag_type: "content_type")[0].title
+      end
+
       protected
 
         def translate_content
@@ -60,7 +64,6 @@ module Refinery
             obj.translations.in_locale(locale).save!
           end
         end
-
 
     end
   end

@@ -13,7 +13,7 @@ function loadDropDownTags() {
     dataType: 'json',
   }).done((response) => {
     const contentTypes = response.filter(tag => tag.data.attributes.tag_type === 'content_type')
-    const contentTypesSelectOptions = contentTypes.slice(0, 1).map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
+    const contentTypesSelectOptions = contentTypes.map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
     const contentTypesDropdown = (`<select><option value='everything' selected>everything</option>${contentTypesSelectOptions}</select`)
     document.getElementById('find-out__dropdown-content-type').innerHTML = contentTypesDropdown
 
@@ -73,11 +73,15 @@ const fetchFilteredTaggings = (dataObject) => {
       if (res.data.attributes.report_id) {
         createReport(res, resultsDiv)
       }
+      if (res.data.attributes.event_id) {
+        createEvent(res, resultsDiv)
+      }
     })
     closeOverlay()
   })
 }
 
+// Report api, class and find-out card html
 function createReport(obj, resultsDiv) {
   $.get(`/reports/${obj.data.attributes.report_id}.json`)
     .then(reportResponse => {
@@ -102,12 +106,55 @@ class Report {
 Report.prototype.reportCardHtml = function reportCardHtml() {
   const tagsHtml = this.tags.map(tag => {
     return (`
+    <span><em> *${tag.title}</em></span>
+    `)
+  }).join('')
+  return (`
+  <div class="find-out__tagged-item">
+  <h3><strong>Publication: </strong>${this.title}</h3>
+  <p><strong>Tags: </strong>${tagsHtml}</>
+  </div>
+  `)
+}
+
+// Event api, class and find-out card html
+function createEvent(obj, resultsDiv) {
+  $.get(`/events/${obj.data.attributes.event_id}.json`)
+    .then(eventResponse => {
+      const event = new Event(eventResponse)
+      const eventCard = event.eventCardHtml()
+      resultsDiv.append(eventCard)
+    })
+}
+
+class Event {
+  constructor(obj) {
+    this.id = obj.data.id // note: not nested under attributes
+    this.type = obj.data.type // note: not nested under attributes
+    this.tags = obj.data.attributes.tags // note: this is a nested array
+    this.title = obj.data.attributes.title
+    this.event_type = obj.data.attributes.event_type
+    this.image_id = obj.data.attributes.image_id
+    this.description = obj.data.attributes.description
+    this.registration_link = obj.data.attributes.registration_link
+    this.start = obj.data.attributes.start
+    this.end = obj.data.attributes.end
+    this.address = obj.data.attributes.address
+    this.city = obj.data.attributes.city
+    this.state = obj.data.attributes.state
+    this.zipcode = obj.data.attributes.zipcode
+  }
+}
+
+Event.prototype.eventCardHtml = function eventCardHtml() {
+  const tagsHtml = this.tags.map(tag => {
+    return (`
       <span><em> *${tag.title}</em></span>
     `)
   }).join('')
   return (`
   <div class="find-out__tagged-item">
-    <h3><strong>Publication: </strong>${this.title}</h3>
+    <h3><strong>Event: </strong>${this.title}</h3>
     <p><strong>Tags: </strong>${tagsHtml}</>
   </div>
 `)
