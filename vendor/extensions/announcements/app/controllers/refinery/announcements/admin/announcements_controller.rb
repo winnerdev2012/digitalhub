@@ -18,15 +18,19 @@ module Refinery
 
         def update
           @announcement = Refinery::Announcements::Announcement.find(params[:id])
-          @announcement.taggings.each {|t| t.delete}
-          tags = params[:tag][:tag_ids].each do |tid|
-            new_tagging = Refinery::Taggings::Tagging.create(announcement_id: @announcement.id, tag_id: tid.to_i)
+          @announcement.update(announcement_params)
+          if params[:tag]
+            @announcement.taggings.each {|t| t.delete}
+            tags = params[:tag][:tag_ids].each do |tid|
+              new_tagging = Refinery::Taggings::Tagging.create(announcement_id: @announcement.id, tag_id: tid.to_i)
+            end
           end
-          redirect_to taggings_admin_taggings_path and return
+          @announcement.save
+          redirect_to announcements_admin_announcements_path and return
         end
-        
+
         private
-        
+
         # Only allow a trusted parameter "white list" through.
         def announcement_params
           params.require(:announcement).permit(:title, :body, :image_id, :link, :tag)

@@ -13,7 +13,7 @@ function loadDropDownTags() {
     dataType: 'json',
   }).done((response) => {
     const contentTypes = response.filter(tag => tag.data.attributes.tag_type === 'content_type')
-    const contentTypesSelectOptions = contentTypes.map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
+    const contentTypesSelectOptions = contentTypes.slice(0, 3).map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
     const contentTypesDropdown = (`<select><option value='everything' selected>everything</option>${contentTypesSelectOptions}</select`)
     document.getElementById('find-out__dropdown-content-type').innerHTML = contentTypesDropdown
 
@@ -70,6 +70,9 @@ const fetchFilteredTaggings = (dataObject) => {
     resultsDiv.empty()
 
     response.taggings.forEach(res => {
+      if (res.data.attributes.announcement_id) {
+        createAnnouncement(res, resultsDiv)
+      }
       if (res.data.attributes.report_id) {
         createReport(res, resultsDiv)
       }
@@ -93,13 +96,13 @@ function createReport(obj, resultsDiv) {
 
 class Report {
   constructor(obj) {
-    this.title = obj.data.attributes.title
-    this.tags = obj.data.attributes.tags
     this.id = obj.data.attributes.id
     this.title = obj.data.attributes.title
+    this.body = obj.data.attributes.body
+    this.tags = obj.data.attributes.tags
+    this.title = obj.data.attributes.title
     this.link = obj.data.attributes.link
-    this.image_id = obj.data.attributes.image_id
-    this.position = obj.data.attributes.position
+    this.image_url = obj.included[0].attributes.url
   }
 }
 
@@ -111,8 +114,11 @@ Report.prototype.reportCardHtml = function reportCardHtml() {
   }).join('')
   return (`
   <div class="find-out__tagged-item">
-  <h3><strong>Publication: </strong>${this.title}</h3>
-  <p><strong>Tags: </strong>${tagsHtml}</>
+    <h3><strong>Publication: </strong>${this.title}</h3>
+    <p>${this.body}</p>
+    <img class="find-out__report__image " src=${this.image_url} />
+    <hr />
+    <p><strong>Tags: </strong>${tagsHtml}</>
   </div>
   `)
 }
@@ -143,6 +149,7 @@ class Event {
     this.city = obj.data.attributes.city
     this.state = obj.data.attributes.state
     this.zipcode = obj.data.attributes.zipcode
+    this.image_url = obj.included[0].attributes.url
   }
 }
 
@@ -155,6 +162,57 @@ Event.prototype.eventCardHtml = function eventCardHtml() {
   return (`
   <div class="find-out__tagged-item">
     <h3><strong>Event: </strong>${this.title}</h3>
+    <p>type: ${this.type}</p>
+    <p>event_type: ${this.event_type}</p>
+    <p>description: ${this.description}</p>
+    <p>registration_link: ${this.registration_link}</p>
+    <p>start: ${this.start}</p>
+    <p>end: ${this.end}</p>
+    <p>address: ${this.address}</p>
+    <p>city: ${this.city}</p>
+    <p>state: ${this.state}</p>
+    <p>zipcode: ${this.zipcode}</p>
+    <img class="find-out__event__image " src=${this.image_url} />
+    <hr />
+    <p><strong>Tags: </strong>${tagsHtml}</p>
+  </div>
+`)
+}
+
+// Announcement api, class and find-out card html
+function createAnnouncement(obj, resultsDiv) {
+  $.get(`/announcements/${obj.data.attributes.announcement_id}.json`)
+    .then(announcementResponse => {
+      const announcement = new Announcement(announcementResponse)
+      const announcementCard = announcement.announcementCardHtml()
+      resultsDiv.append(announcementCard)
+    })
+}
+
+class Announcement {
+  constructor(obj) {
+    this.id = obj.data.attributes.id
+    this.title = obj.data.attributes.title
+    this.body = obj.data.attributes.body
+    this.tags = obj.data.attributes.tags
+    this.link = obj.data.attributes.link
+    this.image_url = obj.included[0].attributes.url
+  }
+}
+
+Announcement.prototype.announcementCardHtml = function announcementCardHtml() {
+  const tagsHtml = this.tags.map(tag => {
+    return (`
+      <span><em> *${tag.title}</em></span>
+    `)
+  }).join('')
+  return (`
+  <div class="find-out__tagged-item">
+    <h3><strong>News: </strong>${this.title}</h3>
+    <p>body: ${this.body}</p>
+    <p>link: ${this.link}</p>
+    <img class="find-out__announcement__image " src=${this.image_url} />
+    <hr />
     <p><strong>Tags: </strong>${tagsHtml}</>
   </div>
 `)
