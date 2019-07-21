@@ -22,7 +22,7 @@
   <span class='preview'></span>
 
   <span class='actions'>
-    <%= action_icon(:preview, refinery.announcements_admin_announcement_path(announcement), t('.view_live_html')) %>
+    <%= action_icon(:preview, refinery.announcements_announcement_path(announcement), t('.view_live_html')) %>
     <%= action_icon(:edit, refinery.edit_announcements_admin_announcement_path(announcement), t('.edit') ) %>
     <%= action_icon(:delete, refinery.announcements_admin_announcement_path(announcement), t('.delete'),
       { class: "cancel confirm-delete",

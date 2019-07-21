@@ -1,6 +1,6 @@
 class AnnouncementSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :title, :body, :link, :position, :tags, :image
+  attributes :title, :body, :link, :position, :published_date, :tags, :image
   has_one :image, :class_name => '::Refinery::Image'
   has_many :taggings, :class_name => '::Refinery::Taggings::Tagging'
   has_many :tags, :class_name => '::Refinery::Tags::Tag', through: :taggings

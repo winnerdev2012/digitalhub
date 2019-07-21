@@ -1,0 +1,11 @@
+.find-out__overlay {
+  background-color: $v3-color_overlay-dark-green;
+  height: 100%;
+  left: 0;
+  opacity: .85;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}

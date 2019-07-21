@@ -3,70 +3,115 @@ $(() => {
     content_type: 'everything',
     topic_area: 'all topic areas'
   }
-  fetchFilteredTaggings(allTaggings)
-  loadDropDownTags()
+  fetchTaggings(allTaggings)
+  loadDropdowns()
 })
 
-function loadDropDownTags() {
+function loadDropdowns() {
   $.get({
     url: '/tags.json',
     dataType: 'json',
   }).done((response) => {
     const contentTypes = response.filter(tag => tag.data.attributes.tag_type === 'content_type')
-    const contentTypesSelectOptions = contentTypes.slice(0, 3).map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
-    const contentTypesDropdown = (`<select><option value='everything' selected>everything</option>${contentTypesSelectOptions}</select`)
-    document.getElementById('find-out__dropdown-content-type').innerHTML = contentTypesDropdown
+    const contentTypeSelectOptions = contentTypes.slice(0, 3).map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
+    const contentTypeDropdown = (`<select><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
+    document.getElementsByClassName('find-out__filter-content-type-dropdown')[0].innerHTML = contentTypeDropdown
 
     const topicAreas = response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
-    const topicAreasSelectOptions = topicAreas.map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
-    const topicAreasDropdown = (`<select><option value='all topic areas' selected>all topic areas</option>${topicAreasSelectOptions}</select`)
-    document.getElementById('find-out__dropdown-topic-area').innerHTML = topicAreasDropdown
-
-    onTagClick()
+    const topicAreaSelectOptions = topicAreas.map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
+    const topicAreaDropdown = (`<select><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`)
+    document.getElementsByClassName('find-out__filter-topic-area-dropdown')[0].innerHTML = topicAreaDropdown
+    onDropdownChange()
   })
 }
 
-const onTagClick = () => {
+const openOverlay = () => {
+  $('body').append("<div class='find-out__overlay'></div>")
+  onClickOverlay()
+}
+
+const onClickOverlay = () => {
+  $('div.find-out__overlay').on('click', (event) => {
+    event.preventDefault()
+    closeOverlay()
+  })
+}
+
+const closeOverlay = () => {
+  $('div.find-out__overlay').html('').removeClass('find-out__overlay')
+}
+
+const onDropdownChange = () => {
+  $('select').on('click', (event) => {
+    event.preventDefault()
+    openOverlay()
+  })
+
   $('select').on('change', (event) => {
     event.preventDefault()
-
-    const selectedOptions = Array.from(document.getElementsByTagName('option')).filter(tag => tag.selected)
-    const dataObject = {
-      content_type: selectedOptions[0].innerText,
-      topic_area: selectedOptions[1].innerText
+    const dropdownSelections = Array.from(document.getElementsByTagName('option')).filter(tag => tag.selected)
+    const dropdownsObject = {
+      content_type: dropdownSelections[0].innerText,
+      topic_area: dropdownSelections[1].innerText
     }
-    fetchFilteredTaggings(dataObject)
+    fetchTaggings(dropdownsObject)
+    closeOverlay()
   })
 }
 
 const loadTopicAreaNarrative = (title, body) => {
-  $('.find-out__topic-area-narrative-title').text(title)
-  $('.find-out__topic-area-narrative-body').text(body)
+  $('.find-out__topic-area-narrative').text(body)
 }
 
-const fetchFilteredTaggings = (dataObject) => {
+const fetchTaggings = (dropdownsObject) => {
   $.get({
     url: '/taggings.json',
     dataType: 'json',
-    data: dataObject,
+    data: dropdownsObject,
   }).done(response => {
-    loadTopicAreaNarrative(dataObject.topic_area, response.topic_area_narrative)
+    loadTopicAreaNarrative(dropdownsObject.topic_area, response.topic_area_narrative)
 
-    const resultsDiv = $('.find-out__results')
+    let resultsDiv = $('.find-out__results')
     resultsDiv.empty()
 
-    response.taggings.forEach(res => {
-      if (res.data.attributes.announcement_id) {
-        createAnnouncement(res, resultsDiv)
-      }
-      if (res.data.attributes.report_id) {
-        createReport(res, resultsDiv)
-      }
-      if (res.data.attributes.event_id) {
-        createEvent(res, resultsDiv)
-      }
-    })
+    const topicAreaResultsDiv = $('.find-out__topic-area-results')
+    topicAreaResultsDiv.empty()
+
+    const footer = $('footer')
+
+    if (dropdownsObject.topic_area !== 'all topic areas') {
+      $('.find-out__header').css('height', '45.25rem')
+      $('body').css('height', '1850px')
+
+      resultsDiv = topicAreaResultsDiv
+
+      $('body').parent().append(footer)
+    }
+
+    if (response.taggings.length === 0) {
+      $('.find-out__results').html('<div class="find-out__results-message-none">There are currently no results for the selected filters.</div>')
+    } else {
+      response.taggings.forEach(res => {
+        if (res.data.attributes.announcement_id) {
+          createAnnouncement(res, resultsDiv)
+        }
+        if (res.data.attributes.report_id) {
+          createReport(res, resultsDiv)
+        }
+        if (res.data.attributes.event_id) {
+          createEvent(res, resultsDiv)
+        }
+      })
+    }
+    onSelectAllTopicAreas()
+    onClickOverlay()
   })
+}
+
+const onSelectAllTopicAreas = () => {
+  if ($('select')[1] && $('select')[1].value === 'all topic areas') {
+    $('.find-out__header').css('height', '29.05rem')
+  }
 }
 
 // Report api, class and find-out card html
@@ -83,7 +128,7 @@ class Report {
   constructor(reportResponse) {
     this.title = reportResponse.data.attributes.title
     this.tags = reportResponse.data.attributes.tags
-    this.id = reportResponse.data.attributes.id
+    this.id = reportResponse.data.id
     this.title = reportResponse.data.attributes.title
     this.link = reportResponse.data.attributes.link
     this.image_url = reportResponse.included[0].attributes.url
@@ -93,24 +138,34 @@ class Report {
 
 Report.prototype.reportCardHtml = function reportCardHtml() {
   const tagsHtml = this.tags.map(tag => {
-    return (`
-    <span><em> *${tag.title}</em></span>
-    `)
+    if (tag.tag_type !== 'content_type') {
+      return (`
+      <span><em>${tag.title}</em></span>
+      `)
+    }
   }).join('')
+
   return (`
-  <div class="find-out__tagged-item">
-    <h3><strong>Publication: </strong>${this.title}</h3>
-    <p>${this.body}</p>
-    <img class="find-out__report__image " src=${this.image_url} />
-    <hr />
-    <p><strong>Tags: </strong>${tagsHtml}</>
+  <div class="find-out__results-tagged-item-report">
+    <a href="/reports/${this.id}">
+      <img class="find-out__results-tagged-item-report-image" src=${this.image_url} />
+    </a>
+    <div class="find-out__results-tagged-item-report-info">
+      <div class="find-out__results-tagged-item-report-info-content-type">PUBLICATION</div>
+      <div class="find-out__results-tagged-item-report-info-title-link">
+        <a href="/reports/${this.id}">${this.title}</a>
+      </div>
+      <div class="find-out__results-tagged-item-report-info-tags">
+        tags: ${tagsHtml}
+      </div>
+    </div>
   </div>
   `)
 }
 
 // Event api, class and find-out card html
-function createEvent(eventObject, resultsDiv) {
-  $.get(`/events/${eventObject.data.attributes.event_id}.json`)
+function createEvent(obj, resultsDiv) {
+  $.get(`/events/${obj.data.attributes.event_id}.json`)
     .then(eventResponse => {
       const event = new Event(eventResponse)
       const eventCard = event.eventCardHtml()
@@ -139,28 +194,29 @@ class Event {
 
 Event.prototype.eventCardHtml = function eventCardHtml() {
   const tagsHtml = this.tags.map(tag => {
-    return (`
-      <span><em> *${tag.title}</em></span>
-    `)
+    if (tag.tag_type !== 'content_type') {
+      return (`
+      <span><em>${tag.title}</em></span>
+      `)
+    }
   }).join('')
+
   return (`
-  <div class="find-out__tagged-item">
-    <h3><strong>Event: </strong>${this.title}</h3>
-    <p>type: ${this.type}</p>
-    <p>event_type: ${this.event_type}</p>
-    <p>description: ${this.description}</p>
-    <p>registration_link: ${this.registration_link}</p>
-    <p>start: ${this.start}</p>
-    <p>end: ${this.end}</p>
-    <p>address: ${this.address}</p>
-    <p>city: ${this.city}</p>
-    <p>state: ${this.state}</p>
-    <p>zipcode: ${this.zipcode}</p>
-    <img class="find-out__event__image " src=${this.image_url} />
-    <hr />
-    <p><strong>Tags: </strong>${tagsHtml}</p>
-  </div>
-`)
+    <div class="find-out__results-tagged-item-event">
+    <a href="/events/${this.id}">
+      <img class="find-out__results-tagged-item-event-image" src=${this.image_url} />
+    </a>
+      <div class="find-out__results-tagged-item-event-info">
+        <div class="find-out__results-tagged-item-event-info-content-type">EVENT</div>
+        <div class="find-out__results-tagged-item-event-info-title-link">
+          <a class="tagged-item-title-link" href="/events/${this.id}">${this.title}</a>
+        </div>
+        <div class="find-out__results-tagged-item-event-info-tags">
+          tags: ${tagsHtml}
+        </div>
+      </div>
+    </div>
+  `)
 }
 
 // Announcement api, class and find-out card html
@@ -175,7 +231,7 @@ function createAnnouncement(announcementObject, resultsDiv) {
 
 class Announcement {
   constructor(announcementResponse) {
-    this.id = announcementResponse.data.attributes.id
+    this.id = announcementResponse.data.id
     this.title = announcementResponse.data.attributes.title
     this.body = announcementResponse.data.attributes.body
     this.tags = announcementResponse.data.attributes.tags
@@ -186,18 +242,27 @@ class Announcement {
 
 Announcement.prototype.announcementCardHtml = function announcementCardHtml() {
   const tagsHtml = this.tags.map(tag => {
-    return (`
-      <span><em> *${tag.title}</em></span>
-    `)
+    if (tag.tag_type !== 'content_type') {
+      return (`
+      <span><em>${tag.title}</em></span>
+      `)
+    }
   }).join('')
+
   return (`
-  <div class="find-out__tagged-item">
-    <h3><strong>News: </strong>${this.title}</h3>
-    <p>body: ${this.body}</p>
-    <p>link: ${this.link}</p>
-    <img class="find-out__announcement__image " src=${this.image_url} />
-    <hr />
-    <p><strong>Tags: </strong>${tagsHtml}</>
-  </div>
-`)
+    <div class="find-out__results-tagged-item-announcement">
+    <a href="/announcements/${this.id}">
+      <img class="find-out__results-tagged-item-announcement-image" src=${this.image_url} />
+    </a>
+      <div class="find-out__results-tagged-item-announcement-info">
+        <div class="find-out__results-tagged-item-announcement-info-content-type">NEWS</div>
+        <div class="find-out__results-tagged-item-announcement-info-title-link">
+          <a class="tagged-item-title-link" href="/announcements/${this.id}">${this.title}</a>
+        </div>
+        <div class="find-out__results-tagged-item-announcement-info-tags">
+          tags: ${tagsHtml}
+        </div>
+      </div>
+    </div>
+  `)
 }

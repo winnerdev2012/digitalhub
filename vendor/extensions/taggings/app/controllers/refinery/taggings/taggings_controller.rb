@@ -7,7 +7,7 @@ module Refinery
 
       def index
         filters = [params[:content_type] || "everything", params[:topic_area] || "all topic areas"]
-        topic_area_narrative = 'default topic narrative'
+        # topic_area_narrative = 'Currently showing all topic areas.'
         topic_area_narrative = Refinery::Tags::Tag.all.find_by(title: filters[1]).narrative if filters[1] != "all topic areas"
         filtered_taggings = Refinery::Taggings::Tagging.filter_taggings(filters)
         filtered_taggings_json = filtered_taggings.map {|t| TaggingSerializer.new(t).serializable_hash }
