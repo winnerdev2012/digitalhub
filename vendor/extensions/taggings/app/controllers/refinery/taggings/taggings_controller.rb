@@ -6,17 +6,25 @@ module Refinery
       before_action :find_page
 
       def index
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @tagging in the line below:
-        present(@page)
+        filters = [params[:content_type] || "everything", params[:topic_area] || "all topic areas"]
+        topic_area_narrative = 'default topic narrative'
+        topic_area_narrative = Refinery::Tags::Tag.all.find_by(title: filters[1]).narrative if filters[1] != "all topic areas"
+        filtered_taggings = Refinery::Taggings::Tagging.filter_taggings(filters)
+        filtered_taggings_json = filtered_taggings.map {|t| TaggingSerializer.new(t).serializable_hash }
+
+        respond_to do |f|
+          f.html { present(@page) }
+          f.json { render json: {taggings: filtered_taggings_json, topic_area_narrative: topic_area_narrative }}
+        end
       end
 
       def show
-        @tagging = Tagging.find(params[:id])
-
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @tagging in the line below:
-        present(@page)
+        @tagging = ::Refinery::Taggings::Tagging.find(params[:id])
+        tagging_json = TaggingSerializer.new(@tagging).serializable_hash
+        respond_to do |f|
+          f.html { present(@page) }
+          f.json { render json: tagging_json}
+        end
       end
 
     protected

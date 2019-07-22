@@ -6,17 +6,20 @@ module Refinery
       before_action :find_page
 
       def index
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @tag in the line below:
-        present(@page)
+        tags_json = @tags.map {|t| TagSerializer.new(t).serializable_hash}
+        respond_to do |f|
+          f.html { present(@page) }
+          f.json { render json: tags_json}
+        end
       end
 
       def show
         @tag = Tag.find(params[:id])
-
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @tag in the line below:
-        present(@page)
+        tag_json = TagSerializer.new(@tag).serializable_hash
+        respond_to do |f|
+          f.html { present(@page) }
+          f.json { render json: tag_json}
+        end
       end
 
     protected
