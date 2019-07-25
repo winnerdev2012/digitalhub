@@ -26,18 +26,6 @@ function loadDropDownTags() {
   })
 }
 
-const closeOverlay = () => {
-  $('div.overlay').on('click', (event) => {
-    event.preventDefault()
-    $('div.overlay').html('').removeClass('overlay')
-  })
-}
-
-const openOverlay = () => {
-  $('div.overlay').html('')
-  $('body').append('<div class="overlay"></div>')
-}
-
 const onTagClick = () => {
   $('select').on('change', (event) => {
     event.preventDefault()
@@ -47,8 +35,6 @@ const onTagClick = () => {
       content_type: selectedOptions[0].innerText,
       topic_area: selectedOptions[1].innerText
     }
-
-    openOverlay()
     fetchFilteredTaggings(dataObject)
   })
 }
@@ -77,13 +63,12 @@ const fetchFilteredTaggings = (dataObject) => {
         createEvent(res, resultsDiv)
       }
     })
-    closeOverlay()
   })
 }
 
 // Report api, class and find-out card html
-function createReport(obj, resultsDiv) {
-  $.get(`/reports/${obj.data.attributes.report_id}.json`)
+function createReport(reportObject, resultsDiv) {
+  $.get(`/reports/${reportObject.data.attributes.report_id}.json`)
     .then(reportResponse => {
       const report = new Report(reportResponse)
       const reportCard = report.reportCardHtml()
@@ -92,14 +77,14 @@ function createReport(obj, resultsDiv) {
 }
 
 class Report {
-  constructor(obj) {
-    this.title = obj.data.attributes.title
-    this.tags = obj.data.attributes.tags
-    this.id = obj.data.attributes.id
-    this.title = obj.data.attributes.title
-    this.link = obj.data.attributes.link
-    this.image_id = obj.data.attributes.image_id
-    this.position = obj.data.attributes.position
+  constructor(reportResponse) {
+    this.title = reportResponse.data.attributes.title
+    this.tags = reportResponse.data.attributes.tags
+    this.id = reportResponse.data.attributes.id
+    this.title = reportResponse.data.attributes.title
+    this.link = reportResponse.data.attributes.link
+    this.image_id = reportResponse.data.attributes.image_id
+    this.position = reportResponse.data.attributes.position
   }
 }
 
@@ -118,8 +103,8 @@ Report.prototype.reportCardHtml = function reportCardHtml() {
 }
 
 // Event api, class and find-out card html
-function createEvent(obj, resultsDiv) {
-  $.get(`/events/${obj.data.attributes.event_id}.json`)
+function createEvent(eventObject, resultsDiv) {
+  $.get(`/events/${eventObject.data.attributes.event_id}.json`)
     .then(eventResponse => {
       const event = new Event(eventResponse)
       const eventCard = event.eventCardHtml()
@@ -128,21 +113,21 @@ function createEvent(obj, resultsDiv) {
 }
 
 class Event {
-  constructor(obj) {
-    this.id = obj.data.id // note: not nested under attributes
-    this.type = obj.data.type // note: not nested under attributes
-    this.tags = obj.data.attributes.tags // note: this is a nested array
-    this.title = obj.data.attributes.title
-    this.event_type = obj.data.attributes.event_type
-    this.image_id = obj.data.attributes.image_id
-    this.description = obj.data.attributes.description
-    this.registration_link = obj.data.attributes.registration_link
-    this.start = obj.data.attributes.start
-    this.end = obj.data.attributes.end
-    this.address = obj.data.attributes.address
-    this.city = obj.data.attributes.city
-    this.state = obj.data.attributes.state
-    this.zipcode = obj.data.attributes.zipcode
+  constructor(eventResponse) {
+    this.id = eventResponse.data.id // note: not nested under attributes
+    this.type = eventResponse.data.type // note: not nested under attributes
+    this.tags = eventResponse.data.attributes.tags // note: this is a nested array
+    this.title = eventResponse.data.attributes.title
+    this.event_type = eventResponse.data.attributes.event_type
+    this.image_id = eventResponse.data.attributes.image_id
+    this.description = eventResponse.data.attributes.description
+    this.registration_link = eventResponse.data.attributes.registration_link
+    this.start = eventResponse.data.attributes.start
+    this.end = eventResponse.data.attributes.end
+    this.address = eventResponse.data.attributes.address
+    this.city = eventResponse.data.attributes.city
+    this.state = eventResponse.data.attributes.state
+    this.zipcode = eventResponse.data.attributes.zipcode
   }
 }
 
