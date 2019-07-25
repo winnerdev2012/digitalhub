@@ -86,7 +86,7 @@ class Report {
     this.id = reportResponse.data.attributes.id
     this.title = reportResponse.data.attributes.title
     this.link = reportResponse.data.attributes.link
-    this.image_id = reportResponse.data.attributes.image_id
+    this.image_url = reportResponse.included[0].attributes.url
     this.position = reportResponse.data.attributes.position
   }
 }
@@ -125,7 +125,7 @@ class Event {
     this.tags = eventResponse.data.attributes.tags // note: this is a nested array
     this.title = eventResponse.data.attributes.title
     this.event_type = eventResponse.data.attributes.event_type
-    this.image_id = eventResponse.data.attributes.image_id
+    this.image_url = eventResponse.included[0].attributes.url
     this.description = eventResponse.data.attributes.description
     this.registration_link = eventResponse.data.attributes.registration_link
     this.start = eventResponse.data.attributes.start
