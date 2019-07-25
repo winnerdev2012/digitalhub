@@ -1,0 +1,11 @@
+.Goals {
+  height: 110rem;
+
+  .container:after {
+   display: none;
+  }
+
+  iframe {
+    padding-top: .5rem;
+  }
+}
