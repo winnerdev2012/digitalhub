@@ -49,8 +49,6 @@
   }
 
   #find-out__dropdown-content-type {
-    -moz-appearance: none;
-    -webkit-appearance: none;
     appearance: none;
     background: none;
     border: none;
@@ -58,8 +56,6 @@
   }
 
   #find-out__dropdown-topic-area {
-    -moz-appearance: none;
-    -webkit-appearance: none;
     appearance: none;
     background: none;
     border: 0;
@@ -79,15 +75,13 @@
   }
 
   select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     background: none;
     border: 0;
     text-decoration: underline;
   }
 
-/* topic area narrative display area ****************************/
+/* topic area narrative display area ******************/
   #find-out__topic-area-narrative {
     display: grid;
     grid-template-columns: 1fr 50% 1fr;
@@ -108,7 +102,7 @@
     grid-row-start: 2;
   }
 
-  /* tagged items display area ****************************/
+/* tagged items display area ****************************/
   .find-out__results {
     display: grid;
     grid-template-columns: 1fr 50% 1fr;
