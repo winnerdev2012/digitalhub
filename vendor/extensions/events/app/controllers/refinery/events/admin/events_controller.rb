@@ -18,11 +18,15 @@ module Refinery
 
         def update
           @event = Refinery::Events::Event.find(params[:id])
-          @event.taggings.each {|t| t.delete}
-          tags = params[:tag][:tag_ids].each do |tid|
-            new_tagging = Refinery::Taggings::Tagging.create(event_id: @event.id, tag_id: tid.to_i)
+          @event.update(event_params)
+          if params[:tag]
+            @event.taggings.each {|t| t.delete}
+            tags = params[:tag][:tag_ids].each do |tid|
+              new_tagging = Refinery::Taggings::Tagging.create(event_id: @event.id, tag_id: tid.to_i)
+            end
           end
-          redirect_to taggings_admin_taggings_path and return
+          @event.save
+          redirect_to events_admin_events_path and return
         end
 
         private
