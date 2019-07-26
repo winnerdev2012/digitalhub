@@ -51,6 +51,7 @@ module Refinery
         elsif report
           report.title.downcase.lstrip
         else
+          "associated Active Record instance NOT found"
         end
       end
 

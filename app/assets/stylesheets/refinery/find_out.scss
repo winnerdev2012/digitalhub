@@ -115,4 +115,20 @@
     grid-column-start: 2;
     padding: 10px;
   }
+
+  /* temporary styling ****************************/
+  .find-out__announcement__image {
+    width: 8rem;
+    border: 5px solid rgb(35, 49, 34);
+  }
+
+  .find-out__event__image {
+    width: 8rem;
+    border: 5px solid rgb(197, 255, 121);
+  }
+
+  .find-out__report__image {
+    width: 8rem;
+    border: 5px solid rgb(37, 41, 75);
+  }
 }

@@ -5,9 +5,6 @@ class SeedEvents < ActiveRecord::Migration[5.2]
     csv_text = File.read(Rails.root.join('vendor', 'extensions', 'events', 'lib', 'import', 'event_seed.csv'))
     csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
     csv.each do |row|
-
-      # binding.pry
-
       tag1_id = ::Refinery::Tags::Tag.find_by(title: row[12]).id
       tag2_id = ::Refinery::Tags::Tag.find_by(title: row[13]).id
 
@@ -15,8 +12,8 @@ class SeedEvents < ActiveRecord::Migration[5.2]
       image = ::Refinery::Image.create(image: file_path)
       new_event = ::Refinery::Events::Event.create(title: row['title'],
         description: row['description'],
-        start: row['start'],
-        end: row['end'],
+        start: Date.parse(row['start']),
+        end: Date.parse(row['end']),
         event_type: row['event_type'],
         address: row['address'],
         city: row['city'],

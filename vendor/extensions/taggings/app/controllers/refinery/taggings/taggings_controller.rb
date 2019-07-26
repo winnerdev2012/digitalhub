@@ -27,6 +27,10 @@ module Refinery
         end
       end
 
+      def findout
+        render 'refinery/pages/find_out.html'
+      end
+
     protected
 
       def find_all_taggings
