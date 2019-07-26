@@ -30,4 +30,13 @@ RSpec.describe Refinery::Announcements::Announcement, :type => :model do
 
     expect(announcement1.tags[1].tag_type).to eq('topic_area')
   end
+
+  it "it MUST have a published_date", js: true do
+    tag1 = Refinery::Tags::Tag.create(title: 'news', narrative: "We do announcements on a specific date.", tag_type: "content_type")
+    announcement1 = FactoryBot.create(:announcement, title: 'Test Announcement Title', published_date: '02-03-2018')
+    announcement1.tags.push(tag1)
+    announcement1.save
+
+    expect(announcement1.published_date.month).to eq(3)
+  end
 end
