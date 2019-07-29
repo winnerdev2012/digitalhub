@@ -17,7 +17,7 @@ module Refinery
         @image_url = announcement_json[:included][0][:attributes][:url]
         @tags = @announcement.tags.map {|t| t.tag_type == 'topic_area' ? t.title : nil }.compact.join(', ')
         respond_to do |f|
-          f.html { render 'refinery/pages/announcement'}
+          f.html { render '/refinery/announcements/show'}
           f.json { render json: announcement_json}
         end
       end
