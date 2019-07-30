@@ -33,7 +33,7 @@ module Refinery
 
         # Only allow a trusted parameter "white list" through.
         def announcement_params
-          params.require(:announcement).permit(:title, :body, :image_id, :link, :tag)
+          params.require(:announcement).permit(:title, :body, :published_date, :image_id, :link, :tag)
         end
       end
     end
