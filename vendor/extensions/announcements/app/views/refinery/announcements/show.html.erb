@@ -1,10 +1,10 @@
 <div class="Announcement">
   <div class="announcement">
     <div class="v2-banner"></div><!-- top green bar -->
-      <div class="announcement__content">
+      <div class="announcement__content container">
         <div class="announcement__content-title"><%= @announcement.title %></div>
         <div class="announcement__content-content-type">NEWS</div>
-        <div class="announcement__content-content-date">July 31, 2019</div>
+        <div class="announcement__content-content-date"><%= @announcement.published_date.strftime("%B %d, %Y") %></div>
         <div class="announcement__content-tags">Tags: <%= @tags %></div>
         <div class="announcement__content-body">
           <img src="<%= @image_url %>" class="announcement__content-image" />

@@ -1,6 +1,6 @@
 class TaggingSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :tag_id, :tag_title, :announcement_id, :event_id, :report_id, :tag_narrative
+  attributes :tag_id, :tag_title, :announcement_id, :event_id, :report_id, :tag_narrative, :sort_date, :tagged_item_title, :tagged_item
 
   belongs_to :tag, :class_name => '::Refinery::Tags::Tag'
   belongs_to :event, :class_name => '::Refinery::Events::Event', optional: true

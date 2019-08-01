@@ -43,6 +43,18 @@ module Refinery
         self.tag.narrative
       end
 
+      def tagged_item
+        if announcement
+          AnnouncementSerializer.new(announcement, { :include => [:image] }).serializable_hash
+        elsif event
+          EventSerializer.new(self.event, { :include => [:image] }).serializable_hash
+        elsif report
+          ReportSerializer.new(report, { :include => [:image] }).serializable_hash
+        else
+          "associated Active Record instance NOT found"
+        end
+      end
+
       def tagged_item_title
         if announcement
           announcement.title.downcase.lstrip
@@ -50,6 +62,18 @@ module Refinery
           event.title.downcase.lstrip
         elsif report
           report.title.downcase.lstrip
+        else
+          "associated Active Record instance NOT found"
+        end
+      end
+
+      def sort_date
+        if announcement
+          announcement.published_date
+        elsif event
+          event.start
+        elsif report
+          report.date
         else
           "associated Active Record instance NOT found"
         end
