@@ -7,13 +7,16 @@ module Refinery
 
       def index
         events_json = @events.map { |event| EventSerializer.new(event, { :include => [:image] }).serializable_hash }
+        next_three = ::Refinery::Events::Event.where('start > ?', DateTime.now).order(start: :asc).first(3)
+        next_three_json = next_three.map {|event| EventSerializer.new(event, { :include => [:image] }).serializable_hash }
+
         @upcoming_events = ::Refinery::Events::Event.where(start: DateTime.now..DateTime.now.at_end_of_month).order(start: :asc)
         @events_next_month = ::Refinery::Events::Event.where(start: DateTime.now.at_beginning_of_month.next_month..DateTime.now.at_end_of_month.next_month)
         @past_events = ::Refinery::Events::Event.where('start < ?', DateTime.now).order(start: :desc)
 
         respond_to do |f|
           f.html { present(@page) }
-          f.json { render json: { events: events_json, past: @past_events, next: @events_next_month, upcoming: @upcoming_events }}
+          f.json { render json: { events: events_json, past: @past_events, next: @events_next_month, upcoming: @upcoming_events, next_three: next_three_json }}
         end
       end
 

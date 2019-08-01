@@ -14,3 +14,4 @@
 //= require activestorage
 //= require_tree .
 //= require local-time
+//= require moment
