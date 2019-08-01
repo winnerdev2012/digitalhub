@@ -19,7 +19,20 @@
     margin-top: 7rem;
   }
 
-  select {
+  .find-out__select-content-types {
+    appearance: none;
+    background: none;
+    border: 0;
+    outline: none;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color_green-light;
+      cursor: pointer;
+    }
+  }
+
+  .find-out__select-topic-areas {
     appearance: none;
     background: none;
     border: 0;
