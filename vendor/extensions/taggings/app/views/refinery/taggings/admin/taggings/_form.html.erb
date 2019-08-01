@@ -7,12 +7,12 @@
     <legend><strong>Select from events or announcements</strong></legend>
       <div class='field'>
         <%= f.label :event -%>
-        <%= f.collection_select(:event_id, Refinery::Events::Event.all, :id, :title, :include_blank => true) %> 
+        <%= f.collection_select(:event_id, Refinery::Events::Event.all, :id, :title, :include_blank => true) %>
       </div>
-    
+
       <div class='field'>
         <%= f.label :announcement -%>
-        <%= f.collection_select(:announcement_id, Refinery::Announcements::Announcement.all, :id, :title, :include_blank => true) %> 
+        <%= f.collection_select(:announcement_id, Refinery::Announcements::Announcement.all, :id, :title, :include_blank => true) %>
       </div>
   </fieldset>
 
@@ -34,8 +34,3 @@
              delete_confirmation: t('message', scope: 'refinery.admin.delete'),
              cancel_url: refinery.taggings_admin_taggings_path -%>
 <% end -%>
-
-
-<script type='text/javascript'>
-
-</script>

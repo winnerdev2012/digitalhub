@@ -107,21 +107,5 @@ RSpec.describe 'Findout Filter API requests' do
       expect(event_next.start.day).to eql(event_today.start.day + 1)
       expect(event_upcoming.start.month).to eql(event_today.start.month + 1)
     end
-
-    it 'loads the find-out page', js: :true do
-      create(:page)
-      event1 = create(:event)
-      event2 = create(:event)
-
-      report1 = create(:report)
-      report2 = create(:report)
-      announcement1 = create(:announcement)
-      announcement2 = create(:announcement)
-      visit "/find-out"
-
-      expect(page).to have_xpath('.//div[@id="find-out__topic-area-narrative"]')
-      expect(page).to have_xpath('.//div[@class="find-out__filter"]')
-      expect(page).to have_xpath('.//div[@class="FindOut"]')
-    end
   end
 end
