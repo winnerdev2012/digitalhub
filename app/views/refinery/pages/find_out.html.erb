@@ -8,23 +8,20 @@
     <div id="find-out__overlay"></div>
       <div class="container">
         <form>
-          <div class="find-out__filter">
-            <div class='find-out__filter-content-type'>You're looking for <span class="find-out__filter-content-type-dropdown"></span></div>
-            <div class='find-out__filter-topic-area'>in <span class="find-out__filter-topic-area-dropdown"></span></div>
+          <div class="filter">
+            <div class='filter__content-type'>You're looking for<span class="filter__content-type--dropdown"></span></div>
           </div>
+          <div class="filter">
+            <div class='filter__topic-area'>in<span class="filter__topic-area--dropdown"></span></div>
+          </div>
+          <div class="narrative-text"></div>
         </form>
-        <div class="find-out__topic-area">
-          <div class="find-out__topic-area-narrative"></div>
-        </div>
       </div>
-      <div class="find-out__topic-area-results"></div>
   </section>
-  <div class="find-out__results container">
-    <p class="find-out__tagged-item">All topic areas</p>
-  </div>
-  <div class="find-out__button-load-more">
+  <div class="results container"></div>
+  <div class="button__load-more">
     <a id="load-more" href="#">LOAD MORE</a>
   </div>
 </div>
 
-<div class="find-out__events-next3-events-receive-updates-url" style="visibility: hidden"><%= CONSTANT_CONTACT_LANDING_PAGE %></div>
+<div class="next3events__receive-updates-url" style="visibility: hidden"><%= CONSTANT_CONTACT_LANDING_PAGE %></div>

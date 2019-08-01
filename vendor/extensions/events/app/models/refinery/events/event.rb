@@ -36,6 +36,11 @@ module Refinery
         self.tags.where(tag_type: "content_type")[0].title
       end
 
+      def self.next_three_events
+        next_three = ::Refinery::Events::Event.where('start > ?', DateTime.now).order(start: :asc).first(3)
+        next_three_json = next_three.map {|event| EventSerializer.new(event, { :include => [:image] }).serializable_hash }
+      end
+
       protected
 
         def translate_content

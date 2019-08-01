@@ -14,25 +14,25 @@ function loadDropdowns() {
   }).done((response) => {
     const contentTypes = response.filter(tag => tag.data.attributes.tag_type === 'content_type')
     const contentTypeSelectOptions = contentTypes.slice(0, 3).map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
-    const contentTypeDropdown = (`<select class="find-out__select-content-types"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
-    document.getElementsByClassName('find-out__filter-content-type-dropdown')[0].innerHTML = contentTypeDropdown
+    const contentTypeDropdown = (`<select class="filter__select--content-type"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
+    document.getElementsByClassName('filter__content-type--dropdown')[0].innerHTML = contentTypeDropdown
 
     const topicAreas = response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
     const topicAreaSelectOptions = topicAreas.map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
-    const topicAreaDropdown = (`<select class="find-out__select-topic-areas"><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`)
-    document.getElementsByClassName('find-out__filter-topic-area-dropdown')[0].innerHTML = topicAreaDropdown
+    const topicAreaDropdown = (`<select class="filter__select--topic-area"><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`)
+    document.getElementsByClassName('filter__topic-area--dropdown')[0].innerHTML = topicAreaDropdown
     onDropdownChange()
     cueOverlay()
   })
 }
 
 const cueOverlay = () => {
-  $('.find-out__filter-content-type').on('click', (event) => {
+  $('.filter__select--content-type').on('click', (event) => {
     event.preventDefault()
     $('div#find-out__overlay').addClass('find-out__overlay')
   })
 
-  $('.find-out__filter-topic-area').on('click', (event) => {
+  $('.filter__select--topic-area').on('click', (event) => {
     event.preventDefault()
     $('div#find-out__overlay').addClass('find-out__overlay')
   })
@@ -62,10 +62,6 @@ const onDropdownChange = () => {
   $('select').niceSelect().on('change', (event) => {
     openOverlay()
     event.preventDefault()
-  })
-
-  $('select').on('change', (event) => {
-    event.preventDefault()
     const dropdownSelections = Array.from(document.getElementsByTagName('option')).filter(tag => tag.selected)
     const dropdownsObject = {
       content_type: dropdownSelections[0].innerText,
@@ -77,7 +73,7 @@ const onDropdownChange = () => {
 }
 
 const loadTopicAreaNarrative = (title, body) => {
-  $('.find-out__topic-area-narrative').text(body)
+  $('.narrative-text').text(body)
 }
 
 const fetchTaggings = (dropdownsObject) => {
@@ -86,40 +82,74 @@ const fetchTaggings = (dropdownsObject) => {
     dataType: 'json',
     data: dropdownsObject,
   }).done(response => {
-    loadTopicAreaNarrative(dropdownsObject.topic_area, response.topic_area_narrative)
-
-    let resultsDiv = $('.find-out__results')
-    const topicAreaResultsDiv = $('.find-out__topic-area-results')
-    const footer = $('footer')
-    resultsDiv.empty()
-    topicAreaResultsDiv.empty()
-
-    if (dropdownsObject.content_type === 'events') {
-      $.get({
-        url: '/events.json',
-        dataType: 'json'
-      }).done(eventsResponse => {
-        const nextThreeEvents = eventsResponse.next_three.map(event => {
-          return new Event(event)
-        })
-
-        const nextThreeEventsHtml = Event.nextThree(nextThreeEvents)
-        resultsDiv.prepend(nextThreeEventsHtml)
-      })
+    const resultsDiv = $('.results.container')
+    const headerShort = () => {
+      $('.find-out__header').css('height', '29.05rem')
+      setDisplayHeight()
     }
 
+    const headerTall = () => {
+      $('.find-out__header').css('height', '45.25rem')
+      setDisplayHeight()
+    }
+
+    const setDisplayHeight = () => {
+      const windowWidth = document.innerWidth
+      const displayHeight = 24
+      const taggingsLength = response.taggings.length
+
+      if ((taggingsLength >= 0 && taggingsLength <= 3) && windowWidth > 1060) {
+        $('.results.container').css('height', `${displayHeight}rem`)
+      }
+
+      if ((taggingsLength >= 4 && taggingsLength <= 6) && windowWidth > 1060) {
+        $('.results.container').css('height', `${displayHeight * 2}rem`)
+      }
+
+      if ((taggingsLength >= 7 && taggingsLength <= 9) && windowWidth > 1060) {
+        $('.results.container').css('height', `${displayHeight * 3}rem`)
+      }
+    }
+
+    const nextThreeEvents = () => {
+      if (dropdownsObject.content_type === 'events') {
+        loadNextThreeEvents(response.next_three_events, resultsDiv)
+      }
+    }
+
+    const cardsHigh = () => {
+      resultsDiv.css('bottom', '14rem')
+    }
+
+    const cardsLow = () => {
+      resultsDiv.css('bottom', '0rem')
+    }
+
+    const resetDisplay = () => {
+      $('.narrative-text').empty()
+      resultsDiv.empty()
+      headerShort()
+      setDisplayHeight()
+    }
+
+    resetDisplay()
+    loadTopicAreaNarrative(dropdownsObject.topic_area, response.topic_area_narrative)
     if (dropdownsObject.content_type === 'everything' && dropdownsObject.topic_area === 'all topic areas') {
-      $('.find-out__header').css('height', '45.25rem')
-    } else if (dropdownsObject.content_type === 'events' || dropdownsObject.topic_area !== 'all topic areas') {
-      resultsDiv = topicAreaResultsDiv
-      $('.find-out__header').css('height', '45.25rem')
-      $('body').parent().append(footer)
-    } else if (dropdownsObject.content_type !== 'events' && dropdownsObject.topic_area === 'all topic areas') {
-      $('.find-out__header').css('height', '29.05rem')
-      $('body').parent().append(footer)
-    } else if (dropdownsObject.content_type === 'everything' && dropdownsObject.topic_area !== 'all topic areas') {
-      $('.find-out__header').css('height', '45.25rem')
-      $('body').parent().append(footer)
+      cardsLow()
+    } else if ((dropdownsObject.content_type === 'events' || (dropdownsObject.topic_area !== 'all topic areas')) && response.taggings.length > 0) {
+      headerTall()
+      nextThreeEvents()
+      cardsHigh()
+    } else if (dropdownsObject.content_type !== 'events' && (dropdownsObject.topic_area === 'all topic areas')) {
+      headerTall()
+      nextThreeEvents()
+      cardsLow()
+    } else if (dropdownsObject.content_type === 'everything' && (dropdownsObject.topic_area !== 'all topic areas')) {
+      headerTall()
+      cardsLow()
+    } else if (response.taggings.length === 0) {
+      cardsLow()
+      headerShort()
     }
 
     loadInitialCards(response.taggings, resultsDiv)
@@ -127,9 +157,27 @@ const fetchTaggings = (dropdownsObject) => {
   })
 }
 
+const createCards = (taggings, resultsDiv) => {
+  taggings.forEach(tagging => {
+    if (tagging.data.attributes.announcement_id) {
+      const announcement = new Announcement(tagging.data.attributes.tagged_item)
+      const announcementCard = announcement.announcementCardHtml()
+      resultsDiv.append(announcementCard)
+    } else if (tagging.data.attributes.report_id) {
+      const report = new Report(tagging.data.attributes.tagged_item)
+      const reportCard = report.reportCardHtml()
+      resultsDiv.append(reportCard)
+    } else if (tagging.data.attributes.event_id) {
+      const event = new Event(tagging.data.attributes.tagged_item)
+      const eventCard = event.eventCardHtml()
+      resultsDiv.append(eventCard)
+    }
+  })
+}
+
 const loadInitialCards = (taggings, resultsDiv) => {
   if (taggings.length === 0) {
-    $('.find-out__results').html('<div class="find-out__results-message-none">There are currently no results for the selected filters.</div>')
+    $('.results').html('<div class="results__message--none">There are currently no results for the selected filters.</div>')
     hideLoadMoreButton()
   } else {
     createCards(taggings.slice(0, 9), resultsDiv)
@@ -139,6 +187,14 @@ const loadInitialCards = (taggings, resultsDiv) => {
       hideLoadMoreButton()
     }
   }
+}
+
+const loadNextThreeEvents = (events, resultsDiv) => {
+  const nextThree = events.map(event => {
+    return new Event(event)
+  })
+  const loadNextThreeEventsHtml = Event.nextThree(nextThree)
+  resultsDiv.prepend(loadNextThreeEventsHtml)
 }
 
 const loadRemainingCards = (taggings, resultsDiv) => {
@@ -155,28 +211,6 @@ const showLoadMoreButton = (remainingCards, resultsDiv) => {
   $('#load-more').on('click', (event) => {
     event.preventDefault()
     loadRemainingCards(remainingCards, resultsDiv)
-  })
-}
-
-const createCards = (taggings, resultsDiv) => {
-  taggings.forEach(tagging => {
-    if (tagging.data.attributes.announcement_id) {
-      const announcement = new Announcement(tagging.data.attributes.tagged_item)
-      const announcementCard = announcement.announcementCardHtml()
-      resultsDiv.append(announcementCard)
-    }
-
-    if (tagging.data.attributes.report_id) {
-      const report = new Report(tagging.data.attributes.tagged_item)
-      const reportCard = report.reportCardHtml()
-      resultsDiv.append(reportCard)
-    }
-
-    if (tagging.data.attributes.event_id) {
-      const event = new Event(tagging.data.attributes.tagged_item)
-      const eventCard = event.eventCardHtml()
-      resultsDiv.append(eventCard)
-    }
   })
 }
 
@@ -203,25 +237,19 @@ Report.prototype.reportCardHtml = function reportCardHtml() {
     }
   }).join('')
 
-  const date = moment(this.date).format('MMM Do YYYY')
-
   return (`
-  <div class="find-out__results-tagged-item-report" data-sortdate="${Date.parse(this.date)}">
-    <a href="/reports/${this.id}">
-      <img class="find-out__results-tagged-item-report-image" src=${this.image_url} />
-    </a>
-    <div class="find-out__results-tagged-item-report-info">
-      <div class="find-out__results-tagged-item-report-info-content-type">PUBLICATION</div>
-      <div class="find-out__results-tagged-item-report-info-title-link">
-        <a href="/reports/${this.id}">${this.title}</a>
+    <div class="results__card" data-sortdate="${Date.parse(this.date)}">
+      <a href="/reports/${this.id}">
+        <img class="results__card--image" src=${this.image_url} />
+      </a>
+      <div class="results__card--content-type">PUBLICATION</div>
+      <div class="results__card--title-link">
+        <a class="results__card--title-link" href="/reports/${this.id}">${this.title}</a>
       </div>
-      <div class="find-out__results-tagged-item-report-info-tags">
+      <div class="results__card--tags">
         tags: ${tagsHtml}
-        <br>
-        ${date}
       </div>
     </div>
-  </div>
   `)
 }
 
@@ -246,42 +274,40 @@ class Event {
 
   static nextThree(events) {
     if (events.length === 0) {
-      const receiveUpdatesUrl = $('.find-out__events-next3-events-receive-updates-url')[0].innerHTML
+      const receiveUpdatesUrl = $('.next3events__receive-updates-url')[0].innerHTML
       return (`
-        <div class="find-out__results-tagged-item-event">
-          <div class="find-out__events-next3">
-            <div class="find-out__events-next3-header">Join us for an event!</div>
-              <div class="find-out__events-next3-triangle"></div>
-            <div class='find-out__events-next3-events-event'>
-              <div class='find-out__events-next3-events-event-title'>No upcoming events at this time.</div>
-              </div>
-            <div class="find-out__events-next3-button-receive-updates">
-              <a class="button" rel="noopener noreferrer" href="${receiveUpdatesUrl}" target="_blank">Receive Updates</a>
+        <div class="next3events">
+          <div class="next3events__header">Join us for an event!</div>
+            <div class="next3events__triangle"></div>
+          <div class='next3events__events'>
+            <div class='next3events__events-event--title'>No upcoming events at this time.</div>
             </div>
+          <div class="next3events__button-receive-updates">
+            <a class="button" rel="noopener noreferrer" href="${receiveUpdatesUrl}" target="_blank">Receive Updates</a>
           </div>
         </div>
       `)
     }
 
-    const nextThreeEventsHtml = events.map(event => {
+    const loadNextThreeEventsHtml = events.map(event => {
       const eventDateAndHours = `${moment(event.start).format('MMM Do, h:mmA')} - ${moment(event.end).format('h:mmA')}`
       return (`
       <a href='/events/${event.id}' style='text-decoration: none'>
-        <div class='find-out__events-next3-events-event'>
-          <div class='find-out__events-next3-events-event-title'>${event.title}</div>
-          <div class='find-out__events-next3-events-event-content'>${eventDateAndHours} | ${event.city}</div>
+        <div class='next3events__events-event'>
+          <div class='next3events__events-event--title'>${event.title}</div>
+          <div class='next3events__events-event--content'>${eventDateAndHours} | ${event.city}</div>
         </div>
       </a>
       `)
     }).join('')
 
     return (`
-      <div class="find-out__results-tagged-item-event">
-        <div class="find-out__events-next3">
-          <div class="find-out__events-next3-header">Join us for an event!</div>
-          <div class="find-out__events-next3-triangle"></div>
-          <div class="find-out__events-next3-events">
-            ${nextThreeEventsHtml}
+      <div class="results__card">
+        <div class="next3events">
+          <div class="next3events__header">Join us for an event!</div>
+          <div class="next3events__triangle"></div>
+          <div class="next3events__events">
+            ${loadNextThreeEventsHtml}
           </div>
         </div>
       </div>
@@ -298,23 +324,17 @@ Event.prototype.eventCardHtml = function eventCardHtml() {
     }
   }).join('')
 
-  const date = moment(this.start).format('MMM Do YYYY')
-
   return (`
-    <div class="find-out__results-tagged-item-event" data-sortdate="${Date.parse(this.start)}">
-    <a href="/events/${this.id}">
-      <img class="find-out__results-tagged-item-event-image" src=${this.image_url} />
-    </a>
-      <div class="find-out__results-tagged-item-event-info">
-        <div class="find-out__results-tagged-item-event-info-content-type">EVENT</div>
-        <div class="find-out__results-tagged-item-event-info-title-link">
-          <a class="tagged-item-title-link" href="/events/${this.id}">${this.title}</a>
-        </div>
-        <div class="find-out__results-tagged-item-event-info-tags">
-          tags: ${tagsHtml}
-          <br>
-          ${date}
-        </div>
+    <div class="results__card" data-sortdate="${Date.parse(this.start)}">
+      <a href="/events/${this.id}">
+        <img class="results__card--image" src=${this.image_url} />
+      </a>
+      <div class="results__card--content-type">EVENT</div>
+      <div class="results__card--title-link">
+        <a class="results__card--title-link" href="/events/${this.id}">${this.title}</a>
+      </div>
+      <div class="results__card--tags">
+        tags: ${tagsHtml}
       </div>
     </div>
   `)
@@ -342,23 +362,17 @@ Announcement.prototype.announcementCardHtml = function announcementCardHtml() {
     }
   }).join('')
 
-  const date = moment(this.published_date).format('MMM Do YYYY')
-
   return (`
-    <div class="find-out__results-tagged-item-announcement" data-sortdate="${Date.parse(this.published_date)}">
-    <a href="/announcements/${this.id}">
-      <img class="find-out__results-tagged-item-announcement-image" src=${this.image_url} />
-    </a>
-      <div class="find-out__results-tagged-item-announcement-info">
-        <div class="find-out__results-tagged-item-announcement-info-content-type">NEWS</div>
-        <div class="find-out__results-tagged-item-announcement-info-title-link">
-          <a class="tagged-item-title-link" href="/announcements/${this.id}">${this.title}</a>
-        </div>
-        <div class="find-out__results-tagged-item-announcement-info-tags">
-          tags: ${tagsHtml}
-          <br>
-          ${date}
-        </div>
+    <div class="results__card" data-sortdate="${Date.parse(this.published_date)}">
+      <a href="/announcements/${this.id}">
+        <img class="results__card--image" src=${this.image_url} />
+      </a>
+      <div class="results__card--content-type">NEWS</div>
+      <div class="results__card---title-link">
+        <a class="results__card--title-link" href="/announcements/${this.id}">${this.title}</a>
+      </div>
+      <div class="results__card--tags">
+        tags: ${tagsHtml}
       </div>
     </div>
   `)
