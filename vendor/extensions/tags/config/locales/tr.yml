@@ -1,0 +1,28 @@
+tr:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: Yeni Ekle Tag
+            reorder: Tekrar sirala Tags
+            reorder_done: Tekrar siralama tamamlandiTags
+          records:
+            title: Tags
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Tags yok henuz.  Tikla "Yeni Ekle Tag" eklemek senin ilk tag.
+          tag:
+            view_live_html: Bunu canlu tag goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle tag
+            delete: Bunu Sil tag sonsuza dek
+      tags:
+        show:
+          other: Diger Tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type

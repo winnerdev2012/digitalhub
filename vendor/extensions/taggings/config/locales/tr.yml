@@ -1,0 +1,30 @@
+tr:
+  refinery:
+    plugins:
+      taggings:
+        title: Taggings
+    taggings:
+      admin:
+        taggings:
+          actions:
+            create_new: Yeni Ekle Tagging
+            reorder: Tekrar sirala Taggings
+            reorder_done: Tekrar siralama tamamlandiTaggings
+          records:
+            title: Taggings
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Taggings yok henuz.  Tikla "Yeni Ekle Tagging" eklemek senin ilk tagging.
+          tagging:
+            view_live_html: Bunu canlu tagging goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle tagging
+            delete: Bunu Sil tagging sonsuza dek
+      taggings:
+        show:
+          other: Diger Taggings
+  activerecord:
+    attributes:
+      'refinery/taggings/tagging':
+        tag_id: Tag
+        event_id: Event
+        story_id: Story
+        announcement_id: Announcement

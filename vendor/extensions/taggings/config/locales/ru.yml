@@ -1,0 +1,30 @@
+ru:
+  refinery:
+    plugins:
+      taggings:
+        title: Taggings
+    taggings:
+      admin:
+        taggings:
+          actions:
+            create_new: Добавить Tagging
+            reorder: Изменить порядок Taggings
+            reorder_done: Закончить изменять порядок Taggings
+          records:
+            title: Taggings
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Taggings" не найдено. Нажмите "Добавить Tagging" чтобы создать tagging.
+          tagging:
+            view_live_html: Просмотреть tagging вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать tagging
+            delete: Удалить tagging навсегда
+      taggings:
+        show:
+          other: Другие Taggings
+  activerecord:
+    attributes:
+      'refinery/taggings/tagging':
+        tag_id: Tag
+        event_id: Event
+        story_id: Story
+        announcement_id: Announcement

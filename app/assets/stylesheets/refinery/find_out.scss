@@ -1,17 +1,288 @@
 .FindOut {
   .banner {
-    background: $color_bg-dark;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-    @include background-2x('find-out-banner', 'png', contain, contain, center, no-repeat );
+    @include background-2x('find-out-banner', 'png', fit, fit, center, no-repeat );
     @include media(small) {
       background-position: bottom 3rem right;
     }
+    background: $color_bg-dark;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: fit;
+  }
+
+  .container::after {
+    display: none;
   }
 
   .banner-content {
-    margin-top: 7rem;
     margin-bottom: 7.5rem;
+    margin-top: 7rem;
+  }
+
+  .find-out__select-content-types {
+    appearance: none;
+    background: none;
+    border: 0;
+    outline: none;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color_green-light;
+      cursor: pointer;
+    }
+  }
+
+  .find-out__select-topic-areas {
+    appearance: none;
+    background: none;
+    border: 0;
+    outline: none;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color_green-light;
+      cursor: pointer;
+    }
+  }
+
+  .find-out__header {
+    @include media(small) {
+      background: none;
+    }
+
+    background-image: image-url('group-2111.png');
+    height: 29.05rem;
+  }
+
+  .topic-area-selected {
+    height: 45.25rem;
+  }
+
+  /* main filter and dropdowns *******************************/
+  .find-out__filter {
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+    padding-top: 9.35rem;
+
+    &-content-type {
+      align-content: center;
+      color: $v3_color_bg-lightest;
+      font-family: $font_family-primary;
+      font-size: $v3_font_size-h1;
+      grid-column-end: 3;
+      grid-column-start: 2;
+    }
+
+    &-topic-area {
+      align-content: center;
+      color: $v3_color_bg-lightest;
+      font-family: $font_family-primary;
+      font-size: $v3_font_size-h1;
+      grid-column-start: 2;
+      grid-row-start: 3;
+    }
+
+    &-content-type-dropdown {
+      appearance: none;
+      background: none;
+      border: 0;
+      display: inline;
+      margin-right: 0;
+      text-decoration: underline;
+    }
+
+    &-topic-area-dropdown {
+      appearance: none;
+      background: none;
+      border: 0;
+      display: inline;
+      margin-right: 0;
+      text-decoration: underline;
+    }
+  }
+
+/* topic area narrative display area ****************************/
+  .find-out__topic-area {
+    display: grid;
+    font-family: $font_family-primary;
+    grid-template-columns: 25% 50% 1fr;
+    grid-template-rows: 1fr;
+
+    &-narrative {
+      color: $v3_color_bg-lightest;
+      font-size: $font_size-medium;
+      grid-column-end: 3;
+      grid-column-start: 2;
+      grid-row-start: 2;
+      // height: 13.1rem;
+      margin-top: 2.4rem;
+      padding-bottom: 2rem;
+    }
+
+  /* when a topic area is selected from the dropdown ... */
+  /* .find-out__topic-area-results places the results overlapping the header **/
+    &-results {
+      display: grid;
+      grid-row-start: 3;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-left: 2.4rem;
+    }
+  }
+
+  /* tagged items display area,  when "all topic areas" selected,****************************/
+  .find-out__results {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 3.8rem;
+
+    &-message-none {
+      color: $v3-color_green-medium;
+      font-family: $font_family-primary;
+      font-size: $font_size-large;
+      grid-column-start: 2;
+    }
+
+    &-tagged-item {
+      color: $color_bg-dark;
+
+      &-report {
+        height: 22rem;
+        margin: 0 2.5rem 5rem 0;
+        width: 23.95rem;
+
+        &-image {
+          height: 90%;
+          margin: 0 0 .5rem;
+          object-fit: cover;
+          width: 100%;
+        }
+
+        &-info {
+          height: 4rem;
+          margin-bottom: 1rem;
+
+          &-content-type {
+            appearance: none;
+            color: $v3-color_gray-dark;
+            font-family: $font_family-secondary;
+            font-size: $font_size-small;
+            letter-spacing: .2rem;
+            margin: 0;
+            padding-bottom: .1rem;
+            text-transform: uppercase;
+          }
+
+          &-title-link a {
+            appearance: none;
+            color: $v3-color_green-medium;
+            cursor: pointer;
+            font-family: $font_family-primary;
+            font-size: $font_size-medium;
+            padding-bottom: 1rem;
+            text-decoration: none;
+          }
+
+          &-tags {
+            color: $v3-color_gray-dark;
+            font-family: $font_family-primary;
+            font-size: $font_size-small;
+            text-decoration: italic;
+          }
+        }
+      }
+
+      &-event {
+        height: 22rem;
+        margin: 0 2.5rem 5rem 0;
+        width: 23.95rem;
+
+        &-image {
+          height: 90%;
+          margin: 0 0 .5rem;
+          object-fit: cover;
+          width: 100%;
+        }
+
+        &-info {
+          height: 4rem;
+          margin-bottom: 1rem;
+
+          &-content-type {
+            appearance: none;
+            color: $v3-color_gray-dark;
+            font-family: $font_family-secondary;
+            font-size: $font_size-small;
+            letter-spacing: .2rem;
+            margin: 0;
+            padding-bottom: .1rem;
+            text-transform: uppercase;
+          }
+
+          &-title-link a {
+            appearance: none;
+            color: $v3-color_green-medium;
+            cursor: pointer;
+            font-family: $font_family-primary;
+            font-size: $font_size-medium;
+            padding-bottom: 1rem;
+            text-decoration: none;
+          }
+
+          &-tags {
+            color: $v3-color_gray-dark;
+            font-family: $font_family-primary;
+            font-size: $font_size-small;
+            text-decoration: italic;
+          }
+        }
+      }
+
+/* tagged items display area ****************************/
+      &-announcement {
+        height: 22rem;
+        margin: 0 2.5rem 5rem 0;
+        width: 23.95rem;
+
+        &-image {
+          height: 90%;
+          margin: 0 0 .5rem;
+          object-fit: cover;
+          width: 100%;
+        }
+
+        &-info {
+          height: 4rem;
+          margin-bottom: 1rem;
+
+          &-content-type {
+            appearance: none;
+            color: $v3-color_gray-dark;
+            font-family: $font_family-secondary;
+            font-size: $font_size-small;
+            letter-spacing: .2rem;
+            margin: 0;
+            padding-bottom: .1rem;
+            text-transform: uppercase;
+          }
+
+          &-title-link a {
+            appearance: none;
+            color: $v3-color_green-medium;
+            cursor: pointer;
+            font-family: $font_family-primary;
+            font-size: $font_size-medium;
+            padding-bottom: 1rem;
+            text-decoration: none;
+          }
+
+          &-tags {
+            color: $v3-color_gray-dark;
+            font-family: $font_family-primary;
+            font-size: $font_size-small;
+            text-decoration: italic;
+          }
+        }
+      }
+    }
   }
 }

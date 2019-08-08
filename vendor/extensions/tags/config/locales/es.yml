@@ -1,0 +1,29 @@
+es:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+#        article: masculino/femenino
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: Crear nuevo tag
+            reorder: Reordenar tags
+            reorder_done: Reordenación de tags completada
+          records:
+            title: Tags
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay tags todavía. Pulsa en "Crear nuevo Tag" para crear tu primer tag.
+          tag:
+            view_live_html: Ver este tag como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este tag
+            delete: Borrar este tag para siempre
+      tags:
+        show:
+          other: Otros tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type

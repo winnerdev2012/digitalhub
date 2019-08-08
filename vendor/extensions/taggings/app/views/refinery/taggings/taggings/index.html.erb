@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="taggings">
+    <% @taggings.each do |tagging| %>
+      <li>
+        <%= link_to tagging, refinery.taggings_tagging_path(tagging) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

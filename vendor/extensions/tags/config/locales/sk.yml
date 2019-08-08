@@ -1,0 +1,28 @@
+sk:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: Pridať Tag
+            reorder: Preusporiadať Tags
+            reorder_done: Koniec radenia Tags
+          records:
+            title: Tags
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Tags. Kliknite na "Pridať Tag" pre pridanie prvého tag.
+          tag:
+            view_live_html: Zobraziť náhľad tag<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť tag
+            delete: Zmazať tag
+      tags:
+        show:
+          other: Daľšie Tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type

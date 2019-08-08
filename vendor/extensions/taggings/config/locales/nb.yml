@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      taggings:
+        title: Taggings
+    taggings:
+      admin:
+        taggings:
+          actions:
+            create_new: Lag en ny Tagging
+            reorder: Endre rekkefølgen på Taggings
+            reorder_done: Ferdig å endre rekkefølgen Taggings
+          records:
+            title: Taggings
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Taggings enda. Klikk på "Lag en ny Tagging" for å legge til din første tagging.
+          tagging:
+            view_live_html: Vis hvordan denne tagging ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne tagging
+            delete: Fjern denne tagging permanent
+      taggings:
+        show:
+          other: Andre Taggings
+  activerecord:
+    attributes:
+      'refinery/taggings/tagging':
+        tag_id: Tag
+        event_id: Event
+        story_id: Story
+        announcement_id: Announcement

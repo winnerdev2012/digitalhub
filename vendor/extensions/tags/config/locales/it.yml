@@ -1,0 +1,28 @@
+it:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: Aggiungi Nuovo Tag
+            reorder: Riordina Tags
+            reorder_done: Termina il Riordino di Tags
+          records:
+            title: Tags
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Tags. Clicca "Aggiungi Nuovo Tag" per aggiungere il tuo primo tag.
+          tag:
+            view_live_html: Guarda live questo tag <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo tag
+            delete: Rimuovi per sempre questo tag
+      tags:
+        show:
+          other: Altri Tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type

@@ -1,0 +1,36 @@
+<%= form_for [refinery, :taggings_admin, @tagging] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @tagging,
+              :include_object_name => true %>
+
+  <fieldset>
+    <legend><strong>Select from events or announcements</strong></legend>
+      <div class='field'>
+        <%= f.label :event -%>
+        <%= f.collection_select(:event_id, Refinery::Events::Event.all, :id, :title, :include_blank => true) %>
+      </div>
+
+      <div class='field'>
+        <%= f.label :announcement -%>
+        <%= f.collection_select(:announcement_id, Refinery::Announcements::Announcement.all, :id, :title, :include_blank => true) %>
+      </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><strong>Select relevant content_type: </strong></legend>
+      <%= f.collection_radio_buttons(:tag_id, Refinery::Tags::Tag.content_types, :id, :title)  %>
+  </fieldset>
+
+  <fieldset>
+    <legend><strong>Select relevant topic area(s): </strong></legend>
+    <div class="checkbox">
+      <%= f.collection_radio_buttons(:tag_id, Refinery::Tags::Tag.topic_areas, :id, :title, :multiple => true, :size =>3) %>
+    </div>
+  </fieldset>
+
+  <%= render '/refinery/admin/form_actions', f: f,
+             continue_editing: false,
+             delete_title: t('delete', scope: 'refinery.taggings.admin.taggings.tagging'),
+             delete_confirmation: t('message', scope: 'refinery.admin.delete'),
+             cancel_url: refinery.taggings_admin_taggings_path -%>
+<% end -%>

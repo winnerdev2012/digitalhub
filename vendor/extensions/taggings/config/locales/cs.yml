@@ -1,0 +1,30 @@
+cs:
+  refinery:
+    plugins:
+      taggings:
+        title: Taggings
+    taggings:
+      admin:
+        taggings:
+          actions:
+            create_new: Přidat Tagging
+            reorder: Řadit Taggings
+            reorder_done: Konec řazení Taggings
+          records:
+            title: Taggings
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Taggings. Zvolte "Přidat Tagging" pro přidání prvního tagging.
+          tagging:
+            view_live_html: Zobrazit náhled tagging<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit tagging
+            delete: Smazat tagging
+      taggings:
+        show:
+          other: Další Taggings
+  activerecord:
+    attributes:
+      'refinery/taggings/tagging':
+        tag_id: Tag
+        event_id: Event
+        story_id: Story
+        announcement_id: Announcement

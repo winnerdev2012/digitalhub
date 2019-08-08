@@ -1,0 +1,28 @@
+fr:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Tag
+            reorder: Réordonner les Tags
+            reorder_done: Fin de réordonnancement des Tags
+          records:
+            title: Tags
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Tag. Cliquer sur "Créer un(e) nouve(au/l/lle) Tag" pour créer votre premi(er/ère) tag.'
+          tag:
+            view_live_html: Voir ce(t/tte) tag <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) tag
+            delete: Supprimer définitivement ce(t/tte) tag
+      tags:
+        show:
+          other: Autres Tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type

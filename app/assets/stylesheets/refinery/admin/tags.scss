@@ -1,0 +1,38 @@
+.tags {
+  background-color: #fcdedee7;
+  border: .1rem solid #707070;
+  border-radius: .3rem;
+  padding: 1rem;
+}
+
+.tags__header-content {
+  color: #111436;
+  display: none;
+  font-weight: bold;
+}
+
+.tags__selector-content {
+  display: none;
+}
+
+.tags__header-topic {
+  color: #111436;
+  font-weight: bold;
+  font-size: .9rem;
+}
+
+.tags__selector-topic {
+  background-color: none;
+  border: .1rem solid #f0efe7;
+  border-radius: .3rem;
+  font-size: .9rem;
+  margin-bottom: .1rem;
+  padding-right: 1rem;
+  text-align: center;
+  width: 7rem;
+}
+
+.tags__selector-topic:hover {
+  background-color: #a4bbeb;
+  color: #fff;
+}

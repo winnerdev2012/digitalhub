@@ -84,7 +84,16 @@ PATH
     refinerycms-one_boxes (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 4.0.2)
+    refinerycms-reports (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 4.0.2)
     refinerycms-stories (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 4.0.2)
+    refinerycms-taggings (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 4.0.2)
+    refinerycms-tags (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 4.0.2)
     refinerycms-weigh_in_prompts (1.0)
@@ -678,8 +687,11 @@ DEPENDENCIES
   refinerycms-hero_images!
   refinerycms-i18n
   refinerycms-one_boxes!
+  refinerycms-reports!
   refinerycms-search!
   refinerycms-stories!
+  refinerycms-taggings!
+  refinerycms-tags!
   refinerycms-weigh_in_prompts!
   refinerycms-wymeditor (~> 2.0, >= 2.0.0)
   rspec-rails

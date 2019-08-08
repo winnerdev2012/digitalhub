@@ -1,0 +1,30 @@
+it:
+  refinery:
+    plugins:
+      reports:
+        title: Reports
+    reports:
+      admin:
+        reports:
+          actions:
+            create_new: Aggiungi Nuovo Report
+            reorder: Riordina Reports
+            reorder_done: Termina il Riordino di Reports
+          records:
+            title: Reports
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Reports. Clicca "Aggiungi Nuovo Report" per aggiungere il tuo primo report.
+          report:
+            view_live_html: Guarda live questo report <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo report
+            delete: Rimuovi per sempre questo report
+      reports:
+        show:
+          other: Altri Reports
+  activerecord:
+    attributes:
+      'refinery/reports/report':
+        title: Title
+        body: Body
+        date: Date
+        image: Image
