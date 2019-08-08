@@ -33,7 +33,6 @@
      padding-bottom: 1rem;
      @include media(small) {
        display: block;
-     }
   }
 
   .footer__column {
@@ -79,4 +78,5 @@
       }
     }
   }
+}
 }
