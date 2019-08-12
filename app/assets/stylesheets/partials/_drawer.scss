@@ -13,10 +13,8 @@
   transition-duration: 1s;
   border-left: 1px solid $color_bg-dark;
 
-  @include media(large) {
-    &.menu-open {
-      right: 0;
-    }
+  &.menu-open {
+    right: 0;
   }
 
   .fa-search {
