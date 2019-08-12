@@ -1,0 +1,11 @@
+<ul id='sortable_list'>
+  <label>Content Types</label>
+  <% content_type_tags = @tags.select {|t| t.tag_type == 'content_type' } %>
+  <%= render :partial => 'tag', :collection => content_type_tags %>
+
+  <label>Topic Areas</label>
+  <% topic_area_tags = @tags.select {|t| t.tag_type == 'topic_area' } %>  
+  <%= render :partial => 'tag', :collection => topic_area_tags %>
+</ul>
+<%= render '/refinery/admin/sortable_list',
+            :continue_reordering => (local_assigns.keys.include?(:continue_reordering)) ? continue_reordering : true %>

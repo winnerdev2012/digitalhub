@@ -1,0 +1,28 @@
+en:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: Add New Tag
+            reorder: Reorder Tags
+            reorder_done: Done Reordering Tags
+          records:
+            title: Tags
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Tags yet. Click "Add New Tag" to add your first tag.
+          tag:
+            view_live_html: View this tag live <br/><em>(opens in a new window)</em>
+            edit: Edit this tag
+            delete: Remove this tag forever
+      tags:
+        show:
+          other: Other Tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type

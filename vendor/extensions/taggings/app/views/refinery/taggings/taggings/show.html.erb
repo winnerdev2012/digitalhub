@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @tagging.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Tag</h1>
+    <p>
+      <%=raw @tagging.tag_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Event</h1>
+    <p>
+      <%=raw @tagging.event_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Story</h1>
+    <p>
+      <%=raw @tagging.story_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Announcement</h1>
+    <p>
+      <%=raw @tagging.announcement_id %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="taggings">
+      <% @taggings.each do |tagging| %>
+        <li>
+          <%= link_to tagging.title, refinery.taggings_tagging_path(tagging) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

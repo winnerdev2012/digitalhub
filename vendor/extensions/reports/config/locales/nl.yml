@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      reports:
+        title: Reports
+    reports:
+      admin:
+        reports:
+          actions:
+            create_new: Nieuwe Report toevoegen
+            reorder: De volgorde van de Reports wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Report-volgorde
+          records:
+            title: Reports
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Reports. Druk op 'Nieuwe Report toevoegen' om de eerste toe te voegen.
+          report:
+            view_live_html: Deze report op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze report
+            delete: Deze report definitief verwijderen
+      reports:
+        show:
+          other: Andere Reports
+  activerecord:
+    attributes:
+      'refinery/reports/report':
+        title: Title
+        body: Body
+        date: Date
+        image: Image

@@ -22,7 +22,7 @@
     <div id="story<%= media.id %>" class="story--response">
       <div class="story--question-text"><%= audio_question_text(media.question) %></div>
       <div class="story--response-text">
-        <q href="/stories/<%= media.id %>"><%= strip_tags(media.response) %></q>
+        <q><%= strip_tags(media.response) %></q>
       </div>
       <p class="story__response--submitter-name">- <%= media.submitter_name %></p>
     </div>

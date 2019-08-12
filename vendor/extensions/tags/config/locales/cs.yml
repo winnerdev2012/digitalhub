@@ -1,0 +1,28 @@
+cs:
+  refinery:
+    plugins:
+      tags:
+        title: Tags
+    tags:
+      admin:
+        tags:
+          actions:
+            create_new: Přidat Tag
+            reorder: Řadit Tags
+            reorder_done: Konec řazení Tags
+          records:
+            title: Tags
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Tags. Zvolte "Přidat Tag" pro přidání prvního tag.
+          tag:
+            view_live_html: Zobrazit náhled tag<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit tag
+            delete: Smazat tag
+      tags:
+        show:
+          other: Další Tags
+  activerecord:
+    attributes:
+      'refinery/tags/tag':
+        title: Title
+        tag_type: Tag Type

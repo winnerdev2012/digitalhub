@@ -1,0 +1,33 @@
+<% content_for :body_content_title do %>
+  <%= @tag.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @tag.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Tag Type</h1>
+    <p>
+      <%=raw @tag.tag_type %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="tags">
+      <% @tags.each do |tag| %>
+        <li>
+          <%= link_to tag.title, refinery.tags_tag_path(tag) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>
