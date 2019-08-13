@@ -42,6 +42,9 @@
 
   ul {
     margin-top: 1.5rem;
+    overflow-y: auto;
+    max-width: 16.05rem;
+    max-height: 9.25rem;
 
     @include media(small) { display: none; }
   }
