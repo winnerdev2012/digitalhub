@@ -67,6 +67,12 @@
   }
 
   &__title {
+    width: 75%;
+    p { color: $color_font-light; }
+    @include media(small) {
+      width: initial;
+    }
+
     display: inline-block;
     top: 2rem;
     z-index: 2;
@@ -167,6 +173,10 @@
     padding: 1.5rem 0;
     background-size: cover;
     background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &::before {
       transform: scaleY(2) rotate(-90deg);
