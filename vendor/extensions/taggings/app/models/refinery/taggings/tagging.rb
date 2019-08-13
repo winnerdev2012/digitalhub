@@ -51,7 +51,7 @@ module Refinery
         elsif report
           ReportSerializer.new(report, { :include => [:image] }).serializable_hash
         else
-          "associated Active Record instance NOT found"
+          errors.add(:tagged_item, "associated Active Record instance NOT found")
         end
       end
 
@@ -63,7 +63,7 @@ module Refinery
         elsif report
           report.title.downcase.lstrip
         else
-          "associated Active Record instance NOT found"
+          errors.add(:tagged_item_title, "associated Active Record instance NOT found")
         end
       end
 
@@ -75,7 +75,7 @@ module Refinery
         elsif report
           report.date
         else
-          "associated Active Record instance NOT found"
+          errors.add(:sort_date, "associated Active Record instance NOT found")
         end
       end
 
