@@ -85,30 +85,10 @@ const fetchTaggings = (dropdownsObject) => {
     const resultsDiv = $('.results.container')
     const headerShort = () => {
       $('.find-out__header').css('height', '29.05rem')
-      setDisplayHeight()
     }
 
     const headerTall = () => {
       $('.find-out__header').css('height', '45.25rem')
-      setDisplayHeight()
-    }
-
-    const setDisplayHeight = () => {
-      const windowWidth = document.innerWidth
-      const displayHeight = 24
-      const taggingsLength = response.taggings.length
-
-      if ((taggingsLength >= 0 && taggingsLength <= 3) && windowWidth > 1060) {
-        $('.results.container').css('height', `${displayHeight}rem`)
-      }
-
-      if ((taggingsLength >= 4 && taggingsLength <= 6) && windowWidth > 1060) {
-        $('.results.container').css('height', `${displayHeight * 2}rem`)
-      }
-
-      if ((taggingsLength >= 7 && taggingsLength <= 9) && windowWidth > 1060) {
-        $('.results.container').css('height', `${displayHeight * 3}rem`)
-      }
     }
 
     const nextThreeEvents = () => {
@@ -128,8 +108,6 @@ const fetchTaggings = (dropdownsObject) => {
     const resetDisplay = () => {
       $('.narrative-text').empty()
       resultsDiv.empty()
-      headerShort()
-      setDisplayHeight()
     }
 
     resetDisplay()
@@ -193,8 +171,8 @@ const loadNextThreeEvents = (events, resultsDiv) => {
   const nextThree = events.map(event => {
     return new Event(event)
   })
-  const loadNextThreeEventsHtml = Event.nextThree(nextThree)
-  resultsDiv.prepend(loadNextThreeEventsHtml)
+  const nextThreeEventsHtml = Event.nextThree(nextThree)
+  resultsDiv.prepend(nextThreeEventsHtml)
 }
 
 const loadRemainingCards = (taggings, resultsDiv) => {
@@ -273,23 +251,17 @@ class Event {
   }
 
   static nextThree(events) {
-    if (events.length === 0) {
-      const receiveUpdatesUrl = $('.next3events__receive-updates-url')[0].innerHTML
-      return (`
-        <div class="next3events">
-          <div class="next3events__header">Join us for an event!</div>
-            <div class="next3events__triangle"></div>
-          <div class='next3events__events'>
-            <div class='next3events__events-event--title'>No upcoming events at this time.</div>
-            </div>
-          <div class="next3events__button-receive-updates">
-            <a class="button" rel="noopener noreferrer" href="${receiveUpdatesUrl}" target="_blank">Receive Updates</a>
-          </div>
+    const receiveUpdatesUrl = $('.next3events__receive-updates-url')[0].innerHTML
+    const noEventsMessageHtml = (`
+      <div>
+        <div class="next3events__events-event--title">No upcoming events at this time.</div>
+        <div class="next3events__button-receive-updates">
+        <a class="button" rel="noopener noreferrer" href="${receiveUpdatesUrl}" target="_blank">Receive Updates</a>
         </div>
+      </div>
       `)
-    }
 
-    const loadNextThreeEventsHtml = events.map(event => {
+    const nextThreeEventsHtml = events.map(event => {
       const eventDateAndHours = `${moment(event.start).format('MMM Do, h:mmA')} - ${moment(event.end).format('h:mmA')}`
       return (`
       <a href='/events/${event.id}' style='text-decoration: none'>
@@ -304,10 +276,9 @@ class Event {
     return (`
       <div class="results__card">
         <div class="next3events">
-          <div class="next3events__header">Join us for an event!</div>
-          <div class="next3events__triangle"></div>
+          <div class="next3events__header">Join us for an event!<span class="next3events__triangle"></span></div>
           <div class="next3events__events">
-            ${loadNextThreeEventsHtml}
+            ${events.length > 0 ? nextThreeEventsHtml : noEventsMessageHtml}
           </div>
         </div>
       </div>
