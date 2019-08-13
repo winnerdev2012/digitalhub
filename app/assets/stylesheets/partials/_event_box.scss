@@ -1,4 +1,8 @@
 .event-box {
+  padding: 2.1rem 1.8rem;
+  border: 1px solid $v3-color_green-light;
+  overflow: hidden;
+
   @include media(medium) { padding: 1rem 1.3rem; }
   @include media(small) { padding: .4rem .5rem; }
   border: 1px solid $v3-color_green-light;
@@ -53,6 +57,9 @@
     }
 
     h4 {
+      margin: 0;
+      font-weight: $font_weight-normal;
+
       @include media(small) { font-size: $font_size-small; }
       font-weight: $font_weight-normal;
       margin: 0;
