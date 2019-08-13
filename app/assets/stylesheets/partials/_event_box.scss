@@ -1,10 +1,8 @@
 .event-box {
-  padding: 2.1rem 1.8rem;
-  border: 1px solid $v3-color_green-light;
-  overflow: hidden;
-
   @include media(medium) { padding: 1rem 1.3rem; }
   @include media(small) { padding: .4rem .5rem; }
+  
+  padding: 2.1rem 1.8rem;
   border: 1px solid $v3-color_green-light;
   overflow: hidden;
   padding: 2.1rem 1.8rem;
@@ -25,9 +23,27 @@
     margin: 0;
     width: 100%;
 
+    h2 {
+      @media (max-width: 1399px){ font-size: 3rem; }
+      @media (max-width: 1399px) and (min-width: 1200px){ font-size: 2.5rem; }
+      @media (max-width: 1199px) and (min-width: 1024px){ font-size: 2rem; }
+      @media (max-width: 1023px) and (min-width: 961px){ font-size: 1.5rem; }
+      @media (max-width: 960px) and (min-width: 671px) { font-size: $v3_font_size-title; }
+      @media (max-width: 670px) and (min-width: 323px) { font-size: $font_size-small; }
+      @media (max-width: 322px) { font-size: 0.95rem }
+      margin: 0;
+
+      color: $color_font-light;
+      font-size: $v3_font_size-title;
+    }
+
     &::after {
-      @media (max-width: 1399px) { align-self: center; }
-      @media (max-width: 670px) { @include triangle(25px, 'right', $v3-color_green-light); }
+      @media (max-width: 1399px){ align-self: center; }
+
+      @media (max-width: 670px){
+        @include triangle(25px, 'right', $v3-color_green-light);
+      }
+
       @extend ._pseudo;
       @include triangle(50px, 'right', $v3-color_green-light);
       margin-left: 1rem;
@@ -37,13 +53,17 @@
   ul {
     display: inline-block;
     margin-top: 1.5rem;
-    @media (min-width: 1400px) {
+    @media (min-width: 1400px){
       max-height: 9.25rem;
       overflow-y: auto;
       width: 100%;
+      max-height: 60%;
     }
-    @media (max-width: 1399px) and (min-width: 961px) { display: none; }
-    @media (max-width: 670px) { display: none; }
+    @media (max-width: 1399px) and (min-width: 961px){ display: none;}
+    @media (max-width: 670px){ display: none; }
+
+    display: inline-block;
+    margin-top: 1.5rem;
   }
 
   li {
@@ -57,12 +77,13 @@
     }
 
     h4 {
+      @include media(small) { font-size: $font_size-small; }
+      
       margin: 0;
       font-weight: $font_weight-normal;
 
       @include media(small) { font-size: $font_size-small; }
       font-weight: $font_weight-normal;
-      margin: 0;
     }
   }
 
