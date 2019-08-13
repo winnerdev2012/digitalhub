@@ -14,25 +14,25 @@ function loadDropdowns() {
   }).done((response) => {
     const contentTypes = response.filter(tag => tag.data.attributes.tag_type === 'content_type')
     const contentTypeSelectOptions = contentTypes.slice(0, 3).map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
-    const contentTypeDropdown = (`<select class="filter__select--content-type"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
-    document.getElementsByClassName('filter__content-type--dropdown')[0].innerHTML = contentTypeDropdown
+    const contentTypeDropdown = (`<select class="content-type__select"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
+    document.getElementsByClassName('content-type__dropdown')[0].innerHTML = contentTypeDropdown
 
     const topicAreas = response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
     const topicAreaSelectOptions = topicAreas.map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
-    const topicAreaDropdown = (`<select class="filter__select--topic-area"><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`)
-    document.getElementsByClassName('filter__topic-area--dropdown')[0].innerHTML = topicAreaDropdown
+    const topicAreaDropdown = (`<select class="topic-area__select"><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`)
+    document.getElementsByClassName('topic-area__dropdown')[0].innerHTML = topicAreaDropdown
     onDropdownChange()
     cueOverlay()
   })
 }
 
 const cueOverlay = () => {
-  $('.filter__select--content-type').on('click', (event) => {
+  $('.content-type__select').on('click', (event) => {
     event.preventDefault()
     $('div#find-out__overlay').addClass('find-out__overlay')
   })
 
-  $('.filter__select--topic-area').on('click', (event) => {
+  $('.topic-area__select').on('click', (event) => {
     event.preventDefault()
     $('div#find-out__overlay').addClass('find-out__overlay')
   })
@@ -155,7 +155,7 @@ const createCards = (taggings, resultsDiv) => {
 
 const loadInitialCards = (taggings, resultsDiv) => {
   if (taggings.length === 0) {
-    $('.results').html('<div class="results__message--none">There are currently no results for the selected filters.</div>')
+    $('.results').html('<div class="message--none">There are currently no results for the selected filters.</div>')
     hideLoadMoreButton()
   } else {
     createCards(taggings.slice(0, 9), resultsDiv)
@@ -216,15 +216,15 @@ Report.prototype.reportCardHtml = function reportCardHtml() {
   }).join('')
 
   return (`
-    <div class="results__card" data-sortdate="${Date.parse(this.date)}">
+    <div class="card" data-sortdate="${Date.parse(this.date)}">
       <a href="/reports/${this.id}">
-        <img class="results__card--image" src=${this.image_url} />
+        <img class="card__image" src=${this.image_url} />
       </a>
-      <div class="results__card--content-type">PUBLICATION</div>
-      <div class="results__card--title-link">
-        <a class="results__card--title-link" href="/reports/${this.id}">${this.title}</a>
+      <div class="card__content-type">PUBLICATION</div>
+      <div class="card__title-link">
+        <a href="/reports/${this.id}">${this.title}</a>
       </div>
-      <div class="results__card--tags">
+      <div class="card__tags">
         tags: ${tagsHtml}
       </div>
     </div>
@@ -251,11 +251,11 @@ class Event {
   }
 
   static nextThree(events) {
-    const receiveUpdatesUrl = $('.next3events__receive-updates-url')[0].innerHTML
+    const receiveUpdatesUrl = $('.next-three-events__receive-updates-url')[0].innerHTML
     const noEventsMessageHtml = (`
       <div>
-        <div class="next3events__events-event--title">No upcoming events at this time.</div>
-        <div class="next3events__button-receive-updates">
+        <div class="next-three-events__event--title">No upcoming events at this time.</div>
+        <div class="next-three-events__button--receive-updates">
         <a class="button" rel="noopener noreferrer" href="${receiveUpdatesUrl}" target="_blank">Receive Updates</a>
         </div>
       </div>
@@ -265,19 +265,19 @@ class Event {
       const eventDateAndHours = `${moment(event.start).format('MMM Do, h:mmA')} - ${moment(event.end).format('h:mmA')}`
       return (`
       <a href='/events/${event.id}' style='text-decoration: none'>
-        <div class='next3events__events-event'>
-          <div class='next3events__events-event--title'>${event.title}</div>
-          <div class='next3events__events-event--content'>${eventDateAndHours} | ${event.city}</div>
+        <div class='next-three-events__event'>
+          <div class='next-three-events__event--title'>${event.title}</div>
+          <div class='next-three-events__event--content'>${eventDateAndHours} | ${event.city}</div>
         </div>
       </a>
       `)
     }).join('')
 
     return (`
-      <div class="results__card">
-        <div class="next3events">
-          <div class="next3events__header">Join us for an event!<span class="next3events__triangle"></span></div>
-          <div class="next3events__events">
+      <div class="card">
+        <div class="next-three-events">
+          <div class="next-three-events__header">Join us for an event!<span class="next-three-events__triangle"></span></div>
+          <div class="next-three-events__events">
             ${events.length > 0 ? nextThreeEventsHtml : noEventsMessageHtml}
           </div>
         </div>
@@ -296,15 +296,15 @@ Event.prototype.eventCardHtml = function eventCardHtml() {
   }).join('')
 
   return (`
-    <div class="results__card" data-sortdate="${Date.parse(this.start)}">
+    <div class="card" data-sortdate="${Date.parse(this.start)}">
       <a href="/events/${this.id}">
-        <img class="results__card--image" src=${this.image_url} />
+        <img class="card__image" src=${this.image_url} />
       </a>
-      <div class="results__card--content-type">EVENT</div>
-      <div class="results__card--title-link">
-        <a class="results__card--title-link" href="/events/${this.id}">${this.title}</a>
+      <div class="card__content-type">EVENT</div>
+      <div class="card__title-link">
+        <a href="/events/${this.id}">${this.title}</a>
       </div>
-      <div class="results__card--tags">
+      <div class="card--tags">
         tags: ${tagsHtml}
       </div>
     </div>
@@ -334,15 +334,15 @@ Announcement.prototype.announcementCardHtml = function announcementCardHtml() {
   }).join('')
 
   return (`
-    <div class="results__card" data-sortdate="${Date.parse(this.published_date)}">
+    <div class="card" data-sortdate="${Date.parse(this.published_date)}">
       <a href="/announcements/${this.id}">
-        <img class="results__card--image" src=${this.image_url} />
+        <img class="card__image" src=${this.image_url} />
       </a>
-      <div class="results__card--content-type">NEWS</div>
-      <div class="results__card---title-link">
-        <a class="results__card--title-link" href="/announcements/${this.id}">${this.title}</a>
+      <div class="card__content-type">NEWS</div>
+      <div class="card__title-link">
+        <a href="/announcements/${this.id}">${this.title}</a>
       </div>
-      <div class="results__card--tags">
+      <div class="card--tags">
         tags: ${tagsHtml}
       </div>
     </div>
