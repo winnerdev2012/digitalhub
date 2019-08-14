@@ -16,41 +16,70 @@
     grid-auto-flow: dense;
     grid-template-columns: 6rem 1fr 6rem;
 
-    &__date {
+    &__content-type {
+      appearance: none;
       color: $v3-color_gray-dark;
-      display: block;
-      font-family: $font_family-secondary-light;
+      font-family: $font_family-secondary;
+      font-size: $font_size-small;
       grid-column-start: 2;
-      margin-bottom: 1rem;
+      grid-row-start: 1;
+      letter-spacing: .2rem;
       margin-top: 5rem;
+      padding: 1rem 0 0;
+      text-transform: uppercase;
+    }
+
+    &__date {
+      appearance: none;
+      color: $v3-color_gray-dark;
+      font-family: $font_family-secondary-light;
+      font-size: $font_size-small;
+      grid-column-start: 2;
+      grid-row-start: 2;
+      padding: 1rem 0 0;
     }
 
     &__title {
       color: $v3-color_green-medium;
+      font-family: $font_family-primary;
       font-size: $font_size-xlarge;
       grid-column-start: 2;
-      margin-bottom: 1rem;
+      grid-row-start: 3;
+      padding: .5rem 0 0;
+    }
+
+    &__tags {
+      color: $color_bg-darkgrey;
+      font-family: $font_family-primary;
+      font-size: $font_size-small;
+      font-style: italic;
+      grid-column-start: 2;
+      grid-row-start: 4;
+      padding: .5rem 0;
     }
 
     &__body {
       color: $v3-color_gray-dark;
       font-size: $font_size-small;
-      grid-column-end: 4;
+      grid-column-end: 3;
       grid-column-start: 2;
-      margin: 0 6rem 3rem 0;
-      padding: 0;
+      grid-row-start: 5;
+      line-height: 1.5rem;
+      margin-bottom: 5rem;
+      padding: .5rem 0;
     }
 
     &__image {
       @include media(small) {
+        display: block;
         float: none;
       }
 
-      display: block;
       float: right;
-      grid-column-start: 3;
+      grid-column-start: 2;
+      grid-row-start: 5;
       height: auto;
-      margin: 0;
+      margin: 0 0 .6rem .8rem;
       padding: 0 0 1rem 1rem;
       width: 40vw;
     }

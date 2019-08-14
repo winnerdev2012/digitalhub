@@ -1,0 +1,16 @@
+<div class="Report">
+  <div class="report">
+    <div class="v2-banner"></div><!-- top green bar -->
+      <div class="content container">
+        <div class="content__title"><%= @report.title %></div>
+        <div class="content__content-type">PUBLICATION</div>
+        <div class="content__date"><%= @report.date.strftime("%B %d, %Y") %></div>
+        <div class="content__tags">Tags: <%= @tags %></div>
+        <div class="content__body">
+          <img src="<%= @image_url %>" class="content__image" />
+          <%= strip_tags @report.body %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

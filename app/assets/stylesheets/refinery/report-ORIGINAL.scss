@@ -1,0 +1,58 @@
+.Report {
+  background-color: $v3_color_bg-lightest;
+
+  .report {
+    .v2-banner {
+      padding-bottom: 2rem;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: 6rem 1fr 6rem;
+
+    &__date {
+      color: $v3-color_gray-dark;
+      display: block;
+      font-family: $font_family-secondary-light;
+      grid-column-start: 2;
+      margin-bottom: 1rem;
+      margin-top: 5rem;
+    }
+
+    &__title {
+      color: $v3-color_green-medium;
+      font-size: $font_size-xlarge;
+      grid-column-start: 2;
+      margin-bottom: 1rem;
+    }
+
+    &__body {
+      color: $v3-color_gray-dark;
+      font-size: $font_size-small;
+      grid-column-end: 4;
+      grid-column-start: 2;
+      margin: 0 6rem 3rem 0;
+      padding: 0;
+    }
+
+    &__image {
+      @include media(small) {
+        float: none;
+      }
+
+      display: block;
+      float: right;
+      grid-column-start: 3;
+      height: auto;
+      margin: 0;
+      padding: 0 0 1rem 1rem;
+      width: 40vw;
+    }
+  }
+}

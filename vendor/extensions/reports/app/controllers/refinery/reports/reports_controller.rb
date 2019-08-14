@@ -7,20 +7,18 @@ module Refinery
 
       def index
         reports_json = @reports.map { |report| ReportSerializer.new(report, { :include => [:image] }).serializable_hash }
-
-        respond_to do |f|
-          f.html { present(@page) }
-          f.json { render json: reports_json }
-        end
+        render json: reports_json
       end
 
       def show
         @report = ::Refinery::Reports::Report.find(params[:id])
         report_json = ReportSerializer.new(@report, { :include => [:image] }).serializable_hash
+        @image_url = report_json[:included][0][:attributes][:url]
+        @tags = @report.tags.map {|t| t.tag_type == 'topic_area' ? t.title : nil }.compact.join(', ')
 
         respond_to do |f|
-          f.html { present(@page) }
-          f.json { render json: report_json }
+          f.html { render '/refinery/reports/show'}
+          f.json { render json: report_json}
         end
       end
 
