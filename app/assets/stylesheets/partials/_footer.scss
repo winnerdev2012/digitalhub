@@ -1,13 +1,162 @@
 .footer {
-  display: flex;
-  flex-wrap: wrap;
   background-color: $color_bg-dark;
   font-size: $font_size-xsmall;
   color: $color_font-light;
   line-height: $font_size-small;
   transition-duration: 1.5s;
 
+  & > .container{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4,1fr);
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+
+    padding-bottom: 1rem;
+    max-width: 100%;
+    padding: 3.4rem 6rem;
+
+    @include media(medium){
+      grid-template-columns: 1fr 1fr;
+      padding: 1.55rem 1.25rem;
+    }
+  }
+
+  &__section {
+    &-about{
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      grid-row: 1;
+      grid-column: 1;
+
+      padding-right: 8.05rem;
+
+      @media(max-width: 1460px){
+        padding-right: 2rem;
+      }
+      @include media(medium){
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 3;
+      }
+    }
+
+    &-links{
+      -ms-grid-row: 1;
+      -ms-grid-column: 2;
+      grid-row: 1;
+      grid-column: 2;
+
+      @include media(medium){
+        grid-row: 4 / span 3;
+        grid-column: 1;
+      }
+    }
+
+    &-explore{
+      -ms-grid-row: 1;
+      -ms-grid-column: 3;
+      grid-row: 1;
+      grid-column: 3;
+
+      @include media(medium){
+        grid-row: 4 / span 3;
+        grid-column: 2;
+      }
+    }
+
+    &-contact{
+      -ms-grid-row: 1;
+      -ms-grid-column: 4;
+      grid-row: 1;
+      grid-column: 4;
+
+      address {
+        margin-bottom: 1rem;
+      }
+
+      @include media(medium){
+        grid-row: 7 / span 3;
+        grid-column: 2;
+
+        &-web{
+          display: none;
+        }
+      }
+    }
+
+    &-images{
+      &-logo{
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        grid-row: 2;
+        grid-column: 1;
+
+        margin-right: 1em;
+        width: 6.05rem;
+        height: 3.35rem;
+
+        @include media(medium){
+          grid-row: 7;
+          grid-column: 1;
+          margin-top: 0.5rem;
+          width: 3.6rem;
+          height: 1.8rem;
+        }
+
+        @include media(medium) {
+          display: block;
+          & > *:not(:last-child) {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+
+      &-cta{
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        grid-row: 2;
+        grid-column: 2;
+
+        @include media(medium){
+          grid-row: 8;
+          grid-column: 1;
+          margin-top: 0.5rem;
+        }        
+
+        .button {
+          text-transform: uppercase;
+          font-family: "CalibreWeb-Semibold";
+
+          @include media(small){
+            min-width: 6.25rem;
+          }
+        }
+      }
+
+      &-social{
+        -ms-grid-row: 2;
+        -ms-grid-column: 4;
+        grid-row: 2;
+        grid-column: 4;
+        font-size: $font_size-medium;
+        a {
+          padding: 0 1rem 0 0;
+        }
+        @include media(medium){
+          grid-row: 9;
+          grid-column: 1;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+
   // Override normal green coloring
+  & h2 {
+    color: $color_font-light;
+  }
+
   a {
     color: $color_font-light;
     text-decoration: none;
@@ -26,57 +175,8 @@
     }
   }
 
-  .footer__row {
-     display: flex;
-     flex-basis: 100%;
-     justify-content: space-between;
-     padding-bottom: 1rem;
-     @include media(small) {
-       display: block;
-     }
-  }
-
-  .footer__column {
-    flex-basis: 22%;
-    .button {
-      text-transform: uppercase;
-      font-family: "CalibreWeb-Semibold";
-    }
-
-    h2 {
-      color: $color_font-light;
-    }
-
-    address {
-      margin-bottom: 1rem;
-    }
-
-    @include media(small) {
-      margin-bottom: 1rem;
-    }
-  }
-
-  .footer__column--social {
-    font-size: $font_size-medium;
-    a {
-      padding: 0 1rem 0 0;
-    }
-  }
-
-  .footer-mapc-brand {
-    display: flex;
-    align-items: center;
-    .logo {
-      width: 72px;
-      height: 36px;
-      margin-right: 1em;
-    }
-
-    @include media(medium) {
-      display: block;
-      & > *:not(:last-child) {
-        margin-bottom: 0.5rem;
-      }
-    }
+  .footer__section--image{
+    width: 72px;
+    height:36px;
   }
 }
