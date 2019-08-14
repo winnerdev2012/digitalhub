@@ -17,7 +17,7 @@
 
   <div class='field'>
     <%= f.label :date -%>
-    <%= f.datetime_select :date -%>
+    <%= f.date_select :date, required: true -%>
   </div>
 
 <%# note: this section is not exposed to user, but retained in case of future need to apply multiple "content_type" tags to a taggable item %>

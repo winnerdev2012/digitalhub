@@ -5,20 +5,23 @@
 <div class="FindOut">
   <section class="v2-banner">
     <div class="find-out__header container">
+    <div id="find-out__overlay"></div>
       <div class="container">
         <form>
-          <div class="find-out__filter">
-            <div class='find-out__filter-content-type'>You're looking for <span class="find-out__filter-content-type-dropdown"></span></div>
-            <div class='find-out__filter-topic-area'>in <span class="find-out__filter-topic-area-dropdown"></span></div>
+          <div class="filter">
+            <div class='content-type'>You're looking for<span class="content-type__dropdown"></span></div>
           </div>
+          <div class="filter">
+            <div class='topic-area'>in<span class="topic-area__dropdown"></span></div>
+          </div>
+          <div class="narrative-text"></div>
         </form>
-        <div class="find-out__topic-area">
-          <div class="find-out__topic-area-narrative"></div>
-        </div>
       </div>
-      <div class="find-out__topic-area-results"></div>
   </section>
-  <div class="find-out__results container">
-    <p class="find-out__tagged-item">All topic areas</p>
+  <div class="results container"></div>
+  <div class="load-more__button">
+    <a id="load-more" href="#">LOAD MORE</a>
   </div>
 </div>
+
+<div class="next-three-events__receive-updates-url" style="visibility: hidden"><%= CONSTANT_CONTACT_LANDING_PAGE %></div>
