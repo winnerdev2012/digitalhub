@@ -221,8 +221,8 @@ Report.prototype.reportCardHtml = function reportCardHtml() {
         <img class="card__image" src=${this.image_url} />
       </a>
       <div class="card__content-type">PUBLICATION</div>
-      <div class="card__title-link">
-        <a href="/reports/${this.id}">${this.title}</a>
+      <div class="card__title">
+        <a class="card__link" href="/reports/${this.id}">${this.title}</a>
       </div>
       <div class="card__tags">
         tags: ${tagsHtml}
@@ -266,8 +266,8 @@ class Event {
       return (`
       <a href='/events/${event.id}' style='text-decoration: none'>
         <div class='next-three-events__event'>
-          <div class='next-three-events__event--title'>${event.title}</div>
-          <div class='next-three-events__event--content'>${eventDateAndHours} | ${event.city}</div>
+          <div class='next-three-events__title'>${event.title}</div>
+          <div class='next-three-events__content'>${eventDateAndHours} | ${event.city}</div>
         </div>
       </a>
       `)
@@ -301,10 +301,10 @@ Event.prototype.eventCardHtml = function eventCardHtml() {
         <img class="card__image" src=${this.image_url} />
       </a>
       <div class="card__content-type">EVENT</div>
-      <div class="card__title-link">
-        <a href="/events/${this.id}">${this.title}</a>
+      <div class="card__title">
+        <a class="card__link" href="/events/${this.id}">${this.title}</a>
       </div>
-      <div class="card--tags">
+      <div class="card__tags">
         tags: ${tagsHtml}
       </div>
     </div>
@@ -339,8 +339,8 @@ Announcement.prototype.announcementCardHtml = function announcementCardHtml() {
         <img class="card__image" src=${this.image_url} />
       </a>
       <div class="card__content-type">NEWS</div>
-      <div class="card__title-link">
-        <a href="/announcements/${this.id}">${this.title}</a>
+      <div class="card__title">
+        <a class="card__link" href="/announcements/${this.id}">${this.title}</a>
       </div>
       <div class="card--tags">
         tags: ${tagsHtml}
