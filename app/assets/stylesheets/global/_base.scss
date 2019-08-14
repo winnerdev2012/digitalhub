@@ -90,13 +90,8 @@ ul {
 }
 
 #page_container {
-  transition-duration: 1s;
   &.menu-open {
     height: 100vh;
-    margin-right: 25rem;
-    @include media(large) {
-      margin-right: 0rem;
-    }
   }
 }
 
