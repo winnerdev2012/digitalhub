@@ -5,8 +5,6 @@
   line-height: $font_size-small;
   transition-duration: 1.5s;
 
-  background: lightblue;
-
   & > .container{
     display: -ms-grid;
     display: grid;
@@ -60,70 +58,65 @@
     max-width: 100%;
     padding: 3.4rem 6rem;
 
-    @include media(small){
+    @include media(medium){
       grid-template-columns: 1fr 1fr;
       //grid-auto-rows: repeat(9, fit-content(1fr));
+      padding: 1.55rem 1.25rem;
     }
-
   }
 
-  // .footer-mapc-brand {
-  //   display: flex;
-  //   align-items: center;
-  //   .logo {
-  //     width: 72px;
-  //     height: 36px;
-  //     margin-right: 1em;
-  //   }
+  &__section {
+    address {
+      margin-bottom: 1rem;
+    }
 
-  //   @include media(medium) {
-  //     display: block;
-  //     & > *:not(:last-child) {
-  //       margin-bottom: 0.5rem;
-  //     }
-  //   }
-  // }
-
-  &__section{
     &-about{
-      @include media(small){
+      margin-right: 8.05rem;
+      @include media(medium){
         grid-column: 1 / span 2;
         grid-row: 1 / span 3;
+        margin-right: 0;
       }
     }
 
     &-links{
-      @include media(small){
+      @include media(medium){
         grid-row: 4 / span 3;
         grid-column: 1;
       }
     }
 
     &-explore{
-      @include media(small){
+      @include media(medium){
         grid-row: 4 / span 3;
         grid-column: 2;
       }
     }
 
     &-contact{
-      @include media(small){
+      @include media(medium){
         grid-row: 7/ span 3;
         grid-column: 2;
+      }
+      &-web{
+        @include media(medium){
+          display:none;
+        }
       }
     }
 
     &-images{
       &-logo{
-        display: flex;
-        align-items: center;
-        width: 72px;
-        height: 36px;
         margin-right: 1em;
+        width: 6.05rem;
+        height: 3.35rem;
 
-        @include media(small){
+        @include media(medium){
           grid-row: 7;
           grid-column: 1;
+          margin-top: 0.5rem;
+          width: 3.6rem;
+          height: 1.8rem;
         }
 
         @include media(medium) {
@@ -136,23 +129,38 @@
 
       &-cta{
         grid-column: 2;
-        @include media(small){
+        @include media(medium){
           grid-row: 8;
           grid-column: 1;
+          margin-top: 0.5rem;
+        }
+
+        .button {
+          text-transform: uppercase;
+          font-family: "CalibreWeb-Semibold";
         }
       }
 
       &-social{
         grid-column: 4;
-        @include media(small){
+        font-size: $font_size-medium;
+        a {
+          padding: 0 1rem 0 0;
+        }
+        @include media(medium){
           grid-row: 9;
           grid-column: 1;
+          margin-top: 0.5rem;
         }
       }
     }
   }
 
   // Override normal green coloring
+  & h2 {
+    color: $color_font-light;
+  }
+
   a {
     color: $color_font-light;
     text-decoration: none;
@@ -175,43 +183,4 @@
     width: 72px;
     height:36px;
   }
-
-  .footer__row {
-     display: flex;
-     flex-basis: 100%;
-     justify-content: space-between;
-     padding-bottom: 1rem;
-     @include media(small) {
-       display: block;
-  }
-
-  .footer__column {
-    flex-basis: 22%;
-    .button {
-      text-transform: uppercase;
-      font-family: "CalibreWeb-Semibold";
-    }
-
-    h2 {
-      color: $color_font-light;
-    }
-
-    address {
-      margin-bottom: 1rem;
-    }
-
-    @include media(small) {
-      margin-bottom: 1rem;
-    }
-  }
-
-  .footer__column--social {
-    font-size: $font_size-medium;
-    a {
-      padding: 0 1rem 0 0;
-    }
-  }
-
-  
-}
 }

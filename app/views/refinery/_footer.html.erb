@@ -32,13 +32,15 @@
         Boston MA 02111<br>
         <a href="tel:6179330700">617-933-0700</a>
       </address>
-      <a href="/">metrocommon.mapc.org</a>
+      <p class="footer__section-contact-web">
+        <a href="/">metrocommon.mapc.org</a
+      </p>
     </div>
 
 
    
-    <div class="footer_section-images-logo">
-      </div>
+    <div class="footer__section-images-logo">
+      <%= link_to 'https://www.mapc.org/', class: 'footer-mapc-brand' do %>
        <%= image_tag("mapc-logo.svg", class: "footer_section-images-logo", alt: t('logo_alt')) %>
      <% end %>
     </div>
@@ -47,17 +49,6 @@
       <a class="button" rel="noopener noreferrer" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank">Receive Updates</a>
     </div>
     <div class="footer__section-images-social">
-      <div class="footer__column">
-        <%= link_to 'https://www.mapc.org/', class: 'footer-mapc-brand' do %>
-          <%= image_tag("mapc-logo.svg", class: "logo", alt: t('logo_alt')) %>
-        <% end %>
-      </div>
-      <div class="footer__column">
-        <a class="button" rel="noopener noreferrer" href="<%= CONSTANT_CONTACT_LANDING_PAGE %>" target="_blank">Receive Updates</a>
-      </div>
-      <div class="footer__column">
-      </div>
-      <div class="footer__column footer__column--social">
       <a aria-label="MAPC Twitter Page" href="https://twitter.com/mapcmetroboston"><%= fa_icon "twitter" %></a>
       <a aria-label="MAPC Instagram Page" href="https://www.instagram.com/mapcmetroboston"><%= fa_icon "instagram" %></a>
       <a aria-label="MAPC Facebook Page" href="https://www.facebook.com/mapcmetroboston"><%= fa_icon "facebook" %></a>
