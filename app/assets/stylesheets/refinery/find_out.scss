@@ -1,6 +1,6 @@
 .FindOut {
   .banner {
-    @include background-2x('find-out-banner', 'png', fit, fit, center, no-repeat );
+    @include background-2x('find-out-banner', 'png', fit, fit, center, no-repeat);
     @include media(small) {
       background-position: bottom 3rem right;
     }
@@ -23,21 +23,11 @@
     @include media(small) {
       background: none;
     }
-
+    align-items: center;
     background-image: image-url('group-2111.png');
-    height: 29.05rem;
-    margin-bottom: 2rem;
-  }
-
-  .filter {
-    @include media(small) {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-
     display: flex;
-    width: auto;
+    justify-content: center;
+    min-height: 29.05rem;
   }
 
   .content-type {
@@ -50,7 +40,6 @@
     display: inline-block;
     font-family: $font_family-primary;
     font-size: $v3_font_size-h1;
-    padding: 11.35rem 0 0 19.3rem;
 
     &__dropdown {
       appearance: none;
@@ -90,9 +79,9 @@
 
     color: $v3_color_bg-lightest;
     display: block;
+    //float: left;
     font-family: $font_family-primary;
     font-size: $v3_font_size-h1;
-    margin-left: 19.3rem;
     width: auto;
 
     &__dropdown {
@@ -129,7 +118,7 @@
     color: $v3_color_bg-lightest;
     font-family: $font_family-primary;
     font-size: $font_size-medium;
-    margin: 2rem 0 2.4rem 19.3rem;
+    //margin: 2rem 0 2.4rem 19.3rem;
   }
 
   .next-three-events {
