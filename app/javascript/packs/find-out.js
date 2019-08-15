@@ -5,6 +5,7 @@ $(() => {
   }
   fetchTaggings(allTaggings)
   loadDropdowns()
+  $('title')[0].text = 'MetroCommon x 2050'
 })
 
 function loadDropdowns() {
