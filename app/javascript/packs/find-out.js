@@ -15,13 +15,13 @@ function loadDropdowns() {
   }).done((response) => {
     const contentTypes = response.filter(tag => tag.data.attributes.tag_type === 'content_type')
     const contentTypeSelectOptions = contentTypes.slice(0, 3).map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
-    const contentTypeDropdown = (`<select class="content-type__select"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
-    document.getElementsByClassName('content-type__dropdown')[0].innerHTML = contentTypeDropdown
+    const contentTypeDropdown = (`<select class="content-type__select content-type__dropdown"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
+    document.getElementsByClassName('content-type')[0].innerHTML = "You're looking for " + contentTypeDropdown
 
     const topicAreas = response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
     const topicAreaSelectOptions = topicAreas.map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
-    const topicAreaDropdown = (`<select class="topic-area__select"><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`)
-    document.getElementsByClassName('topic-area__dropdown')[0].innerHTML = topicAreaDropdown
+    const topicAreaDropdown = (`<select class="topic-area__select topic-area__dropdown"><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`)
+    document.getElementsByClassName('topic-area')[0].innerHTML = "in " + topicAreaDropdown
     onDropdownChange()
     cueOverlay()
   })

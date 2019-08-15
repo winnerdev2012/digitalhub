@@ -22,10 +22,10 @@ $arrow_color: $gray !default;
   clear: both;
   color: $v3_color_bg-lightest;
   cursor: pointer;
-  float: right;
+  //float: right;
   font-family: $font_family-primary;
   font-size: $v3_font_size-h1;
-  margin-left: .7rem;
+  //margin-left: .7rem;
   outline: none;
   padding-right: $dropdown_padding + 22;
   position: relative;
@@ -40,6 +40,10 @@ $arrow_color: $gray !default;
 
   // Arrow
   &::after {
+    @include media (small) {
+      border-bottom-width: 10px;
+      border-right-width: 10px;
+    }
     border-bottom: 18px solid $v3_color_bg-lightest;
     border-bottom-color: transparent;
     border-left-color: transparent;

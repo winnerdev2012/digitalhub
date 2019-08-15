@@ -1,17 +1,17 @@
 .FindOut {
   .banner {
     @include background-2x('find-out-banner', 'png', fit, fit, center, no-repeat);
-    @include media(small) {
-      background-position: bottom 3rem right;
-    }
+    @include media(small) { background-position: bottom 3rem right; }
     background: $color_bg-dark;
     background-position: center;
     background-repeat: no-repeat;
     background-size: fit;
   }
 
-  .container::after {
-    display: none;
+  .container {
+    &::after {
+      display: none;
+    }
   }
 
   .banner-content {
@@ -20,22 +20,28 @@
   }
 
   .find-out__header {
-    @include media(small) {
-      background: none;
-    }
+    @include media(small) { background: none; }
     align-items: center;
     background-image: image-url('group-2111.png');
     display: flex;
+    height: 29rem;
     justify-content: center;
     min-height: 29.05rem;
   }
 
-  .content-type {
+  .form {
+    @include media(large) { max-width: 38rem; }
+    @include media(small) {max-width: 29rem;}
+    @include media(x-small) { max-width: 17rem; }
+    width: 49rem;
+  }
+
+  .content-type,
+  .topic-area {
     @include media(small) {
       font-family: $font_family-primary;
       font-size: $v3_font_size-title;
     }
-
     color: $v3_color_bg-lightest;
     display: inline-block;
     font-family: $font_family-primary;
@@ -51,50 +57,7 @@
 
     &__select {
       @include media(small) {
-        font-size: $font_size-large;
-      }
-
-      appearance: none;
-      border: 0;
-      outline: none;
-      text-decoration: underline;
-
-      &:hover {
-        color: $v3-color_green-light;
-        cursor: pointer;
-
-        &:focus {
-          color: $v3_color_bg-lightest;
-          cursor: pointer;
-        }
-      }
-    }
-  }
-
-  .topic-area {
-    @include media(small) {
-      font-family: $font_family-primary;
-      font-size: $v3_font_size-title;
-    }
-
-    color: $v3_color_bg-lightest;
-    display: block;
-    //float: left;
-    font-family: $font_family-primary;
-    font-size: $v3_font_size-h1;
-    width: auto;
-
-    &__dropdown {
-      appearance: none;
-      background: none;
-      border: 0;
-      display: inline;
-      text-decoration: underline;
-    }
-
-    &__select {
-      @include media(small) {
-        font-size: $font_size-large;
+        font-size: $v3_font_size-title;
       }
 
       appearance: none;
@@ -118,7 +81,7 @@
     color: $v3_color_bg-lightest;
     font-family: $font_family-primary;
     font-size: $font_size-medium;
-    //margin: 2rem 0 2.4rem 19.3rem;
+    margin: 2rem auto;
   }
 
   .next-three-events {
