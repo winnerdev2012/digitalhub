@@ -82,7 +82,7 @@ const fetchTaggings = (dropdownsObject) => {
     dataType: 'json',
     data: dropdownsObject,
   }).done(response => {
-    const resultsDiv = $('.results.container')
+    const resultsDiv = $('.results')
     const headerShort = () => {
       $('.find-out__header').css('height', '29.05rem')
     }
@@ -99,6 +99,7 @@ const fetchTaggings = (dropdownsObject) => {
 
     const cardsHigh = () => {
       resultsDiv.css('bottom', '14rem')
+      resultsDiv.css('margin-bottom', '-18rem')
     }
 
     const cardsLow = () => {
@@ -108,6 +109,7 @@ const fetchTaggings = (dropdownsObject) => {
     const resetDisplay = () => {
       $('.narrative-text').empty()
       resultsDiv.empty()
+      resultsDiv.css('margin-bottom', '0rem')
     }
 
     resetDisplay()
@@ -342,7 +344,7 @@ Announcement.prototype.announcementCardHtml = function announcementCardHtml() {
       <div class="card__title">
         <a class="card__link" href="/announcements/${this.id}">${this.title}</a>
       </div>
-      <div class="card--tags">
+      <div class="card__tags">
         tags: ${tagsHtml}
       </div>
     </div>
