@@ -1,10 +1,7 @@
 <% events = events[0..2] if events.size > 3 %>
 
 <div class="event-box">
-  <div class="event-box__header">
-    <h2>Join us for <br> an event!</h2>
-  </div>
-
+  <h2 class="event-box__header">Join us for <br> an event!</h2>
   <% if events.size > 0 %>
     <ul>
       <% events.each do |event| %>

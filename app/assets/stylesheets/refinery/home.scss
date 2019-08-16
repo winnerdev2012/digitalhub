@@ -29,6 +29,7 @@
     }
 
     .styled-box {
+
       padding: 0;
       text-align: center;
       cursor: default;
@@ -60,33 +61,29 @@
 
       @include media(medium) {
         &__content {
-          display: grid;
-          grid-template-columns: 348px;
-          grid-template-rows: 65px auto auto auto auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           margin: 0;
           background-image: none;
 
-          h1 {
-            grid-column-start: 1;
-            margin: 0;
-          }
+          h1 { margin: 0; }
 
           .sub-header {
-            grid-column-start: 1;
             font-size: 17px;
             font-display: italic;
             width: 236px;
           }
 
           p {
-            grid-column-start: 1;
             font-size: 16px;
             width: 345px;
           }
 
           .hero-banner-actions {
-            grid-column-start: 1;
             margin: 0;
+            width: 345px;
+            //align-self: center;
           }
 
           a.button {
@@ -103,6 +100,16 @@
             margin: 0 0 1rem 0;
             width: 100%;
           }
+        }
+      }
+      @media (max-width: 425px){
+        .hero-banner-actions{
+          align-self: center;
+        }
+      }
+      @media (max-width: 374px){
+        p, .hero-banner-actions {
+          width: 275px;
         }
       }
     }

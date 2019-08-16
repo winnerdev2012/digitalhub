@@ -1,45 +1,45 @@
 .event-box {
-  padding: 2.1rem 1.8rem;
+  @include media(medium) { padding: 1rem 1.3rem; }
+  @include media(small) { padding: .4rem .5rem; }
   border: 1px solid $v3-color_green-light;
   overflow: hidden;
-
-  @include media(medium) { padding: 1rem 1.3rem; }
+  padding: 2.1rem 1.8rem;
 
   &__header {
+    @media (max-width: 1400px) { font-size: $font-size-xlarge; }
+    @media (max-width: 1200px) { font-size: $font-size-large; }
+    @media (max-width: 960px) {
+      font-size: $font-size-xlarge;
+      justify-content: center;
+    }
+    @media (max-width: 670px) { font-size: $font_size-small; }
+    @media (max-width: 320px) { font-size: $font_size-xsmall; }
+
+    color: $color_font-light;
     display: flex;
+    font-size: 1.8rem;
+    margin: 0;
     width: 100%;
 
-    h2 {
-      margin: 0;
-      color: $color_font-light;
-      font-size: $v3_font_size-title;
-
-      @include media(medium) {
-        padding-top: 0rem;
-        font-size: $font_size-small;
-      }
-    }
-
     &::after {
+      @media (max-width: 1399px) { align-self: center; }
+      @media (max-width: 670px) { @include triangle(25px, 'right', $v3-color_green-light); }
       @extend ._pseudo;
       @include triangle(50px, 'right', $v3-color_green-light);
-
       margin-left: 1rem;
-
-      @include media(medium) {
-        @include triangle(25px, 'right', $v3-color_green-light);
-      }
-    }
-
-    @include media(medium) {
-      justify-content: center;
     }
   }
 
   ul {
+    display: inline-block;
     margin-top: 1.5rem;
-
-    @include media(small) { display: none; }
+    @media (min-width: 1400px) {
+      max-height: 9.25rem;
+      overflow-y: auto;
+      width: 100%;
+    }
+    @media (max-width: 1399px) and (min-width: 961px) { display: none; }
+    @media (max-width: 670px) { display: none; }
   }
 
   li {
@@ -53,25 +53,23 @@
     }
 
     h4 {
-      margin: 0;
-      font-weight: $font_weight-normal;
-
       @include media(small) { font-size: $font_size-small; }
+      font-weight: $font_weight-normal;
+      margin: 0;
     }
   }
 
   &__event-info {
     @include media(small) { font-size: $font_size-xsmall; }
 
-    span:last-of-type {
-      $spacing: 3px;
-
-      display: inline-block;
-
-      padding-left: $spacing * 2;
-      margin-left: $spacing;
-
-      border-left: 1px solid $color_font-light;
+    span {
+      :last-of-type {
+        $spacing: 3px;
+        border-left: 1px solid $color_font-light;
+        display: inline-block;
+        margin-left: $spacing;
+        padding-left: $spacing * 2;
+      }
     }
   }
 }
