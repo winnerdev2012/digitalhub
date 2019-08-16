@@ -21,17 +21,6 @@
     margin: 0;
     width: 100%;
 
-    h2 {
-      @include media(medium) {
-        padding-top: 0rem;
-        font-size: $font_size-small;
-      }
-      
-      color: $color_font-light;
-      font-size: $v3_font_size-title;
-      margin: 0;
-    }
-
     &::after {
       @media (max-width: 1399px) { align-self: center; }
       @media (max-width: 670px) { @include triangle(25px, 'right', $v3-color_green-light); }
