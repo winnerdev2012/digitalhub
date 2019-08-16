@@ -42,6 +42,7 @@
       font-family: $font_family-primary;
       font-size: $v3_font_size-title;
     }
+    @include media(x-small) { font-size: $v3_font_size-h1-mobile; }
     color: $v3_color_bg-lightest;
     display: inline-block;
     font-family: $font_family-primary;
@@ -56,9 +57,8 @@
     }
 
     &__select {
-      @include media(small) {
-        font-size: $v3_font_size-title;
-      }
+      @include media(small) { font-size: $v3_font_size-title; }
+      @include media(x-small) { font-size: $v3_font_size-h1-mobile; }
 
       appearance: none;
       border: 0;
