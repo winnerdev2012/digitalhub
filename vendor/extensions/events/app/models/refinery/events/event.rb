@@ -7,6 +7,7 @@ module Refinery
       is_seo_meta
       translates :title, :description, :accessibility_note, :translation_note
       validates :title, :presence => true, :uniqueness => true
+      validates :start, :presence => true
       belongs_to :image, :class_name => '::Refinery::Image', :optional => true
       after_save :translate_content
 

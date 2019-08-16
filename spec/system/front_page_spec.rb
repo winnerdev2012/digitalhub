@@ -1,6 +1,8 @@
 require "rails_helper"
 
 RSpec.describe "Front Page", :type => :system do
+  let(:test_date) { Time.zone.now }
+
   it "enables me to view the front page" do
     new_page = create(:page)
     visit "/"
@@ -23,15 +25,15 @@ RSpec.describe "Front Page", :type => :system do
 
   it "announcements carousel is accessible", js: true do
     create(:page)
-    create(:announcement)
+    create(:announcement, published_date: test_date)
     visit "/"
     expect(page).to be_accessible.within '.announcements'
   end
 
   it "displays new content when I click an announcement button", js: true do
     create(:page)
-    create(:announcement)
-    announcement = create(:announcement)
+    create(:announcement, published_date: test_date)
+    announcement = create(:announcement, published_date: test_date)
     visit "/"
     within('.announcements__numbers') do
       click_on('2')
@@ -41,7 +43,7 @@ RSpec.describe "Front Page", :type => :system do
 
   it "goes to a link when I click the more information button", js: true do
     create(:page)
-    announcement = create(:announcement)
+    announcement = create(:announcement, published_date: test_date)
     visit "/"
     expect(page).to have_link(href: announcement.link)
   end

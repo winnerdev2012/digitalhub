@@ -8,6 +8,7 @@ module Refinery
       translates :title, :body
 
       validates :title, :presence => true, :uniqueness => true
+      validates :published_date, :presence => true
       belongs_to :image, :class_name => '::Refinery::Image'
       has_many :taggings, :class_name => '::Refinery::Taggings::Tagging', dependent: :destroy
       has_many :tags, :class_name => '::Refinery::Tags::Tag', through: :taggings
