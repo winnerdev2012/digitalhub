@@ -85,11 +85,11 @@ const fetchTaggings = (dropdownsObject) => {
   }).done(response => {
     const resultsDiv = $('.results')
     const headerShort = () => {
-      $('.find-out__header').css('height', '29.05rem')
+      //$('.find-out__header').css('height', '29.05rem')
     }
 
     const headerTall = () => {
-      $('.find-out__header').css('height', '45.25rem')
+      $('.find-out__header').css('margin-bottom', '9rem')
     }
 
     const nextThreeEvents = () => {
@@ -111,24 +111,13 @@ const fetchTaggings = (dropdownsObject) => {
       $('.narrative-text').empty()
       resultsDiv.empty()
       resultsDiv.css('margin-bottom', '0rem')
+      $('.find-out__header').css('margin-bottom', '0')
     }
 
     resetDisplay()
     loadTopicAreaNarrative(dropdownsObject.topic_area, response.topic_area_narrative)
-    if (dropdownsObject.content_type === 'everything' && dropdownsObject.topic_area === 'all topic areas') {
-      cardsLow()
-    } else if ((dropdownsObject.content_type === 'events' || (dropdownsObject.topic_area !== 'all topic areas')) && response.taggings.length > 0) {
-      headerTall()
-      nextThreeEvents()
-      cardsHigh()
-    } else if (dropdownsObject.content_type !== 'events' && (dropdownsObject.topic_area === 'all topic areas')) {
-      headerTall()
-      nextThreeEvents()
-      cardsLow()
-    } else if (dropdownsObject.content_type === 'everything' && (dropdownsObject.topic_area !== 'all topic areas')) {
-      headerTall()
-      cardsLow()
-    } else if (response.taggings.length === 0) {
+
+    if (dropdownsObject.topic_area === 'all topic areas'){
       cardsLow()
       headerShort()
     }
@@ -159,6 +148,7 @@ const loadInitialCards = (taggings, resultsDiv, dropdownsObject) => {
   if (taggings.length === 0) {
     $('.results').html('<div class="message--none">There are currently no results for the selected filters.</div>')
     hideLoadMoreButton()
+    $('.find-out__header').css('margin-bottom', '0')
   } else {
     if (dropdownsObject.content_type === 'events'){
       createCards(taggings.slice(0,8), resultsDiv)
@@ -182,6 +172,7 @@ const loadInitialCards = (taggings, resultsDiv, dropdownsObject) => {
 
 const loadNextThreeEvents = (events, resultsDiv) => {
   const nextThree = events.map(event => {
+    console.log(event)
     return new Event(event)
   })
   const nextThreeEventsHtml = Event.nextThree(nextThree)

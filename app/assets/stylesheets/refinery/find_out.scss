@@ -21,18 +21,21 @@
 
   .find-out__header {
     @include media(small) { background: none; }
-    align-items: center;
-    background-image: image-url('group-2111.png');
+    background-image: image-url('376-find-out-banner.png');
+    background-position: center;
+    background-size: cover;
     display: flex;
-    height: 29rem;
+    min-height: 29rem;
+    height: inherit;
     justify-content: center;
     min-height: 29.05rem;
+    padding-top: 11.35rem;
   }
 
   .form {
-    @include media(large) { max-width: 38rem; }
-    @include media(small) {max-width: 29rem;}
-    @include media(x-small) { max-width: 17rem; }
+    @include media(large) { max-width: 40rem; }
+    @include media(small) {max-width: 28rem;}
+    @include media(x-small) { max-width: 23rem; }
     width: 49rem;
   }
 
@@ -148,16 +151,22 @@
     color: $v3-color_green-medium;
     font-family: $font_family-primary;
     font-size: $font_size-large;
-    margin: 0 0 14rem 18rem;
+    //margin: 0 0 14rem 18rem;
   }
 
   .card {
+    @include media (medium){
+      width: 20rem;
+    }
     display: inline-block;
     height: 24rem;
     margin: 1.25rem;
     width: 24rem;
 
     &__image {
+      @include media (medium){
+        width: 20rem;
+      }
       height: 80%;
       margin: 0;
       object-fit: cover;
