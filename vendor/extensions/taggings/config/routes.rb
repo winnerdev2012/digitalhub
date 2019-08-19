@@ -1,6 +1,6 @@
 Refinery::Core::Engine.routes.draw do
 
-  get '/find-out', to: 'taggings/taggings#findout'
+  get '/find-out', to: 'taggings/taggings#index'
 
   # Frontend routes
   namespace :taggings do
