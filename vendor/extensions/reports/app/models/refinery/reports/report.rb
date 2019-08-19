@@ -4,6 +4,7 @@ module Refinery
       self.table_name = 'refinery_reports'
 
       validates :title, :presence => true, :uniqueness => true
+      validates :date, :presence => true
       belongs_to :image, :class_name => '::Refinery::Image', optional: true
       has_many :taggings, :class_name => '::Refinery::Taggings::Tagging', dependent: :destroy
       has_many :tags, :class_name => '::Refinery::Tags::Tag', through: :taggings

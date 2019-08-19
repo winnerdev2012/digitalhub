@@ -5,9 +5,9 @@ RSpec.describe 'Findout Filter API requests' do
 
   describe 'GET /find-out' do
     it 'returns JSON data for the title of the first report, from a group of reports' do
-      report1 = create(:report)
-      report2 = create(:report)
-      report3 = create(:report)
+      report1 = create(:report, date: today)
+      report2 = create(:report, date: today)
+      report3 = create(:report, date: today)
       get('/reports.json')
 
       json_response = JSON.parse(response.body)
@@ -15,9 +15,9 @@ RSpec.describe 'Findout Filter API requests' do
     end
 
     it 'returns JSON data for the title of the first event, from a group of events' do
-      event1 = create(:event)
-      event2 = create(:event)
-      event3 = create(:event)
+      event1 = create(:event, start: today)
+      event2 = create(:event, start: today)
+      event3 = create(:event, start: today)
       get('/events.json')
 
       json_response = JSON.parse(response.body)
@@ -25,9 +25,9 @@ RSpec.describe 'Findout Filter API requests' do
     end
 
     it 'returns JSON data for the title of the third announcement, from a group of announcements' do
-      announcement1 = create(:announcement)
-      announcement2 = create(:announcement)
-      announcement3 = create(:announcement)
+      announcement1 = create(:announcement, published_date: today)
+      announcement2 = create(:announcement, published_date: today)
+      announcement3 = create(:announcement, published_date: today)
       get('/announcements.json')
 
       json_response = JSON.parse(response.body)
@@ -35,9 +35,9 @@ RSpec.describe 'Findout Filter API requests' do
     end
 
     it 'returns the expected number of JSON reports' do
-      report1 = create(:report)
-      report2 = create(:report)
-      report3 = create(:report)
+      report1 = create(:report, date: today)
+      report2 = create(:report, date: today)
+      report3 = create(:report, date: today)
       get('/reports.json')
 
       json_response = JSON.parse(response.body)
@@ -45,9 +45,9 @@ RSpec.describe 'Findout Filter API requests' do
     end
 
     it 'returns the expected number of JSON announcements' do
-      announcement1 = create(:announcement)
-      announcement2 = create(:announcement)
-      announcement3 = create(:announcement)
+      announcement1 = create(:announcement, published_date: today)
+      announcement2 = create(:announcement, published_date: today)
+      announcement3 = create(:announcement, published_date: today)
       get('/announcements.json')
 
       json_response = JSON.parse(response.body)
@@ -66,29 +66,26 @@ RSpec.describe 'Findout Filter API requests' do
     end
 
     it 'returns JSON data for a specific announcement' do
-      announcement1 = create(:announcement)
-      announcement2 = create(:announcement)
-      announcement3 = create(:announcement)
-      get("/announcements/#{announcement2.id}.json")
+      announcement1 = create(:announcement, published_date: today)
+      get("/announcements/#{announcement1.id}.json")
 
       json_response = JSON.parse(response.body)
-      expect(json_response['data']['attributes']['title']).to eql(announcement2.title)
+      expect(json_response['data']['attributes']['title']).to eql(announcement1.title)
     end
 
     it 'returns JSON data for a specific event' do
-      event1 = create(:event)
-      event2 = create(:event)
-      event3 = create(:event)
-      get("/events/#{event2.id}.json")
+      event1 = create(:event, start: today)
+
+      get("/events/#{event1.id}.json")
 
       json_response = JSON.parse(response.body)
-      expect(json_response['data']['attributes']['title']).to eql(event2.title)
+      expect(json_response['data']['attributes']['title']).to eql(event1.title)
     end
 
     it 'returns JSON data for a specific report' do
-      report1 = create(:report)
-      report2 = create(:report)
-      report3 = create(:report)
+      report1 = create(:report, date: today)
+      report2 = create(:report, date: today)
+      report3 = create(:report, date: today)
       get("/reports/#{report2.id}.json")
 
       json_response = JSON.parse(response.body)

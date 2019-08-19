@@ -1,6 +1,8 @@
 require "rails_helper"
 
 RSpec.describe Refinery::Tags::Tag, :type => :model do
+  let(:test_date) { Time.zone.now }
+
   it "has a title" do
     new_tag = FactoryBot.create(:tag, title: 'TagTitle3', tag_type: "topic_area")
 
@@ -17,9 +19,9 @@ RSpec.describe Refinery::Tags::Tag, :type => :model do
     tag1 = FactoryBot.create(:tag, title: 'publications', tag_type: "content_type")
     tag2 = FactoryBot.create(:tag, title: 'housing', tag_type: "topic_area")
 
-    report1 = FactoryBot.create(:report, title: "When the dogs come back.")
-    report2 = FactoryBot.create(:report, title: "When the cats leave.")
-    report3 = FactoryBot.create(:report, title: "When the horses run.")
+    report1 = FactoryBot.create(:report, title: "When the dogs come back.", date: test_date)
+    report2 = FactoryBot.create(:report, title: "When the cats leave.", date: test_date)
+    report3 = FactoryBot.create(:report, title: "When the horses run.", date: test_date)
 
     report1.tags.push(tag1)
     report1.tags.push(tag2)
