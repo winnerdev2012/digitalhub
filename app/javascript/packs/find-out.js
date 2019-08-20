@@ -132,8 +132,7 @@ const fetchTaggings = (dropdownsObject) => {
       cardsLow()
       headerShort()
     }
-
-    loadInitialCards(response.taggings, resultsDiv)
+    loadInitialCards(response.taggings, resultsDiv, dropdownsObject)
     onClickOverlay()
   })
 }
@@ -156,16 +155,27 @@ const createCards = (taggings, resultsDiv) => {
   })
 }
 
-const loadInitialCards = (taggings, resultsDiv) => {
+const loadInitialCards = (taggings, resultsDiv, dropdownsObject) => {
   if (taggings.length === 0) {
     $('.results').html('<div class="message--none">There are currently no results for the selected filters.</div>')
     hideLoadMoreButton()
   } else {
-    createCards(taggings.slice(0, 9), resultsDiv)
-    if (taggings.length > 9) {
-      showLoadMoreButton(taggings.slice(9, taggings.length - 1), resultsDiv)
-    } else {
-      hideLoadMoreButton()
+    if (dropdownsObject.content_type === 'events'){
+      createCards(taggings.slice(0,8), resultsDiv)
+      if (taggings.length > 8){
+        showLoadMoreButton(taggings.slice(8, taggings.length - 1), resultsDiv)
+      }
+      else {
+        hideLoadMoreButton()
+      }
+    }
+    else{
+      createCards(taggings.slice(0, 9), resultsDiv)
+      if (taggings.length > 9) {
+        showLoadMoreButton(taggings.slice(9, taggings.length - 1), resultsDiv)
+      } else {
+        hideLoadMoreButton()
+      }
     }
   }
 }
@@ -189,7 +199,8 @@ const hideLoadMoreButton = () => {
 
 const showLoadMoreButton = (remainingCards, resultsDiv) => {
   $('#load-more').show()
-  $('#load-more').on('click', (event) => {
+  $('#load-more').unbind('click')
+  $('#load-more').bind('click', (event) => {
     event.preventDefault()
     loadRemainingCards(remainingCards, resultsDiv)
   })
