@@ -7,7 +7,9 @@
         <div class="content__date"><%= @report.date.strftime("%B %d, %Y") %></div>
         <div class="content__tags">Tags: <%= @tags %></div>
         <div class="content__body">
-          <img src="<%= @image_url %>" class="content__image" />
+        <% if @report.image %>
+          <%= image_tag(@report.image.url, class: "content__image ") %>
+        <% end %>
           <%= strip_tags @report.body %>
         </div>
       </div>

@@ -13,7 +13,6 @@ module Refinery
       def show
         @report = ::Refinery::Reports::Report.find(params[:id])
         report_json = ReportSerializer.new(@report, { :include => [:image] }).serializable_hash
-        @image_url = report_json[:included][0][:attributes][:url]
         @tags = @report.tags.map {|t| t.tag_type == 'topic_area' ? t.title : nil }.compact.join(', ')
 
         respond_to do |f|
