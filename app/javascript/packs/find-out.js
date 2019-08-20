@@ -189,7 +189,8 @@ const hideLoadMoreButton = () => {
 
 const showLoadMoreButton = (remainingCards, resultsDiv) => {
   $('#load-more').show()
-  $('#load-more').on('click', (event) => {
+  $('#load-more').unbind('click')
+  $('#load-more').bind('click', (event) => {
     event.preventDefault()
     loadRemainingCards(remainingCards, resultsDiv)
   })
