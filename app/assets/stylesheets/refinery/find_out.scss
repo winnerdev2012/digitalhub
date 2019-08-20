@@ -216,21 +216,14 @@
   }
 
   .card {
-    @include media (large) {
-      height: 20rem;
-      width: 20rem;
-    }
-    @include media (small) {
-      height: 10rem;
-      width: 14rem;
-    }
+    @include media (large) { width: 20rem; }
+    @include media (small) { width: 14rem; }
     @include media (x-small) {
-      height: 8.75rem;
       margin: .5rem;
       width: 8.75rem;
     }
     display: inline-block;
-    height: 24rem;
+    height: auto;
     margin: 1.25rem;
     width: 24rem;
 
