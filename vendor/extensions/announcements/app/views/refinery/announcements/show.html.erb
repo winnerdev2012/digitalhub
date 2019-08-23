@@ -9,7 +9,9 @@
         <% end %>
         <div class="content__tags">Tags: <%= @tags %></div>
         <div class="content__body">
-          <img src="<%= @image_url %>" class="content__image" />
+        <% if @announcement.image %>
+          <%= image_tag(@announcement.image.url, class: "content__image") %>
+        <% end %>
           <%= strip_tags @announcement.body %>
         </div>
       </div>
