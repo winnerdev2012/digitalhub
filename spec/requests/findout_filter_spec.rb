@@ -96,7 +96,7 @@ RSpec.describe 'Findout Filter API requests' do
       event_today = create(:event, start: today)
       event_past = create(:event, start: today - 86400)
       event_next = create(:event, start: today + 86400)
-      event_upcoming = create(:event, start: today + (21 * 86400))
+      event_upcoming = create(:event, start: today + (29 * 86400))
       get('/events.json')
 
       json_response = JSON.parse(response.body)

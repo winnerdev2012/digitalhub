@@ -8,10 +8,10 @@ module Refinery
       translates :title, :description, :accessibility_note, :translation_note
       validates :title, :presence => true, :uniqueness => true
       validates :start, :presence => true
-      belongs_to :image, :class_name => '::Refinery::Image', :optional => true
+      belongs_to :image, :class_name => '::Refinery::Image'
       after_save :translate_content
 
-      has_many :taggings, :class_name => '::Refinery::Taggings::Tagging'
+      has_many :taggings, :class_name => '::Refinery::Taggings::Tagging', dependent: :destroy
       has_many :tags, :class_name => '::Refinery::Tags::Tag', through: :taggings
 
       def self.tagged_with(title)

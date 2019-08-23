@@ -1,0 +1,51 @@
+.validation {
+  &__message {
+    border: 2px solid  #275527;
+    border-radius: 15px;
+    padding: 1rem;
+    width: 25rem;
+  }
+
+  &__button--open {
+    background-color: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+
+    &:hover {
+      background-color: #093509;
+      color: #ffffff;
+    }
+  }
+
+  &__button--close {
+    background-color: none;
+    border-radius: 15px;
+    display: none;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+
+    &:hover {
+      background-color: #093509;
+      color: #ffffff;
+    }
+  }
+
+  &__data {
+    display: none;
+
+    &--valid {
+      color: #2c6b02;
+    }
+
+    &--invalid {
+      color: #e23131;
+
+      &:hover {
+        background-color: #ffc0cb;
+      }
+    }
+  }
+}
