@@ -116,7 +116,16 @@ const fetchTaggings = (dropdownsObject) => {
     resetDisplay()
     loadTopicAreaNarrative(dropdownsObject.topic_area, response.topic_area_narrative)
 
-    if (dropdownsObject.topic_area === 'all topic areas'){
+    if (dropdownsObject.content_type !== 'events') {
+      cardsLow()
+      headerShort()
+    }
+    else if (dropdownsObject.content_type === 'events' && response.taggings.length > 0) {
+      headerTall()
+      nextThreeEvents()
+      cardsHigh()
+    }
+    else if (response.taggings.length === 0) {
       cardsLow()
       headerShort()
     }
