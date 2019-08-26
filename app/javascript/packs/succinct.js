@@ -36,6 +36,7 @@
                 .slice(0, -1)
                 .join(' ');
 
+                console.log(textTruncated)
               if (settings.ignore) {
                 textTruncated = textTruncated.replace(regex, '');
               }
