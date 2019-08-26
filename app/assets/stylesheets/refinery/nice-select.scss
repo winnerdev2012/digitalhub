@@ -22,10 +22,8 @@ $arrow_color: $gray !default;
   clear: both;
   color: $v3_color_bg-lightest;
   cursor: pointer;
-  float: right;
   font-family: $font_family-primary;
   font-size: $v3_font_size-h1;
-  margin-left: .7rem;
   outline: none;
   padding-right: $dropdown_padding + 22;
   position: relative;
@@ -40,6 +38,10 @@ $arrow_color: $gray !default;
 
   // Arrow
   &::after {
+    @include media (small) {
+      border-bottom-width: 10px;
+      border-right-width: 10px;
+    }
     border-bottom: 18px solid $v3_color_bg-lightest;
     border-bottom-color: transparent;
     border-left-color: transparent;
@@ -64,9 +66,17 @@ $arrow_color: $gray !default;
     }
 
     .list {
+      @media (max-width: 370px) {
+        text-indent: -1rem;
+        white-space: pre-wrap;
+      }
       opacity: 1;
       pointer-events: auto;
       transform: scale(1) translateY(0);
+
+      li {
+        @include media(x-small) { height: auto; }
+      }
     }
   }
 
@@ -108,6 +118,7 @@ $arrow_color: $gray !default;
       height: 4px;
       width: 4px;
     }
+
     .option {
       line-height: $input_height_small - 2;
       min-height: $input_height_small - 2;

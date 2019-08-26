@@ -1,17 +1,17 @@
 .FindOut {
   .banner {
-    @include background-2x('find-out-banner', 'png', fit, fit, center, no-repeat );
-    @include media(small) {
-      background-position: bottom 3rem right;
-    }
+    @include background-2x('find-out-banner', 'png', fit, fit, center, no-repeat);
+    @include media(small) { background-position: bottom 3rem right; }
     background: $color_bg-dark;
     background-position: center;
     background-repeat: no-repeat;
     background-size: fit;
   }
 
-  .container::after {
-    display: none;
+  .container {
+    &::after {
+      display: none;
+    }
   }
 
   .banner-content {
@@ -20,80 +20,46 @@
   }
 
   .find-out__header {
-    @include media(small) {
-      background: none;
+    @include media (medium) {
+      min-height: 24rem;
+      padding-top: 8.85rem;
     }
-
+    @include media (x-small) {
+      background: none;
+      min-height: 15rem;
+      padding-top: 4.85rem;
+    }
     background-image: image-url('group-2111.png');
-    height: 29.05rem;
-    margin-bottom: 2rem;
-  }
-
-  .filter {
-    @include media(small) {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-
     display: flex;
-    width: auto;
-  }
+    justify-content: center;
+    min-height: 29rem;
+    padding-top: 11.35rem;
 
-  .content-type {
-    @include media(small) {
-      font-family: $font_family-primary;
-      font-size: $v3_font_size-title;
-    }
-
-    color: $v3_color_bg-lightest;
-    display: inline-block;
-    font-family: $font_family-primary;
-    font-size: $v3_font_size-h1;
-    padding: 11.35rem 0 0 19.3rem;
-
-    &__dropdown {
-      appearance: none;
-      background: none;
-      border: 0;
-      display: inline;
-      text-decoration: underline;
-    }
-
-    &__select {
-      @include media(small) {
-        font-size: $font_size-large;
-      }
-
-      appearance: none;
-      border: 0;
-      outline: none;
-      text-decoration: underline;
-
-      &:hover {
-        color: $v3-color_green-light;
-        cursor: pointer;
-
-        &:focus {
-          color: $v3_color_bg-lightest;
-          cursor: pointer;
-        }
-      }
+    &--with-topic {
+      @include media(small) { margin-bottom: 5rem; }
+      @include media(x-small) { margin-bottom: 2rem; }
+      margin-bottom: 9rem;
     }
   }
 
+  .form {
+    @include media(large) { max-width: 40rem; }
+    @include media(small) {max-width: 28rem;}
+    @include media(x-small) { max-width: 17rem; }
+    width: 49rem;
+  }
+
+  .content-type,
   .topic-area {
     @include media(small) {
       font-family: $font_family-primary;
       font-size: $v3_font_size-title;
     }
-
+    @include media(x-small) { font-size: $v3_font_size-h1-mobile; }
     color: $v3_color_bg-lightest;
-    display: block;
+    display: inline-block;
     font-family: $font_family-primary;
     font-size: $v3_font_size-h1;
-    margin-left: 19.3rem;
-    width: auto;
 
     &__dropdown {
       appearance: none;
@@ -104,10 +70,8 @@
     }
 
     &__select {
-      @include media(small) {
-        font-size: $font_size-large;
-      }
-
+      @include media(small) { font-size: $v3_font_size-title; }
+      @include media(x-small) { font-size: $v3_font_size-h1-mobile; }
       appearance: none;
       border: 0;
       outline: none;
@@ -129,10 +93,26 @@
     color: $v3_color_bg-lightest;
     font-family: $font_family-primary;
     font-size: $font_size-medium;
-    margin: 2rem 0 2.4rem 19.3rem;
+    margin: 2rem auto;
   }
 
   .next-three-events {
+    @include media (large) {
+      height: 20rem;
+      width: 20rem;
+    }
+    @include media (small) {
+      align-items: center;
+      display: flex;
+      height: 10rem;
+      justify-content: center;
+      padding: 0;
+      width: 14rem;
+    }
+    @include media (x-small) {
+      height: 8.75rem;
+      width: 8.75rem;
+    }
     background-image: linear-gradient($v3_color_bg-lightest, $v3_color_bg-lightest);
     border: .06rem solid $v3-color_green-medium;
     height: 24rem;
@@ -140,27 +120,41 @@
     width: 24rem;
 
     &__header {
+      @include media(small) {
+        font-size: $font_size-large;
+        padding: 1.5rem;
+      }
       color: $v3-color_green-light;
       display: inline-flex;
       font-family: $font_family-primary;
       font-size: $font_size-xlarge;
       padding-bottom: 1.5rem;
-      width: 16rem;
+      width: 14rem;
     }
 
     &__triangle {
       @extend ._pseudo;
 
       @include media(medium) {
-        @include triangle(1.5rem, 'right', $v3-color_green-medium);
+        @include triangle(2.25rem, 'right', $v3-color_green-medium);
+      }
+
+      @include media(small) {
+        display: none;
       }
 
       @include triangle(3.4rem, 'right', $v3-color_green-medium);
       margin: 1.1rem 0 0 2.4rem;
     }
 
-    &__event {
+    &__events {
+      @include media (large) {
+        height: 5rem;
+        margin-right: 2.5rem;
+      }
+      @include media(small) { display: none; }
       cursor: pointer;
+      overflow-y: scroll;
       padding-bottom: 1.7rem;
     }
 
@@ -185,28 +179,66 @@
   }
 
   .results {
+    @include media (medium) { padding: 1rem; }
+    @include media (small) { padding: 1.25rem; }
+    @include media (x-small) { padding: 1rem; }
+    bottom: 0r;
     display: flex;
     flex-direction: inherit;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0;
     padding: 3.8rem;
     top: none;
+
+    &--cards-high {
+      @include media (medium) {
+        bottom: 12rem;
+        margin-bottom: -4rem;
+      }
+      @include media (small) {
+        bottom: 8rem;
+      }
+      @include media (x-small) {
+        bottom: 3rem;
+        margin-bottom: -4rem;
+      }
+      bottom: 14rem;
+      margin-bottom: -18rem;
+
+    }
   }
 
   .message--none {
     color: $v3-color_green-medium;
     font-family: $font_family-primary;
     font-size: $font_size-large;
-    margin: 0 0 14rem 18rem;
   }
 
   .card {
+    @include media (large) { width: 20rem; }
+    @include media (small) { width: 14rem; }
+    @include media (x-small) {
+      margin: .5rem;
+      width: 8.75rem;
+    }
     display: inline-block;
-    height: 24rem;
+    height: auto;
     margin: 1.25rem;
     width: 24rem;
 
     &__image {
-      height: 80%;
+      @include media (large) { width: 20rem; }
+      @include media (medium) { width: 20rem; }
+      @include media (small) {
+        height: 7rem;
+        width: 14rem;
+      }
+      @include media (x-small) {
+        height: 3.75rem;
+        width: 8.75rem;
+      }
+      height: 20rem;
       margin: 0;
       object-fit: cover;
       width: 24rem;
@@ -244,7 +276,8 @@
 
   .load-more {
     &__button {
-      left: 45%;
+      display: flex;
+      justify-content: center;
       margin-bottom: 2rem;
     }
 

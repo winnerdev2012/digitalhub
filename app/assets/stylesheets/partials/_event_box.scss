@@ -62,14 +62,12 @@
   &__event-info {
     @include media(small) { font-size: $font_size-xsmall; }
 
-    span {
-      :last-of-type {
-        $spacing: 3px;
-        border-left: 1px solid $color_font-light;
-        display: inline-block;
-        margin-left: $spacing;
-        padding-left: $spacing * 2;
-      }
+    &-city {
+      $spacing: 3px;
+      border-left: 1px solid $color_font-light;
+      display: inline-block;
+      margin-left: $spacing;
+      padding-left: $spacing * 2;
     }
   }
 }

@@ -15,13 +15,13 @@ function loadDropdowns() {
   }).done((response) => {
     const contentTypes = response.filter(tag => tag.data.attributes.tag_type === 'content_type')
     const contentTypeSelectOptions = contentTypes.slice(0, 3).map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
-    const contentTypeDropdown = (`<select class="content-type__select"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
-    document.getElementsByClassName('content-type__dropdown')[0].innerHTML = contentTypeDropdown
+    const contentTypeDropdown = (`<select class="content-type__select content-type__dropdown"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
+    document.getElementsByClassName('content-type')[0].innerHTML = "You're looking for " + contentTypeDropdown
 
     const topicAreas = response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
     const topicAreaSelectOptions = topicAreas.map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`).join('')
-    const topicAreaDropdown = (`<select class="topic-area__select"><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`)
-    document.getElementsByClassName('topic-area__dropdown')[0].innerHTML = topicAreaDropdown
+    const topicAreaDropdown = (`<select class="topic-area__select topic-area__dropdown"><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`)
+    document.getElementsByClassName('topic-area')[0].innerHTML = "in " + topicAreaDropdown
     onDropdownChange()
     cueOverlay()
   })
@@ -83,13 +83,14 @@ const fetchTaggings = (dropdownsObject) => {
     dataType: 'json',
     data: dropdownsObject,
   }).done(response => {
+    console.log(response.taggings)
     const resultsDiv = $('.results')
     const headerShort = () => {
-      $('.find-out__header').css('height', '29.05rem')
+      $('.find-out__header').removeClass('find-out__header--with-topic')
     }
 
     const headerTall = () => {
-      $('.find-out__header').css('height', '45.25rem')
+      $('.find-out__header').addClass('find-out__header--with-topic')
     }
 
     const nextThreeEvents = () => {
@@ -99,36 +100,32 @@ const fetchTaggings = (dropdownsObject) => {
     }
 
     const cardsHigh = () => {
-      resultsDiv.css('bottom', '14rem')
-      resultsDiv.css('margin-bottom', '-18rem')
+      resultsDiv.addClass('results--cards-high')
     }
 
     const cardsLow = () => {
-      resultsDiv.css('bottom', '0rem')
+      resultsDiv.removeClass('results--cards-high')
     }
 
     const resetDisplay = () => {
       $('.narrative-text').empty()
       resultsDiv.empty()
-      resultsDiv.css('margin-bottom', '0rem')
+      resultsDiv.removeClass('results--cards-high')
     }
 
     resetDisplay()
     loadTopicAreaNarrative(dropdownsObject.topic_area, response.topic_area_narrative)
-    if (dropdownsObject.content_type === 'everything' && dropdownsObject.topic_area === 'all topic areas') {
+
+    if (dropdownsObject.content_type !== 'events') {
       cardsLow()
-    } else if ((dropdownsObject.content_type === 'events' || (dropdownsObject.topic_area !== 'all topic areas')) && response.taggings.length > 0) {
+      headerShort()
+    }
+    else if (dropdownsObject.content_type === 'events' && response.taggings.length > 0) {
       headerTall()
       nextThreeEvents()
       cardsHigh()
-    } else if (dropdownsObject.content_type !== 'events' && (dropdownsObject.topic_area === 'all topic areas')) {
-      headerTall()
-      nextThreeEvents()
-      cardsLow()
-    } else if (dropdownsObject.content_type === 'everything' && (dropdownsObject.topic_area !== 'all topic areas')) {
-      headerTall()
-      cardsLow()
-    } else if (response.taggings.length === 0) {
+    }
+    else if (response.taggings.length === 0) {
       cardsLow()
       headerShort()
     }
@@ -182,6 +179,7 @@ const loadInitialCards = (taggings, resultsDiv, dropdownsObject) => {
 
 const loadNextThreeEvents = (events, resultsDiv) => {
   const nextThree = events.map(event => {
+    console.log(event)
     return new Event(event)
   })
   const nextThreeEventsHtml = Event.nextThree(nextThree)
@@ -221,14 +219,6 @@ class Report {
 }
 
 Report.prototype.reportCardHtml = function reportCardHtml() {
-  const tagsHtml = this.tags.map(tag => {
-    if (tag.tag_type !== 'content_type') {
-      return (`
-      <span><em>${tag.title}</em></span>
-      `)
-    }
-  }).join('')
-
   return (`
     <div class="card" data-sortdate="${Date.parse(this.date)}">
       <a href="/reports/${this.id}">
@@ -237,9 +227,6 @@ Report.prototype.reportCardHtml = function reportCardHtml() {
       <div class="card__content-type">PUBLICATION</div>
       <div class="card__title">
         <a class="card__link" href="/reports/${this.id}">${this.title}</a>
-      </div>
-      <div class="card__tags">
-        tags: ${tagsHtml}
       </div>
     </div>
   `)
@@ -301,14 +288,6 @@ class Event {
 }
 
 Event.prototype.eventCardHtml = function eventCardHtml() {
-  const tagsHtml = this.tags.map(tag => {
-    if (tag.tag_type !== 'content_type') {
-      return (`
-      <span><em>${tag.title}</em></span>
-      `)
-    }
-  }).join('')
-
   return (`
     <div class="card" data-sortdate="${Date.parse(this.start)}">
       <a href="/events/${this.id}">
@@ -317,9 +296,6 @@ Event.prototype.eventCardHtml = function eventCardHtml() {
       <div class="card__content-type">EVENT</div>
       <div class="card__title">
         <a class="card__link" href="/events/${this.id}">${this.title}</a>
-      </div>
-      <div class="card__tags">
-        tags: ${tagsHtml}
       </div>
     </div>
   `)
@@ -339,14 +315,6 @@ class Announcement {
 }
 
 Announcement.prototype.announcementCardHtml = function announcementCardHtml() {
-  const tagsHtml = this.tags.map(tag => {
-    if (tag.tag_type !== 'content_type') {
-      return (`
-      <span><em>${tag.title}</em></span>
-      `)
-    }
-  }).join('')
-
   return (`
     <div class="card" data-sortdate="${Date.parse(this.published_date)}">
       <a href="/announcements/${this.id}">
@@ -355,9 +323,6 @@ Announcement.prototype.announcementCardHtml = function announcementCardHtml() {
       <div class="card__content-type">NEWS</div>
       <div class="card__title">
         <a class="card__link" href="/announcements/${this.id}">${this.title}</a>
-      </div>
-      <div class="card__tags">
-        tags: ${tagsHtml}
       </div>
     </div>
   `)

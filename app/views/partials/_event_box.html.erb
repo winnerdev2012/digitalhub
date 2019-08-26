@@ -8,8 +8,8 @@
         <li>
         <h4><%= event.title %></h4>
           <div class="event-box__event-info">
-            <span><%= local_time(event.start, '%b %-d, %l:%M%P') %> - <%= local_time(event.end, '%l:%M%P') %></span>
-            <span><%= event.city %></span>
+            <span class="event-box__event-info-time"><%= local_time(event.start, '%b %-d, %l:%M%P') %> - <%= local_time(event.end, '%l:%M%P') %></span>
+            <span class="event-box__event-info-city"><%= event.city %></span>
           </div>
         </li>
       <% end %>
