@@ -1,16 +1,16 @@
 #drawer {
-  position: absolute;
+  position: fixed;
   top: 0;
   height: 100vh;
-  width: 25rem;
-  right: -25rem;
+  width: 18rem;
+  right: -18rem;
   max-width: 100%;
   background: white;
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 2rem;
   z-index: 5;
-  transition-duration: 1s;
+  transition-duration: .7s;
   border-left: 1px solid $color_bg-dark;
 
   &.menu-open {
