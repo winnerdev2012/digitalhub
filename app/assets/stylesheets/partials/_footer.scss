@@ -1,5 +1,6 @@
 .footer {
   background-color: $color_bg-dark;
+  bottom: 0;
   font-size: $font_size-xsmall;
   color: $color_font-light;
   line-height: $font_size-small;
@@ -122,7 +123,7 @@
           grid-row: 8;
           grid-column: 1;
           margin-top: 0.5rem;
-        }        
+        }
 
         .button {
           text-transform: uppercase;
