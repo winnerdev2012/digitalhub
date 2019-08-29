@@ -1,28 +1,19 @@
 $(() => {
   function reloadStoryTexts() {
     Array.from($('.story--response')).forEach((div) => {
-      if (div.children[0].children[0]) {
-        const modifiedDiv = div.children[0].children[0];
-        modifiedDiv.innerText = window.localStorage.getItem(`${div.id}`);
-      }
+      const modifiedDiv = div.children[1].children[0];
       if (document.documentElement.clientWidth > 670) {
-        div.children[1].children[0].innerText = lineClampResponseTexts(div,350)
-      }
-      else if (document.documentElement.clientWidth < 670){
-        div.children[1].children[0].innerText = lineClampResponseTexts(div,55)
+        modifiedDiv.innerText = lineClampResponseTexts(div, 350)
+      } else if (document.documentElement.clientWidth < 670) {
+        modifiedDiv.innerText = lineClampResponseTexts(div, 55)
       }
     });
   }
 
   function lineClampResponseTexts(div, length) {
     const origText = localStorage.getItem(`${div.id}`)
-    let editedStoryText = origText.substring(0,length)
-      .split(' ')
-      .slice(0,-1)
-      .join(" ")
-      + "..."
-    return editedStoryText
-    }
+    return `${origText.substring(0, length).split(' ').slice(0, -1).join(' ')}...`
+  }
 
   function storeAllStoryTexts() {
     $.get({
@@ -37,7 +28,7 @@ $(() => {
       reloadStoryTexts()
     });
   }
-  
+
   storeAllStoryTexts();
   window.addEventListener('resize', reloadStoryTexts);
 });
