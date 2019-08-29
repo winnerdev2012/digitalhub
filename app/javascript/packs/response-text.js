@@ -1,28 +1,18 @@
 $(() => {
   function reloadStoryTexts() {
     Array.from($('.story--response')).forEach((div) => {
-      if (div.children[0].children[0]) {
-        const modifiedDiv = div.children[0].children[0];
-        modifiedDiv.innerText = window.localStorage.getItem(`${div.id}`);
+      const modifiedDiv = div.children[1].children[0];
+      if (document.documentElement.clientWidth > 670) {
+        modifiedDiv.innerText = lineClampResponseTexts(div, 350)
+      } else if (document.documentElement.clientWidth < 670) {
+        modifiedDiv.innerText = lineClampResponseTexts(div, 55)
       }
     });
   }
 
-  function lineClampResponseTexts() {
-    reloadStoryTexts();
-    if (document.documentElement.clientWidth > 670) {
-      $('div.story--response-text').succinct({
-        size: 350,
-        omission: '...',
-        ignore: false,
-      });
-    } else if (document.documentElement.clientWidth < 670) {
-      $('div.story--response-text').succinct({
-        size: 55,
-        omission: '...',
-        ignore: false,
-      });
-    }
+  function lineClampResponseTexts(div, length) {
+    const origText = localStorage.getItem(`${div.id}`)
+    return `${origText.substring(0, length).split(' ').slice(0, -1).join(' ')}...`
   }
 
   function storeAllStoryTexts() {
@@ -35,9 +25,10 @@ $(() => {
           window.localStorage.setItem(`story${story.data.id}`, story.data.attributes.sanitized_response);
         }
       });
-      lineClampResponseTexts();
+      reloadStoryTexts()
     });
   }
+
   storeAllStoryTexts();
-  window.addEventListener('resize', lineClampResponseTexts);
+  window.addEventListener('resize', reloadStoryTexts);
 });
