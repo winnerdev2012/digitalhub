@@ -10,7 +10,7 @@
         <% if @announcement.published_date %>
           <div class="content__date"><%= @announcement.published_date.strftime("%B %d, %Y") %></div>
         <% end %>
-        <div class="content__tags">Tags: <%= @tags %></div>
+        <div class="content__tags">tags: <%= @tags %></div>
         <div class="content__body">
           <%= strip_tags @announcement.body %>
         </div>

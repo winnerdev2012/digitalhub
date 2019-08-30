@@ -209,7 +209,7 @@ Report.prototype.reportCardHtml = function reportCardHtml() {
   const tags = this.tags.map(tag => {
     if (tag.tag_type === 'topic_area') {
       return (`
-      <span><em>${tag.title}</em></span>
+      <span>${tag.title}</span>
     `)
     }
   }).join('')
@@ -287,7 +287,7 @@ Event.prototype.eventCardHtml = function eventCardHtml() {
   const tags = this.tags.map(tag => {
     if (tag.tag_type === 'topic_area') {
       return (`
-      <span><em>${tag.title}</em></span>
+      <span>${tag.title}</span>
     `)
     }
   }).join('')
@@ -323,7 +323,7 @@ Announcement.prototype.announcementCardHtml = function announcementCardHtml() {
   const tags = this.tags.map(tag => {
     if (tag.tag_type === 'topic_area') {
       return (`
-      <span><em>${tag.title}</em></span>
+      <span>${tag.title}</span>
     `)
     }
   }).join('')
