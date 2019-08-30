@@ -257,6 +257,7 @@
       font-family: $font_family-secondary;
       font-size: $font_size-small;
       letter-spacing: .2rem;
+      margin-top: 1rem;
       text-transform: uppercase;
     }
 
@@ -266,6 +267,7 @@
       cursor: pointer;
       font-family: $font_family-primary;
       font-size: $font_size-medium;
+      margin-top: .5rem;
       text-decoration: none;
     }
 
@@ -277,6 +279,7 @@
       color: $v3-color_gray-dark;
       font-family: $font_family-primary;
       font-size: $font_size-small;
+      margin-top: .5rem;
       text-decoration: italic;
     }
   }
