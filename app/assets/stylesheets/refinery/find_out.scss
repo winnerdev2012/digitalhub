@@ -20,6 +20,10 @@
   }
 
   .find-out__header {
+    @include media (large) {
+      background-position-x: center;
+      background-position-y: -1.5rem;
+    }
     @include media (medium) {
       min-height: 24rem;
       padding-top: 8.85rem;
@@ -29,7 +33,10 @@
       min-height: 15rem;
       padding-top: 4.85rem;
     }
-    background-image: image-url('group-2111.png');
+    background-image: image-url('376-find-out-banner.png');
+    background-position-x: -7.8rem;
+    background-position-y: -1rem;
+    background-size: cover;
     display: flex;
     justify-content: center;
     min-height: 29rem;
