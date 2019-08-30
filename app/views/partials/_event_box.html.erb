@@ -1,17 +1,17 @@
 <% events = events[0..2] if events.size > 3 %>
 
 <div class="event-box">
-  <h2 class="event-box__header">Join us for <br> an event!</h2>
+  <%= link_to "Join us for an event!", events_events_path, class: "event-box__header" %>
   <% if events.size > 0 %>
     <ul>
       <% events.each do |event| %>
-        <li>
+        <a href="/events/<%= event.id %>"><li>
         <h4><%= event.title %></h4>
           <div class="event-box__event-info">
             <span class="event-box__event-info-time"><%= local_time(event.start, '%b %-d, %l:%M%P') %> - <%= local_time(event.end, '%l:%M%P') %></span>
             <span class="event-box__event-info-city"><%= event.city %></span>
           </div>
-        </li>
+        </li></a>
       <% end %>
     </ul>
   <% else %>
