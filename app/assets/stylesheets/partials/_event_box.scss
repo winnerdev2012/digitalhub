@@ -13,24 +13,17 @@
       justify-content: center;
     }
     @media (max-width: 670px) { font-size: $font_size-small; }
-    @media (max-width: 320px) {
-      font-size: $font_size-xsmall;
-      margin-right: 2rem;
-    }
+    @media (max-width: 320px) { font-size: $font_size-xsmall;}
 
     color: $color_font-light;
     display: flex;
     font-size: 1.8rem;
     margin: 0;
-    width: 85%;
+    width: 100%;
 
     &::after {
       @media (max-width: 1399px) { align-self: center; }
       @media (max-width: 670px) { @include triangle(25px, 'right', $v3-color_green-light); }
-      @media (max-width: 320px) {
-        font-size: $font_size-xsmall;
-        margin-right: 2rem;
-      }
 
       @extend ._pseudo;
       @include triangle(50px, 'right', $v3-color_green-light);
