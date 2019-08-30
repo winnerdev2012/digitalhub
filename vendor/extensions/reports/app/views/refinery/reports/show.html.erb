@@ -8,7 +8,7 @@
         <div class="content__content-type">PUBLICATION</div>
         <div class="content__title"><%= @report.title %></div>
         <div class="content__date"><%= @report.date.strftime("%B %d, %Y") %></div>
-        <div class="content__tags">Tags: <%= @tags %></div>
+        <div class="content__tags">tags: <%= @tags %></div>
         <div class="content__body">
           <%= strip_tags @report.body %>
         </div>
