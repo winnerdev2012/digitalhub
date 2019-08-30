@@ -66,7 +66,8 @@
   }
 
   &__title {
-    @include media(small) { width: initial; }
+    @include media(small) { width: inherit; }
+    @include media(x-small) { font-size: 1rem;}
     background: none;
     display: inline-block;
     font-family: $font_family-secondary;

@@ -2,6 +2,7 @@
 
 <div class="event-box">
   <%= link_to "Join us for an event!", events_events_path, class: "event-box__header" %>
+  <div class="event-box__content">
   <% if events.size > 0 %>
     <ul>
       <% events.each do |event| %>
@@ -19,4 +20,5 @@
       No upcoming events at this time.
     </p>
   <% end %>
+  </div>
 </div>
