@@ -35,7 +35,7 @@
     min-height: 29rem;
     padding-top: 11.35rem;
 
-    &--with-topic {
+    &--large {
       @include media(small) { margin-bottom: 5rem; }
       @include media(x-small) { margin-bottom: 2rem; }
       margin-bottom: 9rem;
@@ -57,7 +57,7 @@
     }
     @include media(x-small) { font-size: $v3_font_size-h1-mobile; }
     color: $v3_color_bg-lightest;
-    display: inline-block;
+    display: block;
     font-family: $font_family-primary;
     font-size: $v3_font_size-h1;
 
