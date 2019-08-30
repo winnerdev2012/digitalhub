@@ -1,9 +1,9 @@
 header {
-  width: 100%;
-  position: absolute;
   left: 0;
-  right: 0;
   margin: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
   z-index: 100;
 
   h1 {
@@ -11,13 +11,13 @@ header {
   }
 
   .language-disclaimer {
-    color: $color_font-light;
     background-color: $color_bg-black;
-    width: 100%;
+    color: $color_font-light;
     font-size: $font_size-xsmall;
+    width: 100%;
     .container {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding-bottom: .5rem;
+      padding-top: .5rem;
     }
   }
 
@@ -25,7 +25,7 @@ header {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding-top: 1rem;
 
     @include media(medium) {
       padding: 1rem 1.35rem;
@@ -37,14 +37,14 @@ header {
   }
 
   .site-name {
+    align-items: center;
     color: $color_font-light;
     display: flex;
-    align-items: center;
     img.wordmark {
-      height: $font_size-small;
       @include media(x-small) {
         height: $font_size-xsmall;
       }
+      height: $font_size-small;
     }
   }
 
