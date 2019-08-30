@@ -7,7 +7,6 @@ body {
   min-height: 100vh;
   &.menu-open {
     height: 100vh;
-    overflow-y: hidden;
   }
 }
 
@@ -90,8 +89,12 @@ ul {
 }
 
 #page_container {
+  transition-duration: .7s;
+
   &.menu-open {
-    height: 100vh;
+    @include media(large) {
+      margin-right: 0;
+    }
   }
 }
 
