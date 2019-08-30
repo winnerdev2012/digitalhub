@@ -13,7 +13,7 @@
       justify-content: center;
     }
     @media (max-width: 670px) { font-size: $font_size-small; }
-    @media (max-width: 320px) { font-size: $font_size-xsmall;}
+    @media (max-width: 325px) { font-size: $font_size-xsmall;}
 
     color: $color_font-light;
     display: flex;
@@ -31,7 +31,7 @@
     }
   }
 
-  ul {
+  &__content {
     display: inline-block;
     margin-top: 1.5rem;
     @media (min-width: 1400px) {
