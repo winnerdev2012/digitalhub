@@ -76,6 +76,20 @@ System tests can be run on multiple platforms via BrowserStack by using the BROW
 Valid options include: internet_explorer, chrome, android. Unfortunately Safari using devices do not seem to be compatible with the localtesting setup.
 
 By default rack-test and headless_chrome will be used to run system tests in local development.
+
+## Data Validator
+Data validation can be run via rake task:
+`$ rake db:validate`
+
+To test the validator, you can run:
+`$ rake db:create_invalid_data`
+
+This will create 3 invalid objects (an Announcement, a Report and an Event) with errors.
+
+Correct invalid data in `/hubadmin`, and check your results by clicking on `Validate Data` in `/hubadmin/taggings`
+
+
+
 ## CMS Instructions
 
 ### Home Page

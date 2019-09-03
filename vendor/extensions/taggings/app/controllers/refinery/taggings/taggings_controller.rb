@@ -32,6 +32,11 @@ module Refinery
         end
       end
 
+      def data_validation
+        @data_exceptions = ValidationService.call
+        render json: @data_exceptions.to_json
+      end
+
     protected
 
       def find_all_taggings
